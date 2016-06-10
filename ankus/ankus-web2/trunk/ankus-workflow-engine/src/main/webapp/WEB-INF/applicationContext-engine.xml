@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
+
+    <!-- ========================= PROPERTY PLACE HOLDER DEFINITION ========================= -->
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>/WEB-INF/config-${spring.profiles.active:dev}.properties</value>
+            </list>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="active.profile">${spring.profiles.active:dev}</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- ========================= PROPERTIES DEFINITION ========================= -->
+
+    <util:properties id="config" location="/WEB-INF/config-${spring.profiles.active:dev}.properties"/>
+
+    <!-- ========================= COMPONENT SCAN DEFINITION ========================= -->
+
+    <context:component-scan base-package="org.openflamingo.engine"/>
+
+    <!-- ========================= SCHEDULER DEFINITION ========================= -->
+
+    <bean id="jobScheduler" class="org.openflamingo.engine.scheduler.QuartzJobScheduler">
+        <property name="scheduler" ref="quartzJobScheduler"/>
+    </bean>
+
+    <bean id="quartzJobScheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="autoStartup" value="true"/>
+        <property name="beanName" value="scheduler"/>
+        <property name="applicationContextSchedulerContextKey" value="CTX"/>
+        <property name="waitForJobsToCompleteOnShutdown" value="true"/>
+        <property name="configLocation" value="/WEB-INF/quartz.properties"/>
+
+        <property name="jobDetails">
+            <list>
+                <ref bean="monitoringJobDetail"/>
+                <ref bean="hiveLogCleaningJobDetail"/>
+            </list>
+        </property>
+
+        <property name="triggers">
+            <list>
+                <ref bean="monitoringTrigger"/>
+                <ref bean="hiveLogCleaningTrigger"/>
+            </list>
+        </property>
+    </bean>
+
+    <!-- Monitoring Job -->
+
+    <bean name="monitoringJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <property name="durability" value="true"/>
+        <property name="jobClass" value="org.openflamingo.engine.monitoring.job.MonitoringQuartzJob"/>
+        <property name="applicationContextJobDataKey" value="spring"/>
+    </bean>
+
+    <bean id="monitoringTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="monitoringJobDetail"/>
+        <property name="cronExpression" value="0 * * * * ?"/>
+    </bean>
+
+    <!-- Hive Query Log Cleansing Job -->
+
+    <bean name="hiveLogCleaningJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <property name="durability" value="true"/>
+        <property name="jobClass" value="org.openflamingo.engine.monitoring.cleaning.HiveLogCleaningQuartzJob"/>
+        <property name="applicationContextJobDataKey" value="spring"/>
+    </bean>
+
+    <bean id="hiveLogCleaningTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="hiveLogCleaningJobDetail"/>
+        <property name="cronExpression" value="0 0 1 * * ?"/>
+    </bean>
+</beans>

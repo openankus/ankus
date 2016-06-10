@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+    <!-- http://hadoop.apache.org/common/docs/current/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml -->
+    <property>
+        <name>dfs.replication</name>
+        <value>1</value>
+    </property>
+    <property>
+        <name>dfs.datanode.socket.write.timeout</name>
+        <value>0</value>
+    </property>
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/tmp/hadoop</value>
+    </property>
+    <property>
+        <name>dfs.name.dir</name>
+        <value>${hadoop.tmp.dir}/dfs/name</value>
+    </property>
+    <property>
+        <name>dfs.name.edits.dir</name>
+        <value>${hadoop.tmp.dir}/dfs/name/edits</value>
+    </property>
+    <property>
+        <name>dfs.data.dir</name>
+        <value>${hadoop.tmp.dir}/dfs/data</value>
+    </property>
+</configuration>
+

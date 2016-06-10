@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.openflamingo.fs.audit.AuditLogRepository">
+
+    <!-- ==================================================================================== -->
+    <!-- 1. Result and Parameter Maps -->
+    <!-- ==================================================================================== -->
+
+    <resultMap id="auditHistoryMap" type="org.openflamingo.model.rest.AuditHistory">
+        <result property="id"                column="ID"             jdbcType="BIGINT"/>
+        <result property="clusterId"         column="CLUSTER_ID"     jdbcType="BIGINT"/>
+        <result property="clusterName"       column="CLUSTER_NAME"   jdbcType="VARCHAR"/>
+        <result property="from"              column="FROM_PATH"      jdbcType="VARCHAR"/>
+        <result property="to"                column="TO_PATH"        jdbcType="VARCHAR"/>
+        <result property="length"            column="LENGTH"         jdbcType="BIGINT"/>
+        <result property="fileSystemType"    column="FS_TYPE"        jdbcType="VARCHAR"/>
+        <result property="auditType"         column="AUDIT_TYPE"     jdbcType="VARCHAR"/>
+        <result property="fileType"          column="FILE_TYPE"      jdbcType="VARCHAR"/>
+        <result property="workDate"          column="WORK_DATE"      jdbcType="TIMESTAMP"/>
+        <result property="username"          column="USERNAME"       jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- ==================================================================================== -->
+    <!-- 2. Sql Fragments -->
+    <!-- ==================================================================================== -->
+
+    <sql id="wherePK">WHERE ID = #{id}</sql>
+
+    <sql id="whereUsername">WHERE USERNAME = #{username}</sql>
+
+    <sql id="whereType">WHERE USERNAME = #{username} AND ACTION_TYPE = #{type}</sql>
+
+    <!-- ==================================================================================== -->
+    <!-- 3. Select Statement -->
+    <!-- ==================================================================================== -->
+
+    <select id="select" resultMap="auditHistoryMap">
+        SELECT * FROM AUDIT_LOG
+        <include refid="wherePK"/>
+    </select>
+
+    <select id="selectAll" resultMap="auditHistoryMap">
+        SELECT * FROM AUDIT_LOG
+    </select>
+
+    <select id="selectByType" parameterType="auditHistory" resultMap="auditHistoryMap">
+        SELECT * FROM AUDIT_LOG
+        <include refid="whereType"/>
+    </select>
+
+    <select id="selectByUsername" resultMap="auditHistoryMap">
+        SELECT * FROM AUDIT_LOG
+        <include refid="whereUsername"/>
+    </select>
+
+    <select id="selectByCondition" parameterType="map" resultMap="auditHistoryMap">
+        SELECT
+            ID,
+            CLUSTER_ID,
+            CLUSTER_NAME,
+            FROM_PATH,
+            TO_PATH,
+            LENGTH,
+            FS_TYPE,
+            AUDIT_TYPE,
+            FILE_TYPE,
+            WORK_DATE,
+            USERNAME
+        FROM AUDIT_LOG
+        WHERE 1=1
+        <if test="username != null and username != ''">
+            AND USERNAME = #{username}
+        </if>
+        <if test="auditType != null and auditType != '' and auditType != 'ALL'">
+            AND AUDIT_TYPE = #{auditType}
+        </if>
+        <if test="startDate != null and startDate != ''">
+            AND DATE(WORK_DATE) BETWEEN #{startDate} AND #{endDate}
+        </if>
+        <if test="endDate != null and endDate != ''">
+            AND DATE(WORK_DATE) BETWEEN #{startDate} AND #{endDate}
+        </if>
+        <if test="path != null and path != ''">
+            AND (FROM_PATH LIKE '%${path}%' OR TO_PATH LIKE '%${path}%')
+        </if>
+        ORDER BY ${orderBy} ${desc}
+        LIMIT ${start}, ${limit}
+    </select>
+
+    <select id="getTotalCountByUsername" parameterType="map" resultType="Integer">
+        SELECT COUNT(*) FROM AUDIT_LOG
+        WHERE 1=1
+        <if test="username != null and username != ''">
+            AND USERNAME = #{username}
+        </if>
+        <if test="auditType != null and auditType != '' and auditType != 'ALL'">
+            AND AUDIT_TYPE = #{auditType}
+        </if>
+        <if test="startDate != null and startDate != ''">
+            AND DATE(WORK_DATE) BETWEEN #{startDate} AND #{endDate}
+        </if>
+        <if test="endDate != null and endDate != ''">
+            AND DATE(WORK_DATE) BETWEEN #{startDate} AND #{endDate}
+        </if>
+        <if test="path != null and path != ''">
+            AND FROM_PATH LIKE '%${path}%'
+        </if>
+        <if test="path != null and path != ''">
+            AND TO_PATH LIKE '%${path}%'
+        </if>
+    </select>
+
+    <!-- ==================================================================================== -->
+    <!-- 3. Exist Statement -->
+    <!-- ==================================================================================== -->
+
+    <select id="exist" parameterType="Integer" resultType="Integer">
+        SELECT COUNT(*) FROM AUDIT_LOG
+        <include refid="wherePK"/>
+    </select>
+
+    <!-- ==================================================================================== -->
+    <!-- 4. Insert Statements -->
+    <!-- ==================================================================================== -->
+
+    <insert id="insert" parameterType="auditHistory" useGeneratedKeys="true" keyProperty="id" keyColumn="ID">
+        INSERT INTO AUDIT_LOG
+        (
+            ID,
+            CLUSTER_ID,
+            CLUSTER_NAME,
+            FROM_PATH,
+            TO_PATH,
+            LENGTH,
+            FS_TYPE,
+            AUDIT_TYPE,
+            FILE_TYPE,
+            WORK_DATE,
+            USERNAME
+        )
+        VALUES
+        (
+            #{id},
+            #{clusterId},
+            #{clusterName},
+            #{from},
+            #{to},
+            #{length},
+            #{fileSystemType},
+            #{auditType},
+            #{fileType},
+            #{workDate},
+            #{username}
+        )
+
+        <selectKey resultType="int" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+    <!-- ==================================================================================== -->
+    <!-- 5. Update Statements -->
+    <!-- ==================================================================================== -->
+
+    <update id="update" parameterType="auditHistory">
+        UPDATE AUDIT_LOG
+        SET
+            CLUSTER_ID = #{clusterId},
+            CLUSTER_NAME = #{clusterName},
+            FROM_PATH = #{from},
+            TO_PATH = #{to},
+            LENGTH = #{length},
+            FS_TYPE = #{fileSystemType},
+            AUDIT_TYPE = #{auditType},
+            FILE_TYPE = #{auditType},
+            WORK_DATE = #{workDate},
+            USERNAME = #{username}
+        <include refid="wherePK"/>
+    </update>
+
+    <!-- ==================================================================================== -->
+    <!-- 6. Delete Statements -->
+    <!-- ==================================================================================== -->
+
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM AUDIT_LOG
+        <include refid="wherePK"/>
+    </delete>
+</mapper>

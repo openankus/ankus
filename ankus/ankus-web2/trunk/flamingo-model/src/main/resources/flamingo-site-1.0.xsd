@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://www.openflamingo.org/schema/configuration"
+            targetNamespace="http://www.openflamingo.org/schema/configuration"
+            elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+
+	<xsd:annotation>
+		<xsd:documentation><![CDATA[
+	Open Flamingo Configuration Schema, version 1.0
+	Authors: Edward KIM
+		]]></xsd:documentation>
+	</xsd:annotation>
+
+	<!-- Top-level <model> tag -->
+	<xsd:element name="configuration">
+		<xsd:annotation>
+			<xsd:documentation>Open Flamingo Configuration Root</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="description" minOccurs="0" maxOccurs="1"/>
+				<xsd:element ref="property" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="hadoop" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="property">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="value" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+				<xsd:element name="defautlVaule" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="description" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="expose" type="xsd:boolean" default="false">
+					<xsd:annotation>
+						<xsd:documentation>클라이언트 JavaScript Configuration으로 노출할지 여부를 설정한다. 기본값은 false이다.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="cluster">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="description" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="fs.default.name" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>HDFS (ex. http://192.168.1.1:9000)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="mapred.job.tracker" type="xsd:string">
+					<xsd:annotation>
+						<xsd:documentation>Job Tracker (ex. 192.168.1.1:9001)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<!-- Hadoop related useful key:
+										mapred.child.java.opts
+										mapred.map.tasks
+										mapred.reduce.tasks
+										hadoop.job.ugi
+										mapred.tasktracker.map.tasks.maximum
+										mapred.tasktracker.reduce.tasks.maximum
+										dfs.replication
+									-->
+				<xsd:element ref="properties" minOccurs="0" maxOccurs="1"/>
+				<xsd:element name="namenode" type="xsd:string" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Namnode의 IP Address</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element ref="datanodes" minOccurs="0" maxOccurs="1"/>
+			</xsd:sequence>
+			<xsd:attribute name="name" type="xsd:string" use="required">
+				<xsd:annotation>
+					<xsd:documentation>Unique Hadoop Cluster Name</xsd:documentation>
+				</xsd:annotation>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="description">
+		<xsd:annotation>
+			<xsd:documentation><![CDATA[ ]]></xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="xsd:string"/>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="properties">
+		<xsd:annotation>
+			<xsd:documentation>Hadoop Configuration으로 주입할 Key Value</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="property" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="datanodes">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="datanode" type="xsd:string" maxOccurs="unbounded">
+					<xsd:annotation>
+						<xsd:documentation>Datanode의 IP Address</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="hadoop">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="cluster" minOccurs="1" maxOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

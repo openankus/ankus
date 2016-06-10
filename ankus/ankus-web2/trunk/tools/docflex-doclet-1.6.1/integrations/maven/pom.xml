@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- POM Basics -->
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1.0</version>
+  <name>my-app</name>
+
+  <!-- Specifying properties (i.e. the variable used in further settings) -->
+  <properties>
+    <!-- DocFlex/Javadoc home directory -->
+    <DFH>${basedir}/../..</DFH>
+
+    <!-- DocFlex/Javadoc version -->
+    <DocFlex_Doclet_Ver>1.6.0</DocFlex_Doclet_Ver>
+  </properties>
+
+  <!-- The Java source directory -->
+  <build>
+    <sourceDirectory>
+      ${DFH}/demo
+    </sourceDirectory>
+  </build>
+
+  <!-- Reporting section (i.e. where we need to setup the doclet) -->
+  <reporting>
+    <plugins>
+      <!-- Configure Maven Javadoc plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+
+          <!-- The maximum heap size available to JVM when running Javadoc -->
+          <maxmemory>512m</maxmemory>
+
+          <!-- Using DocFlex Doclet -->
+          <doclet>com.docflex.javadoc.Doclet</doclet>
+          <docletPath>${DFH}/lib/docflex-doclet.jar</docletPath>
+
+          <!-- Specifying command-line parameters for DocFlex Doclet -->
+          <additionalparam>
+
+            <!-- The main template -->
+            -template ${DFH}/templates/JavadocPro/FramedDoc.tpl
+
+            <!-- Pass template parameters -->
+            -p:windowTitle "DocFlex Doclet Demo"
+            -p:docTitle "DocFlex/Javadoc &amp; Maven Integration Demo"
+            -p:include.tag.custom "todo:a:To Do:"
+            -p:include.tag.custom "prj\\:type:opt:Project Type:"
+
+            <!-- The output format -->
+            -format HTML
+
+            <!-- Supress showing up the doclet GUI -->
+            -nodialog
+
+            <!-- Do not launch documentation viewer -->
+            -launchviewer=false
+
+            <!-- Tell DocFlex Doclet the location of the output directory -->
+            -d ${project.build.directory}/site/docflex_doclet_demo
+
+            -nodialog=quiet
+
+          </additionalparam>
+
+          <!-- Tell Maven the output directory name -->
+          <destDir>docflex_doclet_demo</destDir>
+
+          <!-- For the project-reports page -->
+          <name>DocFlex/Javadoc Demo</name>
+          <description>A demo documentation generated with DocFlex/Javadoc.</description>
+
+          <!-- Document only 'java5' package -->
+          <subpackages>java5</subpackages>
+
+        </configuration>
+
+        <!-- prevent Maven from generating unnecessary reports (e.g. test-javadoc) -->
+        <reportSets>
+          <reportSet>
+            <id>default</id>
+            <reports>
+              <report>javadoc</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+
+      </plugin>
+    </plugins>
+
+  </reporting> 
+
+</project>

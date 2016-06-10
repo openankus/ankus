@@ -1,0 +1,678 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>DocFlex/Doclet, Version 1.6.1 - Release Notes</title>
+
+<style type="text/css">
+
+body {
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+code {
+  white-space:nowrap;
+}
+
+.mrg0 {
+  margin-top:0;
+  margin-bottom:0;
+}
+
+.note {
+  font-size:90%;
+  padding: 5px;
+  border: solid 1px #999999;
+  background-color:#F3F3F3;
+}
+
+.brdr1 { border-left: 1px solid #CCCCCC; border-top: 1px solid #CCCCCC; border-right: 1px solid #999999; border-bottom: 1px solid #999999; }
+.brdr2 { border-left: 1px solid #999999; border-top: 1px solid #999999; border-right: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC; padding: 5px 6px 5px 6px }
+.brdr3 { border-left: 1px solid #999999; border-top: 1px solid #999999; border-right: 1px solid #CCCCCC; padding: 5px 6px 0px 6px }
+.brdr4 { border-left: 1px solid #999999; border-right: 1px solid #CCCCCC; padding: 0px 6px 0px 6px }
+.brdr5 { border-left: 1px solid #999999; border-right: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC; padding: 0px 6px 5px 6px }
+.row1 { background-color:#F5F5F5;}
+.row2 { background-color:#FFFFFF;}
+
+</style>
+</head>
+
+<body>
+
+<center>
+  <h1>DocFlex/Doclet, Version 1.6.1</h1>
+  <h2>Release Notes</h2>
+</center>
+
+<hr>
+
+<h2>Table Of Contents</h2>
+<ul>
+  <li><a href="#contents">Package Contents</a></li>
+  <li><a href="#requirements">Technical Requirements</a></li>
+  <li><a href="#limitations">Limitations of Freeware Edition</a>
+  <li><a href="#installation">Installation</a>
+    <ul>
+      <li><a href="#windows_installation">Windows Installation</a></li>
+      <li><a href="#linux_installation">Linux Installation</a></li>
+    </ul>
+  </li>
+  <li><a href="#running_maven_demo">Running Maven Demo</a></li>
+  <li><a href="#getting_help">Getting Help</a></li>
+  <li><a href="#change_log">Change Log</a></li>
+</ul>
+
+<hr>
+
+<h2>
+  <a name="contents"></a>
+  Package Contents
+</h2>
+
+<table cellspacing="0" cellpadding="0" border="0" class="brdr1">
+
+<!-- LICENSE -->
+
+<tr class="row1">
+  <td class="brdr2">
+    <code>LICENSE.html</code>
+  </td>
+  <td class="brdr2">
+    <a href="LICENSE.html">DocFlex Freeware Edition License</a>
+  </td>
+</tr>
+
+<!-- README -->
+
+<tr class="row2">
+  <td class="brdr2">
+    <code>README.html</code>
+  </td>
+  <td class="brdr2">
+    this file
+  </td>
+</tr>
+
+<!-- CHANGES -->
+
+<tr class="row1">
+  <td class="brdr2">
+    <code>CHANGES.html</code>
+  </td>
+  <td class="brdr2">
+    <a href="CHANGES.html">change log</a> of DocFlex/Javadoc
+  </td>
+</tr>
+
+<!-- DOCS -->
+
+<tr class="row2">
+  <td class="brdr2">
+    <code>doc/</code>
+  </td>
+  <td class="brdr2">
+    <a href="doc/index.html" target="_blank">documentation</a>
+  </td>
+</tr>
+
+<!-- *.BAT -->
+
+<tr class="row1" valign="top">
+  <td class="brdr3">
+    <code>*.bat</code>
+  </td>
+  <td class="brdr3">
+    Files prepared for <a href="#windows_installation">Windows&nbsp;Installation</a>:
+  </td>
+</tr>
+
+<tr class="row1" valign="top">
+  <td class="brdr4">
+    <code>generator.bat</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>starts Javadoc with DocFlex Doclet to generate a demo documentation (Java 5 / 6 / 7)</li>
+    </ul>
+  </td>
+</tr>
+
+<tr class="row1" valign="top">
+  <td class="brdr5">
+    <code>generator-1.4.bat</code>
+  </td>
+  <td class="brdr5">
+    <ul class="mrg0">
+      <li>the same for Java&nbsp;1.4</li>
+    </ul>
+  </td>
+</tr>
+
+<!-- LINUX -->
+
+<tr class="row2" valign="top">
+  <td class="brdr3">
+    <code>linux/</code>
+  </td>
+  <td class="brdr3">
+    Files prepared for <a href="#linux_installation">Linux&nbsp;Installation</a>:
+  </td>  
+</tr>
+
+<tr class="row2" valign="top">
+  <td class="brdr4">
+    <code>linux/generator.sh</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>shell script to start Javadoc with the DocFlex Doclet and generate a demo (Java 5 / 6 / 7)</li>
+    </ul>
+  </td>
+</tr>
+
+<tr class="row2" valign="top">
+  <td class="brdr4">
+    <code>linux/generator-1.4.sh</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>the same for Java&nbsp;1.4</li>
+    </ul>
+  </td>
+</tr>
+
+<tr class="row2" valign="top">
+  <td class="brdr5">
+    <code>linux/docflex.config</code>
+  </td>
+  <td class="brdr5">
+    <ul class="mrg0">
+      <li>DocFlex main configuration file prepared for Linux</li>
+    </ul>
+  </td>
+</tr>
+
+<!-- LIB -->
+
+<tr class="row1" valign="top">
+  <td class="brdr3">
+    <code>lib/</code>
+  </td>
+  <td class="brdr3">
+    DocFlex/Doclet Runtime Environment:
+  </td>  
+</tr>
+
+<tr class="row1" valign="top">
+  <td class="brdr4">
+    <code>lib/docflex-doclet.jar</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>Java library compiled for Java 5 / 6 / 7</li>
+    </ul>
+  </td>
+</tr>
+
+<tr class="row1" valign="top">
+  <td class="brdr4">
+    <code>lib/docflex-doclet-1.4.jar</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>Java library compiled for Java&nbsp;1.4</li>
+    </ul>
+  </td>
+</tr>
+
+<tr class="row1" valign="top">
+  <td class="brdr5">
+    <code>lib/docflex.config</code>
+  </td>
+  <td class="brdr5">
+    <ul class="mrg0">
+      <li>
+        DocFlex main configuration file prepared for Windows
+        (contains locations of other config files and various important settings)
+      </li>
+    </ul>
+  </td>
+</tr>
+
+<!-- CONFIG -->
+
+<tr class="row2" valign="top">
+  <td class="brdr3">
+    <code>config/</code>
+  </td>
+  <td class="brdr3">
+    Configuration files (created and updated dynamically):
+  </td>  
+</tr>
+
+<tr class="row2" valign="top">
+  <td class="brdr5">
+    <code>config/generator.config</code>
+  </td>
+  <td class="brdr5">
+    <ul class="mrg0">
+      <li>Generator configuration file</li>
+    </ul>
+  </td>
+</tr>
+
+<!-- TEMPLATES -->
+
+<tr class="row1" valign="top">
+  <td class="brdr2">
+    <code>templates/</code>
+  </td>
+  <td class="brdr2">
+    Ready to use template sets supplied with DocFlex/Javadoc
+  </td>  
+</tr>
+
+<!-- TEMPLATES | JAVADOC -->
+
+<tr class="row2" valign="top">
+  <td class="brdr3">
+    <a name="basic_templates"></a>
+    <code>templates/javadoc/</code>
+  </td>
+  <td class="brdr3">
+    The
+    <a href="doc/index.html?templates/javadoc/overview.html" target="_blank">basic template set</a>,
+    which you can use to generate Java API documentation for any your projects in any of the supported output formats.
+    This is an early version of standard templates provided before <a href="CHANGES.html#v1.6.0">v1.6.0</a>.
+    It is able to generate only basic content: project overview, package summaries, class details.
+    All Java 5 language features are fully supported. However, it will equally work under Java 1.4.
+  </td>
+</tr>
+
+<tr class="row2" valign="top">
+  <td class="brdr4">
+    <code>templates/javadoc/FramedDoc.tpl</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>
+        The template to generate framed HTML documentation
+      </li>
+    </ul>
+  </td>
+</tr>
+
+<tr class="row2" valign="top">
+  <td class="brdr5">
+    <code>templates/javadoc/PlainDoc.tpl</code>
+  </td>
+  <td class="brdr5">
+    <ul class="mrg0">
+      <li>
+        The template to generate single file documentation (in RTF or HTML format).
+      </li>
+    </ul>
+  </td>
+</tr>
+
+<!-- TEMPLATES | JAVADOCPRO -->
+
+<tr class="row1" valign="top">
+  <td class="brdr3">
+    <a name="JavadocPro"></a>
+    <code>templates/JavadocPro/</code>
+  </td>
+  <td class="brdr3">
+    The new
+    <a href="doc/index.html?templates/JavadocPro/overview.html" target="_blank">JavadocPro</a>
+    template set that implements the most advanced Java API documentation generator
+    with the support of filtering of classes and members by tags/annotations:
+  </td>
+</tr>
+
+<tr class="row1" valign="top">
+  <td class="brdr4">
+    <code>templates/JavadocPro/FramedDoc.tpl</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>
+        The template to generate framed HTML documentation identical to classic JavaDoc.
+      </li>
+    </ul>
+  </td>
+</tr>
+
+<tr class="row1" valign="top">
+  <td class="brdr5">
+    <code>templates/JavadocPro/PlainDoc.tpl</code>
+  </td>
+  <td class="brdr5">
+    <ul class="mrg0">
+      <li>
+        The template to generate single file documentation (in RTF or HTML format).
+      </li>
+    </ul>
+  </td>
+</tr>
+
+<!-- DEMO -->
+
+<tr class="row2" valign="top">
+  <td class="brdr3">
+    <code>demo/</code>
+  </td>
+  <td class="brdr3">
+    Java files for demo generation:
+  </td>  
+</tr>
+
+<tr class="row2" valign="top">
+  <td class="brdr4">
+    <code>demo/java4/</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>Java 1.4 demo project</li>
+    </ul>
+  </td>
+</tr>
+
+<tr class="row2" valign="top">
+  <td class="brdr5">
+    <code>demo/java5/</code>
+  </td>
+  <td class="brdr5">
+    <ul class="mrg0">
+      <li>Java 5.0 demo project</li>
+    </ul>
+  </td>
+</tr>
+
+<!-- INTEGRATIONS -->
+
+<tr class="row1" valign="top">
+  <td class="brdr2">
+    <code>integrations/</code>
+  </td>
+  <td class="brdr2">
+    The support files for integrations of DocFlex/Doclet with other software systems
+  </td>  
+</tr>
+
+<!-- INTEGRATIONS | ANT -->
+
+<tr class="row2" valign="top">
+  <a name="ant_example"></a>
+  <td class="brdr3">
+    <code>integrations/ant/</code>
+  </td>
+  <td class="brdr3">
+    Ant example files:
+  </td>  
+</tr>
+
+<tr class="row2" valign="top">
+  <td class="brdr4">
+    <code>integrations/ant/build.xml</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>
+        A simple ANT buildfile to demonstrate integration of DocFlex Doclet 
+        with <a href="http://ant.apache.org/" target="_blank">Apache&nbsp;Ant</a>
+      </li>
+    </ul>
+  </td>  
+</tr>
+
+<tr class="row2" valign="top">
+  <td class="brdr4">
+    <code>integrations/ant/make.bat</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>Windows command file to run Ant</li>
+    </ul>
+  </td>  
+</tr>
+
+<tr class="row2" valign="top">
+  <td class="brdr5">
+    <code>integrations/ant/make.sh</code>
+  </td>
+  <td class="brdr5">
+    <ul class="mrg0">
+      <li>Linux shell script to run Ant</li>
+    </ul>
+  </td>  
+</tr>
+
+<!-- INTEGRATIONS | MAVEN -->
+
+<tr class="row1" valign="top">
+  <a name="maven_example"></a>
+  <td class="brdr3">
+    <code>integrations/maven/</code>
+  </td>
+  <td class="brdr3">
+    Maven example files
+    (see also <a href="#running_maven_demo">Running Maven Demo</a>):
+  </td>  
+</tr>
+
+<tr class="row1" valign="top">
+  <td class="brdr4">
+    <code>integrations/maven/pom.xml</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>
+        A sample Maven project file configured to generate with Maven
+        a demo JavaDoc using DocFlex Doclet.
+        (This file is used by <code>site.bat</code> and <code>site.sh</code>)
+      </li>
+    </ul>
+  </td>  
+</tr>
+
+<tr class="row1" valign="top">
+  <td class="brdr4">
+    <code>integrations/maven/site.bat</code>
+  </td>
+  <td class="brdr4">
+    <ul class="mrg0">
+      <li>
+        Windows command file to generated a project site 
+        including a demo JavaDoc generated with DocFlex Doclet.
+      </li>
+    </ul>
+  </td>  
+</tr>
+
+<tr class="row1" valign="top">
+  <td class="brdr5">
+    <code>integrations/maven/site.sh</code>
+  </td>
+  <td class="brdr5">
+    <ul class="mrg0">
+      <li>The same prepared for Linux</li>
+    </ul>
+  </td>  
+</tr>
+
+</table>
+
+<h2>
+  <a name="requirements"></a>
+  Technical Requirements
+</h2>
+
+DocFlex/Doclet requires the Javadoc Tool delivered with one of the following
+Java Development Kits:
+<ul class="mrg8">
+  <li><a href="http://www.oracle.com/technetwork/java/" target="_blank">JDK 7</a></li>
+  <li><a href="http://java.sun.com/javase/6/" target="_blank">JDK 6</a></li>
+  <li><a href="http://java.sun.com/j2se/1.5/" target="_blank">JDK 5.0</a></li>
+  <li><a href="http://java.sun.com/j2se/1.4/" target="_blank">Java2 SDK 1.4</a></li>
+</ul>
+(JDK 7 may be preferable as it is the fastest.)
+<p>
+Since DocFlex/Doclet is a pure Java application,
+it is supposed to work on any operating system with the installed JDK.
+<p>
+Specifically, the software includes both <b>MS Windows</b> BAT files and <b>Linux</b> 
+shell script files to run DocFlex/Doclet immediately on those operating systems.
+See <a href="#windows_installation">Windows Installation</a> and 
+<a href="#linux_installation">Linux Installation</a> respectively.
+<p>
+We were also reported that DocFlex/Doclet worked successfully 
+under <b>Mac OS X</b>.
+
+<h2>
+  <a name="limitations"></a>
+  Limitations of Freeware Edition
+</h2>
+
+The "<a href="http://www.filigris.com/products/docflex_javadoc/#docflex-doclet" target="_blank">DocFlex/Doclet</a>"
+is a freeware edition of <a href="http://www.filigris.com/products/docflex_javadoc/" target="_blank">DocFlex/Javadoc</a>
+and subject to the following limitations:
+
+<ol>
+  <li>
+    The freeware edition has no specific limitations on the size or content of the processed 
+    Java projects neither on the output it generates. 
+    (It just makes all the DocFlex Technology is up to.)
+    <p>
+  </li>
+  <li>
+    The <a href="http://www.filigris.com/products/docflex_javadoc/#template_designer" target="_blank">Template Designer</a>
+    is not included in the freeware edition. You cannot create new templates or modify any existing ones.
+    <p>
+  </li>
+  <li>
+    The <a href="#JavadocPro">JavadocPro</a> template set will work with reduced functionality.
+    You can run only FramedDoc.tpl with some parameters disabled.
+    <p>
+    <table><tr><td class="note">
+      In fact, the same <code style="font-size:90%">docflex-javadoc.license</code>
+      covering the <a href="http://www.filigris.com/products/docflex_javadoc/#full_edition" target="_blank">full edition</a>
+      can be used with DocFlex/Doclet too, which will enable all features of JavadocPro.
+    </td></tr></table>
+  </li>
+</ol>
+
+<h2>
+  <a name="installation"></a>
+  Installation
+</h2>
+
+<h3>
+  <a name="windows_installation"></a>
+  Windows Installation
+</h3>
+
+To install DocFlex/Doclet on Windows, please follow these steps:
+
+<ol>
+  <li>
+    Unzip the downloaded archive.
+  </li>
+  <li>
+    Edit the <b><code>generator.bat</code></b> file in DocFlex/Doclet root directory 
+    to specify the <b><code>JDK</code></b> variable according to the location 
+    of JDK (Java Development Kit) installed on your system.
+  </li>
+</ol>
+
+Now, everything must be ready.
+Just run <code>generator.bat</code> !
+
+<h3>
+  <a name="linux_installation"></a>
+  Linux Installation
+</h3>
+
+To install DocFlex/Doclet on Linux, please follow these steps:
+
+<ol>
+  <li>
+    Unzip the downloaded archive.
+  </li>
+  <li>
+    Edit the <b><code>generator.sh</code></b> shell script file in <b><code>linux</code></b>
+    subdirectory to specify the <b><code>JDK</code></b> variable according to the location 
+    of JDK installed on your system.
+    (Note: You may also need to edit "Permission" properties of this file to allow it to be executed by Linux.)
+  </li>
+</ol>
+
+Now, everything must be ready.
+Just run <code>generator.sh</code> !
+
+<h2>
+  <a name="running_maven_demo"></a>
+  Running Maven Demo
+</h2>
+
+First, of course, you need to have Maven installed on your system.
+<p>
+If you do not have Maven yet, download it from the Apache Maven web-site: 
+<a href="http://maven.apache.org/" target="_blank">http://maven.apache.org/</a>.
+The download archive will contain exactly the Maven home directory, which you may 
+unpack at any location (e.g. <code>C:\apache-maven-2.2.1</code>).
+<p>
+Further, please follow these steps (Windows platform):
+<ol>
+<li>
+  Edit <code>{docflex-doclet}\integrations\maven\site.bat</code> to specify <code>'JAVA_HOME'</code> and
+  <code>'M2_HOME'</code> variables according to the locations of Java and Maven
+  installed on your system.
+</li>
+<li>
+  Switch the current directory to <code>{docflex-doclet}\integrations\maven</code> 
+  and run <code>site.bat</code>, which will generate the project web-site.
+  After Maven ends you will see a new <code>'target'</code> subdirectory.
+</li>
+<li>
+  Open <code>target\site\index.html</code> file.
+  Then, go to "Project Reports" and click "DocFlex Doclet Demo".
+  You will see the demo JavaDoc generated by DocFlex Doclet.
+</li>
+</ol>
+
+On Linux, everything is the same except that, instead of *.bat, 
+you should use *.sh command files.
+<p>
+<i><b>Note:</b> To pass those steps, Maven may need to download from Internet and install
+lots of plugins. (In fact, Maven is all made of various plugins, which it downloads from 
+Internet dynamically as needed.) So, you must be connected to Internet during this.</i>
+
+<h2>
+  <a name="getting_help"></a>
+  Getting Help
+</h2>
+
+The most up-to-date information about DocFlex/Javadoc can be found on the product home page:
+<a href="http://www.filigris.com/products/docflex_javadoc/" target="_blank">www.filigris.com | DocFlex/Javadoc</a>.
+<p>
+We are happy to hear any questions, suggestions, comments, etc. 
+about this product.<br>
+Please, e-mail us to: <a href="mailto:support@docflex.com">support@docflex.com</a> or
+<a href="mailto:contact@filigris.com">contact@filigris.com</a>
+
+<h2>
+  <a name="change_log"></a>
+  Change Log
+</h2>
+
+Please see: <a href="CHANGES.html" target="_blank"><code>{docflex-doclet}/CHANGES.html</code></a>
+<p>
+
+<hr>
+<span style="font-family: Verdana, helvetica; font-size: 13px">
+Copyright&copy; 2004-2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.
+</span>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+----------------------
+Flamingo Installation
+----------------------
+
+See : http://wiki.opencloudengine.org/pages/viewpage.action?pageId=819216
+
+----------------------
+Flamingo User Guide
+----------------------
+
+See : http://wiki.opencloudengine.org/pages/viewpage.action?pageId=819212
+
+----------------------
+Flamingo Source Code
+----------------------
+
+See : http://www.opencloudengine.org/svn/flamingo/tags/flamingo-1.0.1-GA
+Checkout : svn checkout www.opencloudengine.org/svn/flamingo/tags/flamingo-1.0.1-GA flamingo-1.0.1.GA
+Build : cd flamingo-1.0.GA;mvn -Dmaven.test.skip=true install

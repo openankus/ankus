@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.openflamingo.engine.history.VisualizationHistoryRepository">
+
+    <!-- ==================================================================================== -->
+    <!-- 1. Result and Parameter Maps -->
+    <!-- ==================================================================================== -->
+
+    <resultMap id="visualizationHistoryMap" type="org.openflamingo.model.rest.VisualizationHistory">
+        <result property="id" column="ID" jdbcType="BIGINT"/>
+        <result property="workflowId" column="WORKFLOW_ID" jdbcType="VARCHAR"/>
+        <result property="jobId" column="JOB_ID" jdbcType="BIGINT"/>
+        <result property="jobStringId" column="JOB_ID_STRING" jdbcType="VARCHAR"/>
+        <result property="visualizationHtml" column="VISUALIZATION_HTML" jdbcType="CLOB"/>
+        <result property="create" column="CREATE_DT" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!-- ==================================================================================== -->
+    <!-- 2. Sql Fragments -->
+    <!-- ==================================================================================== -->
+
+    <sql id="wherePK">WHERE ID = #{id}</sql>
+
+    <sql id="whereWFID">WHERE WORKFLOW_ID = #{workflowId}</sql>
+
+    <sql id="whereJobID">WHERE JOB_ID = #{jobId}</sql>
+
+    <sql id="whereJobStringId">WHERE JOB_ID_STRING = #{jobStringId}</sql>
+
+
+    <!-- ==================================================================================== -->
+    <!-- 3. Select Statement -->
+    <!-- ==================================================================================== -->
+
+    <select id="select" parameterType="Integer" resultMap="visualizationHistoryMap">
+        SELECT * FROM VISUALIZATION_HISTORY 
+        <include refid="wherePK"/>
+    </select>
+
+    <select id="selectAll" resultMap="visualizationHistoryMap">
+        SELECT * FROM VISUALIZATION_HISTORY 
+    </select>
+
+    <select id="selectByWFID" parameterType="String" resultMap="visualizationHistoryMap">
+        SELECT * FROM VISUALIZATION_HISTORY 
+        <include refid="whereWFID"/>
+    </select>
+    
+    <select id="selectByJobID" parameterType="Integer" resultMap="visualizationHistoryMap">
+        SELECT * FROM VISUALIZATION_HISTORY 
+        <include refid="whereJobID"/>
+    </select>
+    
+    <select id="selectByJobStringId" parameterType="String" resultMap="visualizationHistoryMap">
+        SELECT * FROM VISUALIZATION_HISTORY 
+        <include refid="whereJobStringId"/>
+    </select>
+
+    <!-- ==================================================================================== -->
+    <!-- 3. Exist Statement -->
+    <!-- ==================================================================================== -->
+
+    <select id="exist" parameterType="Integer" resultType="Integer">
+        SELECT COUNT(*) FROM VISUALIZATION_HISTORY
+        <include refid="wherePK"/>
+    </select>
+
+    <select id="existByJobStringId" parameterType="Integer" resultType="Integer">
+        SELECT COUNT(*) FROM VISUALIZATION_HISTORY
+        <include refid="whereJobStringId"/>
+    </select>
+
+    <!-- ==================================================================================== -->
+    <!-- 4. Insert Statements -->
+    <!-- ==================================================================================== -->
+
+    <insert id="insert" parameterType="visualizationHistory" useGeneratedKeys="true" keyProperty="id" keyColumn="ID">
+	    INSERT INTO VISUALIZATION_HISTORY
+	        (
+	        ID,
+	        WORKFLOW_ID,
+	        JOB_ID,
+	        JOB_ID_STRING,
+	        VISUALIZATION_HTML,
+	        CREATE_DT
+	        )
+	        VALUES
+	        (
+	        #{id},
+	        #{workflowId},
+	        #{jobId},
+	        #{jobStringId},
+	        #{visualizationHtml},
+	        #{create}
+	        )	
+        <selectKey resultType="int" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+    <!-- ==================================================================================== -->
+    <!-- 5. Update Statements -->
+    <!-- ==================================================================================== -->
+
+    <update id="update" parameterType="visualizationHistory">
+        UPDATE VISUALIZATION_HISTORY
+        SET
+        WORKFLOW_ID = #{worwkflowId},
+        JOB_ID = #{jobId},
+        JOB_ID_STRING = #{jobStringId},
+        VISUALIZATION_HTML = #{visualizationHtml}
+        <include refid="wherePK"/>
+    </update>
+
+    <!-- ==================================================================================== -->
+    <!-- 6. Delete Statements -->
+    <!-- ==================================================================================== -->
+
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM VISUALIZATION_HISTORY
+        <include refid="wherePK"/>
+    </delete>
+</mapper>

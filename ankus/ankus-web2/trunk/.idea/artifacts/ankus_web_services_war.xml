@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ankus-web-services:war">
+    <output-path>$PROJECT_DIR$/ankus-web-services/target</output-path>
+    <root id="archive" name="ankus-web-services-0.3.0.war">
+      <element id="artifact" artifact-name="ankus-web-services:war exploded" />
+    </root>
+  </artifact>
+</component>

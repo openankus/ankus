@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <typeAliases>
+        <typeAlias type="org.openflamingo.web.menu.Menu" alias="menu"/>
+        <typeAlias type="org.openflamingo.web.pig.Pig" alias="pig"/>
+        <typeAlias type="org.openflamingo.model.rest.Workflow" alias="workflow"/>
+
+        <!-- Common -->
+        <typeAlias type="org.openflamingo.locale.Locale" alias="locale"/>
+        <typeAlias type="org.openflamingo.model.rest.Tree" alias="tree"/>
+        <typeAlias type="org.openflamingo.model.rest.User" alias="user"/>
+
+        <!-- Admin -->
+        <typeAlias type="org.openflamingo.model.rest.Engine" alias="engine"/>
+        <typeAlias type="org.openflamingo.model.rest.HadoopCluster" alias="hadoopCluster"/>
+        <typeAlias type="org.openflamingo.model.rest.HiveServer" alias="hiveServer"/>
+        <typeAlias type="org.openflamingo.model.rest.User" alias="user"/>
+    </typeAliases>
+
+    <mappers>
+        <mapper resource="org/openflamingo/web/menu/menu-mapper.xml"/>
+        <mapper resource="org/openflamingo/web/pig/pig-mapper.xml"/>
+        <mapper resource="org/openflamingo/web/designer/workflow-mapper.xml"/>
+
+        <!-- Common -->
+        <mapper resource="org/openflamingo/locale/locale-mapper.xml"/>
+        <mapper resource="org/openflamingo/web/tree/tree-mapper.xml"/>
+        <mapper resource="org/openflamingo/web/security/user-mapper.xml"/>
+
+        <!-- Admin -->
+        <mapper resource="org/openflamingo/web/admin/engine-mapper.xml"/>
+        <mapper resource="org/openflamingo/web/admin/hadoop-admin-mapper.xml"/>
+        <mapper resource="org/openflamingo/web/admin/hive-admin-mapper.xml"/>
+        <mapper resource="org/openflamingo/web/admin/user-admin-mapper.xml"/>
+
+        <!-- Member -->
+        <mapper resource="org/openflamingo/web/member/member-mapper.xml"/>
+    </mappers>
+
+</configuration>

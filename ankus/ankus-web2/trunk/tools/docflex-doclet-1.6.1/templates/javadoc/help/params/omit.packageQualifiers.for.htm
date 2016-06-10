@@ -1,0 +1,13 @@
+Specify the packages whose qualifying names should be omitted
+from ahead of class names in parameters, types, referenced classes (like exception lists, implemented interfaces, etc.),
+@see tags and {@link} tags in comments.
+<p>
+The packages to omit are specified as the list of package name prefixes delimited with new lines ('\n'), semicolons (;) or colons (:).
+For example:
+<blockquote><pre><code>
+java.lang.
+javax.swing.
+</code></pre></blockquote>
+When a particular fully-qualified name is decided whether
+to be shortened, the answer will be yes when the full name
+starts with one of the specified prefixes.

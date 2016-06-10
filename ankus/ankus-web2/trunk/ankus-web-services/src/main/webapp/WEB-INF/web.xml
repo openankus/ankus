@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+	<display-name>Flamingo Web UI</display-name>
+
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>site.root</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>/WEB-INF/log4j.xml</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>log4jRefreshInterval</param-name>
+		<param-value>60000</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+            /WEB-INF/applicationContext.xml
+        </param-value>
+	</context-param>
+
+	
+	<listener>
+		<listener-class>org.openflamingo.web.util.VersionConfigurer</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+<!-- 	<servlet>
+   		<servlet-name>admin_cluster_update</servlet-name>  
+   		<servlet-class>org.openflamingo.web.admin.Update_a_cluster</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+	   <servlet-name>admin_cluster_update</servlet-name>        
+	   <url-pattern>/admin/hadoop/update_a_cluster</url-pattern> 
+	</servlet-mapping>
+ -->	
+	<!-- 클러스터와 엔진 연결 검사. 
+	<servlet>
+   		<servlet-name>check_engineWithCluster</servlet-name>  
+   		<servlet-class>org.openflamingo.web.admin.Check_EngineWithCluster</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+	   <servlet-name>check_engineWithCluster</servlet-name>        
+	   <url-pattern>/admin/hadoop/check_enginewithCluster</url-pattern> 
+	</servlet-mapping>
+	-->
+	
+	<!-- engine 속성 로드. -->
+	<!-- 
+	<servlet>
+   		<servlet-name>load_engineinfo</servlet-name>  
+   		<servlet-class>org.openflamingo.web.engine.Load_Engineinfo</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+	   <servlet-name>load_engineinfo</servlet-name>        
+	   <url-pattern>/admin/engine/load_engineinfo</url-pattern> 
+	</servlet-mapping>
+	 -->
+	
+	<!-- engine 속성 변. -->
+	<!--
+	<servlet>
+   		<servlet-name>update_engineinfo</servlet-name>  
+   		<servlet-class>org.openflamingo.web.engine.Update_Engineinfo</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+	   <servlet-name>update_engineinfo</servlet-name>        
+	   <url-pattern>/admin/engine/update_engineinfo</url-pattern> 
+	</servlet-mapping>
+	 -->
+	
+	<!-- 20150205 whitepoo@onycom.com 사용자 정보 로드. -->
+<!-- 	<servlet>
+   		<servlet-name>GET_USERINFO</servlet-name>  
+   		<servlet-class>org.openflamingo.web.Get_userinfo</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+	   <servlet-name>GET_USERINFO</servlet-name>        
+	   <url-pattern>/user_info/get</url-pattern> 
+	</servlet-mapping>
+ -->	
+	<!-- tkkim@onycom.com 사용자 정보 로드. -->
+<!--
+	<servlet>
+   		<servlet-name>GET_MRJAR</servlet-name>  
+   		<servlet-class>org.openflamingo.web.Get_MRJAR</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+	   <servlet-name>GET_MRJAR</servlet-name>        
+	   <url-pattern>/mrjar/get</url-pattern> 
+	</servlet-mapping>
+	
+	<servlet>
+   		<servlet-name>GET_WF_EXPORT</servlet-name>  
+   		<servlet-class>org.openflamingo.web.designer.WorkflowExport</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+	   <servlet-name>GET_WF_EXPORT</servlet-name>        
+	   <url-pattern>/wfexport/get</url-pattern> 
+	</servlet-mapping>
+	
+	<servlet>
+   		<servlet-name>GET_WF_IMPORT</servlet-name>  
+   		<servlet-class>org.openflamingo.web.designer.WorkflowImport</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+	   <servlet-name>GET_WF_IMPORT</servlet-name>        
+	   <url-pattern>/wfimport/get</url-pattern> 
+	</servlet-mapping>
+	
+ 	<servlet>
+   		<servlet-name>MVC_USERINFO</servlet-name>  
+   		<servlet-class>org.openflamingo.web.Get_userinfo</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+	   <servlet-name>MVC_USERINFO</servlet-name>        
+	   <url-pattern>/user_info/*</url-pattern> 
+	</servlet-mapping>
+ -->	
+	<servlet>
+		<servlet-name>dispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>
+                /WEB-INF/applicationContext-remote.xml
+                /WEB-INF/applicationContext-repository.xml
+                /WEB-INF/dispatcher-servlet.xml
+            </param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>dispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<servlet-name>dispatcher</servlet-name>
+	</filter-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.do</welcome-file>
+	</welcome-file-list>
+
+	<session-config>
+		<session-timeout>300</session-timeout>
+	</session-config>
+
+</web-app>

@@ -1,0 +1,50 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+            http://www.springframework.org/schema/util                  http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+    <!-- ========================= PROPERTY PLACE HOLDER DEFINITION ========================= -->
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:config-${spring.profiles.active:dev}.properties</value>
+            </list>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="active.profile">${spring.profiles.active:dev}</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- ========================= PROPERTIES DEFINITION ========================= -->
+
+    <util:properties id="config" location="classpath:config-${spring.profiles.active:dev}.properties"/>
+
+    <!-- ========================= DATASOURCE DEFINITION ========================= -->
+
+    <bean id="dataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+        <constructor-arg ref="pooledDataSource"/>
+        <property name="logFormatter">
+            <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+                <property name="sqlPrefix" value="[SQL]  "/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="pooledDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="${jdbc.driver}"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="initialPoolSize" value="${jdbc.min.pool}"/>
+        <property name="maxPoolSize" value="${jdbc.max.pool}"/>
+        <property name="debugUnreturnedConnectionStackTraces" value="true"/>
+        <property name="preferredTestQuery" value="select 1"/>
+        <property name="testConnectionOnCheckin" value="true"/>
+        <property name="testConnectionOnCheckout" value="false"/>
+    </bean>
+
+</beans>
