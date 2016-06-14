@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <!-- ========================= REMOTE SERVICE DEFINITION ========================= -->
+
+    <bean id="hdfsFileSystemRemoteService" class="org.openflamingo.fs.hdfs.HdfsFileSystemServiceImpl">
+        <property name="fileSystemAuditService" ref="fileSystemAuditService"/>
+    </bean>
+
+    <bean name="/remote/hdfs" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" ref="fileSystemServiceProxy"/>
+        <property name="serviceInterface" value="org.openflamingo.provider.fs.FileSystemService"/>
+    </bean>
+
+    <bean id="jobRemoteService" class="org.openflamingo.engine.job.JobServiceImpl">
+        <property name="jobScheduler" ref="jobScheduler"/>
+    </bean>
+
+    <bean name="/remote/job" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" ref="jobRemoteService"/>
+        <property name="serviceInterface" value="org.openflamingo.provider.engine.JobService"/>
+    </bean>
+
+    <bean id="workflowEngineRemoteService" class="org.openflamingo.engine.monitoring.system.WorkflowEngineServiceImpl"/>
+
+    <bean name="/remote/engine" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" ref="workflowEngineRemoteService"/>
+        <property name="serviceInterface" value="org.openflamingo.provider.engine.WorkflowEngineService"/>
+    </bean>
+
+    <bean id="historyRemoteService" class="org.openflamingo.engine.history.HistoryServiceImpl"/>
+
+    <bean name="/remote/history" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" ref="historyRemoteService"/>
+        <property name="serviceInterface" value="org.openflamingo.provider.engine.HistoryService"/>
+    </bean>
+
+    <bean id="adminRemoteService" class="org.openflamingo.engine.admin.AdminServiceImpl"/>
+
+    <bean name="/remote/admin" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" ref="adminRemoteService"/>
+        <property name="serviceInterface" value="org.openflamingo.provider.engine.AdminService"/>
+    </bean>
+
+    <bean id="hiveRemoteService" class="org.openflamingo.engine.hive.HiveServiceImpl"/>
+
+    <bean name="/remote/hive" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" ref="hiveRemoteService"/>
+        <property name="serviceInterface" value="org.openflamingo.provider.hive.HiveService"/>
+    </bean>
+
+    <bean id="fileSystemAuditService" class="org.openflamingo.fs.audit.FileSystemAuditServiceImpl"/>
+
+    <bean name="/remote/audit" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+        <property name="service" ref="fileSystemAuditService"/>
+        <property name="serviceInterface" value="org.openflamingo.provider.fs.FileSystemAuditService"/>
+    </bean>
+
+    <!-- ========================= INTERCEPTORS DEFINITION ========================= -->
+
+    <bean id="fileSystemServiceInterceptor" class="org.openflamingo.engine.fs.HdfsFileSystemServiceInterceptor"/>
+
+    <bean id="fileSystemServiceProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="proxyInterfaces" value="org.openflamingo.provider.fs.FileSystemService"/>
+
+        <property name="target" ref="hdfsFileSystemRemoteService"/>
+        <property name="interceptorNames">
+            <list>
+                <value>fileSystemServiceInterceptor</value>
+            </list>
+        </property>
+    </bean>
+</beans>

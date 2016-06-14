@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collector xmlns="http://www.openflamingo.org/schema/collector"
+           xsi:schemaLocation="http://www.openflamingo.org/schema/collector flamingo-log-collector-1.0.xsd"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <description>서울시 공공 데이터 수집기</description>
+
+    <job name="Traffic-Accident-To-HDFS" description="서울시 공공데이터 - 교통 돌발상황 조회">
+        <schedule>
+            <cronExpression>0 * * * * ?</cronExpression>
+        </schedule>
+        <policy>
+            <ingress>
+                <fromHttp>
+                    <url>http://openapi.seoul.go.kr:8088/sample/xml/SearchTrafficAccidentService/1/5</url>
+                    <method type="GET"/>
+                </fromHttp>
+            </ingress>
+            <egress>
+                <toLocal>
+                    <targetPath>/Users/fharenheit/Projects/flamingo-mapreduce-desinger/trunk/flamingo-workflow-engine
+                    </targetPath>
+                    <filename>accident_${dateFormat('yyyyMMdd-HHmmss')}.txt</filename>
+                </toLocal>
+            </egress>
+        </policy>
+    </job>
+</collector>

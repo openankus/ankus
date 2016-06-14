@@ -1,0 +1,471 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../styles.css">
+<title>DocFlex/Javadoc - Documentation - Integrations</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/Javadoc - Documentation - Integrations
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ul>
+  <li><a href="#ant">Apache Ant</a></li>
+  <li><a href="#maven">Apache Maven</a>
+    <ul>
+      <li><a href="#maven_2.0.x">Maven 2.0.x</a></li>
+      <li><a href="#maven_2.2.x_3.0.x">Maven 2.2.x / 3.0.x</a></li>
+    </ul>
+  </li>
+  <li><a href="#eclipse">Eclipse</a></li>
+  <li><a href="#other">Other Systems</a></li>
+</ul>
+<!-- END TABLE OF CONTENTS -->
+
+<hr>
+
+<h2>
+  <a name="ant"></a>
+  Apache Ant
+</h2>
+
+You can easily integrate <a href="../about.html#doclet">DocFlex Doclet</a>
+with the <a href="http://ant.apache.org/" target="_blank">Apache Ant</a>
+automated build system.
+<p>
+Here is an example.
+<p>
+Let's suppose, we want to generate a framed HTML documentation using
+<a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#FramedDoc.tpl">FramedDoc.tpl</a> template
+by the Java source package <code>'java5'</code> contained in <code>'demo'</code> directory
+of <a href="../about.html#full_edition">DocFlex/Javadoc</a>
+installation at <code>C:\docflex-javadoc</code>.
+Here is a simple Windows command file that launches such a generation:
+
+<blockquote>
+<table cellpadding="0" cellspacing="0">
+<tr valign="top">
+  <td colspan="2"><code>set DFH=C:\docflex-javadoc</code></td>
+</tr>
+<tr valign="top">
+  <td><code>javadoc&nbsp;</code></td>
+  <td><code>
+    <span class="nowrap">-J-Xmx512m</span>
+    <span class="nowrap">-sourcepath %DFH%\demo</span>
+    <span class="nowrap">-d %DFH%\out</span>
+    <span class="nowrap">-docletpath %DFH%\lib\docflex-javadoc.jar</span>
+    <span class="nowrap">-doclet com.docflex.javadoc.Doclet</span>
+    <span class="nowrap">-template %DFH%\templates\javadoc\FramedDoc.tpl</span>
+    <span class="nowrap">-p:windowTitle "DocFlex/Doclet Demo"</span>
+    <span class="nowrap">-p:docTitle "DocFlex Ant Demo"</span>
+    <span class="nowrap">-p:include.tag.custom "todo:a:To Do:"</span>
+    <span class="nowrap">-p:include.tag.custom "prj\:type:opt:Project Type:"</span>
+    <span class="nowrap">-format HTML</span>
+    <span class="nowrap">-nodialog</span>
+    <span class="nowrap">-launchviewer=false</span>
+    <span class="nowrap">java5</span>
+  </code></td>
+</tr>
+</table>
+</blockquote>
+
+The following is an equivalent Ant <code>build.xml</code> file doing the same:
+
+<p class="mrg8"><u><i>build.xml</i></u></p>
+<TABLE BGCOLOR="#F5F5F5" CELLSPACING="0" CELLPADDING="7" BORDER="0" CLASS="brdr1">
+<TR>
+<TD CLASS="f6">
+<SPAN CLASS="f1">&lt;?xml version=&quot;1.0&quot;?&gt;</SPAN>
+<DIV><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">project</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">basedir</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">.</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">DocFlex Ant Demo</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> the location of DocFlex/Javadoc home directory </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">property</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">DFH</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">C:/docflex-javadoc</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">target</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">demo</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"><BR>Specifying Javadoc task.<BR>The 'maxmemory' attribute sets the maximum heap size<BR>available to the Java VM running Javadoc.<BR></SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">javadoc</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">maxmemory</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">512m</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">sourcepath</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">${DFH}/demo</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">destdir</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">${DFH}/out</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> specifying the doclet </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">doclet</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">com.docflex.javadoc.Doclet</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">path</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">${DFH}/lib/docflex-javadoc.jar</SPAN><SPAN CLASS="f1">&quot;&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> specifying the doclet command-line parameters </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> the main template </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">-template</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">${DFH}/templates/JavadocPro/FramedDoc.tpl</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> template parameters </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">-p:windowTitle</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">DocFlex/Doclet Demo</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">-p:docTitle</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">DocFlex Ant Demo</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">-p:include.tag.custom</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">todo:a:To Do:</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">-p:include.tag.custom</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">prj\:type:opt:Project Type:</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> the output format </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">-format</SPAN><SPAN CLASS="f1">&quot;</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">value</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">HTML</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> supress showing up the doclet GUI </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">-nodialog</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> do not launch documentation viewer </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">param</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">-launchviewer=false</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">doclet</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> specifying the Java source package to document </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">package</SPAN><SPAN CLASS="f6"> </SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">=&quot;</SPAN><SPAN CLASS="f3">java5.*</SPAN><SPAN CLASS="f1">&quot;/&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">javadoc</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">target</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">project</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+</TD>
+</TR>
+</TABLE>
+<p>
+To run that <code>build.xml</code> file, you can use a Windows BAT specified like the following:
+<blockquote><pre>
+set ANT_HOME=C:\apache-ant
+set PATH=%ANT_HOME%\bin;%PATH%
+set JAVA_HOME=C:\jdk1.6
+call %ANT_HOME%\bin\ant.bat demo
+</pre></blockquote>
+(Note, the BAT should be started from the directory containing the <code>build.xml</code> file!)
+
+<h2>
+  <a name="maven"></a>
+  <a name="maven2"></a>
+  Apache Maven
+</h2>
+
+Integrating <a href="../about.html#doclet">DocFlex Doclet</a>
+with the <a href="http://maven.apache.org/" target="_blank">Apache Maven</a>
+automated build system may be more complicated. 
+<p class="mrg8">
+The support of custom doclets (in general) by the 
+<a href="http://maven.apache.org/plugins/maven-javadoc-plugin/" target="_blank">Maven Javadoc Plugin</a>
+seems to be rather erratic.
+So, it may take some efforts to get the <a href="../about.html#doclet">DocFlex Doclet</a>
+work with a particular <a href="http://maven.apache.org/" target="_blank">Maven</a> version.
+Here is what we have found.
+
+<h3>
+  <a name="maven_2.0.x"></a>
+  Maven 2.0.x
+</h3>
+
+In this version, the <code>&lt;docletPath&gt;</code> element, which is provided by the 
+<a href="http://maven.apache.org/plugins/maven-javadoc-plugin/" target="_blank">Maven Javadoc Plugin</a>
+to specify the file pathname of the custom doclet, actually doesn't work.
+<p class="mrg8">
+Instead, you need to install the <code>docflex-javadoc.jar</code> (or <code>docflex-doclet.jar</code>
+in <a href="../about.html#docflex-doclet">DocFlex/Doclet</a> edition)
+into the <b>Maven repository</b>. But you cannot do it directly!
+<p class="mrg8">
+Anything stored in the Maven repository is associated with a certain <b>artifact</b>.
+Each artifact is identified by three things: { <i>groupId</i>, <i>artifactId</i>, <i>version</i> }.
+Those properties need to be specified anywhere you want to use a feature associated with that 
+artifact. (Maven itself avoids working with direct file locations!)
+<p class="mrg8">
+With <a href="../about.html#doclet">DocFlex Doclet</a>, we shall associate
+the following artifact identifiers (the <i>version</i> will be the last DocFlex/Javadoc version number):
+
+<blockquote class="mrg8">
+<table cellpadding="0" cellspacing="0">
+<tr>
+  <td><i>groupId</i></td>
+  <td>&nbsp;=&nbsp;</td>
+  <td><code>docflex</code></td>
+</tr>
+<tr>
+  <td><i>artifactId</i></td>
+  <td>&nbsp;=&nbsp;</td>
+  <td><code>docflex-doclet</code></td>
+</tr>
+<tr>
+  <td><i>version</i></td>
+  <td>&nbsp;=&nbsp;</td>
+  <td><code>1.6.0</code></td>
+</tr>
+</table>
+</blockquote>
+
+Then, to install <a href="../about.html#doclet">DocFlex Doclet</a>
+in the Maven repository you can use the following command:
+
+<blockquote class="mrg8">
+<table cellpadding="0" cellspacing="0">
+<tr valign="top">
+  <td><code>mvn&nbsp;</code></td>
+  <td><code>
+    <span class="nowrap">install:install-file</span>
+    <span class="nowrap">-Dfile=C:\docflex-javadoc\lib\docflex-javadoc.jar</span>
+    <span class="nowrap">-DgroupId=docflex</span>
+    <span class="nowrap">-DartifactId=docflex-doclet</span>
+    <span class="nowrap">-Dversion=1.6.0 -Dpackaging=jar</span>
+  </code></td>
+</tr>
+</table>
+</blockquote>
+
+Now, you can configure the 
+<a href="http://maven.apache.org/plugins/maven-javadoc-plugin/" target="_blank">Maven Javadoc Plugin</a>
+in your project POM file like the following:
+
+<p class="mrg8"><u><i>pom.xml</i></u></p>
+<TABLE BGCOLOR="#F5F5F5" CELLSPACING="0" CELLPADDING="7" BORDER="0" CLASS="brdr1">
+<TR>
+<TD CLASS="f6">
+<DIV style="margin-right:15pt">
+<DIV><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">project</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f8">...</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">reporting</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">plugins</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Configure Maven Javadoc plugin </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">plugin</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">groupId</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">org.apache.maven.plugins</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">groupId</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">artifactId</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">maven-javadoc-plugin</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">artifactId</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">configuration</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> The maximum heap size available to JVM when running Javadoc </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">maxmemory</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">512m</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">maxmemory</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Using DocFlex Doclet </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">doclet</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">com.docflex.javadoc.Doclet</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">doclet</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">docletArtifact</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">groupId</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">docflex</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">groupId</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">artifactId</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">docflex-doclet</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">artifactId</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">version</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">1.6.0</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">version</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">docletArtifact</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Specifying command-line parameters for DocFlex Doclet </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">additionalparam</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> The main template </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f3">-template C:/docflex-javadoc/templates/JavadocPro/FramedDoc.tpl</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Pass template parameters </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f3">-p:windowTitle &quot;DocFlex Doclet Output&quot;<BR>-p:docTitle &quot;DocFlex/Javadoc &amp;amp; Maven Integration Demo&quot;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> The output format </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f3">-format HTML</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Supress showing up the doclet GUI </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f3">-nodialog</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Do not launch documentation viewer </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f3">-launchviewer=false</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Tell DocFlex Doclet the location of the output directory </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f3">-d ${project.build.directory}/site/docflex_doclet_output</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">additionalparam</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Tell Maven the output directory name </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">destDir</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">docflex_doclet_output</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">destDir</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> For the project-reports page </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">DocFlex Doclet Output</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">description</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f3">A Java API documentation generated with DocFlex Doclet.</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">description</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">configuration</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">plugin</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">plugins</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">reporting</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f8">...</SPAN></DIV>
+<DIV><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">project</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+</DIV>
+</TD>
+</TR>
+</TABLE>
+
+<h3>
+  <a name="maven_2.2.x_3.0.x"></a>
+  Maven 2.2.x / 3.0.x
+</h3>
+
+In these Maven versions, the <code>&lt;docletPath&gt;</code> element, which specifies 
+the custom doclet class pathname, does work!
+<p class="mrg8">
+So, installing <a href="../about.html#doclet">DocFlex Doclet</a> as an &ldquo;artifact&rdquo;
+in the Maven repository is not necessary any longer and the project POM file becomes a bit simpler.
+
+<p class="mrg8">
+<table border="1" cellspacing="1" cellpadding="6">
+<tr><td bgcolor="#F5F5F5" class="inset">
+Yet, the new versions of
+<a href="http://maven.apache.org/plugins/maven-javadoc-plugin/" target="_blank">Maven Javadoc Plugin</a>
+are not without oddities too.
+For instance, now Maven always emits some Standard Doclet options even in the case of custom doclet,
+as well as a -<a href="doclet.html#link_option">link</a> option,
+which in its argument provides no URL but a local file pathname.
+<p class="mrg8"></p>
+So, more special efforts were needed to work around all this!
+See also the note to <a href="doclet.html#template_params.standard_doclet_options">Setting template parameters via Standard Doclet options</a> for that matter.
+</td></tr>
+</table>
+
+<p class="mrg8">
+Here is a sample project POM file that did work (tested with Maven 2.2.1 and Maven 3.0.4):
+
+<p class="mrg8"><u><i>pom.xml</i></u></p>
+<TABLE BGCOLOR="#F5F5F5" CELLSPACING="0" CELLPADDING="7" BORDER="0" CLASS="brdr1">
+<TR>
+<TD CLASS="f6">
+<DIV style="margin-right:15pt">
+<DIV><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">project</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f8">...</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">reporting</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">plugins</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Configure Maven Javadoc plugin </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">plugin</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">groupId</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">org.apache.maven.plugins</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">groupId</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">artifactId</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">maven-javadoc-plugin</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">artifactId</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">configuration</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> The maximum heap size available to JVM when running Javadoc </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">maxmemory</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">512m</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">maxmemory</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Using DocFlex Doclet </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">doclet</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">com.docflex.javadoc.Doclet</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">doclet</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">docletPath</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">C:/docflex-javadoc/lib/docflex-javadoc.jar</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">docletPath</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Specifying command-line parameters for DocFlex Doclet </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">additionalparam</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> The main template </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f3">-template C:/docflex-javadoc/templates/JavadocPro/FramedDoc.tpl</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Pass template parameters </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f3">-p:windowTitle &quot;DocFlex Doclet Output&quot;<BR>-p:docTitle &quot;DocFlex/Javadoc &amp;amp; Maven Integration Demo&quot;<BR>-p:include.tag.custom &quot;todo:a:To Do:&quot;<BR>-p:include.tag.custom &quot;prj\\:type:opt:Project Type:&quot;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> The output format </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f3">-format HTML</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Supress showing up the doclet GUI </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f3">-nodialog</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Do not launch documentation viewer </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f3">-launchviewer=false</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Tell DocFlex Doclet the location of the output directory </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f3">-d ${project.build.directory}/site/docflex_doclet_output</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">additionalparam</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> Tell Maven the output directory name </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">destDir</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">docflex_doclet_output</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">destDir</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;!--</SPAN><SPAN CLASS="f8"> For the project-reports page </SPAN><SPAN CLASS="f1">--&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN><SPAN CLASS="f3">DocFlex Doclet Output</SPAN><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">name</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;</SPAN><SPAN CLASS="f2">description</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p6"><SPAN CLASS="f3">A Java API documentation generated with DocFlex Doclet.</SPAN></DIV>
+<DIV CLASS="p5"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">description</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p4"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">configuration</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p3"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">plugin</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p2"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">plugins</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">reporting</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+<DIV CLASS="p1"><SPAN CLASS="f8">...</SPAN></DIV>
+<DIV><SPAN CLASS="f1">&lt;/</SPAN><SPAN CLASS="f2">project</SPAN><SPAN CLASS="f1">&gt;</SPAN></DIV>
+</DIV>
+</TD>
+</TR>
+</TABLE>
+<p>
+<i>
+The complete working example is included in both 
+<a href="../about.html#full_edition">DocFlex/Javadoc</a>
+and 
+<a href="../about.html#docflex-doclet">DocFlex/Doclet</a>
+archives prepared for <a target="_blank" href="http://www.filigris.com/downloads/">downloads</a>.</i>
+
+<h2>
+  <a name="eclipse"></a>
+  Eclipse
+</h2>
+
+Using <a href="../about.html#doclet">DocFlex Doclet</a>
+with <a href="http://www.eclipse.org/" target="_blank">Eclipse</a>
+is most simple. You just need to fill out two dialogs.
+<p>
+First, select in the Eclipse main menu the &ldquo;Project | Generate Javadoc...&rdquo; item.
+The following dialog will show up:
+
+<blockquote>
+  <img src="images/eclipse_javadoc_1.png" alt="Running DocFlex Doclet from Eclipse">
+</blockquote>
+
+Make sure the following settings are specified:
+<ol>
+<li>
+  In the &ldquo;Javadoc command&rdquo; field, provide the location of the Javadoc executable 
+  in some JDK installed on your system.
+</li>
+<li>
+  Select &ldquo;Use Custom Doclet&rdquo;.
+</li>
+<li>
+  In the &ldquo;Doclet name&rdquo; field, specify the name of the 
+  <a href="../about.html#doclet">DocFlex Doclet</a> main class:
+  <code>com.docflex.javadoc.Doclet</code>
+</li>
+<li>
+  In the &ldquo;Doclet class path&rdquo; field, specify the full pathname of the DocFlex Doclet
+  Java library file: <code>docflex-javadoc.jar</code> or <code>docflex-doclet.jar</code>
+  (depending on the <a href="../about.html#editions">edition</a>).
+  This file is located in the <code>'lib'</code> directory of your 
+  <a href="../about.html#full_edition">DocFlex/Javadoc</a>
+  (or <a href="../about.html#docflex-doclet">DocFlex/Doclet</a>)
+  installation.
+</li>
+<li>
+  Now, you can click &ldquo;Next&rdquo;.
+</li>
+</ol>
+
+Then, you will see the second dialog:
+
+<blockquote>
+  <img src="images/eclipse_javadoc_2.png" alt="Running DocFlex Doclet from Eclipse">
+</blockquote>
+
+In this dialog, check the following fields:
+<ol>
+<li>
+  In the &ldquo;VM options&rdquo; field, you should specify the maximum memory heap size 
+  available to the JVM that will run Javadoc (512Mb may be just enough).
+  <p class="mrg8">
+  <b>Note:</b> If you leave this field empty, Javadoc 
+  (that is the <a href="../about.html#doclet">DocFlex Doclet</a>)
+  may slow down very much, especially on a big project, and you may get eventually
+  <code>java.lang.OutOfMemoryError</code> exception!
+</li>
+<li>
+  The &ldquo;Extra Javadoc options&rdquo; field is for the doclet-specific options.
+  All the <a href="doclet.html#options">command-line options</a> processed by DocFlex Doclet 
+  that you may ever need should be specified here!
+  <p class="mrg8">
+  In particular, with the -<a href="doclet.html#d_option">d option</a> you should specify
+  the output directory for the generated documentation.
+  <p class="mrg8">
+  Also, unless -<a href="doclet.html#nodialog_option">nodialog</a> option is specified directly,
+  the DocFlex Doclet will launch the <a href="doclet.html#gui">Doclet GUI</a> over Eclipse.
+  (In fact, since Javadoc is run by a different JVM, the Doclet GUI will be completely
+  independent on Eclipse).
+  <p class="mrg8">
+  Remember also that all missing options that the DocFlex Doclet may need (including 
+  <a href="doclet.html#template_params">template parameters</a>)
+  will be taken from the <a href="setup.html#generator.config">generator.config</a> created 
+  when the <a href="doclet.html#gui">Doclet GUI</a> was invoked the last time.
+  (So, you should not wonder, how DocFlex Doclet knows some specific settings 
+  you did not provide to it.)
+</li>
+</ol>
+
+Now, you may click &ldquo;Finish&rdquo; button to start Javadoc.
+
+<h2>
+  <a name="other"></a>
+  Other Systems
+</h2>
+
+As being a
+<a href="http://docs.oracle.com/javase/6/docs/technotes/guides/javadoc/doclet/overview.html" target="_blank">Javadoc Doclet</a>
+(that is a special plug-in for <a href="http://java.sun.com/j2se/javadoc/" target="_blank">Javadoc</a>),
+<a href="../about.html#doclet">DocFlex Doclet</a>
+can be integrated with probably anything that runs Javadoc itself.
+<p class="mrg8">
+To use <a href="../about.html#doclet">DocFlex Doclet</a> with a particular system,
+basically, you need to know how to specify the following settings:
+<ul class="mrg8">
+  <li>The doclet class name</li>
+  <li>The doclet class path</li>
+  <li>The doclet-specific Javadoc options</li>
+  <li>
+    The maximum heap size used by the JVM that runs Javadoc
+    (i.e. how to pass to it the <b>-Xmx</b> option).
+  </li>
+</ul>
+
+Once you know those things, you will be able to run
+<a href="../about.html#doclet">DocFlex Doclet</a> within your tool!
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2003-2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

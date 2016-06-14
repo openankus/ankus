@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <groupId>org.openflamingo</groupId>
+        <artifactId>ankus</artifactId>
+        <version>0.2.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>flamingo-mapreduce</artifactId>
+    <packaging>jar</packaging>
+    <version>0.2.0</version>
+    <name>Flamingo MapReduce</name>
+    <description>Apache Hadoop based MapReduce Module</description>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.openflamingo.mapreduce.etl.MapReduceDriver</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>${site.plugin.version}</version>
+                <configuration>
+                    <inputEncoding>${output.encoding}</inputEncoding>
+                    <outputEncoding>${output.encoding}</outputEncoding>
+                    <reportPlugins>
+                        <!-- Source Code Cross Reference Generation -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-jxr-plugin</artifactId>
+                            <version>${jxr.plugin.version}</version>
+                            <configuration>
+                                <inputEncoding>${output.encoding}</inputEncoding>
+                                <outputEncoding>${output.encoding}</outputEncoding>
+                                <linkJavadoc>true</linkJavadoc>
+                                <stylesheet>${basedir}/src/javadoc/xref.css</stylesheet>
+                                <docTitle>${project.name} Source Xref (${project.version})</docTitle>
+                                <windowTitle>${project.name} Source Xref (${project.version})</windowTitle>
+                                <aggregate>true</aggregate>
+                            </configuration>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-project-info-reports-plugin</artifactId>
+                            <version>${project.info.report.plugin}</version>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-surefire-report-plugin</artifactId>
+                            <version>${surefire.report.plugin.version}</version>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <version>${javadoc.plugin.version}</version>
+                            <configuration>
+                                <!--
+                                                                        <doclet>ydoc.doclets.YStandard</doclet>
+                                                                        <docletPath>
+                                                                            ${basedir}\src\tool\yworks-uml-doclet-3.0_01-jdk1.5\lib\ydoc.jar:${basedir}\src\tool\yworks-uml-doclet-3.0_01-jdk1.5\lib\class2svg.jar:${basedir}\src\tool\yworks-uml-doclet-3.0_01-jdk1.5\resources
+                                                                        </docletPath>
+                                                                        -->
+                                <attach>false</attach>
+                                <stylesheetfile>${basedir}/src/javadoc/stylesheet.css</stylesheetfile>
+                                <javadocDirectory>${basedir}/src/javadoc</javadocDirectory>
+                                <docfilessubdirs>true</docfilessubdirs>
+                                <useStandardDocletOptions>true</useStandardDocletOptions>
+                                <charset>${output.encoding}</charset>
+                                <docencoding>${output.encoding}</docencoding>
+                                <breakiterator>true</breakiterator>
+                                <version>true</version>
+                                <author>true</author>
+                                <keywords>true</keywords>
+                                <overview>${basedir}/src/javadoc/overview.html</overview>
+                                <doctitle>${project.name} API Reference (${project.version})</doctitle>
+                                <windowtitle>${project.name} API Reference (${project.version})</windowtitle>
+                                <additionalparam>-link http://download.oracle.com/javase/6/docs/api
+                                    -link http://download.oracle.com/javaee/6/api
+                                    -link http://www.slf4j.org/apidocs/
+                                    -link http://commons.apache.org/logging/commons-logging-1.1.1/apidocs/
+                                    -link http://logging.apache.org/log4j/1.2/apidocs/
+                                    -link http://static.springsource.org/spring/docs/3.0.x/javadoc-api/
+                                    -link http://commons.apache.org/io/apidocs
+                                    -link http://junit.sourceforge.net/javadoc
+                                    -link http://ehcache.org/apidocs
+                                </additionalparam>
+                                <encoding>${output.encoding}</encoding>
+                                <locale>${javadoc.locale}</locale>
+                            </configuration>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-checkstyle-plugin</artifactId>
+                            <version>${checkstyle.plugin.version}</version>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-pmd-plugin</artifactId>
+                            <version>${pmd.plugin.version}</version>
+                            <configuration>
+                                <linkXref>true</linkXref>
+                                <sourceEncoding>${output.encoding}</sourceEncoding>
+                                <minimumTokens>100</minimumTokens>
+                                <targetJdk>1.6</targetJdk>
+                            </configuration>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>jdepend-maven-plugin</artifactId>
+                            <version>${jdepend.plugin.version}</version>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>taglist-maven-plugin</artifactId>
+                            <version>${taglist.plugin.version}</version>
+                            <configuration>
+                                <tagListOptions>
+                                    <tagClasses>
+                                        <tagClass>
+                                            <displayName>Todo Work</displayName>
+                                            <tags>
+                                                <tag>
+                                                    <matchString>TODO</matchString>
+                                                    <matchType>exact</matchType>
+                                                </tag>
+                                                <tag>
+                                                    <matchString>FIXME</matchString>
+                                                    <matchType>exact</matchType>
+                                                </tag>
+                                            </tags>
+                                        </tagClass>
+                                    </tagClasses>
+                                </tagListOptions>
+                            </configuration>
+                        </plugin>
+                    </reportPlugins>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.plugin.version}</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!-- =================== -->
+        <!--  Hadoop EcoSystems  -->
+        <!-- =================== -->
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.pig</groupId>
+            <artifactId>pig</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.mahout.commons</groupId>
+            <artifactId>commons-cli</artifactId>
+        </dependency>
+
+        <!-- ============== -->
+        <!--  Google Guava  -->
+        <!-- ============== -->
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+
+        <!-- ============= -->
+        <!--      MVEL     -->
+        <!-- ============= -->
+
+        <dependency>
+            <groupId>org.mvel</groupId>
+            <artifactId>mvel2</artifactId>
+        </dependency>
+
+        <!-- ============= -->
+        <!--  Logging API  -->
+        <!-- ============= -->
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+        </dependency>
+
+        <!-- ========== -->
+        <!--  Test API  -->
+        <!-- ========== -->
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-mrunit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

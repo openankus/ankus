@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <typeAliases>
+        <typeAlias type="org.openflamingo.locale.Locale" alias="locale"/>
+        <typeAlias type="org.openflamingo.model.rest.ActionHistory" alias="actionHistory"/>
+        <typeAlias type="org.openflamingo.model.rest.WorkflowHistory" alias="workflowHistory"/>
+        <typeAlias type="org.openflamingo.model.rest.HiveHistory" alias="hiveHistory"/>
+        <typeAlias type="org.openflamingo.model.rest.AuditHistory" alias="auditHistory"/>
+    </typeAliases>
+
+    <mappers>
+        <mapper resource="org/openflamingo/locale/locale-mapper.xml"/>
+        <mapper resource="org/openflamingo/fs/audit/audit-log-mapper.xml"/>
+        <mapper resource="org/openflamingo/engine/history/workflow-history-mapper.xml"/>
+        <mapper resource="org/openflamingo/engine/history/action-history-mapper.xml"/>
+        <mapper resource="org/openflamingo/engine/history/hive-history-mapper.xml"/>
+    </mappers>
+
+</configuration>

@@ -1,0 +1,1360 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../styles.css">
+<title>DocFlex/Javadoc - Documentation - DocFlex Doclet</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/Javadoc - Documentation - DocFlex Doclet
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ol>
+  <li class="mrg4"><a href="#running_doclet"><b>Running Doclet</b></a>
+    <ul class="mrg4">
+      <li><a href="#options">Command Line Options</a>
+        <ul>
+          <li><a href="#template_options">Template Options</a></li>
+          <li><a href="#output_options">Output Options</a></li>
+          <li><a href="#config_options">Configuration Options</a></li>
+          <li><a href="#other_options">Other Options</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#gui"><b>Doclet GUI</b></a>
+    <ul class="mrg4">
+      <li><a href="#gui.template">Specifying Template</a>
+        <ul>
+          <li><a href="#gui.param_inspector">Setting Template Parameters</a></li>
+        </ul>
+      </li>
+      <li><a href="#gui.output_format">Selecting Output Format</a>
+        <ul>
+          <li><a href="#gui.html_option_inspector">HTML Option Inspector</a></li>
+          <li><a href="#gui.rtf_option_inspector">RTF Option Inspector</a></li>
+          <li><a href="#gui.txt_option_inspector">TXT Option Inspector</a></li>
+        </ul>
+      </li>
+      <li><a href="#gui.output_location">Specifying Output Location</a></li>
+      <li><a href="#gui.run">Starting Generation</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#template_params"><b>Handling Template Parameters</b></a>
+    <ul class="mrg4">
+      <li><a href="#template_params.gui">Using Parameter Insector GUI</a></li>
+      <li><a href="#template_params.cmdline">Setting parameters from command line</a></li>
+      <li><a href="#template_params.generator_config">Using Doclet GUI to prepare parameters for command line</a></li>
+      <li><a href="#template_params.standard_doclet_options">Setting template parameters via Standard Doclet options</a></li>
+      <li><a href="#template_params.multivalued">Multi-valued (list) parameters</a>
+        <ul>
+          <li><a href="#template_params.multivalued.gui">Specifying list value in Parameter Inspector</a></li>
+          <li><a href="#template_params.multivalued.escapes">Using escapes</a></li>
+          <li><a href="#template_params.multivalued.cmdline">Specifying list parameter on command line </a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#generation_phases"><b>Generation Phases</b></a></li>
+  <li class="mrg4"><a href="#error_report"><b>Error Reporting</b></a></li>
+</ol>
+<!-- END TABLE OF CONTENTS -->
+
+<hr>
+
+<h2>
+  <a name="running_doclet"></a>
+  1.&nbsp; Running Doclet
+</h2>
+
+To run the <a href="../about.html#doclet">DocFlex Doclet</a>,
+basically you need to specify the doclet class using two Javadoc options:
+<blockquote class="mrg8">
+<code>
+  <a class="latent" href="#cmdline.docletpath_option"><b>-docletpath</b></a>
+  <a class="latent" href="#cmdline.doclet_class_path">&lt;doclet_class_path&gt;</a>
+  <a class="latent" href="#cmdline.doclet_option"><b>-doclet</b></a>
+  <a class="latent" href="#cmdline.doclet_class">com.docflex.javadoc.Doclet</a>
+</code>
+</blockquote>
+If you are not sure what that means, here is the full Javadoc command line:
+<blockquote class="mrg8">
+<table cellpadding="0" cellspacing="0">
+<tr valign="top">
+<td><code>
+  <a class="latent" href="#cmdline.javadoc">javadoc</a>
+</code></td>
+<td><code>&nbsp;</code></td>
+<td><code>
+  <a class="latent" href="#cmdline.vm_options">[VM options]</a>
+  <a class="latent" href="#cmdline.docletpath_option">-docletpath</a>
+  <a class="latent" href="#cmdline.doclet_class_path">&lt;doclet_class_path&gt;</a>
+  <a class="latent" href="#cmdline.doclet_option">-doclet</a>
+  <a class="latent" href="#cmdline.doclet_class">&lt;doclet_class&gt;</a>
+  <a class="latent" href="#cmdline.options">[options]</a>
+  <a class="latent" href="#cmdline.packagenames">[packagenames]</a>
+  <a class="latent" href="#cmdline.sourcefilenames">[sourcefilenames]</a>
+  <a class="latent" href="#cmdline.subpackages"><span class="nowrap">[-subpackages <i>pkg1:pkg2:...</i>]</span></a>
+</code></td>
+</tr>
+</table>
+</blockquote>
+
+All arguments are explained in this table:
+
+<p class="mrg8">
+<table width="100%" border="1" cellspacing="1" cellpadding="4">
+
+<tr align="center">
+  <th width="1%"><b>Command/Arg</b></th>
+  <th width="99%"><b>Explanation</b></th>
+</tr>
+
+<tr valign="top">
+  <td>
+    <a name="cmdline.javadoc"></a>
+    <code>javadoc</code>
+  </td>
+  <td>
+    A system command that starts Javadoc.
+    <p class="mrg80">
+    On Windows, that command may look like the following:
+    <p class="mrg80">
+    <code>"C:\Program Files\Java\jdk1.6\bin\javadoc"</code>
+    <p class="mrg80">
+    (Just do not forget to enclose it in double quotes, when the pathname contains spaces!)
+  </td>
+</tr>
+<tr valign="top">
+  <td>
+    <a name="cmdline.vm_options"></a>
+    <code>[VM options]</code>
+  </td>
+  <td>
+    The options passed to JVM that runs Javadoc.
+    <p class="mrg8">
+    When you generate documentation for a big project, it is important to ensure
+    that JVM will allocate enough memory for the heap (otherwise, the generator will slow down and
+    may run out of memory). The maximum heap size should be specified here using
+    <span class="nowrap"><b>-J-Xmx</b></span> option.
+    <p class="mrg8">
+    For example, setting
+    <span class="nowrap"><b>-J-Xmx256m</b></span> will allocate <b>256 Mb</b> for the heap.
+    <p class="mrg80">
+    <table border="1" cellspacing="1" cellpadding="4">
+    <tr><td bgcolor="#F6F6F6" class="inset">
+      DocFlex generator may need a lot of memory as it stores lots
+      of temporary data in hash-tables in order to boost performance.
+      However, according to our tests, 256 Mb heap appeared to be quite
+      enough to generate an RTF documentation for a project with something
+      close to 1000 Java classes. That was on 32-bit Java.
+      <p class="mrg8"></p>
+      For 64-bit Java (running on 64-bit OS), we recommend to double the amount of allocated memory
+      since lots of internal things (like memory pointers) get doubled in size on 64-bit (as compared to 32-bit OS).
+      <p class="mrg8"></p>
+      So, on <b>Windows 7 64-bit</b> you should specify <b><code>-Xmx512m</code></b>,
+      instead of <code>-Xmx256m</code>.
+    </td></tr>
+    </table>
+  </td>
+</tr>
+<tr valign="top">
+  <td>
+    <a name="cmdline.docletpath_option"></a>
+    <code>-docletpath</code>
+  </td>
+  <td>
+    The Javadoc
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#docletpath" target="_blank">docletpath</a></code>
+    option to specify the path to the doclet starting class file.
+  </td>
+</tr>
+<tr valign="top">
+  <td>
+    <a name="cmdline.doclet_class_path"></a>
+    <code>&lt;doclet_class_path&gt;</code>
+  </td>
+  <td>
+    This must be the pathname of the DocFlex/Javadoc Java library file.
+    <p class="mrg8">
+    On Windows platform, it should look like the following:
+    <blockquote class="mrg80">
+      <code>"%DFH%\lib\docflex-javadoc.jar"</code>
+    </blockquote>
+    or
+    <blockquote class="mrg0">
+      <code>"%DFH%\lib\docflex-doclet.jar"</code>
+    </blockquote>
+    <p class="mrg80">
+    where
+    <ul class="mrg0">
+      <li><code>'%DFH%'</code> must expand to the pathname of DocFlex/Javadoc home directory (e.g. <code>C:\docflex-javadoc</code>)</li>
+      <li>
+        <code>docflex-javadoc.jar</code> is the Java library in 
+        <a href="../about.html#full_edition">Full Edition</a>
+      </li>
+      <li>
+        <code>docflex-doclet.jar</code> is the Java library in 
+        <a href="../about.html#docflex-doclet">DocFlex/Doclet</a> edition
+      </li>
+    </ul>
+    <p class="mrg80">
+    Notes:
+    <ul class="mrg0">
+      <li>
+        The precise form of the file pathname depends on the OS.
+        (For instance, on Linux the name-separator is '/')
+      </li>
+      <li>
+        When the file pathname contains spaces, it should be enclosed in double quotes!
+        (Otherwise, it will be treated as separate arguments.)
+      </li>
+    </ul>
+  </td>
+</tr>
+<tr valign="top">
+  <td>
+    <a name="cmdline.doclet_option"></a>
+    <code>-doclet</code>
+  </td>
+  <td>
+    The Javadoc
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#doclet" target="_blank">doclet</a></code>
+    option to specify the fully-qualified name of the doclet starting class.
+  </td>
+</tr>
+<tr valign="top">
+  <td>
+    <a name="cmdline.doclet_class"></a>
+    <code>&lt;doclet_class&gt;</code>
+  </td>
+  <td>
+    The qualified name of the DocFlex Doclet starting class:
+    <blockquote class="mrg8">
+      <code class="nowrap">com.docflex.javadoc.Doclet</code>
+    </blockquote>
+    (the same for all <a href="../about.html#editions">editions</a>)
+  </td>
+</tr>
+<tr valign="top">
+  <td>
+    <a name="cmdline.options"></a>
+    <code>[options]</code>
+  </td>
+  <td>
+    All other Javadoc options.
+    This includes both the
+    <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#javadocoptions" target="_blank">Javadoc core options</a>
+    and the options processed by the DocFlex Doclet (see <a href="#options">below</a>).
+  </td>
+</tr>
+<tr valign="top">
+  <td>
+    <a name="cmdline.packagenames"></a>
+    <a name="cmdline.sourcefilenames"></a>
+    <a name="cmdline.subpackages"></a>
+    <code>
+    [packagenames]<br>
+    [sourcefilenames]<br>
+    <span class="nowrap">[-subpackages <i>pkg1:pkg2:...</i>]</span>
+    </code>
+  </td>
+  <td>
+    Specify the Java packages and classes to document.
+    <p class="mrg80">
+    For further explanations, please see Javadoc Reference Guide, e.g. by this link:
+    <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#referenceguide" target="_blank">http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#referenceguide</a>
+  </td>
+</tr>
+</table>
+
+<h3>
+  <a name="options"></a>
+  Command Line Options
+</h3>
+
+Here are all command line options specifically processed by 
+<a href="../about.html#doclet">DocFlex Doclet</a>:
+<p>
+<table cellspacing="0" cellpadding="0">
+<tr valign="top">
+  <td><table width="32" height="8" border="0"><tr><td></td></tr></table></td>
+  <td>
+    -<a href="#config_option">config</a><br>
+    -<a href="#d_option">d</a><br>
+    -<a href="#docflexconfig_option">docflexconfig</a><br>
+    -<a href="#errlog_option">errlog</a><br>
+    -<a href="#f_option">f</a>
+  </td>
+  <td><table width="32" height="8" border="0"><tr><td></td></tr></table></td>
+  <td>
+    -<a href="#format_option">format</a><br>
+    -<a href="#launchviewer_option">launchviewer</a><br>
+    -<a href="#license_option">license</a><br>
+    -<a href="#link_option">link</a><br>
+    -<a href="#linkoffline_option">linkoffline</a>
+  </td>
+  <td><table width="32" height="8" border="0"><tr><td></td></tr></table></td>
+  <td>
+    -<a href="#nodialog_option">nodialog</a><br>
+    -<a href="#o_option">o</a><br>
+    -<a href="#p_option">p</a><br>
+    -<a href="#quiet_option">quiet</a><br>
+    -<a href="#template_option">template</a>
+  </td>
+</tr>
+</table>
+<p>
+The number of options is relatively small for two reasons:
+<ol>
+  <li>
+     Since all informative content of the generated documentation is programmed entirely within templates,
+     it is the matter of template parameters to control this. The templates parameters are passed via
+     the <span class="nowrap">-<a href="#p_option">p option</a></span>.
+     <p>
+  </li>
+  <li>
+     The output formats do have their specific options. But since such options are different for each
+     particular output format and the number of supported formats will grow, all output format options
+     are specified in the uniform way via <span class="nowrap">-<a href="#o_option">o option</a></span>
+     (the same as the template parameters).
+  </li>
+</ol>
+
+Effectively, the number of various generator settings may be so great that the 
+<a href="../about.html#doclet">DocFlex Doclet</a>
+provides a different and more convenient way for specifying all of them --
+the <a href="#gui">Doclet GUI</a>.
+<p>
+Here are the option details grouped by category:
+
+<h4 class="spec">
+  <a name="template_options"></a>
+  <i>Template Options</i>
+</h4>
+
+<dl>
+
+<dt><a name="template_option"></a><b>-template</b> <i>&lt;file&gt;</i></dt>
+<dd>Specifies the main template file to be executed by the generator. All documentation
+    generation is controlled by this template. The main template may call from itself
+    another templates (<i>subtemplates</i>) producing either a single output file or
+    multiple files (framed documentation).
+</dd>
+<dt><a name="p_option"></a>
+    <b>-p:</b><i>&lt;parameter&gt;=&lt;value&gt;</i>
+    <p style="margin:5px">or</p>
+    <b>-p:</b><i>&lt;parameter&gt; &lt;value&gt;</i>
+</dt>
+<dd>Specifies the value of a template parameter.
+    <br>
+    <b>Notes:</b>
+    <ul>
+      <li class="mrg8">
+        You can find the necessary parameter names in the
+        <a href="#gui.param_inspector">Template Parameter Inspector</a>
+        invoked from the <a href="#gui">Generator Dialog</a>.
+      </li>
+      <li class="mrg8">
+        The boolean values should be specified as <code>"true"</code> and 
+        <code>"false"</code> strings (for example: 
+        <code class="nowrap">-p:include.deprecated=true</code>).
+      </li>
+      <li class="mrg8">
+        There are also <i>enum</i> parameters, which are strings limited to only fixed number of values.
+        You can see all possible values accepted by an enum parameter in 
+        <a href="#gui.param_inspector">Parameter Inspector</a>.
+      </li>
+      <li class="mrg8">
+        Now DocFlex supports <a href="#template_params.multivalued">multivalued (list) parameters</a>,
+        which can be equally specified on the command line using this option.
+        See <a href="#template_params.multivalued.cmdline">Specifying List Parameter on Command Line</a> for more details.
+      </li>
+      <li class="mrg8">
+        When the parameter value contains spaces, enclose it in double quotes
+        (for example: <code class="nowrap">-p:title "My Docs"</code>).
+      </li>
+      <li class="mrg8">
+        The first variant of this option allows you to specify the parameter with a single command line argument,
+        the second variant breaks the option into two arguments
+        (one for the parameter name, another one for the parameter value).
+        <p class="mrg8">
+        <table border="1" cellspacing="1" cellpadding="4">
+        <tr><td bgcolor="#F5F5F5" class="inset">
+          The two argument variant is necessary for compatibility with
+          <a href="integrations.html#ant">Apache Ant</a>.
+          Ant provides a special doclet <code>&lt;param&gt;</code> element with two attributes:
+          <code>name</code> and <code>value</code>.
+          When everything goes into the <code>name</code> attribute and the actual
+          value contains spaces, Ant won't process it correctly.
+        </td></tr>
+        </table>
+      </li>
+    </ul>
+</dd>
+</dl>
+
+<h4 class="spec">
+  <a name="output_options"></a>
+  <i>Output Options</i>
+</h4>
+
+<dl>
+
+<dt><a name="format_option"></a><b>-format</b> <i>&lt;<u>HTML</u> | RTF | TXT&gt;</i></dt>
+<dd>Specifies the output format. By default, HTML.</dd>
+
+<dt><a name="o_option"></a>
+    <b>-o:</b><i>&lt;option&gt;=&lt;value&gt;</i>
+    <p style="margin:5px">or</p>
+    <b>-o:</b><i>&lt;option&gt; &lt;value&gt;</i>
+</dt>
+<dd>Specifies the output format option.
+    <br>
+    <b>Notes:</b>
+    <ul>
+      <li>
+        You can find the necessary option names in the
+        <a href="#gui.format_option_inspector">Format Option Inspector</a>
+        invoked from the <a href="#gui">Generator Dialog</a>.
+      </li>
+      <li class="mrg8">
+        The values of the boolean options should be specified as <code>"true"</code>
+        and <code>"false"</code> strings (for example:
+        <code class="nowrap">-o:rtf.storeGraphicsInRTF=false</code>).
+      </li>
+      <li class="mrg8">
+        The first variant of this option allows you to specify everything with a single command line argument,
+        the second variant breaks the option into two arguments
+        (one for the option name, another one for the value).
+        <p class="mrg8">
+        <table border="1" cellspacing="1" cellpadding="4">
+        <tr><td bgcolor="#F5F5F5" class="inset">
+          The two argument variant is necessary for compatibility with
+          <a href="integrations.html#ant">Apache Ant</a>.
+          Ant provides a special doclet <code>&lt;param&gt;</code> element with two attributes:
+          <code>name</code> and <code>value</code>.
+          When everything goes into the <code>name</code> attribute and the actual option
+          value contains spaces, Ant won't process it correctly.
+        </td></tr>
+        </table>
+      </li>
+    </ul>
+</dd>
+<dt><a name="d_option"></a><b>-d</b> <i>&lt;directory&gt;</i></dt>
+<dd>Specifies the destination directory for the generated documentation.
+    By default, this is the current directory (the one designated by "." pathname).
+    This option works in conjunction with the -<a href="#f_option">f option</a>.
+    <p class="mrg8">
+    The documentation files are distributed in the following way:
+    <ul>
+      <li>
+        <b>In the case of a single-file documentation</b>
+        <ol>
+          <li class="mrg8">
+            The output document is placed in the destination directory under default file name
+            '<i>templatename</i>.<i>formatextention</i>' (for example, in the RTF output format,
+            template PlainDoc.tpl will produce document 'PlainDoc.rtf').
+            The -<a href="#f_option">f option</a> may override this name.
+          </li>
+          <li class="mrg8">
+            All associated files (such as images, if not included in the document) are placed
+            in the '<i>docname</i>_files' subdirectory near the main document.
+          </li>
+        </ol>
+      </li>
+      <li>
+        <b>In the case of a framed multiple-file documentation</b>
+        <ol>
+          <li class="mrg8">
+            By default, all generated files and subdirectories are placed in the specified destination
+            directory. The frameset file produced by the main template is saved under the name 'index.html'.
+            This is the same as the output produced by the
+            <a href="http://docs.oracle.com/javase/6/docs/technotes/guides/javadoc/standard-doclet.html" target="_blank">Standard Javadoc doclet</a>.
+          </li>
+          <li class="mrg8">
+            If a different name '<i>docname</i>' is specified with the -<a href="#f_option">f option</a>,
+            the frameset file is saved under this name. All other files and the subdirectory tree are moved into
+            '<i>docname</i>_files' subdirectory near the frameset file.
+            <p class="mrg8">
+            This makes the whole documentation to look as to consist of only two file entities, which may be easier
+            to distribute yet during the generation, especially when different types of documentation are produced
+            from the same Java sources (e.g. by different templates or with the different parameters).
+          </li>
+        </ol>
+      </li>
+    </ul>
+    <dl>
+      <dt><u>Examples</u>:</dt>
+      <dd>
+        <dl>
+          <dt><code><b>-template PlainDoc.tpl -format RTF -d c:\out</b></code></dt>
+          <dd>generate the document file <code>c:\out\PlainDoc.rtf</code> with the associated files
+              subdirectory <code>c:\out\PlainDoc_files\</code> (if any)</dd>
+
+          <dt><code><b>-template PlainDoc.tpl -format HTML -d c:\out -f OpenAPI</b></code></dt>
+          <dd>generate the document file <code>c:\out\OpenAPI.html</code> with the associated files
+              subdirectory <code>c:\out\OpenAPI_files\</code> (if any)</dd>
+
+          <dt><code><b>-template FramedDoc.tpl -format HTML -d c:\out</b></code></dt>
+          <dd>generate the framed documentation located in the directory <code>c:\out\</code>
+              with the main file <code>index.html</code></dd>
+
+          <dt><code><b>-template FramedDoc.tpl -format HTML -d c:\out -f OpenAPI</b></code></dt>
+          <dd>generate the framed documentation with the main file <code>c:\out\OpenAPI.html</code>
+              and all other files located in the directory <code>c:\out\OpenAPI_files\</code></dd>
+        </dl>
+      </dd>
+    </dl>
+</dd>
+<dt><a name="f_option"></a><b>-f</b> <i>&lt;file&gt;</i></dt>
+<dd>Specifies the documentation output file name. This option works in conjunction with the
+    -<a href="#d_option">d option</a> and specifies the name of the main output file
+    (the one associated with the main template).
+    <p class="mrg8">
+    Typically, it should be used to specify a pure name associated with the generated documentation
+    (for example, 'DocletAPI'). However, the pathname may also be used. In that case, it is interpreted
+    against the initial destination directory (specified with the <b>-d</b> option) and may override it.
+    If the pathname is the absolute one, the <b>-d</b> option is effectively ignored.
+</dd>
+<dt><a name="launchviewer_option"></a><b>-launchviewer</b>[=<i>&lt;true | <u>false</u>&gt;</i>]</dt>
+<dd>Tells the generator to execute a specific non-Java command to launch an external application
+    able to view the generated result (for instance, an Internet browser to view HTML documentation).
+    <p class="mrg8">
+    Precisely, this command is specified in <a href="setup.html#docflex.config">docflex.config</a>
+    file found near <code>docflex-javadoc.jar</code> (or <code>docflex-doclet.jar</code>) file in the
+    <code><b>lib</b></code> directory.
+
+    <dl>
+      <dt><u>Examples</u>:</dt>
+      <dd>
+        <dl>
+          <dt><code><b>-launchviewer</b></code></dt>
+          <dd>Do launch viewer</dd>
+        </dl>
+        <dl>
+          <dt><code><b>-launchviewer=false</b></code></dt>
+          <dd>Do not launch viewer, no matter what's specified in the
+          <a href="setup.html#generator.config">generator.config</a></dd>
+        </dl>
+      </dd>
+    </dl>
+</dd>
+</dl>
+
+<h4 class="spec">
+  <a name="config_options"></a>
+  <i>Configuration Options</i>
+</h4>
+
+<dl>
+
+<dt><a name="config_option"></a><b>-config</b> <i>&lt;file&gt;</i></dt>
+<dd>Specifies the <a href="setup.html#generator.config">generator config file</a>,
+    which may contain options written manually or using the
+    <a href="#gui">Generator Dialog</a>. All options not provided directly
+    on the command line are looked for in this file.
+    <p class="mrg8">
+    The Generator Dialog also uses this file to store all options and parameters specified interactively.
+    If the config file does not exist, the Generator Dialog will try to create it by the provided pathname.
+    <p class="mrg8">
+    By default, the location of the generator configuration file is specified in the
+    <a href="setup.html#docflex.config">docflex.config</a>
+    (located in <code><b>lib</b></code> directory).
+    If no other config file is provided, it is automatically loaded from that location (if found).
+    <p class="mrg8">
+    See also:
+    <a href="#template_params.generator_config">Handling Template Parameters | Using Doclet GUI to prepare parameters for command line</a>
+</dd>
+<dt><a name="docflexconfig_option"></a><b>-docflexconfig</b> <i>&lt;file&gt;</i></dt>
+<dd>Specifies an alternative path to the DocFlex
+    <a href="setup.html#docflex.config">main configuration file</a>.
+    By default, this file is <code>'docflex.config'</code> which is searched in the directory where
+    the DocFlex Java library file <code class="nowrap">'docflex-javadoc.jar'</code>
+    (or <code>docflex-doclet.jar</code>) is located.
+    If not found, <a href="setup.html#docflex.config">docflex.config</a>
+    is created automatically with default settings.
+</dd>
+<dt><a name="license_option"></a><b>-license</b> <i>&lt;file&gt;</i></dt>
+<dd>Specifies the location of the <a href="setup.html#docflex.license">license file</a>.
+    <p class="mrg8">
+    You may need this option when you use the 
+    <a href="../about.html#full_edition">full edition</a> of DocFlex/Javadoc 
+    and your license allows you to execute your templates only in its presence. 
+    At that, the way how the license is searched by default does not fit to you 
+    (see <a href="setup.html#docflex.license">Documentation | Configuration Files | docflex.license</a>).
+    <p class="mrg8">
+    <b>Note:</b> The license directly specified with this option on the command line will override 
+    any other licenses (e.g. assigned in <a href="setup.html#docflex.config">docflex.config</a>
+    or found near <code>docflex-javadoc.jar</code>).
+</dd>
+</dl>
+
+<h4 class="spec">
+  <a name="other_options"></a>
+  <i>Other Options</i>
+</h4>
+
+<dl>
+
+<dt><a name="link_option"></a><b>-link</b> <i>&lt;extdocURL&gt;</i></dt>
+<dd>Creates links to existing javadoc-generated documentation of external referenced classes.
+    <p class="mrg8">
+    This option will work the same as the
+    -<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#link" target="_blank">link</a>
+    option supported by the
+    <a href="http://docs.oracle.com/javase/6/docs/technotes/guides/javadoc/standard-doclet.html" target="_blank">Standard Doclet</a>.
+    <p class="mrg8">
+    Precisely, the processing of both -link and -<a href="#linkoffline_option">linkoffline</a> options
+    is programmed within the templates using a Javadoc-specific
+    <a target="_blank" href="http://www.filigris.com/products/docflex/features/data_processing.php#fq_expr">FlexQuery</a> function:
+    <code>getExternalDocURL()</code>.
+    When DocFlex/Doclet meets either <span class="nowrap">-link</span> or
+    <span class="nowrap">-linkoffline</span> option on the Javadoc command line, it processes such an option
+    so that the content of the <code>package-list</code> file referred from it is loaded into a special internal
+    hash-table. Further, <code>getExternalDocURL()</code> function uses that table to translate
+    any Java qualified name into a possible URL of the external documentation.
+</dd>
+<dt><a name="linkoffline_option"></a><b>-linkoffline</b> <i>&lt;extdocURL&gt;</i> <i>&lt;packagelistLoc&gt;</i></dt>
+<dd>This option is a variation of -<a href="#link_option">link</a>; they both create links to javadoc-generated
+    documentation for external referenced classes. Use the -linkoffline option when linking to a document on
+    the web when the Javadoc tool itself is "offline" -- that is, it cannot access the document through
+    a web connection.
+    <p class="mrg8">
+    This option will work the same as the
+    -<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#linkoffline" target="_blank">linkoffline</a>
+    option provided by the
+    <a href="http://docs.oracle.com/javase/6/docs/technotes/guides/javadoc/standard-doclet.html" target="_blank">Standard Doclet</a>.
+    See also -<a href="#link_option">link</a> option for more details about how it is implemented.
+</dd>
+<dt><a name="nodialog_option"></a><b>-nodialog</b>[=<i>&lt;true | <u>false</u> | quiet&gt;</i>]</dt>
+<dd>Do not invoke the <a href="#gui">Doclet GUI</a>.
+    <p class="mrg8">Parameters:
+    <blockquote class="mrg8">
+    <table cellpadding="0" cellspacing="0">
+      <tr valign="top">
+        <td><span class="nowrap"><i>true</i></span></td>
+        <td><span class="nowrap">&nbsp;-&nbsp;</span></td>
+        <td>
+          if this (or no parameter) is specified, the
+          <a href="../about.html#doclet">DocFlex Doclet</a>
+          starts the generation immediately according to the setting specified 
+          on the Javadoc command line and loaded from the 
+          <a href="setup.html#generator.config">generator config</a>
+          (see -<a href="#config_option">config</a> option).
+          Then, the doclet exits.
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><span class="nowrap"><i>false</i></span></td>
+        <td><span class="nowrap">&nbsp;-&nbsp;</span></td>
+        <td>
+          this is the same as when the -nodialog option was not specified at all.
+          The <a href="#gui">Generator Dialog</a> will be invoked.
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><span class="nowrap"><i>quiet</i></span></td>
+        <td><span class="nowrap">&nbsp;-&nbsp;</span></td>
+        <td>
+          start the generation immediately (without dialog) and suppress displaying most of
+          the generator messages to screen (see also -<a href="#quiet_option">quiet</a> option).
+          The generation progress counter will be printed.
+        </td>
+      </tr>
+    </table>
+    </blockquote>
+</dd>
+<dt><a name="errlog_option"></a><b>-errlog</b> <i>&lt;file&gt;</i></dt>
+<dd>
+    Specifies the <b>error log file</b> used when the
+    <a href="../about.html#doclet">DocFlex Doclet</a>
+    is executed without the <a href="#gui">Generator Dialog</a>
+    (i.e. when -<a href="#nodialog_option">nodialog</a> option is also specified on the command line).
+    <p class="mrg8">
+    By default, when an unexpected error/exception occurs during the generation and no GUI is enabled,
+    all details about the error are printed to the standard console.
+    <p class="mrg8">
+    Using this option, you can assign a separate error log file, into which the detailed ERROR REPORT is dumped
+    each time an error happens. Only brief messages will get on the console in that case.
+    (See also <a href="#error_report">Error Reporting</a> for more details.)
+    <p class="mrg8">
+    The error log file should be specified as an absolute or relative file pathname.
+    When the pathname points to a directory, it will be extended with the default
+    <i>&ldquo;docflex_error.log&rdquo;</i> name (for example, setting <code>"-errlog ."</code>
+    will be interpreted as <code>'docflex_error.log'</code> file located in the current directory).
+    <p class="mrg8">
+    If the error log file does not exist, it is created in the event of error.
+    Otherwise, the ERROR REPORT is appended to the existing file.
+    In the case of any I/O error related to the error log file itself, everything will be printed
+    to the console (along with additional the log file error message).
+</dd>
+<dt><a name="quiet_option"></a><b>-quiet</b>[=<i>&lt;true | <u>false</u>&gt;</i>]</dt>
+<dd>Suppress displaying most of the generator messages to screen.
+    <p class="mrg8">
+    Note: Since Java 5, this option is used by Javadoc itself as one of its core options.
+    If you want to suppress only <a href="../about.html#doclet">DocFlex Doclet</a>
+    messages but still see the generation progress counter, use 
+    <code>-<a href="#nodialog_option">nodialog</a>=quiet</code> option instead.
+</dd>
+</dl>
+
+<h2>
+  <a name="gui"></a>
+  <a name="generator_dialog"></a>
+  2.&nbsp; Doclet GUI
+</h2>
+
+Besides the command line options, <a href="../about.html#doclet">DocFlex Doclet</a> 
+provides a different more user-friendly way to specify most of the settings used by the generator.
+<p>
+If no -<a href="#nodialog_option">nodialog</a> option specified on the
+Javadoc command line, when the DocFlex Doclet starts, it invokes the following dialog:
+
+<blockquote>
+  <img src="images/generator_dialog.png" title="Generator Dialog" border="0" usemap="#gui.map">
+  <map name="gui.map">
+    <area shape="rect" coords="11,48,407,72" href="#gui.template">
+    <area shape="rect" coords="439,48,503,72" href="#gui.param_inspector">
+    <area shape="rect" coords="11,77,407,100" href="#gui.output_format">
+    <area shape="rect" coords="439,77,503,100" href="#gui.format_option_inspector">
+    <area shape="rect" coords="11,105,407,128" href="#gui.output_folder">
+    <area shape="rect" coords="11,132,407,156" href="#gui.output_file">
+    <area shape="rect" coords="11,161,115,184" href="#gui.launch_viewer">
+    <area shape="rect" coords="137,198,214,224" href="#gui.run">
+  </map>
+</blockquote>
+
+The dialog fields are initialized with the option values specified on the
+<a href="#options">command line</a> or loaded from the
+<a href="setup.html#generator.config">generator config file</a>
+(see also <span class="nowrap">-<a href="#config_option">config</a></span> option).
+
+<h3>
+  <a name="gui.template"></a>
+  Specifying Template
+</h3>
+
+In the <b>&ldquo;Template&rdquo;</b> field, you should specify the pathname of the <i>main template</i>
+to be interpreted by the generator.
+The combo-box list contains the last used templates which allows you quickly to pick
+one as soon as you need.
+<p>
+This field duplicate <span class="nowrap">-<a href="#template_option">template</a></span>
+option specified on the generator <a href="#options">command line</a>.
+
+<h4>
+  <a name="gui.param_inspector"></a>
+  Setting Template Parameters
+</h4>
+
+For the specified template, the <b>&ldquo;Params&rdquo;</b> button invokes
+the <b>Parameter Inspector</b> dialog, like the one shown on this screenshot:
+
+<blockquote>
+  <img src="images/param_inspector.png" title="Template Parameter Inspector">
+</blockquote>
+
+The inspector contents is constructed dynamically from the
+<a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#param_defs">parameter definitions</a>
+obtained from the given template (the one specified in the <b>&ldquo;Template&rdquo;</b> field in the Generator Dialog).
+The parameter values are displayed and edited according to their types.
+<p>
+The bottom panel displays the description of the selected parameter (which is also obtained from the template).
+The first line of the description (the white text) shows the internal parameter name. Use this name in the
+-<a href="#p_option">p option</a> to specify the parameter value on the Javadoc command line.
+<p>
+See also: <a href="#template_params">Handling Template Parameters</a>.
+
+<h3>
+  <a name="gui.output_format"></a>
+  Selecting Output Format
+</h3>
+
+The <b>&ldquo;Output format&rdquo;</b> combo-box allows you to select the output format
+of the generated documentation. Currently, the following formats are supported:
+<ul>
+  <li><a href="#gui.html_option_inspector">HTML</a></li>
+  <li><a href="#gui.rtf_option_inspector">RTF</a></li>
+  <li><a href="#gui.txt_option_inspector">TXT</a></li>
+</ul>
+
+Since all <a target="_blank" href="http://www.filigris.com/products/docflex/#document_template">document templates</a>
+are format independent, if you have specified such a template in the &ldquo;Template&rdquo; field
+you can freely use any output format with it.
+The <a target="_blank" href="http://www.filigris.com/products/docflex/#frameset_template">frameset templates</a>
+are supported only by HTML output format.
+<p>
+<a name="gui.format_option_inspector"></a>
+Similar to the template parameters, the <b>&ldquo;Options&rdquo;</b> button near the
+&ldquo;Output format&rdquo; combo-box invokes the <b>Format Option Inspector</b>
+which is specific for the selected output format.
+<p>
+The bottom panel in the inspector dialog displays the description of the selected option.
+The first line of the description (the highlighted text) shows the internal option name.
+This name should be used in the -<a href="#o_option">o option</a> to specify the format
+option value on the generator command line.
+<p>
+<a name="gui.format_option_inspectors"></a>
+The following screenshots show the option inspectors for each supported output format:
+
+<h4>
+  <a name="gui.html_option_inspector"></a>
+  HTML Option Inspector
+</h4>
+
+<blockquote>
+  <img src="images/html_option_inspector.png" title="HTML Option Inspector">
+</blockquote>
+
+<h4>
+  <a name="gui.rtf_option_inspector"></a>
+  RTF Option Inspector
+</h4>
+
+<blockquote>
+  <img src="images/rtf_option_inspector.png" title="RTF Option Inspector">
+</blockquote>
+
+<h4>
+  <a name="gui.txt_option_inspector"></a>
+  TXT Option Inspector
+</h4>
+
+<blockquote>
+  <img src="images/txt_option_inspector.png" title="TXT Option Inspector">
+</blockquote>
+
+
+<h3>
+  <a name="gui.output_location"></a>
+  Specifying Output Location
+</h3>
+
+<dl>
+<dt><a name="gui.output_folder"></a><b>Output folder</b></dt>
+<dd>Use this field to specify the destination directory for the generated documentation.
+    See -<a href="#d_option">d option</a> for more details.
+</dd>
+<dt><a name="gui.output_file"></a><b>Output file</b></dt>
+<dd>Use this field to specify the documentation main output file name.
+    See -<a href="#f_option">f option</a> for more details.
+</dd>
+</dl>
+
+<h3>
+  <a name="gui.run"></a>
+  Starting Generation
+</h3>
+
+Once all settings prepared, the generator can be started by clicking the <b>&ldquo;Run&rdquo;</b> button.
+Then, the dialog transforms and the progress panel appears:
+
+<blockquote>
+  <img src="images/generating.png" title="Generating documentation">
+</blockquote>
+
+The progress bar tracks the generation progress and shows the name of the output file being
+currently generated. The <b>&ldquo;Cancel&rdquo;</b> button can stop the generation at any moment.
+<p>
+Once the generation has finished or cancelled, the <a href="#gui">Generator Dialog</a> 
+transforms itself back to the initial state.
+Then, the new settings can be entered and the generation started again. At that, the Java sources
+information provided by Javadoc via
+<a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/" target="_blank">Doclet API</a>
+remains the same (as Javadoc doesn't care what exactly a particular doclet is doing with it).
+This allows you during the same session to generate different kinds of documentation by different
+templates, in different output formats and so on.
+<p>
+<a name="gui.launch_viewer"></a>
+When the generation was successful and the <b>&ldquo;Launch Viewer&rdquo;</b> check-box
+selected, the generator will try to launch an external application (e.g. MS Word)
+to view the produced result. See -<a href="#launchviewer_option">launchviewer</a> option
+for more details about this setting.
+<p>
+See also: <a href="#generation_phases">Generation Phases</a>
+
+<h2>
+  <a name="template_params"></a>
+  3.&nbsp; Handling Template Parameters
+</h2>
+
+Since all the content and formatting of the generated JavaDoc is programmed now entirely in the template set
+(which, in effect, becomes the actual doclet), what previously were command-line options provided by the 
+<a href="http://docs.oracle.com/javase/6/docs/technotes/guides/javadoc/standard-doclet.html" target="_blank">Standard Doclet</a>
+now simply become <b>template parameters</b>.
+<p class="mrg8">
+But introducing and checking parameters in templates is much easier
+than implementing some command-line options controlling a Java code.
+(In fact, it is writing a parameter description what takes the most time in many cases!)
+So, there can be a lot more template parameters than in the case of in traditional
+&ldquo;command-line options&rdquo; approach.
+<p class="mrg8">
+For instance, 
+&ldquo;<a href="../templates/JavadocPro/overview.html">JavadocPro</a>&rdquo;
+template set currently supports
+<a href="../templates/JavadocPro/parameters.html">more than 70 parameters</a>.
+
+<h3>
+  <a name="template_params.gui"></a>
+  Using Parameter Insector GUI
+</h3>
+
+To control so many parameters, <a href="#top">DocFlex Doclet</a> provides
+a <a href="#gui">GUI</a> that includes the <a href="#gui.param_inspector">Parameter Inspector</a> dialog
+(which is invoked from the main dialog on clicking <b>&ldquo;Params&rdquo;</b> button for the specified template).
+<p class="mrg8">
+On the following screenshot you can see the Parameter Inspector loaded with the parameters of
+<a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#FramedDoc.tpl">JavadocPro | FramedDoc.tpl</a>
+(click to view an expanded form):
+
+<blockquote>
+  <a href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/images/FramedDoc/param_inspector_expanded.html" target="_blank"><img src="../templates/JavadocPro/images/FramedDoc/param_inspector.png" title="Template Parameter Inspector with parameters of FramedDoc.tpl" border="0"></a>
+</blockquote>
+
+The inspector content is constructed dynamically from the 
+<a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#param_defs">parameter definitions</a>
+found in the given template.
+<p class="mrg8">
+Using Parameter Inspector, you can:
+<ul class="mrg8">
+  <li>
+    Edit each parameter according to its type.
+  </li>
+  <li>
+    View the parameter HTML description (it is also obtained from the template) as well as
+    the parameter internal name (the first line) and possible values, which must be specified in
+    <span class="nowrap">-<a href="#p_option">p option</a></span>,
+    when you set that parameter on the command line (see <a href="#template_params.cmdline">below</a>).
+  </li>
+</ul>
+Once you have changed some parameters and closed the inspector dialog (with &ldquo;OK&rdquo; button),
+the new values will be stored (along with the parameter names) in the
+<a href="setup.html#generator.config">generator.config</a> file.
+Further, the generator will use the parameter values found in that file. 
+The same will happen when you open the Parameter Inspector
+dialog next time. The template parameters, whose names match those found in the
+<a href="setup.html#generator.config">generator.config</a> file,
+will be initialized with the corresponding values from that file.
+
+<p class="mrg8">
+The parameters are organized in <b>groups</b> (which may contain subgroups and so on).
+A group heading may also be a parameter itself.
+<p class="mrg8">
+Each parameter group may appear in expanded or collapsed state like a tree node.
+The group states are also saved in the 
+<a href="setup.html#generator.config">generator.config</a> file
+to be restored again when the inspector is invoked next time for the same templates.
+Using inspector popup menu, you can quickly reset all parameters in a group to their default values.
+
+<p class="mrg8">
+The check-boxes in <b>&ldquo;Default&rdquo;</b> column indicate whether the default values of 
+the corresponding parameters are used.
+
+<p class="mrg8">
+The default value of a parameter is specified in the 
+<a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#param_def">parameter definition</a>
+in the template.
+Alternatively, the default value may be calculated dynamically from the values of other parameters or settings
+by a special <a target="_blank" href="http://www.filigris.com/products/docflex/features/data_processing.php#fq_expr">FlexQuery-expression</a>
+also specified in the <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#param_def">parameter definition</a>.
+<p class="mrg8">
+The same parameters in different main templates may have different default values.
+<p class="mrg8">
+When a parameter is specified in the Parameter Inspector, its value is saved in the
+<a href="setup.html#generator.config">generator.config</a>
+file. 
+If the parameter value is NOT found in that file, the default value will be used (or calculated).
+
+<h3>
+  <a name="template_params.cmdline"></a>
+  Setting parameters from command line
+</h3>
+
+Besides the <a href="#template_params.gui">Parameter Inspector</a> dialog,
+you can always set any template parameters directly on the 
+<a href="#options">command line</a> using any number of
+<span class="nowrap">-<a href="#p_option">p options</a></span>.
+<p class="mrg8">
+The <span class="nowrap">-<a href="#p_option">p option</a></span>
+requires the <b>parameter internal name</b>, which you can find in the bottom panel
+of the <a href="#template_params.gui">Parameter Inspector</a> dialog (when the necessary parameter is selected).
+For example:
+
+<blockquote>
+  <img src="images/param_internal_name.png" title="internal name of a template parameter">
+</blockquote>
+
+In this case, the <span class="nowrap">-<a href="#p_option">p option</a></span> would look like the following:
+
+<blockquote class="mrg8">
+  <code>-p:<b>gen.refs.index</b> true</code>
+</blockquote>
+
+The parameter values specified with 
+<span class="nowrap">-<a href="#p_option">p options</a></span>
+on the Javadoc command line will override the values of those parameters found in the
+<a href="setup.html#generator.config">generator.config</a>.
+
+<h3>
+  <a name="template_params.generator_config"></a>
+  Using Doclet GUI to prepare parameters for command line
+</h3>
+
+A possibility to specify template parameters on the command line may be particularly important
+when you prepare an <a href="integrations.html#ant">Ant</a>
+or <a href="integrations.html#maven">Maven</a> build file.
+But that seems like your will have to fill your build file with lots of
+<span class="nowrap">-<a href="#p_option">p options</a></span> for all those numerous parameters. Right?
+Actually, not!
+<p class="mrg8">
+Rather than specifying all the template parameters (and other generator settings)
+directly with <a href="#options">command line options</a>, you can use <a href="#gui">Doclet GUI</a> to prepare a special 
+<a href="setup.html#generator.config"><b>generator.config</b></a> file
+and, then, provide only that file with <span class="nowrap">-<a href="#config_option">config</a></span> option.
+<p class="mrg8">
+Here is how it works, step by step:
+<ol>
+<li class="mrg8">
+  Run <a href="#running_doclet">DocFlex Doclet</a> like follows:
+  <p class="mrg8">
+  <code>javadoc ... -doclet com.docflex.javadoc.Doclet <b>-nodialog=false -config C:\project\...\myconfig.config</b> ...</code>
+  <p class="mrg8">
+  That should start the <a href="#gui">Doclet GUI</a>.
+</li>
+<li class="mrg8">
+  Edit with the <a href="#gui">GUI</a> all the settings you need (including all template parameters)
+  and click &ldquo;OK&rdquo; button in each dialog where you have changed anything.
+  That will cause all new settings to be saved in your specified config file.
+</li>
+<li class="mrg8">
+  Now, you can use that config file (with all the prepared settings) anywhere you wish (including in any 
+  <a href="integrations.html#ant">Ant</a>/<a href="integrations.html#maven">Maven</a>
+  build file) just by specifying the only option:
+  <p class="mrg8">
+  <code><b>-config C:\project\...\myconfig.config</b></code>
+</li>
+<li class="mrg8">
+  Above this, you can still use any other options 
+  (like <span class="nowrap">-<a href="#p_option">p</a></span> and <span class="nowrap">-<a href="#o_option">o</a></span>)
+  to override selectively the corresponding settings stored in the <code>myconfig.config</code>.
+</li>
+</ol>
+
+<h3>
+  <a name="template_params.standard_doclet_options"></a>
+  Setting template parameters via Standard Doclet options
+</h3>
+
+Since the version 1.6.0, DocFlex/Javadoc supports a possibility to 
+use many of
+<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#standard" target="_blank">Standard Doclet Options</a>
+along with (or instead of) the template parameters.
+<p class="mrg8">
+Such options like
+<code class="nowrap">-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#author">author</a></code> or
+<code class="nowrap">-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#splitindex">splitindex</a></code>
+can be mapped to the default values of the corresponding template parameters.
+So, by using them you actually specify again some template parameter, implicitly now.
+However, it means that whether and which Standard Doclet options are supported depends on a particular template set.
+<p class="mrg8">
+Currently, that functionality is supported only by
+&ldquo;<a href="../templates/JavadocPro/overview.html">JavadocPro</a>&rdquo;
+template set. Here you can see which Standard Doclet options can be used with it and on which template parameters
+they are mapped:
+<p class="mrg8">
+<a href="../templates/JavadocPro/overview.html#params.standard_doclet_options">DocFlex/Javadoc | JavadocPro | Template Set Overview | Specifying parameters via Standard Doclet options</a>
+
+<p>
+<table border="1" cellspacing="1" cellpadding="6">
+<tr><td bgcolor="#F5F5F5" class="inset">
+The primary reason why we needed to process
+<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#standard" target="_blank">Standard Doclet options</a>
+was because the recent versions of <a href="integrations.html#maven">Maven</a>
+always emit some of those options no matter is there a custom doclet or not. Although the Javadoc itself does not mandate
+for a custom doclet to process any Standard Doclet options, without doing something about them,
+<a href="#top">DocFlex Doclet</a> would simply fail now under
+<a href="integrations.html#maven">Maven</a>
+(because Javadoc requires for any non-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#javadocoptions" target="_blank">core option</a>
+to be recognized by the doclet).
+<p class="mrg8"></p>
+To deal with that problem, since v1.6.0, DocFlex Doclet includes a list of all possible Standard Doclet options
+(along with their parameter numbers) so as to tell Javadoc that any of such options has been recognized (in case it was fed to the doclet).
+As a by-product of this, it became possible to read those options within templates and initialize from them
+the corresponding template parameters.
+</td></tr>
+</table>
+
+<h3>
+  <a name="template_params.multivalued"></a>
+  Multi-valued (list) parameters
+</h3>
+
+Since the version 1.5.6, DocFlex/Javadoc supports multi-valued template parameters (which we shall call also 
+<i>list</i> parameters, for short).
+<p>
+List parameters allow you to pass into template the whole vector of different values associated with the same 
+parameter name.
+This provides a universal mechanism for implementing a user control over how a set of templates 
+processes a certain type of data (or situations) that may come in unlimited number of variations.
+<p>
+<table border="1" cellspacing="1" cellpadding="6">
+<tr><td bgcolor="#F5F5F5" class="inset">
+Before this, such functionality was actually emulated with a string parameter, whose value
+was expected to contain separate items delimited with a special character 
+(e.g. semicolon). That representation was parsed in a template so as to produce from it
+an array of values that could be used in further processing.
+For example, so was implemented (before v1.5.6) the processing of
+<a href="../templates/javadoc/overview.html#param.exclude.byTags.classes">exclude.byTags.classes</a>
+and
+<a href="../templates/javadoc/overview.html#param.omit.packageQualifiers.for">omit.packageQualifiers.for</a>
+parameters of the basic template set.
+</td></tr>
+</table>
+<p>
+Now, the parameter inspector also represents the whole value of a list parameter as a concatenation 
+of all value items (represented as strings) delimited with a separator character.
+However, there is no need any longer to process that string representation within a template.
+Rather, it will be parsed automatically by the 
+<a href="../about.html#generator">Generator</a>
+(as well as the parameter inspector ensures its integrity).
+
+<h4>
+  <a name="template_params.multivalued.gui"></a>
+  Specifying list value in Parameter Inspector
+</h4>
+
+In Parameter Inspector dialog, the entite list parameter value is displayed as a single string
+in the value field of the inspector row, where you can edit it as well:
+<blockquote>
+  <img src="images/list_param_value.png" title="editing a list parameter inside the inspector row">
+</blockquote>
+
+Additionally, the list value can be edited as a multi-line text in a special dialog
+(invoked by the ellipsis button):
+
+<blockquote>
+  <img src="images/list_param_value_edit.png" title="editing a list parameter in a separate dialog">
+</blockquote>
+
+At that, when the allowed value item separators include <code>newline</code>,
+all currently used separators will be replaced with it so as to show each value item 
+on a different line.
+When the editing in this dialog is finished, all <code>newline</code>-separators will be
+automatically replaced with another available separator suitable for single-line
+representation.
+<p>
+<a name="template_params.multivalued.separators"></a>
+You can see all available value item <b>separator characters</b> in the 
+&ldquo;Parameter Description&rdquo; window, when the list parameter is selected:
+<blockquote>
+  <img src="images/list_param_descr.png" title="parameter properties and description">
+</blockquote>
+
+The separators are specified in the template along with the parameter definition.
+
+<h4>
+  <a name="template_params.multivalued.escapes"></a>
+  Using escapes
+</h4>
+
+When the characters recognized as value item separators 
+may also appear within the value items themselves, 
+the list parameter may be defined so as to recognize escapes. 
+In that case, each separator character can be equally 
+used within value items if escaped with a backslash.
+For example, given that <code>';'</code> is a separator,
+the following value item:
+<blockquote class="mrg8">
+  <code>my;odd;tag</code>
+</blockquote>
+can be specified like this:
+<blockquote class="mrg8">
+  <code>my\;odd\;tag</code>
+</blockquote>
+
+If a backslash is not consumed by an escape it will be remained in the text as is.
+To make sure that a backslash is not part of some escape, you may add another backslash.
+A sequence of two backslashes (<code>"\\"</code>) is an escape itself, which represents a single backslash. 
+This is important because backslashes may be used also in a secondary system of escapes
+within value items, which is specific to the given parameter.
+<p>
+When the escapes are recognized, the sequence <code>"\n"</code> 
+is reserved to encode a <code>newline</code> character.
+The encoding of <code>newline</code> may be needed, for instance, 
+when it is used not as a value item separator, but rather within multi-line content 
+of value items themselves. In that case, the <code>"\n"</code> escape allows flattening
+the entire list value into a single line. This may be particularly important
+for specifying the list parameter on the <a href="#options">command line</a> (see also below).
+<p>
+Some list parameters can be specified to ignore escapes. This may be needed when 
+backslashes must be frequently used within value items. (For example, the parameter
+will accept a list of Windows file pathnames.)
+<p>
+All possible escapes related to specifying of the value of a list parameter 
+as a whole can be found in the &ldquo;Parameter Description&rdquo; window.
+<p>
+As an example of extensive usage of escapes, see description
+of
+<code><a href="../templates/javadoc/overview.html#param.include.tag.custom">include.tag.custom</a></code>
+parameter of the basic template set.
+
+<h4>
+  <a name="template_params.multivalued.cmdline"></a>
+  Specifying list parameter on command line
+</h4>
+
+To specify a list parameter on Javadoc command-line you should encode
+the entire list value into a single string (using the value item
+<a href="#template_params.multivalued.separators">separators</a> and possibly 
+<a href="#template_params.multivalued.escapes">escapes</a>) and provide
+that string as a -<a href="#p_option">p option</a> argument.
+<p>
+For example, suppose you need to pass into a template the list parameter 
+<code><a href="../templates/javadoc/overview.html#param.include.tag.custom">include.tag.custom</a></code>
+with three value items:
+<blockquote>
+<code>
+prjtype:a:Project Type:<br>
+todo:cmf:To Do:<br>
+priority:cmf:Priority
+</code>
+</blockquote>
+
+You can do this using a single command line option
+(given that <code>';'</code> is a value item separator):
+<blockquote>
+<code>
+-p:include.tag.custom "prjtype:a:Project Type:;todo:cmf:To Do:;priority:cmf:Priority" 
+</code>
+</blockquote>
+(The quotes are needed here because the full parameter value contains spaces
+and must be treated as a single command-line argument.)
+<p>
+Alternatively, you can pass the same list value using multiple 
+-<a href="#p_option">p options</a>, each one for a separate value item. e.g.:
+<blockquote>
+<code>
+-p:include.tag.custom "prjtype:a:Project Type:"
+-p:include.tag.custom "todo:cmf:To Do:" 
+-p:include.tag.custom priority:cmf:Priority
+</code>
+</blockquote>
+
+You can even combine the two approaches simultaneously:
+<blockquote>
+<code>
+-p:include.tag.custom "prjtype:a:Project Type:;todo:cmf:To Do:" 
+-p:include.tag.custom priority:cmf:Priority
+</code>
+</blockquote>
+
+Multiple options specifying the same list parameter
+can be mixed with other options on command line.
+However, the order in which the parameter options follow is important,
+because it defines the ordering of the list value items received by the template.
+
+<h2>
+  <a name="generation_phases"></a>
+  4.&nbsp; Generation phases
+</h2>
+
+DocFlex generates the whole documentation in two phases:
+<i>estimation phase</i> and <i>generation phase</i>.
+<p>
+In the <i><b>estimation phase</b></i>, the generator quickly passes
+over all the source data and partially interprets the involved templates.
+During that, it collects the names and location of all documentation files
+to be created and all possible hypertarget locations within them. It also
+makes an estimation of the total generation time in order to graduate
+the progress.
+<p>
+During the estimation phase, only the message
+<i>"Scanning data source, please wait..."</i> is displayed on the
+<a href="#gui">generator dialog</a>'s progress bar (or printed on console).
+Please note, the estimation phase may take some time!
+On a huge project (plus a slow computer), it may last several minutes.
+This does not mean, the generator hangs. Please wait!
+<p>
+During the <i><b>generation phase</b></i>, all template components are
+being fully interpreted and the real output generated. The progress bar is alive
+and shows what's being generated at the particular moment.
+Without <a href="#gui">Doclet GUI</a>, an estimated percent of the finished output
+will be periodically printed.
+
+<h2>
+  <a name="error_report"></a>
+  5.&nbsp; Error reporting
+</h2>
+
+Both the DocFlex <a href="../about.html#generator">Generator</a>
+and the <a href="../about.html#template_designer">Template Designer</a>
+may encounter various unexpected error situations.
+During the generation, the unexpected errors and exceptions may arise
+because of the following reasons:
+<ol>
+<li>
+  I/O errors (e.g. invalid file pathnames, disk full, etc.)
+</li>
+<li>
+  Template errors (when something is improperly specified in templates).
+</li>
+<li>
+  Data source exceptions (in the case of
+  <a href="../about.html">DocFlex/Javadoc</a>,
+  these may be exceptions thrown by the
+  <a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/" target="_blank">Doclet API</a>).
+</li>
+<li>
+  DocFlex core exceptions (may be caused by bugs not discovered and fixed yet).
+</li>
+</ol>
+
+DocFlex tries to catch all such errors/exceptions and report about them along
+with the full diagnostics possible (i.e. where exactly and how the error has happened).
+<p>
+When the <a href="#gui">Generator Dialog</a> is enabled,
+any error is reported via the error message dialog, like the one shown on the screenshot:
+<blockquote>
+  <img src="images/err_dialog.png" title="Error Message Dialog">
+</blockquote>
+
+The error dialog shows brief information about the error.
+When more details are available, a full ERROR REPORT is created and dumped to the system clipboard.
+You can easily extract it (e.g. under MS Windows, just run <b>Notepad</b> and press <b>Ctrl+V</b>).
+<p>
+The detailed <b>ERROR REPORT</b> includes:
+<ul>
+<li>The general info about JVM, OS, command-line arguments, etc.</li>
+<li>All available error messages.</li>
+<li>
+  The Template Location Trace that shows which precisely template component was being interpreted
+  when the error happened.
+</li>
+<li>The Java Exception Stack Trace (when the error was caused by some unexpected Java exception).</li>
+</ul>
+
+When the <a href="../about.html#doclet">DocFlex Doclet</a>
+is executed without GUI (-<a href="#nodialog_option">nodialog</a> option is specified
+on the Javadoc command line), by default, all exception/error details are printed 
+to the standard console.
+However, using -<a href="#errlog_option">errlog</a> option, you can specify a separate error log file.
+In that case, the detailed ERROR REPORT will be dumped in that file; only brief messages will get on the console.
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2003-2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

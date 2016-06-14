@@ -1,0 +1,31 @@
+
+## Notes about points to make
+
+- A Series must be appended in the _series_ Chart array configuration.
+Most of the series ref pages mention this but I don't see it in any of the examples
+or maybe I don't know what I'm looking at...
+- Minumum/maximum values cause values to be bound.  If no values are set,
+then the scale auto-adjusts to the values.
+You can set just the minimum value to 0
+to ensure that the grid starts at 0
+even if all Series have values greater than 0.
+- Talk about renderers
+- Talk about mouseup, mousedown, etc.  These are Listeners,
+described on Ext.chart.series.Series page
+- Setting axis: [`left`,`bottom`] for each series config might be necessary
+for Time axis.  From comment in Ext.chart.axis.Time -- guy had Time axis on
+bottom, Numeric axis on the left, line series.
+- Discuss groupBy and aggregateOp configs.
+From comment to Ext.chart.axis.Time.
+- Passing Series instances instead of config objects is supported
+- or rather, was until 4.1.2 - and so this regression got to be fixed.
+(from hipchat discussion 4/9 on Ext JS)
+- Talk about animation with different Series
+- Explain why scatter does not disappear and reappear similar to line
+(comment to Ext.chart.series.Scatter)
+- How to do a "trend line" for scatter plots
+(comment to Ext.chart.series.Scatter)
+- Time axes vs. using timestamps on a Category axis.
+- Explain Sprites; they allow you to customize the Charts
+through the "renderer" functions
+(hooks in the drawing code that allow the apps to override the default behavior).

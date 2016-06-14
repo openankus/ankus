@@ -1,0 +1,28 @@
+// Styles for filters feature/range menu
+// TODO: refactor ux as a cmd package so these styles can be automatically included.
+.ux-rangemenu-icon {
+  display: block;
+  height: 16px;
+  background: no-repeat 5px center;
+}
+
+.ux-rangemenu-gt {
+  background-image: url(images/grid/greater_than.png) !important;
+}
+
+.ux-rangemenu-lt {
+  background-image: url(images/grid/less_than.png) !important;
+}
+
+.ux-rangemenu-eq {
+  background-image: url(images/grid/equals.png) !important;
+}
+
+.ux-filtered-column {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.ux-gridfilter-text-icon {
+  background-image: url(images/grid/find.png) !important;
+}

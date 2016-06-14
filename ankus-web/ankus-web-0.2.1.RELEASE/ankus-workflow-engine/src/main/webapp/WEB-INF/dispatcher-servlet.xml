@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+
+    <!-- ========================= COMPONENT SCAN DEFINITION ========================= -->
+
+    <context:component-scan base-package="org.openflamingo.engine"/>
+    <context:component-scan base-package="org.openflamingo.collector"/>
+    <context:component-scan base-package="org.openflamingo.fs.audit"/>
+    <context:component-scan base-package="org.openflamingo.locale"/>
+
+    <context:annotation-config/>
+
+    <!-- ========================= MVC DEFINITION ========================= -->
+
+    <mvc:annotation-driven content-negotiation-manager="contentNegotiationManager"/>
+
+    <!-- ========================= VIEW RESOLVER ========================= -->
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!-- ========================= REST DEFINITION ========================= -->
+
+    <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="defaultContentType" value="application/xml"/>
+        <property name="favorPathExtension" value="true"/>
+        <property name="favorParameter" value="false"/>
+        <property name="parameterName" value="type"/>
+        <property name="ignoreAcceptHeader" value="false"/>
+        <property name="useJaf" value="false"/>
+        <property name="mediaTypes">
+            <map>
+                <entry key="json" value="application/json"/>
+                <entry key="xml" value="application/xml"/>
+            </map>
+        </property>
+    </bean>
+
+    <!-- ========================= EXCEPTION RESOLVER DEFINITION ========================= -->
+
+    <bean id="exceptionResolverComposite"
+          class="org.springframework.web.servlet.handler.HandlerExceptionResolverComposite">
+        <property name="exceptionResolvers">
+            <list>
+                <bean id="exceptionResolver"
+                      class="org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver">
+                    <property name="contentNegotiationManager" ref="contentNegotiationManager"/>
+                </bean>
+            </list>
+        </property>
+        <property name="order" value="0"/>
+    </bean>
+
+    <!-- ========================= MESSAGE CONVERTER DEFINITION ========================= -->
+
+    <bean id="jsonMediaType" class="org.springframework.http.MediaType">
+        <constructor-arg value="application"/>
+        <constructor-arg value="json"/>
+    </bean>
+
+    <bean id="xmlMediaType" class="org.springframework.http.MediaType">
+        <constructor-arg value="application"/>
+        <constructor-arg value="xml"/>
+    </bean>
+
+    <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <util:list>
+                <ref bean="jsonMediaType"/>
+            </util:list>
+        </property>
+    </bean>
+
+    <bean id="stringHttpMessageConverter" class="org.springframework.http.converter.StringHttpMessageConverter">
+        <constructor-arg type="java.nio.charset.Charset">
+            <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+                <property name="staticMethod" value="java.nio.charset.Charset.forName"/>
+                <property name="arguments">
+                    <list>
+                        <!-- Set Default Charset -->
+                        <bean class="java.lang.String">
+                            <constructor-arg value="UTF-8"/>
+                        </bean>
+                    </list>
+                </property>
+            </bean>
+        </constructor-arg>
+
+        <property name="supportedMediaTypes">
+            <util:list>
+                <ref bean="jsonMediaType"/>
+                <ref bean="xmlMediaType"/>
+            </util:list>
+        </property>
+    </bean>
+
+    <!-- ========================= REST TEMPLATE DEFINITION ========================= -->
+
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+        <property name="messageConverters">
+            <list>
+                <ref bean="jsonConverter"/>
+                <ref bean="stringHttpMessageConverter"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,30 @@
+This parameter allows you to specify precisely which class members (fields & methods) should be documented.
+<p>
+The annotation types specified in this parameter are treated as follows.
+<p>
+A class <b>member</b> is included in the documentation only
+when it has an annotation of one of the specified types.
+<p>
+<b>Note:</b> When the class containing such a member must be excluded,
+the member itself may still appear in the documentation.
+If that class has subclasses to be documented, the member will be shown as if it belongs
+to those of them, which are the nearest descendants of the member's original class.
+
+<table border="1" style="margin-top:12pt;margin-bottom:12pt">
+<tr><td><font face="Dialog" size="-1">
+When you specify this parameter, the condition above is only necessary for a member
+to be actually included in the documentation scope. Using other <i>include/exclude</i> parameters,
+you can limit which members are included even further!
+</font>
+</td></tr>
+</table>
+
+Each annotation type must be specified with its <b>fully qualified name</b> (e.g. <code>java.lang.Deprecated</code>).
+Multiple annotation type names must be separated with new lines ('\n'), semicolons (';') or colons (':').
+For example:
+<dl><dd>
+<code>
+  my.core.util.Public<br>
+  my.project.api.Include
+</code>
+</dd></dl>

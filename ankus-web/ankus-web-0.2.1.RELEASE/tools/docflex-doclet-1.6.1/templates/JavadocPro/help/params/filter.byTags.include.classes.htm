@@ -1,0 +1,25 @@
+With this parameter you can explicitly identify classes to be documented,
+while keeping in the documentation some of the fields and methods defined in the classes to be excluded.
+<p>
+The tags specified in this parameter are treated as follows.
+<p>
+A <b>class</b> is included in the documentation only when it has one of the specified tags.
+<p>
+Each <b>inheritable member</b> of any excluded class, which has subclasses to be documented,
+will be shown as if it belongs to those of them that are the nearest descendants of the member's original class.
+
+<table border="1" style="margin-top:12pt;margin-bottom:12pt">
+<tr><td><font face="Dialog" size="-1">
+When you specify this parameter, the criteria above are only necessary for a class or member to be actually
+included in the documentation scope. However, they do not guarantee it.
+Using other <i>include/exclude</i> parameters, you can limit the documentation scope even further!
+</font>
+</td></tr>
+</table>
+
+The multiple exclude-tag names must be separated with new lines ('\n'), semicolons (';') or colons (':').
+For example:
+<dl><dd><code>
+  @api<br>
+  @include
+</code></dd></dl>

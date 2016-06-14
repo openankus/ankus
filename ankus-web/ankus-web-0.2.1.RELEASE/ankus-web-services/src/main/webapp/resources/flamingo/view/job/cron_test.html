@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Flamingo</title>
+    <link type="text/css" rel="stylesheet" href="../../lib/ext-4.2.1.883/resources/css/ext-all-gray.css">
+    <link type="text/css" rel="stylesheet" href="../../css/flamingo-gray.css">
+
+    <!-- ExtJS & Locale -->
+    <script type="text/javascript" src="../../lib/ext-4.2.1.883/ext-all.js"></script>
+    <script type="text/javascript" src="../../lib/ext-4.2.1.883/locale/ext-lang-en.js"></script>
+
+    <script type="text/javascript" src="../../lib/jquery-1.10.2.min.js"></script>
+
+    <!-- Flamingo Utility -->
+    <script type="text/javascript" src="../../lib/flamingo/Flamingo.Ajax.js"></script>
+    <script type="text/javascript" src="../../lib/flamingo/Flamingo.Util.js"></script>
+
+    <!-- ExtJS Application -->
+    <!--<script type="text/javascript" src="app.js"></script>-->
+
+    <script type="text/javascript">
+        Ext.tip.QuickTipManager.init();
+
+        Ext.Loader.setConfig({
+            enabled: true,
+            paths: {
+                'Ext.ux': '../../lib/ext-4.2.1.883/examples/ux',
+                'Job': '../job'
+            }
+        });
+
+        Ext.require([
+            'Job.view.CronTriggerPanel'
+        ]);
+        Ext.onReady(function () {
+            var popWindow = Ext.create('Ext.Window', {
+                title: 'Job Scheduling',
+                modal: true,
+                border: false,
+                layout: 'fit',
+                items: [
+                    {
+                        xtype: 'cronTrigger',
+                        border: true,
+                        value: '0 * * * * ? *',
+                        buttons: [
+                            {
+                                text: 'OK',
+                                iconCls: 'common-confirm',
+                                formBind: true,
+                                handler: function () {
+                                    // sample
+                                    var cronTrigger = popWindow.down('cronTrigger');
+                                    var prompt = window.prompt('현재 Cron Expression 은 \'' + cronTrigger.getValue() + '\' 입니다.\n' +
+                                            '\'확인\' 을 누르면 \'0 15 10 ? * 6L 2002-2005\' 로 UI 를 설정합니다.', '0 15 10 ? * 6L 2002-2005');
+                                    if (prompt) {
+                                        cronTrigger.setValue(prompt);
+                                    }
+                                }
+                            },
+                            {
+                                text: 'Cancel',
+                                iconCls: 'common-cancel',
+                                handler: function () {
+//                                  popWindow.close();
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }).show();
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="content-body"></div>
+</body>
+</html>

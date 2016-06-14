@@ -1,0 +1,21 @@
+This group of parameters allows you to filter classes and members by tags.
+You can identify classes and members to be documented both:
+<ul>
+<li>Explicitly -- those that are marked with <i>including tags</i></li>
+<li>Implicitly -- those that are not marked with the <i>excluding tags</i></li>
+</ul>
+
+<table border="1" style="margin-top:12pt;margin-bottom:12pt">
+<tr><td style="font-family: Dialog; font-size:12pt">
+Note that since any tags are embedded in Java doc comments,
+they are not stored in the compiled Java code.
+So, you can filter by tags only classes and members whose Java sources 
+have been specified on the Javadoc command line (with
+<code>-<a href="http://download.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#sourcepath">sourcepath</a></code>
+option or directly).
+<p style="margin-top:10pt">
+If you need to filter anything contained in the compiled object code,
+use filtering by annotations instead (see 
+<i>"Filter Classes & Members | By Annotations"</i> parameter group)
+</td></tr>
+</table>

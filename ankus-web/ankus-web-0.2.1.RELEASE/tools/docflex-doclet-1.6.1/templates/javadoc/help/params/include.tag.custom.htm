@@ -1,0 +1,216 @@
+This parameter duplicates the functionality of the <b><code>-tag</code></b> option supported by the <b>Standard Doclet</b>.
+<p>
+It allows you to include in the generated output the documentation of your custom tags, specify the tag headings as well as their ordering. You will be able also to redefine the headings and ordering of the standard tags (such as @param, @see, @author etc).
+<p>
+This parameter accepts multiple (list) value. Each value item specifies how a single tag should be documented.
+
+<h2>Specifying Single Tag</h2>
+
+Documenting of a single tag is specified with the following expression:
+<dl><dd>
+<code><i>tagname</i>:Xaoptcmf:<i>taghead</i></code>
+</dd></dl>
+The <code><b><i>tagname</i></b> </code>is the name of the tag for which this setting applies. 
+The <code><b><i>taghead</i></b> </code>is the heading for the tag documentation. Omitting <code><i>taghead</i></code> causes <code><i>tagname</i></code> to be used as the heading (unless this is a standard tag). If the tag has no text (specified in the Java comment), only the heading will appear in the generated output.
+<p>
+The<code> <b>Xaoptcmf</b></code> part determines the locations in the source code where the tag is to be processed/documented. Each letter specify possible tag locations according to this table:
+<br><br>
+<table border="1">
+<tr bgcolor="#CCCCEE">
+  <td align="center"><b>Letter</b></td>
+  <td align="center"><b>Meaning / Location</b></td>
+</tr>
+<tr valign="top">
+<td align=center><code>X</code></td>
+<td>
+Rather than including the tag, this letter indicates that the tag should be ignored in the specified locations. For example, specifying
+<blockquote>
+<code>see:X</code>
+</blockquote>
+will suppress documenting of all <code>@see</code> tags. However,
+<blockquote>
+<code>see:Xf</code>
+</blockquote>
+suppresses <code>@see</code> tags only for fields.
+</td>
+</tr>
+<tr valign="top">
+<td align=center><code>a</code></td>
+<td>
+all locations
+</td>
+</tr>
+<tr valign="top">
+<td align=center><code>o</code></td>
+<td>
+project overview
+</td>
+</tr>
+<tr valign="top">
+<td align=center><code>p</code></td>
+<td>
+packages overviews
+</td>
+</tr>
+<tr valign="top">
+<td align=center><code>t</code></td>
+<td>
+types (that is classes and interfaces)
+</td>
+</tr>
+<tr valign="top">
+<td align=center><code>c</code></td>
+<td>
+constructors
+</td>
+</tr>
+<tr valign="top">
+<td align=center><code>m</code></td>
+<td>
+methods
+</td>
+</tr>
+<tr valign="top">
+<td align=center><code>f</code></td>
+<td>
+fields
+</td>
+</tr>
+</table>
+<p>
+<u>Examples</u>:
+<p>
+The following parameter value item:
+<dl><dd>
+<code>threadsafe:a:Can be called safely from multiple threads</code>
+</dd></dl>
+specifies a custom <code>@threadsafe</code> tag to be documented anywhere it is used with the heading message: 
+<dl><dd>
+<b>Can be called safely from multiple threads</b>
+</dd></dl>
+The following value item specifies that <code>@todo</code> tag should be processed only with constructors, methods and fields: 
+<dl><dd>
+<code>todo:cmf:To Do:</code>
+</dd></dl>
+Notice the last colon (:) above is not a separator, but is part of the heading text (as shown below). You would use either tag option for source code that contains the tag @todo, such as: 
+<dl><dd>
+<code>@todo The documentation for this method needs work.</code>
+</dd></dl>
+This line would produce output something like: 
+<dl><dd>
+<b>To Do:</b> 
+<blockquote>
+The documentation for this method needs work. 
+</blockquote>
+</dd></dl>
+
+<u>Use of Colon in Tag Name</u>
+<p>
+A colon can be used in a tag name if it is escaped with a backslash. For this doc comment: 
+<blockquote>
+<pre><code>
+/**
+ * @ejb:bean
+ */
+</code></pre>
+</blockquote>
+use the following setting of the parameter value: 
+<blockquote>
+<pre><code>
+ejb\:bean:a:EJB Bean:
+</code></pre>
+</blockquote>
+
+<h2>Specifying Multiple Tags</h2>
+
+Documenting of different tags should be specified in different items of the whole parameter value.
+Each value item should define how to document a single tag as described above. The items must be separated with one of the allowed item separator characters (<code>newline</code> or <code>';'</code>). 
+<p>
+<u>Example</u>:
+
+<dl><dd>
+<pre><code>
+ejb\:bean:a:EJB Bean:
+todo:cmf:To Do:
+</code></pre>
+</dd></dl>
+
+or the same as a single line:
+
+<dl><dd>
+<pre><code>
+ejb\:bean:a:EJB Bean:;todo:cmf:To Do:
+</code></pre>
+</dd></dl>
+
+The last form can be used to specify both tags on the Javadoc command line:
+
+<dl><dd>
+<code>
+<b>-p:include.tag.custom</b> "ejb\:bean:a:EJB Bean:;todo:cmf:To Do:"
+</code>
+</dd></dl>
+
+(Note: Because the full parameter value here contains spaces, it is enclosed in quotes in order to make it treated as a single command-line argument.)
+<p>
+The same can be also specified with two <code>-p</code> options:
+
+<dl><dd>
+<code>
+-p:include.tag.custom "ejb\:bean:a:EJB Bean:"
+-p:include.tag.custom "todo:cmf:To Do:"
+</code>
+</dd></dl>
+Each <code><b>-p</b></code> option adds a separate value item to <code>'include.tag.custom'</code> parameter.
+
+<p>
+<u>Tag Ordering</u>
+<p>
+
+The tags will appear in the output documentation in the same order as they are specified in the value items of this parameter. For instance, in the example above, the documentation of <code>'@ejb:bean'</code> tag will be followed by the documentation of <code>'@todo'</code> tag.
+<p>
+Using this parameter, you can also redefine the ordering of the standard tags, for example:
+<dl><dd>
+<code>
+version;todo:cmf:To Do:;see
+</code>
+</dd></dl>
+This setting says that @version tag should be documented before the custom @todo tag followed by the documentation of @see tags.
+<p>
+Any other standard tags will be documented as usual in a certain some predefined order before the tags specified in this parameter.
+
+<h2>Using Escapes</h2>
+
+Each character that serves as a value item separator can be equally used within the value items if escaped with a backslash. For example, documenting of the tag:
+<dl><dd>
+<code>
+@my;odd;tag
+</code>
+</dd></dl>
+can be specified like this:
+<dl><dd>
+<code>
+my\;odd\;tag:a:My odd tag:
+</code>
+</dd></dl>
+
+If a backslash is not consumed by an escape it will be remained in the text as is. To make sure that a backslash is not part of some escape, you may add another backslash. A sequence of two backslashes (<code>"\\"</code>) is an escape by itself, which represents a single backslash. 
+This is important because backslashes may be used also in a secondary system of escapes (e.g. to escape <code>':'</code> within the tag name).
+<p>
+For example, a string like this:
+<dl><dd>
+<code>
+my\;odd\;tag:a:\My Odd Title:\\;ejb\:bean:a:EJB Bean:
+</code>
+</dd></dl>
+will be initially processed and broken into two value items:
+<dl><dd>
+<pre><code>
+my;odd;tag:a:\My Odd Title\
+ejb\:bean:a:EJB Bean:
+</code></pre>
+</dd></dl>
+
+then, processed further to document all <code>'@my;odd;tag'</code> tags 
+with <i>"\My Odd Title\"</i> title and all <code>'@ejb:bean'</code> tags with
+<i>"EJB Bean:"</i> title.

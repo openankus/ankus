@@ -1,0 +1,12 @@
+Allows to suppress generation of lists of the inner classes, fields or methods inherited from those classes/interfaces, which belong to the packages specified with this parameter.
+<p>
+This parameter may be especially useful to suppress long lists of  the class members inherited from the standard Java API classes and, in such a way, to considerably reduce the output documentation.
+<p>
+The packages, whose classes/inerfaces should not appear
+in the "inherited from ..." lists, are specified as the list of the package name prefixes delimited with new lines ('\n'), semicolons (;) or colons (:).
+<p>
+For example, the following will exclude lists of the members inherited from most of the standard Java API classes:
+<blockquote><pre><code>
+java.lang.
+javax.swing.
+</code></pre></blockquote>

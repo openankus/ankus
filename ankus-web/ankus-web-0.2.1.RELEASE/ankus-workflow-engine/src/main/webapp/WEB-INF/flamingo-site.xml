@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://www.openflamingo.org/schema/configuration">
+
+    <property>
+        <name>application.locale</name>
+        <value>English</value>
+        <description>Application Locale. If it's changed, log messages are also changed. Currently Korean and English
+            are supported.
+        </description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>hive.query.simultaneously.per.user</name>
+        <value>3</value>
+        <description>Allowed number of simultaneous Hive query executions per user.</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>hive.query.execute.user</name>
+        <value>root</value>
+        <description>Name of user who sends Hive query to Hive Server. If this user name is different, Hive query won't
+            be executed.
+        </description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>monitoring.system.path</name>
+        <value>/tmp/monitoring/system</value>
+        <description>Path to save the system monitoring information</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>monitoring.engine.path</name>
+        <value>/tmp/monitoring/engine</value>
+        <description>Path to save the engine monitoring information</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>monitoring.hadoop.path</name>
+        <value>/tmp/monitoring/hadoop</value>
+        <description>Path to save Hadoop monitoring information</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>hive.query.log.path</name>
+        <value>/tmp/hive</value>
+        <description>Hive Editor's user logs</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>file.system.user.home</name>
+        <value>/users</value>
+        <description>user's home directory</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>action.log.max.size</name>
+        <value>102400</value>
+        <description>Max log size when loading actions</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>working.path</name>
+        <value>/tmp</value>
+        <description>Path to save logs for actions</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>system.temporary.path</name>
+        <value>/tmp</value>
+        <description>Temporary path where Flamingo Workflow Engine uses</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>artifact.caching</name>
+        <value>true</value>
+        <description>Options for caching whether to save artifacs such as MapReduce jar files. If it's on, caching is
+            enabled so it might slow down.
+        </description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>artifact.cache.path</name>
+        <value>/tmp/cache</value>
+        <description>Path where artifacs such as MapReduce JAR files are saved.</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>maven.repository.url</name>
+        <value>http://www.openankus.org:8081/nexus/content/repositories/ankus</value>
+        <!--<value>http://maven.opencloudengine.org/content/groups/public</value>-->
+        <description>Maven Remote Repository URL</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>hadoop.user.name</name>
+        <value></value>
+        <description>System user account for Hadoop Security</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>java.home</name>
+        <value>/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home</value>
+        <description>JDK path</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>hadoop.home</name>
+        <value>/Users/suhyunjeon/usr/local/hadoop</value>
+        <description>Hadoop home directory.</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>pig.home</name>
+        <value>/Users/suhyunjeon/usr/local/pig</value>
+        <description>Apache Pig installation path.</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>hive.home</name>
+        <value>/usr/local/java/hive</value>
+        <description>Apache Hive installation path.</description>
+        <expose>false</expose>
+    </property>
+
+</configuration>

@@ -1,0 +1,235 @@
+<configuration xmlns="http://www.openflamingo.org/schema/configuration">
+
+    <description>
+        Flamingo Hadoop Manager의 기본 설정 파일이다. 이 설정 파일 내부에서 ${}을 이용하여 EL을 사용할 수 있다.
+        EL의 적용 범위는 이 설정 파일 내부에만 사용 가능하다.
+    </description>
+
+    <hadoop>
+        <cluster name="Default">
+            <fs.default.name>hdfs://localhost:9000</fs.default.name>
+            <mapred.job.tracker>localhost:9001</mapred.job.tracker>
+            <description>Development Hadoop Cluster for Test</description>
+            <properties>
+                <property>
+                    <name>mapred.reduce.task</name>
+                    <value>10</value>
+                    <description>기본 Reduce Task의 개수</description>
+                    <expose>true</expose>
+                </property>
+            </properties>
+        </cluster>
+    </hadoop>
+
+    <property>
+        <name>default.date.pattern</name>
+        <value>yyyy-MM-dd HH:mm:ss</value>
+        <description>시스템에서 사용하는 기본 Date Pattern</description>
+        <expose>true</expose>
+    </property>
+
+    <property>
+        <name>maven.repository.url</name>
+        <value>http://nexus.openflamingo.org/content/groups/public</value>
+        <description>MapReduce JAR 및 Dependency를 다운로드 하기 위한 Maven Repository URL</description>
+        <expose>true</expose>
+    </property>
+
+    <property>
+        <name>maven.local.repository.path</name>
+        <value>/Users/kimbyounggon/.m2/repository</value>
+        <description>Maven의 Local Repository Path</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>dashboard.date.pattern</name>
+        <value>Y-m-d</value>
+        <description>Dashboard의 날짜 조회시 사용하는 ExtJS의 Date Pattern</description>
+        <expose>true</expose>
+    </property>
+
+    <property>
+        <name>dashboard.summary.days</name>
+        <value>3</value>
+        <description>Dashboard에서 워크플로우 요약정보를 보여줄때 요약정보를 처리하는 기간. (현재날짜 기준으로 n일전)</description>
+        <expose>true</expose>
+    </property>
+
+    <property>
+        <name>hdfs.browser.file.threshold</name>
+        <value>999999</value>
+        <description>HDFS Browser의 파일 목록에서 파일의 크기를 Human Readable Value로 변경하기 위한 임계치</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>hdfs.browser.file.timestamp</name>
+        <value>${default.date.pattern}</value>
+        <description>HDFS Browser의 파일 목록에서 파일의 시간을 표현하기 위해서 사용하는 Date Pattern</description>
+        <expose>true</expose>
+    </property>
+
+    <property>
+        <name>hdfs.browser.show.wait</name>
+        <value>false</value>
+        <description>HDFS Browser에서 디렉토리를 선택할 때 마다 나타나는 wait dialog를 표시할지 여부</description>
+        <expose>true</expose>
+    </property>
+
+    <property>
+        <name>hdfs.browser.upload.timeout</name>
+        <value>300</value>
+        <description>HDFS Browser에서 파일 업로드시 적용할 Upload Timeout</description>
+        <expose>true</expose>
+    </property>
+
+    <property>
+        <name>hdfs.browser.exclude.directory.ant.pattern</name>
+        <value>/tmp,/tmp/**/*</value>
+        <description>HDFS Browser에서 화면에 표시하지 않을 디렉토리 패턴</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>hdfs.browser.exclude.file.ant.pattern</name>
+        <value>_SUCCESS</value>
+        <description>HDFS Browser에서 화면에 표시하지 않을 파일의 패턴</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>hadoop.monitoring.timestamp</name>
+        <value>${hdfs.browser.file.timestamp}</value>
+        <description>Hadoop Monitoring 화면에서 화면에 정보를 표시할 때 사용하는 Timestamp Pattern</description>
+        <expose>true</expose>
+    </property>
+
+    <property>
+        <name>EL.constants</name>
+        <value>
+            KB=org.openflamingo.manager.el.ELConstantsFunctions#KB,
+            MB=org.openflamingo.manager.el.ELConstantsFunctions#MB,
+            GB=org.openflamingo.manager.el.ELConstantsFunctions#GB,
+            TB=org.openflamingo.manager.el.ELConstantsFunctions#TB,
+            PB=org.openflamingo.manager.el.ELConstantsFunctions#PB,
+            MINUTES=org.openflamingo.manager.el.ELConstantsFunctions#MINUTES,
+            HOURS=org.openflamingo.manager.el.ELConstantsFunctions#HOURS,
+            DAYS=org.openflamingo.manager.el.ELConstantsFunctions#DAYS
+        </value>
+        <description>콤마로 구분하는 EL 상수 선언, 형식 [PREFIX:]NAME=CLASS#CONSTANT.</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>EL.functions</name>
+        <value>
+            firstNotNull=org.openflamingo.manager.el.ELConstantsFunctions#firstNotNull,
+            concat=org.openflamingo.manager.el.ELConstantsFunctions#concat,
+            trim=org.openflamingo.manager.el.ELConstantsFunctions#trim,
+            timestamp=org.openflamingo.manager.el.ELConstantsFunctions#timestamp,
+            urlEncode=org.openflamingo.manager.el.ELConstantsFunctions#urlEncode,
+        </value>
+        <description>콤마로 구분하는 EL 함수 선언, 형식 [PREFIX:]NAME=CLASS#METHOD.</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>system.temporary.path</name>
+        <value>/Users/fharenheit/temp</value>
+        <description>시스템 동작시 필요한 임시 디렉토리</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>action.log.path</name>
+        <value>/Users/fharenheit/temp/action_log</value>
+        <description>Action Log 파일을 저장하기 위한 기준 경로</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>hadoop.xml.validation</name>
+        <value>false</value>
+        <description>Hadoop Configuration XML이 CLASSPATH에서 존재하는지 확인하는 옵션</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>hadoop.home</name>
+        <value>/Users/suhyunjeon/usr/local/hadoop</value>
+        <description>Hadoop 홈 디렉토리로써 이 값이 잘못되면 MapReduce 관련 모든 동작이 정상적으로 실행되지 않는다.</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>pig.home</name>
+        <value>/usr/local/java/pig-0.10.0</value>
+        <description>Pig 홈 디렉토리로써 이 값이 잘못되면 Pig 관련 모든 동작이 정상적으로 실행되지 않는다.</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>hive.home</name>
+        <value>/usr/local/java/hive-0.9.0</value>
+        <description>Hive 홈 디렉토리로써 이 값이 잘못되면 Hive 관련 모든 동작이 정상적으로 실행되지 않는다.</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>hdfs.temporary.path</name>
+        <value>/temp/flamingo</value>
+        <description>Flamingo에서 사용하는 HDFS의 임시 디렉토리</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>workflow.base.path</name>
+        <value>/WORKFLOW</value>
+        <description>워크플로우에서 사용하는 기준 경로</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>workflow.path</name>
+        <value>${workflow.base.path}/${workflowId}/${date}</value>
+        <description>각각의 워크플로우에서 사용하는 기준 경로</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>action.path</name>
+        <value>${workflow.path}/${actionId}/${sun.cpu.endian}</value>
+        <description>각각의 워크플로우에서 사용하는 기준 경로</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>currentOutput</name>
+        <value>${action.path}/output</value>
+        <description>이전 노드의 출력 경로</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>flamingo.server.url</name>
+        <value>http://localhost:8080/rest</value>
+        <description>Flamingo HTTP URL</description>
+        <expose>true</expose>
+    </property>
+
+    <property>
+        <name>artifact.path</name>
+        <value>/system/artifact</value>
+        <description>Artifact를 저장하기 위한 HDFS 경로</description>
+        <expose>false</expose>
+    </property>
+
+    <property>
+        <name>working.path</name>
+        <value>/tmp/${user.name}/hadoop-manager</value>
+        <description>임시 작업 디렉토리</description>
+        <expose>false</expose>
+    </property>
+
+</configuration>

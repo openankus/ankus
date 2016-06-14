@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <groupId>org.openflamingo</groupId>
+        <artifactId>ankus</artifactId>
+        <version>0.2.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>flamingo-fs</artifactId>
+    <packaging>jar</packaging>
+    <version>0.2.0</version>
+    <name>Flamingo FileSystem</name>
+    <description>파일 시스템 브라우저에서 사용하기 위한 파일 시스템 API</description>
+
+    <dependencies>
+        <!-- ========== -->
+        <!--  Flamingo  -->
+        <!-- ========== -->
+
+        <dependency>
+            <groupId>org.openflamingo</groupId>
+            <artifactId>flamingo-interface</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openflamingo</groupId>
+            <artifactId>flamingo-locale</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openflamingo</groupId>
+            <artifactId>flamingo-util</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- ============= -->
+        <!--  Java EE API  -->
+        <!-- ============= -->
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- ============ -->
+        <!--  Amazon SDK  -->
+        <!-- ============ -->
+
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk</artifactId>
+        </dependency>
+
+        <!-- =================== -->
+        <!--  Hadoop EcoSystems  -->
+        <!-- =================== -->
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-core</artifactId>
+        </dependency>
+
+        <!-- ========== -->
+        <!--  Test API  -->
+        <!-- ========== -->
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <profiles>
+        <!--
+            Hadoop이 설치되어 있는 경우 Maven 파라미터를 이용하여 HDFS와 통합 테스트를 수행한다.
+            커맨드 라인 : #mvn -Denv=integration test
+        -->
+        <profile>
+            <id>hadoop-test</id>
+            <activation>
+                <property>
+                    <name>env</name>
+                    <value>integration</value>
+                </property>
+            </activation>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!--
+            Hadoop이 설치되어 있지 않은 로컬 환경에서 테스트하는 경우 단위 테스트를 건너 뛴다.
+        -->
+        <profile>
+            <id>unit-test</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <skipTests>true</skipTests>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>

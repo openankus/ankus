@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../styles.css">
+<title>DocFlex/Javadoc - Documentation - Installation / Configuration Files</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/Javadoc - Documentation - Installation / Configuration Files
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ol>
+  <li class="mrg4"><a href="#installation"><b>Installation</b></a></li>
+  <li class="mrg4"><a href="#config_files"><b>Configuration Files</b></a>
+      <ul class="mrg4">
+        <li><a href="#docflex.config">docflex.config</a></li>
+        <li><a href="#docflex.license">docflex.license</a></li>
+        <li><a href="#designer.config">designer.config</a></li>
+        <li><a href="#generator.config">generator.config</a></li>
+      </ul>
+  </li>
+</ol>
+<!-- END TABLE OF CONTENTS -->
+
+<hr>
+
+<h2>
+  <a name="installation"></a>
+  1.&nbsp; Installation
+</h2>
+
+Installation of <a href="../about.html">DocFlex/Javadoc</a> is very simple:
+
+<ol class="mrg8">
+  <li class="mrg8">
+    Unpack the downloaded archive.
+  </li>
+  <li class="mrg8">
+    Copy the DocFlex license file <code>'<a href="#docflex.license">docflex-javadoc.license</a>'</code>,
+    which you received by e-mail, into the <b><code>'lib'</code></b> directory.
+    This file must be always near the DocFlex/Javadoc Java library
+    (<code>docflex-javadoc.jar</code>) file!
+  </li>
+  <li class="mrg8">
+    Edit <b><code>generator.bat</code></b> and <b><code>designer.bat</code></b>
+    to specify the <b><code>'JDK_HOME'</code></b> variable according to the location of 
+    JDK 7.x, 6.x, 5.x or 1.4.x installed on your system.
+  </li>
+</ol>
+
+After that, you can start:
+<ul class="mrg8">
+<li>
+  <code>generator.bat</code> (e.g. to generate some <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/examples.php">demo</a> JavaDoc)
+</li>
+<li>
+  <code>designer.bat</code> to launch the <a href="../about.html#tda">Template Designer</a>
+  (e.g. to investigate <a href="../templates/JavadocPro/overview.html">JavadocPro</a> templates)
+</li>
+</ul>
+
+To generate the real JavaDoc (for you project) you will need to specify in the <code>generator.bat</code>
+your Java packages/classes to document.
+
+<p class="mrg8">
+See also:
+<ul class="mrg8">
+<li>
+  <a href="doclet.html#running_doclet">Documentation | DocFlex Doclet | Running Doclet</a>
+</li>
+<li>
+  <a href="faq.html#no_doclet_class">Documentation | FAQ | Troubleshooting | Cannot find doclet class</a>
+</li>
+<li>
+  The README file found in the <a target="_blank" href="http://www.filigris.com/downloads/">downloaded</a> archive
+</li>
+</ul>
+
+<h2>
+  <a name="config_files"></a>
+  2.&nbsp; Configuration Files
+</h2>
+
+<table width="100%" cellspacing="1" cellpadding="4" border="1">
+<tr>
+  <th width="10%"><b class="nowrap">File</b></th>
+  <th width="90%"><b>Description</b></th>
+</tr>
+
+<tr valign="top">
+  <td class="nowrap"><a name="docflex.config"></a>
+    <img src="images/cfg.gif" width="16" height="16" align="top">&nbsp;<b>docflex.config</b>
+  </td>
+  <td>
+    This is the DocFlex/Javadoc <b><i>main configuration file</i></b>.
+    It contains:
+    <ul class="mrg8">
+      <li>
+        The locations of other configuration files used by DocFlex/Javadoc. Normally,
+        all of them reside in the same <b><code>'config'</code></b> directory.
+      </li>
+      <li>
+        The default template directory
+      </li>
+      <li>
+        The default output directory
+      </li>
+      <li>
+        An alternative location of <a href="#docflex.license">docflex.license</a> file
+      </li>
+      <li>
+        The external system command to open a URL which is used to launch an external viewer
+        for generated output files (see -<a href="doclet.html#launchviewer_option">launchviewer</a>
+        command line option).
+      </li>
+    </ul>
+    <p class="mrg8">
+    The main configuration file is used for reading only and never changed.
+
+    <dl class="mrg80">
+      <dt class="mrg80"><b>Default Location:</b></dt>
+      <dd class="mrg80">
+        By default, the main configuration file is <b><code>'docflex.config'</code></b> and searched
+        in the same directory where the DocFlex/Javadoc Java library
+        <b><code class="nowrap">docflex-javadoc.jar</code></b>
+        (or <b><code class="nowrap">docflex-doclet.jar</code></b>) is located.
+        If not found, the <code>docflex.config</code> file is created automatically
+        with the default settings.
+      </dd>
+      <dt class="mrg80"><b>Alternative Location:</b></dt>
+      <dd class="mrg80">
+        Can be specified using -<a href="doclet.html#docflexconfig_option">docflexconfig</a> option
+        both on <a href="../about.html#template_designer">Template Designer</a>
+        and Javadoc <a href="doclet.html#running_doclet">command line</a>.
+      </dd>
+    </dl>
+  </td>
+</tr>
+
+<tr valign="top">
+  <td class="nowrap"><a name="docflex.license"></a>
+    <img src="images/cfg.gif" width="16" height="16" align="top">&nbsp;<b>docflex.license</b>
+  </td>
+  <td>
+    The DocFlex/Javadoc license file, which you should receive by e-mail.
+
+    <dl class="mrg80">
+      <dt class="mrg80"><b>Default Location:</b></dt>
+      <dd class="mrg80">
+        Searched near the DocFlex/Javadoc Java library file
+        <b><code class="nowrap">docflex-javadoc.jar</code></b>.
+        <p class="mrg8">
+        <table cellspacing="0" cellpadding="0">
+          <tr valign="top">
+            <td><b>Note:</b>&nbsp;&nbsp;</td>
+            <td>
+            Since the version 1.5.4, the default DocFlex/Javadoc license file is
+            <code class="nowrap">'docflex-javadoc.license'</code>. If this file is not found, the license
+            is searched in <code>'docflex.license'</code> file.
+            </td>
+          </tr>
+        </table>
+      </dd>
+    </dl>
+    <p class="mrg8"><b>Alternative Locations:</b></p>
+    <ul class="mrg80">
+      <li>
+        Can be specified using -<a href="doclet.html#license_option">license</a>
+        option both on the <a href="../about.html#template_designer">Template Designer</a>
+        and Javadoc <a href="doclet.html#running_doclet">command line</a>
+      </li>
+      <li>
+        Can be assigned in the main configuration file (<a href="#docflex.config">docflex.config</a>)
+      </li>
+    </ul>
+  </td>
+</tr>
+
+<tr valign="top">
+  <td class="nowrap"><a name="designer.config"></a>
+    <img src="images/cfg.gif" width="16" height="16" align="top">&nbsp;<b>designer.config</b>&nbsp;
+  </td>
+  <td>
+    The <a href="../about.html#template_designer">Template Designer</a>
+    configuration file. It stores the designer configuration for the recently edited templates.
+    This file is created and maintained automatically.
+
+    <dl class="mrg80">
+      <dt class="mrg80"><b>Default Location:</b></dt>
+      <dd class="mrg80">
+        <code>config/designer.config</code> -- assigned in the <a href="#docflex.config">main configuration file</a>
+      </dd>
+      <dt class="mrg80"><b>Alternative Location:</b></dt>
+      <dd class="mrg80">
+        Can be specified using -<a href="doclet.html#config_option">config</a> option
+        on the <a href="../about.html#template_designer">Template Designer</a> command line.
+      </dd>
+    </dl>
+  </td>
+</tr>
+
+<tr valign="top">
+  <td class="nowrap"><a name="generator.config"></a>
+    <img src="images/cfg.gif" width="16" height="16" align="top">&nbsp;<b>generator.config</b>&nbsp;
+  </td>
+  <td>
+    The generator configuration file; used by the <a href="doclet.html#generator">Generator</a>
+    to obtain all settings not specified directly on the command line.
+
+    <p class="mrg8">
+    This file is created and maintained automatically by the <a href="doclet.html#gui">generator dialog</a>.
+    It contains:
+    <ul class="mrg8">
+      <li>The last used templates</li>
+      <li>The values of template parameters</li>
+      <li>The output directory and file name</li>
+      <li>The output format options</li>
+      <li>The launch viewer setting (see -<a href="doclet.html#launchviewer_option">launchviewer</a> option)</li>
+    </ul>
+    <p class="mrg8">
+    When the <a href="doclet.html#gui">generator dialog</a> is invoked next time,
+    those settings are restored from the generator config file, so you don't need to re-enter them again.
+    The values of template parameters previously specified for one template will also
+    be loaded into the equally named parameters of other templates.
+
+    <p class="mrg8">
+    You can use the <a href="doclet.html#gui">generator dialog</a> to quickly prepare
+    a config file with the specific settings you need and, then, provide only this file
+    on the Javadoc <a href="doclet.html#running_doclet">command line</a>
+    (using -<a href="doclet.html#config_option">config</a> option) instead of specifying all those settings
+    directly.
+
+    <dl class="mrg80">
+      <dt class="mrg80"><b>Default Location:</b></dt>
+      <dd class="mrg80">
+        <code>config/generator.config</code> --
+        assigned in the <a href="#docflex.config">main configuration file</a>
+      </dd>
+      <dt class="mrg80"><b>Alternative Location:</b></dt>
+      <dd class="mrg80">
+        Can be specified using -<a href="doclet.html#config_option">config</a> option
+        on the Javadoc <a href="doclet.html#running_doclet">command line</a>.
+      </dd>
+      <dt class="mrg80"><b>See Also:</b></dt>
+      <dd class="mrg80">
+        <a href="doclet.html#template_params.generator_config">Documentation | DocFlex Doclet | Handling Template Parameters | Using Doclet GUI to prepare parameters for command line</a>
+      </dd>
+    </dl>
+  </td>
+</tr>
+
+</table>
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2003-2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

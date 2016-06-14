@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.openflamingo.engine.hive.HiveHistoryRepository">
+
+    <!-- ==================================================================================== -->
+    <!-- 1. Result and Parameter Maps -->
+    <!-- ==================================================================================== -->
+
+    <resultMap id="hiveHistoryMap" type="org.openflamingo.model.rest.HiveHistory">
+        <result property="id" column="ID" jdbcType="BIGINT"/>
+        <result property="executionId" column="EXECUTION_ID" jdbcType="VARCHAR"/>
+        <result property="databaseName" column="DB_NAME" jdbcType="VARCHAR"/>
+        <result property="queryName" column="QUERY_NAME" jdbcType="VARCHAR"/>
+        <result property="logPath" column="LOG_PATH" jdbcType="VARCHAR"/>
+        <result property="hiveJson" column="HIVE_JSON" jdbcType="CLOB"/>
+        <result property="query" column="QUERY" jdbcType="CLOB"/>
+        <result property="startDate" column="START_DATE" jdbcType="TIMESTAMP"/>
+        <result property="endDate" column="END_DATE" jdbcType="TIMESTAMP"/>
+        <result property="elapsed" column="ELAPSED" jdbcType="INTEGER"/>
+        <result property="cause" column="CAUSE" jdbcType="VARCHAR"/>
+        <result property="status" column="STATUS" jdbcType="VARCHAR"/>
+        <result property="username" column="USERNAME" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- ==================================================================================== -->
+    <!-- 2. Sql Fragments -->
+    <!-- ==================================================================================== -->
+
+    <sql id="wherePK">WHERE ID = #{id}</sql>
+
+    <sql id="whereExecutionId">WHERE EXECUTION_ID = #{executionId}</sql>
+
+    <sql id="whereUsername">WHERE USERNAME = #{username}</sql>
+
+    <sql id="whereStatus">WHERE USERNAME = #{username} AND STATUS = #{status}</sql>
+
+    <!-- ==================================================================================== -->
+    <!-- 3. Select Statement -->
+    <!-- ==================================================================================== -->
+
+    <select id="select" resultMap="hiveHistoryMap">
+        SELECT * FROM HIVE_HISTORY
+        <include refid="wherePK"/>
+    </select>
+
+    <select id="selectByExecutionId" resultMap="hiveHistoryMap">
+        SELECT * FROM HIVE_HISTORY
+        <include refid="whereExecutionId"/>
+    </select>
+
+    <select id="selectAll" resultMap="hiveHistoryMap">
+        SELECT * FROM HIVE_HISTORY
+    </select>
+
+    <select id="selectByStatus" parameterType="hiveHistory" resultMap="hiveHistoryMap">
+        SELECT * FROM HIVE_HISTORY
+        <include refid="whereStatus"/>
+    </select>
+
+    <select id="selectByUsername" resultMap="hiveHistoryMap">
+        SELECT * FROM HIVE_HISTORY
+        <include refid="whereUsername"/>
+        ORDER BY START_DATE DESC
+    </select>
+
+    <select id="getTotalCountByUsername" parameterType="map" resultType="Integer">
+        SELECT COUNT(*) FROM HIVE_HISTORY
+        WHERE 1=1
+        <if test="username != null and username != ''">
+            AND USERNAME = #{username}
+        </if>
+        <if test="status != null and status != '' and status != 'ALL'">
+            AND STATUS = #{status}
+        </if>
+        <if test="queryName != null and queryName != ''">
+            AND QUERY_NAME LIKE '%${queryName}%'
+        </if>
+        <if test="startDate != null and startDate != ''">
+            AND DATE(START_DATE) BETWEEN #{startDate} AND #{endDate}
+        </if>
+        <if test="endDate != null and endDate != ''">
+            AND DATE(END_DATE) BETWEEN #{startDate} AND #{endDate}
+        </if>
+    </select>
+
+    <select id="selectByCondition" parameterType="map" resultMap="hiveHistoryMap">
+        SELECT
+        ID,
+        EXECUTION_ID,
+        DB_NAME,
+        QUERY_NAME,
+        LOG_PATH,
+        HIVE_JSON,
+        QUERY,
+        START_DATE,
+        IF(END_DATE IS NULL, CURRENT_TIMESTAMP, END_DATE) AS END_DATE,
+        ELAPSED,
+        CAUSE,
+        STATUS,
+        USERNAME
+        FROM HIVE_HISTORY
+        WHERE 1=1
+        <if test="username != null and username != ''">
+            AND USERNAME = #{username}
+        </if>
+        <if test="status != null and status != '' and status != 'ALL'">
+            AND STATUS = #{status}
+        </if>
+        <if test="queryName != null and queryName != ''">
+            AND QUERY_NAME LIKE '%${queryName}%'
+        </if>
+        <if test="startDate != null and startDate != ''">
+            AND DATE(START_DATE) BETWEEN #{startDate} AND #{endDate}
+        </if>
+        <if test="endDate != null and endDate != ''">
+            AND DATE(END_DATE) BETWEEN #{startDate} AND #{endDate}
+        </if>
+        ORDER BY ${orderBy} ${desc}
+        LIMIT ${start}, ${limit}
+    </select>
+
+    <!-- ==================================================================================== -->
+    <!-- 3. Exist Statement -->
+    <!-- ==================================================================================== -->
+
+    <select id="exist" parameterType="Integer" resultType="Integer">
+        SELECT COUNT(*) FROM HIVE_HISTORY
+        <include refid="wherePK"/>
+    </select>
+
+    <!-- ==================================================================================== -->
+    <!-- 4. Insert Statements -->
+    <!-- ==================================================================================== -->
+
+    <insert id="insert" parameterType="hiveHistory" useGeneratedKeys="true" keyProperty="id" keyColumn="ID">
+        INSERT INTO HIVE_HISTORY
+        (
+        ID,
+        EXECUTION_ID,
+        DB_NAME,
+        QUERY_NAME,
+        LOG_PATH,
+        HIVE_JSON,
+        QUERY,
+        START_DATE,
+        ELAPSED,
+        CAUSE,
+        STATUS,
+        USERNAME
+        )
+        VALUES
+        (
+        #{id},
+        #{executionId},
+        #{databaseName},
+        #{queryName},
+        #{logPath},
+        #{hiveJson},
+        #{query},
+        #{startDate},
+        #{elapsed},
+        #{cause},
+        #{status},
+        #{username}
+        )
+
+        <selectKey resultType="int" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+    <!-- ==================================================================================== -->
+    <!-- 5. Update Statements -->
+    <!-- ==================================================================================== -->
+
+    <update id="update" parameterType="hiveHistory">
+        UPDATE HIVE_HISTORY
+        SET
+        DB_NAME = #{databaseName},
+        QUERY_NAME = #{queryName},
+        LOG_PATH = #{logPath},
+        HIVE_JSON = #{hiveJson},
+        QUERY = #{query},
+        START_DATE = #{startDate},
+        END_DATE = #{endDate},
+        ELAPSED = #{elapsed},
+        CAUSE = #{cause},
+        STATUS = #{status}
+        <include refid="wherePK"/>
+    </update>
+
+    <!-- ==================================================================================== -->
+    <!-- 6. Delete Statements -->
+    <!-- ==================================================================================== -->
+
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM HIVE_HISTORY
+        <include refid="wherePK"/>
+    </delete>
+
+    <delete id="deleteBeforeTwoAgo">
+        <![CDATA[
+
+         DELETE from HIVE_HISTORY where START_DATE < DATE_SUB(NOW(), INTERVAL 1 DAY)
+
+        ]]>
+    </delete>
+</mapper>

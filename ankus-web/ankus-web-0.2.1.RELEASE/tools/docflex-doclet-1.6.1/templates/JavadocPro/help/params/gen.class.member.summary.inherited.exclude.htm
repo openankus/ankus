@@ -1,0 +1,16 @@
+This parameter allows you to exclude the lists of inner classes, fields or methods
+that are inherited from the classes/interfaces which belong to the specified packages.
+<p>
+For instance, you may want to suppress the long lists of the class members inherited from standard Java API classes
+and, thereby, to reduce the output documentation
+<p>
+The packages, whose classes/interfaces should not appear in the <i>"inherited from ..."</i> lists, 
+are specified as the list of package patterns separated with newlines or colons (<code>:</code>).
+For example:
+
+<dl><dd><code>
+java.lang.*<br>
+javax.swing.*
+</code></dd></dl>
+
+A package pattern ${include ../refs/package_pattern.htm}

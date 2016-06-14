@@ -1,0 +1,2090 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/REC-html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>DocFlex/Javadoc - Change Log</title>
+
+<style type="text/css">
+
+body {
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+code {
+  white-space:nowrap;
+}
+
+.note {
+  font-size:90%;
+  padding: 5px;
+  border: solid 1px #999999;
+  background-color:#F3F3F3;
+}
+
+.tbl {
+  font-family:Verdana, sans-serif;
+  font-size:80%
+}
+
+</style>
+</head>
+
+<body>
+
+<center>
+  <h1>DocFlex/Javadoc - Change Log</h1>
+</center>
+
+<hr>
+
+<h2>Table Of Contents</h2>
+<ul>
+  <li><a href="#v1.6.1"><b>Version 1.6.1</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.6.1_trial_output">Distortion of Trial Output</a></li>
+      <li><a href="#v1.6.1_template_language">Template language / general functionality</a>
+        <ul>
+          <li><a href="#v1.6.1_images_and_hyperlinks_in_txt">Generation of images and hyperlinks in plain-text output</a></li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.6.0"><b>Version 1.6.0</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.6.0_JavadocPro">New "JavadocPro" Template Set</a></li>
+      <li><a href="#v1.6.0_template_language">Template language / general functionality</a>
+        <ul>
+          <li><a href="#v1.6.0_procedure_templates">Procedure Templates</a></li>
+          <li><a href="#v1.6.0_text_control">Text Control</a></li>
+          <li><a href="#v1.6.0_section_flow_control">Section Flow Control</a></li>
+          <li><a href="#v1.6.0_grouping_elements">Grouping of elements with Element Iterators</a></li>
+          <li><a href="#v1.6.0_adding_javascript">Adding JavaScript in generated HTML</a></li>
+          <li><a href="#v1.6.0_hyperlink_defs">Definition of hyperlinks</a></li>
+          <li><a href="#v1.6.0_image_control">Output directory/file for Image Control</a></li>
+          <li><a href="#v1.6.0_flexquery">New capabilities of FlexQuery expression language</a></li>
+          <li><a href="#v1.6.0_flattening_ehtml">Flattening of embedded HTML</a></li>
+          <li><a href="#v1.6.0_disabling_params">Disabling of irrelevant parameters</a></li>
+          <li><a href="#v1.6.0_javadoc_options_to_params">Mapping Javadoc options to template parameters</a></li>
+          <li><a href="#v1.6.0_template_descriptions">Separation of template/parameter descriptions from templates</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.6.0_html_output">HTML Output</a>
+        <ul>
+          <li><a href="#v1.6.0_CSS_file">Generation of CSS file</a></li>
+          <li><a href="#v1.6.0_html_options">New HTML Options</a></li>
+          <li><a href="#v1.6.0_html_gen_performance">Performance improvement</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.6.0_rtf_output">RTF Output</a>
+        <ul>
+          <li><a href="#v1.6.0_rtf_compatibility">Compatibility with other RTF readers</a></li>
+          <li><a href="#v1.6.0_rtf_styles">Optimization of RTF styles</a></li>
+          <li><a href="#v1.6.0_rtf_wrap_nbr_str">Wrapping of long non-breaking strings in tables</a></li>
+          <li><a href="#v1.6.0_rtf_ehtml">Rendering of embedded HTML</a></li>
+          <li><a href="#v1.6.0_rtf_emf_images">Size and scaling of EMF Images</a></li>
+          <li><a href="#v1.6.0_rtf_options">New RTF Options</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.6.0_doclet_gui">Doclet GUI</a></li>
+      <li><a href="#v1.6.0_maven">Maven Integration</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.5.6"><b>Version 1.5.6</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.5.6_template_language">Template language / general functionality</a>
+        <ul>
+          <li><a href="#v1.5.6_list_params">Multivalued (List) Parameters</a></li>
+          <li><a href="#v1.5.6_custom_elements">Custom Elements</a></li>
+          <li><a href="#v1.5.6_doclet_dsmtype2">Doclet DSM Type, Version 2</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.5.6_generator">Template interpreter / output generator</a>
+        <ul>
+          <li><a href="#v1.5.6_generator.performance">Performance improvement</a></li>
+          <li><a href="#v1.5.6_rtf_wrap_nbr_str">Very long nonbreaking string in RTF</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.5.6_standard_templates">Standard Templates</a>
+        <ul>
+          <li><a href="#v1.5.6_standard_templates.custom_tags">Documenting of custom tags</a></li>
+          <li><a href="#v1.5.6_standard_templates.changes">Changes in Standard Template Set</a></li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.5.5"><b>Version 1.5.5</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.5.5_template_language">Template language / Template Designer</a></li>
+      <li><a href="#v1.5.5_template_designer_doclet_gui">Template Designer / Doclet GUI</a></li>
+      <li><a href="#v1.5.5_generator">Output Generators</a></li>
+      <li><a href="#v1.5.5_maven_example">Maven Example</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.5.4"><b>Version 1.5.4</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.5.4_new_licensing_system">New licensing system</a></li>
+      <li><a href="#v1.5.4_generator_gui">Generator GUI | Template Parameter Inspector</a></li>
+      <li><a href="#v1.5.4_template_designer">Template Designer</a></li>
+      <li><a href="#v1.5.4_generator">Template interpreter / output generator</a></li>
+      <li><a href="#v1.5.4_standard_templates">Standard Templates</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.5.3"><b>Version 1.5.3</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.5.3_generator_gui">Generator GUI | Template Parameter Inspector</a></li>
+      <li><a href="#v1.5.3_template_designer">Template Designer</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.5.2"><b>Version 1.5.2</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.5.2_standard_templates">Standard Templates</a>
+        <ul>
+          <li><a href="#v1.5.2_standard_templates.new_params">New template parameters</a></li>
+          <li><a href="#v1.5.2_standard_templates.javadoc-1.4">Template set for Java 1.4</a></li>
+        </ul>
+      </li>
+      <li><a href="#v1.5.2_template_language">Template Language</a></li>
+      <li><a href="#v1.5.2_template_designer">Template Designer</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.5.1"><b>Version 1.5.1</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.5.1_standard_templates">Standard Templates | New template parameters</a></li>
+      <li><a href="#v1.5.2_template_language">Template Language</a></li>
+      <li><a href="#v1.5.1_generator">Template interpreter / output generator</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.5.0"><b>Version 1.5.0</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.5.0_java5_support">Full support of Java 5 language features</a></li>
+      <li><a href="#v1.5.0_performance">Performance improvement</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.4.11"><b>Version 1.4.11</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.4.11_generator">Template interpreter / output generator</a></li>
+      <li><a href="#v1.4.11_template_language_gom">Template Language / Generator Object Model (GOM)</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.4.10"><b>Version 1.4.10</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.4.10_generator">Template interpreter / output generator</a></li>
+      <li><a href="#v1.4.10_gom">Generator Object Model (GOM)</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.4"><b>Version 1.4</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.4_linux_support">DocFlex/Javadoc now supports Linux</a></li>
+      <li><a href="#v1.4_rtf_options">New RTF option</a></li>
+      <li><a href="#v1.4_doc_viewers">Improved support for external document viewers</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.3"><b>Version 1.3</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.3_performance">Performance improvement</a></li>
+      <li><a href="#v1.3_standard_templates">Standard Templates | New template parameter</a></li>
+      <li><a href="#v1.3_command_line_options">More command line option support</a></li>
+      <li><a href="#v1.3_html_options">New HTML option</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.2"><b>Version 1.2</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.2_ehtml_table_tags">Full support of table tags in embedded HTML</a></li>
+      <li><a href="#v1.2_standard_templates">Standard Templates | New template parameters</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.1"><b>Version 1.1</b></a>
+    <p>
+    <ul>
+      <li><a href="#v1.1_core_upgrade">Upgrade with the latest DocFlex core</a></li>
+      <li><a href="#v1.1_more_docs">Lots of new documentation on the DocFlex Technology</a></li>
+      <li><a href="#v1.1_template_improvements">Improvements in templates</a></li>
+    </ul>
+    <p>
+  </li>
+  <li><a href="#v1.0"><b>Version 1.0</b></a></li>
+</ul>
+
+<hr>
+
+<h2>
+  <a name="v1.6.1"></a>
+  Version 1.6.1
+</h2>
+
+<ul>
+<li><a name="v1.6.1_trial_output"></a>
+  <b>Distortion of Trial Output</b>
+  <p>
+  Now, all output documents (in HTML and RTF formats) generated under the general
+  <a href="http://www.filigris.com/buy/licensing_pricing.php#trial_license" target="_blank">Trial License</a>
+  will be heavily distorted by replacing some letters with bullet characters (as well as contain special messages). 
+  <p>
+  This should help some our users to respect the trial license terms.
+  <p>
+</li>
+<li><a name="v1.6.1_template_language"></a>
+  <b>Template language / general functionality</b>
+  <p>
+  <ul>
+  <li>
+    <a name="v1.6.1_images_and_hyperlinks_in_txt"></a>
+    <b><i>Generation of images and hyperlinks in plain-text output</i></b>
+    <p>
+    It may sound odd. What images and hyperlinks can exist in plain-text files?
+    <p>
+    Yet, the plain-text output may be just a base layer for other file formats, for instance DITA, which is an XML-based markup.
+    There, both images and hyperlinks do exist and are required.
+    <p>
+    The following new functionality will allow you to use plain-text output capability of DocFlex/XML
+    to generate some full-blown complex formats even when they are not supported by DocFlex/XML directly.
+    <p>
+    <u>Images</u>
+    <p>
+    In plain-text mode, an Image Control will produce the same image file (according to its setting).
+    However, in addition, it also emits into the main output the image file's relative pathname.
+    That pathname is calculated against the main file's location and the name-separator is UNIX style ("/").
+    In a template, you can surround the Image Control with other Text Controls generating some markup,
+    so everything would produce both the image file and the image tag for it in the main output.
+    <p>
+    <u>Hyperlinks</u>
+    <p>
+    Now, you can generate cross-hyperlinks in plain-text files too. This equally includes the hyperlinks from images
+    (the imagemaps).
+    <p>
+    What a hyperlink actually is depends on the final format you generate using the plain-text output.
+    DocFlex/XML just provides the necessary functionality to find the things you want to link from and to.
+    This is implemented in the form of new FlexQuery functions and GOM types ("GOM" stands for
+    <i>Generator Object Model</i>):
+    <p>
+    <table cellspacing="1" cellpadding="4" border="1">
+      <tr bgcolor="#EEEEEE">
+        <th>Function / Type</th>
+        <th>Description</th>
+      </tr>
+      <tr valign="top">
+        <td><code>findHyperTarget()</code></td>
+        <td>
+          Finds a hypertarget matching the specified set of keys that may exist anywhere
+          in the whole generated documentation. Returns a <code>GOMHyperTarget</code> object
+          describing the target.
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><code>GOMHyperTarget</code></td>
+        <td>
+          Provides information about a hyperlink target. This includes the output file containing the target
+          and the target name.
+        </td>
+      </tr>
+    </table>
+    <p>
+    More details you can find in the Template Designer | Help | Assistant:
+    <ul>
+      <li>Functions | By Category | Hypertext Functions</li>
+      <li>Generator Object Model | Object Types</li>
+    </ul>
+    <p>
+  </li>
+  </ul>
+</li>
+</ul>
+
+<h2>
+  <a name="v1.6.0"></a>
+  Version 1.6.0
+</h2>
+
+<ul>
+<li><a name="v1.6.0_JavadocPro"></a>
+  <b>New "JavadocPro" Template Set</b>
+  <p>
+  "<a href="doc/index.html?docflex_javadoc/templates/JavadocPro/index.html" target="_blank">JavadocPro</a>"
+  is a new template set provided with DocFlex/Javadoc since the version <a href="#v1.6.0">1.6.0</a>.
+  Using it you can generate:
+  <p>
+  <ul>
+    <li>Framed HTML JavaDoc <b>identical</b> to the classic one.</li>
+    <li>Single-file HTML JavaDoc with basic content (project overview, package summaries, class details)</li>
+    <li>The newly redesigned RTF JavaDoc (which can be further converted to PDF).</li>
+  </ul>
+  </p>
+  This everything is complemented with a possibility to selectively
+  <b>filter classes and members by tags/annotations</b>,
+  a feature not seen in any other software known to us!
+  <p>
+</li>
+<li><a name="v1.6.0_template_language"></a>
+  <b>Template language / general functionality</b>
+  <p>
+  <ul>
+  <li><a name="v1.6.0_procedure_templates"></a>
+    <b><i>Procedure Templates</i></b>
+    <p>
+    <i>Procedure templates</i> are a special kind of templates that generate no output.
+    Rather, they have been used internally in big template applications to employ the data querying and processing
+    capabilities of template components (such as Element Iterator) for some auxiliary tasks 
+    (e.g. creating of element maps).
+    <p>
+    Now, the role of procedure templates has been extended, so they can be used also 
+    to generate multi-file documentation with no particular root.
+    The following functionality has been supported:
+    <ul>
+    <li>
+      A procedure template can be specified directly to the generator, that is, used as a <i>main template</i>.
+    </li>
+    <li>
+      Procedure templates can call from themselves other templates, including document and frameset templates,
+      which would generate separate documentation files.
+    </li>
+    <li>
+      A procedure template may include definitions of any number of parameters (with any complexity) 
+      to control a large template application, as well as all the formatting styles to be inherited
+      by the called subtemplates.
+    </li>
+    </ul>
+    <p>
+  </li>
+  <li><a name="v1.6.0_text_control"></a>
+    <b><i>Text Control</i></b>
+    <p>
+    The "Label Control" has been renamed into "Text Control" and more functionality added.
+    <p>
+    The purpose of Text Control is to specify some static text in templates.
+    Now, unlike the old Label Control, it shows the full multi-line text directly in the designer pane 
+    (with the support of scrolling). This may be particular helpful, when you want to specify in templates
+    some multi-line descriptions.
+    <p>
+  </li>
+  <li><a name="v1.6.0_section_flow_control"></a>
+    <b><i>Section Flow Control</i></b>
+    <p>
+    A new property has been introduced for template sections: <b><i>"Output Notification Expression"</i></b>
+    (found on the <i>"Component | Options"</i> tab of the section property dialog in the Template Designer).
+    <p>
+    When that expression is specified, it will be executed each time the section has produced a non-empty output
+    (on the finishing of the section processing).
+    <p>
+    This makes possible, for instance, to program such things like tracking whether particular output sections 
+    have been generated early and, depending on it, to add some kind of separator (e.g. horizontal rule)
+    before the output that follows them.
+    <p>
+  </li>
+  <li><a name="v1.6.0_grouping_elements"></a>
+    <b><i>Grouping of elements with Element Iterators</i></b>
+    <p>
+    A new property has been introduced for Element Iterators: <b><i>"Expression for Grouping Key"</i></b>
+    (found on the <i>"Processing | Sorting/Grouping | Grouping"</i> tab of the Element Iterator properties dialog
+    in the Template Designer).
+    It allows you to break the iterated elements into groups so as to iterate, first, by the groups
+    and, then, by the elements within each group.
+    <p>
+    It works as follows.
+    <p>
+    After the initial elements have been collected, filtered and sorted, the result sequence of elements
+    is broken into groups according to the grouping keys generated for each element by the FlexQuery 
+    specified in the <i>"Expression for Grouping Key"</i> of the Element Iterator.
+    <p>
+    Each continuous subsequence of elements with equal grouping keys produces a group.
+    As a result, the sequence of elements prepared for iterations is converted into a sequence of element groups.
+    The ordering of elements in each group remains the same as in the initial sequence.
+    <p>
+    Since groups are not elements, the Element Iterator cannot iterate by them directly.
+    So, it will iterate by the first elements taken from each group. 
+    However, at that, on each iteration step, the Generator Object Model (GOM) property 
+    <code>iterator.groupElements</code>, which is accessible in FlexQuery expressions,
+    is updated so as to provide the enumeration of all elements
+    in the given group.
+    This allows you to specify a nested Element Iterator that will iterate by the elements
+    in the group received from the <code>iterator.groupElements</code> property.
+    <p>
+  </li>
+  <li><a name="v1.6.0_adding_javascript"></a>
+    <b><i>Adding JavaScript in generated HTML</i></b>
+    <p>
+    Although, dynamic HTML is not currently in the focus of DocFlex templates,
+    the following setting has been supported:
+    <i>Template | Properties | Output File | <b>HTML Head Expression</b></i>.
+    <p>
+    It specifies an expression that may produce a string, which will be included in the header
+    (between &lt;head&gt;...&lt;/head&gt; tags) of an HTML file generated by the given template.
+    In particular, this allows you to embed in the generated HTML file any custom JavaScript code 
+    (enclosed in &lt;script&gt;...&lt;/script&gt; tags).
+    <p>
+    For instance, this may be used to reload the <code>'detail'</code> frame
+    (of a frameset defined in <code>index.html</code>) with another HTML document passed 
+    to <code>index.html</code> via a URL parameter (specified after '?' in the initial URL).
+    <p>
+    <table><tr><td class="note">
+      This is supported now in <a href="#v1.6.0_JavadocPro">JavadocPro</a> templates
+    </td></tr></table>
+    </p>
+  </li>
+  <li><a name="v1.6.0_hyperlink_defs"></a>
+    <b><i>Definition of hyperlinks</i></b>
+    <p>
+    Hyperlinks are generated according to special link/target definitions specified in template components
+    (see component's Properties Dialog | Hypertext tab).
+    Now, hyperlink definitions themselves look more like components.
+    The following settings/features have been added:
+    <ul>
+    <li><i>Description</i>
+      <p>
+      Some hyperlink definitions may be so complicated that they are better to be explained.
+      <p>
+    </li>
+    <li><i>Expression for New Context Element</i>
+      <p>
+      The same as in template components, it allows switching context element used for calculations of other
+      hyperlink's settings.
+      <p>
+    </li>
+    <li><i>Matching Element Type(s)</i>
+      <p>
+      Specify one or several element types, which the context element must match.
+      This is a kind of filter. If the context element does not match any of the specified types,
+      the whole hyperlink definition will be skipped.
+      <p>
+    </li>
+    <li><i>Matrix of alternative keys</i>
+      <p>
+      A hyperlink is created when the vector of keys generated by the <i>Link Key Expressions</i>
+      matches a similar vector of keys associated with a certain target (generated by a different component).
+      <p>
+      Now, in addition to single vector of keys, it is possible to define matrix of alternative keys.
+      The matrix columns become alternative key vectors. If one vector cannot be matched, another is tried.
+      <p>
+      This allows unifying in a single hyperlink definition what were previously several ones,
+      which simplifies programming and improves performance of the template.
+    </li>
+    </ul>
+    <p>
+  </li>
+  <li><a name="v1.6.0_image_control"></a>
+    <b><i>Output directory/file for Image Control</i></b>
+    <p>
+    Image Control has been extended with two new properties that control
+    where the image file is saved and under which name:
+    <ul>
+    <li>
+      <b><i>"Expression for Image Output Directory"</i></b>
+      provides the pathname of the directory where the images produced by the given Image Control is be stored.
+      In particular, this allows saving all standard documentation icons in a single directory
+      (and, therefore, to prevent duplicating them):
+      <blockquote><code><i>{doc-root}</i>/resources</code></blockquote>
+      <table><tr><td class="note">
+        This is supported now in <a href="#v1.6.0_JavadocPro">JavadocPro</a> templates
+      </td></tr></table>
+      <p>
+      Previously, all images were saved only in a local <i>'doc-files'</i> subdirectory associated with the
+      given document (which is now also the case when no separate image output directory specified).
+    </li>
+    <li>
+      <b><i>"Expression for Image File Name"</i></b> provides the name of the output image file.
+      <p>
+      <table><tr><td class="note">
+        This feature is interesting mainly in the case of <i>element images</i>, which are certain graphical
+        depictions (e.g. some diagrams) of the entities represented by the DSM elements.
+        This is not yet supported in DocFlex/Javadoc. (For example, dynamically generated UML class/package diagrams
+        would be such "element images").
+      </td></tr></table>
+    </li>
+    </ul>
+    <p>
+  </li>
+  <li><a name="v1.6.0_flexquery"></a>
+    <b><i>New capabilities of FlexQuery expression language</i></b>
+    <p>
+    FlexQuery expressions are small program blocks (called <i>queries</i>) with a Java-like syntax
+    that are used in templates to calculate dynamic properties of template components and for other needs.
+    Now, the capabilities of this language have been extended:
+    <ul>
+    <li>
+      <b><i>'Return' statement</i></b>
+      <blockquote>
+        <code>return <i>&lt;result_expr&gt;</i></code>
+      </blockquote>
+      It allows you to stop the execution of the query at any point and return the query result,
+      which is calculated by the <i><code>result_expr</code></i> specified in the return statement.
+      <p>
+      The type of the returned result is checked to comply with the data type necessary for the given query.
+      This is done yet during the parsing of the query (e.g. in Template Designer).
+      <p>
+      A FlexQuery expression may also contain subqueries, which are nested code blocks executed not directly,
+      but rather passed as parameters to functions. A function may call such a subquery repeatedly
+      to calculate certain things (e.g. to check a filter condition for the elements processed by the function).
+      <p>
+      A subquery may also contain <i>return</i> statements, which will affect only the execution of that subquery.
+      The <i><code>result_expr</code></i> specified in such a return statement will be also checked, however, 
+      now only to comply with the data type necessary for the given subquery.
+      <p>
+    </li>
+    <li>
+      <b><i>Typecast operator</i></b>
+      <p>
+      The Java-style typecast operator has been supported:
+      <blockquote><code>
+        (<i>type</i>) obj
+      </code></blockquote>
+      where <code><i>type</i></code> may be any primitive type (like <code>String</code> or <code>Number</code>)
+      or GOM-type ("GOM" stands for Generator Object Model).
+      <p>
+      It allows you to quickly access properties of various GOM objects,
+      provided via untyped references (mostly returned by various functions).
+      Now, you can write something like this:
+      <blockquote><code>
+        ((GOMElement) getParam("name")).id
+      </code></blockquote>
+      Previously, only special type-conversion functions (like <code>toString()</code> or <code>toElement()</code>)
+      were available for such operations.
+      <p>
+      Casting to array types is also supported. You can write:
+      <blockquote><code>
+        (<i>type</i>[]) obj
+      </code></blockquote>
+      At that, the necessary conversion will be done even when the initially <code>obj</code> is an array 
+      of a more generic type, however, containing only elements of the required type. For example:
+      <blockquote><pre>
+objects = Array (1, 2, 3);  // create an Object[] array with only integer elements
+ints = (int[]) objects;     // convert it to an array of integers
+ints[0] * ints[1] * ints[2] // access array elements as integers</pre>
+      </blockquote>
+      (In the case, when the initial array contains object of incompatible types, an error will be reported.)
+    </li>
+    </ul>
+    <p>
+  </li>
+  <li><a name="v1.6.0_flattening_ehtml"></a>
+    <b><i>Flattening of embedded HTML</i></b>
+    <p>
+    <i>Embedded HTML</i> is the HTML markup (tags) inserted by the user directly in various descriptions, annotations etc.
+    (stored as plain text in XML files) in order to format them.
+    To have that formatting show up in the generated documentation, in general, the embedded HTML markup needs
+    to be processed (rendered) specifically, which depends on the output format. This is controlled by
+    the <i>"Render embedded HTML"</i> option of the given output format.
+    <p>
+    Sometimes it is needed to remove all block-level HTML tags but leave any other tags, so that
+    the result text would be displayed formatted but without any structure, as a single line.
+    That, we call <i>flattening</i>.
+    <p>
+    It is supported now!
+    <p>
+    A new formatting property has been introduced for all template components: 
+    <b><i>"Embedded HTML | Flatten"</i></b>
+    (found on the <i>"Formatting | Text Flow"</i> tab of the component properties dialog in the Template Designer).
+    If it is selected, any embedded HTML markup found in the text output produced by the component will be flattened
+    (given that the embedded HTML is processed both as a whole and for that component in particular).
+    This will also affect all nested components (including called stock-sections), unless rendering 
+    of embedded HTML is specifically disabled in some of them.
+  </li>
+  <li><a name="v1.6.0_disabling_params"></a>
+    <b><i>Disabling of irrelevant parameters</i></b>
+    <p>
+    Now, in the Parameter Inspector, those parameters that are irrelevant to the current settings
+    (specified in other parameters) can be shown disabled. This will help navigating the parameter tree.
+    <p>
+    That is achieved by introducing new properties in the template parameter definition:
+    <i>"Enabling Condition"</i> and <i>"Group | Enabling Condition"</i>.
+    They specify the boolean FlexQuery expressions (queries) that are evaluated each time
+    any of the template parameters is changed:
+    <ul>
+    <li>
+      When the <i>"Enabling Condition"</i> query returns false, the given parameter is disabled.
+    </li>
+    <li>
+      When <i>"Group | Enabling Condition"</i> query returns false, all parameters in the group
+      headed by the given parameter are disabled.
+    </li>
+    </ul>
+    <p>
+  </li>
+  <li><a name="v1.6.0_javadoc_options_to_params"></a>
+    <b><i>Mapping Javadoc options to template parameters</i></b>
+    <p>
+    It is possible now to map some of the non-core Javadoc command line options to the default values
+    of template parameters.
+    <p>
+    Three new FlexQuery functions have been added for this:
+    <blockquote>
+      <code>hasOption(), getOption(), getOptions()</code>
+    </blockquote>
+    They can be used within the default value expression of template parameters,
+    to calculate parameter values from particular option arguments.
+    <p>
+    <table><tr><td class="note">
+      That was needed, first of all, to fix the integration with the
+      <a href="#v1.6.0_javadoc_options_to_params">new versions of Maven</a>
+      and is supported now in <a href="#v1.6.0_JavadocPro">JavadocPro</a> templates.
+    </td></tr></table>
+    </p>
+    <p>
+  </li>
+  <li><a name="v1.6.0_template_descriptions"></a>
+    <b><i>Separation of template/parameter descriptions from templates</i></b>
+    <p>
+    Before this version, all descriptions of templates and their parameters could be stored only directly 
+    within the templates themselves.
+    Now, they can be held also in separate text files located near the main templates.
+    (The description text may also include HTML markup.)
+    <p>
+    This makes possible:
+    <ul>
+      <li>To reuse the same descriptions in several main templates</li>
+      <li>To reduce the sizes of main templates considerably thereby making them loadable faster</li>
+    </ul>
+    <p>
+    That functionality is achieved by introducing of a new macro:
+    <blockquote>
+      <code>${include <i>&lt;url&gt;</i>}</code>
+    </blockquote>
+    Such macros can be inserted both within the descriptions stored directly in templates
+    and within the included text files themselves.
+    <p>
+    The <i><code>url</code></i> specified in the macro points to the file to be included.
+    The macro is expanded with the content of that file (after the expansion of any <i>include</i>
+    macros found in that file).
+    <p>
+    The file URL may be both absolute and relative one.
+    If the macro is found within a description stored in a template, the relative URL
+    is interpreted against the location of that template. If the macro is found within a text file,
+    the URL is interpreted against the location of that file.
+    <p>
+    <table><tr><td class="note">
+      This everything has been applied in <a href="#v1.6.0_JavadocPro">JavadocPro</a> templates
+    </td></tr></table>
+    </p>
+  </li>
+  </ul>
+</li>
+<li><a name="v1.6.0_html_output"></a>
+  <b>HTML Output</b>
+  <p>
+  <ul>
+  <li><a name="v1.6.0_CSS_file"></a>
+    <b><i>Generation of CSS file</i></b>
+    <p>
+    All internal CSS declarations, which were previously defined and used only locally in every generated HTML document,
+    now can be held in a single <code>'stylesheet.css'</code> file stored in the documentation root.
+    Only links to this file will be included in the generated HTML documents.
+    <p>
+    Although such CSS declarations look typlically rather gibberish, they tend to repeat across HTML files.
+    So, moving them to a single CSS file may substantially reduce the overall size of the generated HTML documentation.
+    <p>
+    That possibility is controlled by a new 
+    <i>"<a href="#v1.6.0_html_options_generateCSSFile">Output | Generate style sheet file</a>"</i> option.
+    <p>
+    What's more, using the nested <i>"<a href="#v1.6.0_html_options_cssPatternFile">CSS pattern file</a>"</i> option,
+    you can frame the generated CSS declarations into your own CSS file. That will allow you to include in the
+    result CSS file your custom styles, which you can use to format the HTML markup embedded in your
+    descriptions/annotations.
+    <p>
+  </li>
+  <li><a name="v1.6.0_html_options"></a>
+    <b><i>New HTML Options</i></b>
+    <p>
+    <a name="v1.6.0_html_options_encoding"></a>
+    <i>Output | Character Encoding</i>
+    <blockquote>
+      Specifies the encoding of the generated HTML files.
+    </blockquote>
+
+    <i>Output | Add Charset</i>
+    <blockquote>
+      Specifies whether to insert the character encoding declaration in the generated HTML files.
+      The encoding name will be taken from the
+      <i>"<a href="#v1.6.0_html_options_encoding">Character Encoding</a>"</i> option.
+    </blockquote>
+
+    <a name="v1.6.0_html_options_noTimeStamp"></a>
+    <i>Output | Suppress Timestamp</i>
+    <blockquote>
+      Specifies whether to suppress the date/time information included in a special comment inserted
+      automatically at the beginning of every generated HTML file.
+      <p>
+      When you frequently upload the generated docs into some repository, which stores only changes of files
+      against their previous versions and your docs actually do not change, this will relieve
+      the repository from unnecessary updates.
+    </blockquote>
+
+    <a name="v1.6.0_html_options_generateCSSFile"></a>
+    <i>Output | Generate style sheet file</i>
+    <blockquote>
+      Specify whether to generate a separate style sheet file containing most of internal CSS
+      declarations generated by DocFlex (instead of holding them in every HTML documents where they are used).
+    </blockquote>
+
+    <a name="v1.6.0_html_options_cssPatternFile"></a>
+    <i>Output | Generate style sheet file | CSS pattern file</i>
+    <blockquote>
+      Allows you to frame the CSS declarations generated by DocFlex into your own CSS file.
+    </blockquote>
+  </li>
+  <li><a name="v1.6.0_html_gen_performance"></a>
+    <b><i>Performance improvement</i></b>
+    <p>
+    Thanks to all recent innovations, including storage of all internal CSS declarations
+    in a single CSS file (see <a href="#v1.6.0_CSS_file">Generation of CSS file</a>) and many others,
+    the HTML generator works now on average <b>5% faster</b>
+    and generate output <b>15% smaller</b> against the previous version <a href="#v1.5.6">1.5.6</a>.
+    <p>
+  </li>
+  </ul>
+</li>
+
+<li><a name="v1.6.0_rtf_output"></a>
+  <b>RTF Output</b>
+  <p>
+  <ul>
+  <li><a name="v1.6.0_rtf_compatibility"></a>
+    <b><i>Compatibility with other RTF readers</i></b>
+    <p>
+    The primary focus of the generated RTF was always MS Word.
+    However, since <a href="#v1.5.6">1.5.6</a>, following some user complaints,
+    we uncovered and fixed a lot of problems of compatibility with other RTF readers.
+    For instance, under WordPad, certain features of the old RTF output might be distorted,
+    or the whole doc might get invisible starting from some point.
+    <p>
+    <table><tr><td class="note">
+      RTF is poorly documented format ridden with various legacy contradictions.
+      So, it is not very simple to get all known RTF reader work correctly together, 
+      particularly, when you have a rather complex RTF.
+    </td></tr></table>
+    </p>
+    Now we've fixed a lot of such issues. So, the generated RTF seems to work OK with all
+    RTF reader we tried:
+    <p>
+    <ul>
+      <li>MS Word 2000, 2007, 2010</li>
+      <li>WordPad under Windows XP, Vista, 7</li>
+      <li>LibreOffice (Windows/Linux)</li>
+    </ul>
+    <p>
+  </li>
+  <li><a name="v1.6.0_rtf_styles"></a>
+    <b><i>Optimization of RTF styles</i></b>
+    <p>
+    Before this version, all formatting styles defined across a template set,
+    which are not overridden by other equally named styles from parent (calling) templates,
+    would produce the same number of separate styles in the RTF.
+    <p>
+    Now, this is changed:
+    <ul>
+      <li>
+        An RTF style is generated only when it is actually used (that is, there are references to it).
+        <p>
+      </li>
+      <li>
+        All equally named styles (defined in a template set), whose all properties are equal
+        and which are not overridden by other styles from calling templates,
+        will produce the only style in RTF (with those name and properties).
+      </li>
+    </ul>
+    <p>
+    That optimization prevents the contamination of the generated RTF with many unused styles
+    (which have been defined in templates but never used) and duplicated styles
+    (which are defined in several subtemplates, but never in the main one).
+    <p>
+  </li>
+  <li><a name="v1.6.0_rtf_wrap_nbr_str"></a>
+    <b><i>Wrapping of long non-breaking strings in tables</i></b>
+    <p>
+    The automatic wrapping of very long nonbreaking strings within table cells has been reworked once again.
+    <p>
+    <table><tr><td class="note">
+      The problem is that MS Word cannot wrap such strings by itself, which causes the table to stretch beyond
+      the visible page.
+    </td></tr></table>
+    </p>
+    The previous algorithm worked well when such strings appeared only in one table column.
+    But when they happened to be in several columns, the algorithm failed and the table was laid out by Word
+    again beyond the page width.
+    <p>
+    To deal with that problem, the following things have been implemented:
+    <ul>
+      <li>
+      When the table is generated by a template component
+      <blockquote>
+      (e.g. see: <i>Template Designer | Section's Properties Dialog | Formatting | General | Section Output | "Table"</i>)
+      </blockquote>
+      then a property similar to 
+      <i>"<a href="#v1.6.0_rtf_options_tables.breakLongStrings.maxNbrWidth">Tables | Break long nonbreaking strings | Maximal unbroken width</a>"</i>
+      option can be specified for each table cell/column; see:
+      <blockquote>
+        <i>Template Designer | Control's Properties Dialog | Formatting | Table Cell | Options | Max width allowed for long nonbreaking strings</i>
+      </blockquote>
+      </li>
+      <li>
+      When the table is generated by some embedded HTML markup (i.e. &lt;table&gt;,&lt;tr&gt;,&lt;td&gt; tags),
+      the above setting is estimated dynamically according to the overall content of each table column.
+      </li>
+    </ul>
+    <p>
+  </li>
+  <li><a name="v1.6.0_rtf_ehtml"></a>
+    <b><i>Rendering of embedded HTML</i></b>
+    <p>
+    <ul>
+      <li><i>&lt;img&gt; tags</i>
+      <p>
+      The <code>src</code> attribute now can specify not only a formal URL but also a local file pathname
+      (e.g. <code>c:\element.gif</code>). Such an image will be shown in RTF.
+      <p>
+      Also, when the image file specified in <code>src</code> attribute cannot be found and 
+      the <i>"Images | Show failed image path"</i> RTF option selected,
+      the failed image's pathname (or URL) will be shown in the generated RTF (along with a placeholder).
+      Previously, all &lt;img&gt; tags with failed images were just ignored.
+      <p>
+      </li>
+      <li><i>Rendering of line breaks (newlines)</i>
+      <p>
+      That has been completely reworked.
+      <p>
+      Previously, when <i>"Text | Render line breaks"</i> RTF option was selected
+      and some embedded HTML happened to contain table tags (&lt;table&gt;,&lt;tr&gt;,&lt;td&gt;)
+      intermitting with newlines, the rendering of such a markup in RTF could produce tables with extra cells.
+      Now, this is fixed!
+      <p>
+      </li>
+      <li><i>Formatting within table cells</i>
+      <p>
+      Before this version, when some HTML formatting was specified within a table cell, like:
+      <blockquote>
+      <code>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;font color="red"&gt;blah-blah-blah&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code>
+      </blockquote>
+      it didn't work (<code>'blah-blah-blah'</code> wouldn't be red). Now, this is fixed!
+      <p>
+      </li>
+    </ul>
+    <p>
+  </li>
+  <li><a name="v1.6.0_rtf_options"></a>
+    <b><i>New RTF Options</i></b>
+    <p>
+    <i>Hypertext | Generate hyperlinks</i>
+    <blockquote>
+      Specify whether to add hyperlinks in the RTF output.
+      <p>
+      Note: To have cross-reference hyperlinks (those pointing within the same document) be generated, 
+      the <i>"<a href="#v1.6.0_rtf_options.generate_bookmarks">Hypertext | Generate bookmarks</a>"</i>
+      option must also be selected. Without it, only external (URL) hyperlinks will be possible.
+    </blockquote>
+
+    <a name="v1.6.0_rtf_options.generate_bookmarks"></a>
+    <i>Hypertext | Generate bookmarks</i>
+    <blockquote>
+      Specify whether to add bookmarks in the RTF output.
+      <p>
+      Bookmarks are needed to generated both cross-reference hyperlinks and page number references.
+    </blockquote>
+
+    <i>Hypertext | Bookmark name prefix</i>
+    <blockquote>
+      Specify prefix for automatically generated bookmark names.
+      <p>
+      This option may be useful when you need to merge several RTF files produced with DocFlex 
+      into a single document. In that case, you should generate those files with different bookmark prefixes.
+      This will ensure that the bookmarks from different RTFs never overlap and all hyperlinks and 
+      page number references in the result document are correct.
+    </blockquote>
+
+    <i>Tables | Break long nonbreaking strings</i>
+    <blockquote>
+      Specify whether to break automatically the long nonbreaking strings placed within the tables
+      with the <i>'table autofit'</i> setting.
+    </blockquote>
+
+    <i>Tables | Break long nonbreaking strings | Maximal unbroken length</i>
+    <blockquote>
+      Specify the maximal characters length for a nonbreaking string
+      (i.e. non-wrapping text) allowed to be left unbroken.
+      <p>
+      This option lets you define what a long nonbreaking string actually is
+      (thereby preventing breaking of some resonably long words and names).
+    </blockquote>
+
+    <a name="v1.6.0_rtf_options_tables.breakLongStrings.maxNbrWidth"></a>
+    <i>Tables | Break long nonbreaking strings | Maximal unbroken width</i>
+    <blockquote>
+      Specify the maximal width for a long nonbreaking string (i.e. non-wrapping text)
+      allowed to be left unbroken.
+      Precisely, it is the percent of the table width, in which any nonbreaking string should be wrapped.
+      <p>
+      For all details, see the description of this option in:
+      Generator GUI | Output format | RTF | Options | "RTF Option" dialog
+    </blockquote>
+
+    <i>Tables | Break long nonbreaking strings | Use optional breaks</i>
+    <blockquote>
+      Specify whether to use <i>'Non-width Optional Breaks'</i> when breaking long strings for wrapping.
+    </blockquote>
+
+    <i>Other | Suppress Timestamp</i>
+    <blockquote>
+      The same as HTML option:
+      <i>"<a href="#v1.6.0_html_options_noTimeStamp">Output | Suppress Timestamp</a>"</i>
+    </blockquote>
+  </li>
+  </ul>
+</li>
+<li><a name="v1.6.0_doclet_gui"></a>
+  <b>Doclet GUI</b>
+  <p>
+  In the case when the DocFlex Doclet is run with the enabled GUI,
+  the <a href="doc/index.html?docflex_javadoc/docs/doclet.html#gui" target="_blank">generator dialog</a>
+  has been re-implemented using JFrame so that it is visible on the Windows taskbar
+  as a Swing application.
+  <p>
+</li>
+<li><a name="v1.6.0_maven"></a>
+  <b>Maven Integration</b>
+  <p>
+  The integration with Apache Maven 2.2.x - 3.0.x has been specifically worked out.
+  <p>
+  Although, <a href="http://maven.apache.org/plugins/maven-javadoc-plugin/" target="_blank">Maven Javadoc Plugin</a>
+  is supposed to work with any Javadoc doclets, since Maven 2.2.x it always emits various
+  <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#standard" target="_blank">Standard Doclet options</a>
+  (like <code>-author</code>, <code>-bottom</code> etc.), which break execution of any custom doclet,
+  unless it supports them too.
+  <p>
+  <table><tr><td class="note">
+    Javadoc itself requires for a doclet to recognize all non-core options.
+    The Standard Doclet options are non-core. So, when found on the Javadoc command line,
+    they break the execution of the doclet unless it supports them. Supporting of an option
+    means not only returning OK for it, but also how many arguments it has.
+  </td></tr></table>
+  <p>
+  So, we needed to develop the whole mechanism of
+  <a href="#v1.6.0_javadoc_options_to_params">mapping options to template parameters</a>
+  to work around all this.
+</li>
+</ul>
+
+<h2>
+  <a name="v1.5.6"></a>
+  Version 1.5.6
+</h2>
+
+<ul>
+<li><a name="v1.5.6_template_language"></a>
+  <b>Template language / general functionality</b>
+  <p>
+  <ul>
+    <li><a name="v1.5.6_list_params"></a>
+      <b><i>Multivalued (List) Parameters</i></b>
+      <p>
+      Since this version, DocFlex/Javadoc supports multi-valued template parameters
+      (called also <i>list</i> parameters, for short).
+      <p>
+      Such parameters allow you to pass into template the whole vector of different values 
+      associated with the same parameter name. This provides a universal mechanism for implementing 
+      a user control over how a set of templates processes a certain type of data (or situations) 
+      that may come in unlimited number of variations.
+      A list parameter can be specified both in the Parameter Inspector dialog of the doclet GUI
+      and on Javadoc command (using one or many <code>-P</code> options).
+      <p>
+      List parameters have been immediately used in <a href="#v1.5.6_standard_templates">standard templates</a> 
+      to re-implement all <i>"<a href="#v1.5.6_exclude.byTags">Exclude By Tags</a>"</i> and 
+      <i>"<a href="#v1.5.6_exclude.byAnns">Exclude By Annotations</a>"</i> parameters
+      and to support a new functionality of 
+      <i>"<a href="#v1.5.6_standard_templates.custom_tags">Include Custom Tags</a>"</i> parameter (see below).
+      <p>
+    </li>
+    <li><a name="v1.5.6_custom_elements"></a>
+      <b><i>Custom Elements</i></b>
+      <p>
+      Most of the data processed by templates come from some external data source (e.g. Doclet API) via its virtual 
+      XML-like representation called Data Source Model (DSM), which maps everything onto some elements and their attributes.
+      Therefore, most of the functionality available in templates (such as iterators, hash-maps and so on) is about 
+      elements and attributes.
+      <p>
+      But what if you want to use that functionality to process some different kind of data, 
+      for instance, those coming from template parameters or elsewhere?
+      <p>
+      Now, you can do that using <i>custom elements</i>!
+      <p>
+      For more details, please see Template Designer | Help | Assistant:
+      <p>
+      <ul>
+       <li><i>Function By Category | Elements / Attributes | Custom Elements</i></li>
+       <li><i>All Element Types | #CUSTOM</i></li>
+      </ul>
+      <p>
+      We have used this new functionality immediately to implement the processing of
+      <i>"<a href="#v1.5.6_standard_templates.custom_tags">Include Custom Tags</a>"</i> parameter (see below).
+      <p>
+    </li>
+    <li><a name="v1.5.6_doclet_dsmtype2"></a>
+      <b><i>Doclet DSM Type, Version 2</i></b>
+      <p>
+      Doclet API Data Source Model (or Doclet DSM, for short) is a virtual XML-like representation of the entire Javadoc Doclet API
+      in the form of a tree of elements and attributes. All DocFlex templates are based on that representation.
+      DSM Type is a particular mapping of the Doclet API classes and methods on the DSM elements and attributes.
+      <p>
+      Since now, DocFlex/Javadoc uses a new version of such a mapping. 
+      It is different from the old one just in a few places.
+      <p>
+      The reason why the new mapping (DSM Type) was needed is the support of the notion of 
+      <b>parent element</b>: a new <code>GOMElement.parent</code> property and <code>findAncestor()</code> 
+      function have been introduced. (Later, there will be also a special Location Path axis <code>'parent'</code>.)
+      <p>
+      The notion of parent element is opposite to the notion of child element. 
+      If <code>element1</code> is a child of <code>element2</code>, then <code>element2</code> must be the parent 
+      of <code>element1</code>. In particular that means, given
+      <blockquote>
+        <code>element1 = element2.findChild ("SomeElementType");</code>
+      </blockquote>
+      the following must be true:
+      <blockquote>
+        <code>element1.parent.id == element2.id</code>
+      </blockquote>
+      That is not always true (in all situations) for the old mapping. The new DSM Type fixes it.
+      <p>
+      The <a href="#v1.5.6_standard_templates">standard templates</a> have been switched to the new mapping.
+      The old mapping is supported as well, for compatibility with any previous custom templates.
+    </li>
+  </ul>
+  </p>
+</li>
+<li><a name="v1.5.6_generator"></a>
+  <b>Template interpreter / output generator</b>
+  <p>
+  <ul>
+    <li><a name="v1.5.6_generator.performance"></a>
+      <b><i>Performance improvement</i></b>
+      <p>
+      Thanks to some new optimizations, all output generators work 15-20% faster now.
+      <p>
+      The following is the result of the generation of framed HTML documentation
+      by all Java sources of <code>java.*</code>, <code>javax.*</code>, <code>org.*</code> packages 
+      (including all their subpackages), which constitute the entire 
+      <a href="http://docs.oracle.com/javase/6/docs/api/" target="_blank">Java SE 6 API Specification</a>
+      currently provided by Sun:
+      <p>
+      <table cellpadding="4" cellspacing="1" border="1">
+      <tr>
+      <td bgcolor="#F5F5F5">
+        <table cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="tbl">Number of Java classes:&nbsp;&nbsp;</td>
+          <td class="tbl">3821</font></td>
+        </tr>
+        <tr>
+          <td class="tbl">Total source code size:&nbsp;&nbsp;</td>
+          <td class="tbl">40.4 Mb (all files)</font></td>
+        </tr>
+        <tr>
+          <td class="tbl">Generation time:&nbsp;&nbsp;</td>
+          <td class="tbl"><b>323 sec</b></td>
+        </tr>
+        <tr>
+          <td class="tbl">Result HTML documentation:&nbsp;&nbsp;</td>
+          <td class="tbl">39.7 Mb</td>
+        </tr>
+        <tr>
+          <td class="tbl">Number of generated files:&nbsp;&nbsp;</td>
+          <td class="tbl">4216</td>
+        </tr>
+        <tr>
+          <td class="tbl">Computer platform:&nbsp;&nbsp;</td>
+          <td class="tbl">Intel Core 2 Duo E6600 based system / Windows XP</td>
+        </tr>
+        <tr>
+          <td class="tbl">JDK version:&nbsp;&nbsp;</td>
+          <td class="tbl">1.6.0_10</td>
+        </tr>
+        </table>
+      </td>
+      </tr>
+      </table>
+      <p>
+      For comparison, the same test run with the previous <a href="#v1.5.5">v1.5.5</a> took 393 sec.
+      <p>
+    </li>
+    <li><a name="v1.5.6_rtf_wrap_nbr_str"></a>
+      <b><i>Very long nonbreaking string in RTF</i></b>
+      <p>
+      The automatic wrapping of very long nonbreaking strings within table cells has been improved.
+      <p>
+      Until this version, such a wrapping was done correctly when the string was generated by the same control.
+      When the entire nonbreaking string was produced by different controls (possibly using different fonts),
+      it was not recognized as a single string and, therefore, was not broken as needed.
+      That caused some summary tables in RTF JavaDoc to expand beyond the page width.
+      <p>
+      Now, this is fixed!
+      <p>
+      For more details about that problem with long nonbreaking strings in RTF, see Doclet GUI | 
+      RTF Options | Tables | Long string wrapping factor.
+      </p>
+    </li>
+  </ul>
+  </p>
+</li>
+<li><a name="v1.5.6_standard_templates"></a>
+  <b>Standard Templates</b>
+  <p>
+  <ul>
+    <li><a name="v1.5.6_standard_templates.custom_tags"></a>
+      <b><i>Documenting of custom tags</i></b>
+      <p>
+      The <i>"Include | Tags | Custom Tags"</i> (<code>include.tag.custom</code>) parameter,
+      which was present in the standard templates previously, has been completely redefined to support a functionality
+      similar to that of 
+      <code><a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#tag" target="_blank">-tag</a></code>
+      option provided by the
+      <a href="http://docs.oracle.com/javase/6/docs/technotes/guides/javadoc/standard-doclet.html" target="_blank">Standard Doclet</a>.
+      <p>
+      In particular, using this parameter, now you can selectively include in the generated output 
+      the documentation of your custom tags, specify the tag headings as well as their ordering. 
+      You will be able also to redefine the headings and ordering of the standard tags (such as @param, @see, @author etc). 
+      <p>
+      All that new sophisticated functionality of this parameter has been implemented entirely in 
+      standard templates using new general features
+      <i><a href="#v1.5.6_list_params">Multivalued (List) Parameters</a></i> and 
+      <i><a href="#v1.5.6_custom_elements">Custom Elements</a></i> introduced in this version.
+      <p>
+    </li>
+    <li><a name="v1.5.6_standard_templates.changes"></a>
+      <b><i>Changes in Standard Template Set</i></b>
+      <p>
+      Processing/documenting of tags has been completely reworked.
+      The old <code>tags.tpl</code> subtemplate has been eliminated.
+      <p>
+      Now, all tags are processed in <i>"tag documentation"</i> sections 
+      of the template blocks that generate the details for each type of Java language constructs
+      (package, class, constructor, method, field).
+    </li>
+  </ul>
+  </p>
+</li>
+</ul>
+
+<h2>
+  <a name="v1.5.5"></a>
+  Version 1.5.5
+</h2>
+
+<ul>
+<li><a name="v1.5.5_template_language"></a>
+  <b>Template language / Template Designer</b>
+  <p>
+  A new property has been introduced for template sections: <b><i>"Break Parent Section Block"</i></b>.
+  <p>
+  When specified, it forces the template interpreter, after the processing of the given section,
+  to break the further processing of the containing it section block according to the property value,
+  which may be one of the following:
+  <p>
+  <i>"break when section executed"</i>
+  <blockquote>
+    The processing of the parent block will be broken only when the given section has been executed.
+    <p>
+    Note: The section is executed when it has passed its <i>enabling condition</i> (if specified)
+    and the current <i>generator context element</i> complies with the <i>Matching Element Type(s)</i>
+    specified on the section.
+  </blockquote>
+
+  <i>"break when section produced output"</i>
+  <blockquote>
+    The processing of the parent block will be broken only when the given section has not only 
+    been executed but also produced some non-empty output.
+  </blockquote>
+
+  In the Template Designer, when the <i>'Break Parent Section Block'</i> property is specified
+  on a section, it is indicated with a special icon, which appears on that section in the left designer
+  pane (showing the section tree).
+  The property itself can be specified in the <i>"Component | Options"</i> tab of section's property dialog.
+  <p>
+  Until now, the functionality of the new property was substituted by testing 
+  in the enabling conditions of other sections (located below the given one) one of the generator variables:
+  <code>'sectionBlock.execSecNone'</code> or <code>'sectionBlock.outputSecNone'</code>.
+  (Those variables allow you to test if some sections in a section block have been already executed
+  or produced a non-empty output.)
+  <p>
+  The old approach works as well now. However, the new one adds clarity, simplifies programming and 
+  may substantially improve performance of template applications (up to 15% in some our tests!).
+  <p>
+  The new feature is already used in the standard template set.
+  <p>
+</li>
+<li><a name="v1.5.5_template_designer_doclet_gui"></a>
+  <b>Template Designer / Doclet GUI</b>
+  <p>
+  The processing of mouse-click events has been reworked so as to show popup menus
+  correctly on different platforms.
+  Until this version, the popup menus actually didn't work on Apple Mac (with its one-button mouse).
+  Now, it is fixed!
+  <p>
+</li>
+<li><a name="v1.5.5_generator"></a>
+  <b>Output Generators</b>
+  <p>
+  The EMF image format has been supported. Now, the EMF images can be inserted both in 
+  the generated HTML and RTF documents.
+  All supported (and tested) image formats now include: GIF, PNG, JPG, WMF, EMF, BMP.
+  <p>
+</li>
+<li><a name="v1.5.5_maven_example"></a>
+  <b>Maven Example</b>
+  <p>
+  A Maven sample project has been added to demonstrate how to integrate 
+  DocFlex Doclet with <a href="http://maven.apache.org/" target="_blank">Apache Maven</a>.
+</li>
+</ul>
+
+<h2>
+  <a name="v1.5.4"></a>
+  Version 1.5.4
+</h2>
+
+<ul>
+<li><a name="v1.5.4_new_licensing_system"></a>
+   <b>New licensing system</b>
+   <p>
+   A new <a target="_blank" href="http://www.filigris.com/buy/licensing_pricing.php">licensing system</a>
+   has been implemented. However, this currently will not particularly affect DocFlex/Javadoc product line, 
+   except that the Template Designer will work now in demo mode without any special licensing 
+   (e.g. without a trial license).
+   <p>
+   <i>Note: Any old commercial licenses will work the same. If you have one, you may install and
+   use it with this version as well.</i>
+   <p>
+</li>
+<li><a name="v1.5.4_generator_gui"></a>
+   <b>Generator GUI | Template Parameter Inspector</b>
+   <p>
+   Now, the parameter group nodes may themselves serve as the template parameters.
+   This allows making the template parameter tree even more compact (especially in the case of big template applications
+   with lots of parameters).
+   <p>
+</li>
+<li><a name="v1.5.4_template_designer"></a>
+  <b>Template Designer</b>
+  <p>
+  <ul>
+    <li>
+      The improved support of the definition of template parameters (see above).
+      <p>
+    </li>
+    <li>
+      Support of Copy/Paste of all settings at once specified 
+      in a particular tab (e.g. "Processing") of a component property dialog,
+      including all sub-tabs.
+      <p>
+      This feature may not sound very great, but it was not that easy to implement.
+      In fact, it substantially speeds up the process of designing of templates
+      (which we particularly need ourselves as the primary users of our own tool).
+      <p>
+    </li>
+  </ul>
+</li>
+<li><a name="v1.5.4_generator"></a>
+   <b>Template interpreter / output generator</b>
+   <p>
+   The format of <code>-P</code> and <code>-O</code> command-line options 
+   (which specify a value of a template parameter or output format option) has been changed slightly
+   so as to pass the value as a separate command-line argument.
+   <p>
+   That was needed for better compatibility with <a href="#ant_example">Apache Ant</a>
+   (particularly, in some situations when the value string contains spaces). 
+   <p>
+</li>
+<li><a name="v1.5.4_standard_templates"></a>
+   <b>Standard Templates</b>
+   <p>
+   The processing of <code>{@inheritDoc}</code> tags has been slightly changed so as not
+   to reprint them back in the documentation when no actual inherited comments have been found.
+   <p>
+</li>
+</ul>
+
+<h2>
+  <a name="v1.5.3"></a>
+  Version 1.5.3
+</h2>
+
+<ul>
+<li><a name="v1.5.3_generator_gui"></a>
+   <b>Generator GUI | Template Parameter Inspector</b>
+   <p>
+   As the number of template parameters (controlling what is generated) will ever grow, 
+   the Template Parameter Inspector in its previous form became increasingly cumbersome and difficult to navigate. 
+   <p>
+   We have addressed that problem by introducing a possibility to collapse/expand the parameter group nodes dynamically 
+   (some of which can be preset in the templates to appear initially in the collapsed form; 
+   further, the current collapse/expand state of particular group nodes is saved in the 
+   <code>generator.config</code> and restored next time). This improvement should make the whole parameter tree 
+   a lot more compact and easy to use.
+   <p>
+   The same feature has been extended to all other property inspectors (e.g. in the Output Format Option dialogs
+   and the Template Designer).
+   <p>
+</li>
+<li><a name="v1.5.3_template_designer"></a>
+   <b>Template Designer</b>
+   <p>
+   When Copy/Paste template components, the original settings of the component being copied 
+   (including those of its nested components) that are dependant on the context 
+   (e.g. the context Element Type or formatting styles) are preserved now in some "latent" form 
+   along with the copy of that component at the new location. This is done even though those 
+   settings might be senseless according to the new context at the moment of copying.
+   (For instance, the original component may print the value of an attribute of the context element.
+   However, at the new location the current context Element Type has no such an attribute.
+   Hence, the component's settings about that attribute would be lost. The same is true 
+   about formatting styles.) Once at the new location the context has been changed 
+   appropriately (e.g. the needed formatting style has been copied there as well), 
+   the latent settings will be restored as actual ones. This all may save lots of time 
+   when a piece of a template is being reused at different locations or in another template 
+   (perhaps with some little changes).
+   All the necessary context settings simply cannot be copied to the new location together with 
+   the component at once!
+</li>
+</ul>
+
+<h2>
+  <a name="v1.5.2"></a>
+  Version 1.5.2
+</h2>
+
+<ul>
+<li><a name="v1.5.2_standard_templates"></a>
+  <b>Standard Templates</b>
+  <p>
+  <ul>
+  <li><a name="v1.5.2_standard_templates.new_params"></a>
+    <b><i>New template parameters</i></b>
+    <p>
+    <a name="v1.5.2_exclude.byAnns"></a>
+    In addition to <a href="#v1.5.1_exclude.byTags"><i>"Exclude By Tags"</i></a>, a similar group of parameters 
+    <i>"Exclude By Annotations"</i> has been added:
+    <p>
+    <ol>
+      <li>
+        <i>Exclude By Annotations | classes & members</i>
+        <p>
+        Specify annotation types by which both classes and class members 
+        (i.e. fields, constructors and methods) are completely excluded from 
+        the generated documentation.
+        <p>
+      </li>
+      <li>
+        <i>Exclude By Annotations | classes</i>
+        <p>
+        Allows to hide completely from the generated documentation 
+        some intermediate classes of your internal implementation, however, 
+        to preserve documenting of some their fields and methods (inherited by other classes), 
+        which are supposed to be part of an open API.
+        <p>
+      </li>
+      <li>
+        <i>Exclude By Annotations | members</i>
+        <p>
+        Specify annotation types by which only class members 
+        (i.e. fields, constructors and methods) are selectively excluded 
+        from the generated documentation.
+      </li>
+    </ol> 
+    <p>
+    The reason why tags are not enough is that they are not retained in the compiled binary classes. 
+    <p>
+    Suppose that before generating JavaDoc, a part of your project is present already in a precompiled 
+    binary form (e.g. in a jar-file) and you want to exclude those classes from mentioning
+    in the documentation (even though they are declared <code>public</code> for your internal use). 
+    You will not be able to achieve this simply by marking such classes 
+    with tags and trying to exclude by them! Those tags won't get into the binary classes and, hence,
+    the Doclet API won't know anything about them. 
+    Annotations, on the contrary, can be retained in binary form and here is where they can help!
+    <p>
+  </li>
+  <li><a name="v1.5.2_standard_templates.javadoc-1.4"></a>
+    <b><i>Template set for Java 1.4</i></b>
+    <p>
+    In addition to the default <i>"javadoc"</i> template set (which fully supports Java 5), 
+    a reduced template set <i>"javadoc-1.4"</i> has been added,
+    which is based only on the pre-Java5 features provided by 
+    <a href="http://java.sun.com/j2se/1.4.2/docs/tooldocs/javadoc/doclet/" target="_blank">Doclet API 1.4</a>
+    and, because of this, is much simpler.
+    <p>
+    You can use this template set for learning or when your project is based only on Java 1.4.
+    <p>
+  </li>
+  </ul>
+</li>
+<li><a name="v1.5.2_template_language"></a>
+  <b>Template Language</b>
+  <p>
+  Similarly the <a href="#findTag()"><code>findTag()</code></a> function, a new 
+  <b><code>findAnnotation()</code></b> function has been added. 
+  <p>
+  It finds an annotation with the specified qualified name assigned to the specified package, 
+  program element or constructor/method's parameter. For a program element (i.e. class or member), 
+  the search is extended to all classes containing/enclosing it. 
+  <p>
+  This function is used in the implementation of the new 
+  <a href="#v1.5.2_exclude.byAnns"><i>"Exclude By Annotations"</i></a> parameters.
+  <p>
+  It is particularly useful when some annotations specified in a class 
+  affect processing of the class' members and its inner classes.
+  For more detail, see 
+  <i>Template Designer | Help | Assistant | Function by Category | Javadoc | findAnnotation()</i>.
+  <p>
+</li>
+<li><a name="v1.5.2_template_designer"></a>
+  <b>Template Designer</b>
+  <p>
+  In the Element Type Tree, which shows the mapping of the 
+  <a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/" target="_blank">Doclet API</a>
+  interfaces and methods onto a virtual XML document
+  (e.g. see <i>Template Designer | Help | Assistant | All Element Types</i>), 
+  the child element types and attributes inherited from the ancestor types appear now in a different color.
+  This helps to distinguish them quickly from the own children and attribute of the given type,
+  which adds clarity to the whole representation.
+</li>
+</ul>
+
+<h2>
+  <a name="v1.5.1"></a>
+  Version 1.5.1
+</h2>
+
+<ul>
+<li><a name="v1.5.1_standard_templates"></a>
+  <b>Standard Templates | New template parameters</b>
+  <p>
+  <a name="v1.5.1_exclude.byTags"></a>
+  The old <i>"Exclude by tags"</i> template parameter has been replaced with the whole three parameters:
+  <p>
+  <ol>
+    <li>
+      <i>Exclude By Tags | classes & members</i>
+      <p>
+      Specify tags by which both classes and everything defined within them (i.e. members and inner classes)
+      will be completely excluded from the documentation. Before this revision, the public/protected members 
+      of the excluded classes might still appear in the documentation 
+      (e.g. in such places like inherited member lists).
+      <p>
+    </li>
+    <li>
+      <i>Exclude By Tags | classes</i>
+      <p>
+      Allows to hide completely from the generated documentation some intermediate public classes 
+      of your internal implementation while preserving documenting their public/protected 
+      fields and methods supposed to be part of an open API.
+      <p>
+      The effect will be that each visible inheritable member of the excluded class will appear in every 
+      direct descendant of that class being documented (as if that member was defined directly there).
+      This may be especially helpful when you will need next time to change your implementation 
+      while keeping intact what you have declared in your open API.
+      <p>
+    </li>
+    <li>
+      <i>Exclude By Tags | members</i>
+      <p>
+      Specify tags by which only class members are selectively excluded from the generated documentation.
+    </li>
+  </ol> 
+  <p>
+</li>
+<li><a name="v1.5.1_template_language"></a>
+  <b>Template Language</b>
+  <p>
+  <ul>
+    <li>
+      <a name="findTag()"></a>
+      A new function <code>findTag()</code> was added. 
+      <p>
+      It finds a tag of the specified kind in the specified <code>Doc</code> element.
+      If the tag is not found and the given element is a <i>program element</i> (i.e. class or member), 
+      the search is continued in all classes containing/enclosing it.
+      <p>
+      This function is used in the implementation of the new 
+      <a href="#v1.5.1_exclude.byTags"><i>"Exclude By Tags"</i></a> parameters.
+      <p>
+      It is particularly useful when some tags specified in a class affect processing 
+      of the class' members and its inner classes. For more detail, see 
+      <i>Template Designer | Help | Assistant | Function by Category | Javadoc | findTags()</i>.
+      <p>
+    </li>
+  </ul>
+</li>
+<li><a name="v1.5.1_generator"></a>
+  <b>Template interpreter / output generator</b>
+  <p>
+  <ul>
+    <li>
+      Reworked scaling of images in HTML.
+      <p>
+      In templates, the new image size must be specified in device-independent units (like points).
+      Before that, it was an HTML browser who converted points into pixels, which might be
+      responsible for producing images with unpredictable sizes.
+      <p>
+      Now, when generating HTML, the DocFlex generator itself converts point size into pixel size according 
+      to the DPI value specified in the formatting properties of the given templates
+      (see: <i>Template Designer | File | Properties | Formatting | General | Resolution (DPI)</i>).
+      So, in HTML, the new image size will always be specified in pixels.
+      <p>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      Support of images in BMP format.
+      <p>
+      Now, all supported image formats include: GIF, PNG, JPG, WMF, BMP
+    </li>
+  </ul>
+</li>
+</ul>
+
+<h2>
+  <a name="v1.5.0"></a>
+  Version 1.5.0
+</h2>
+
+<ul>
+<li><a name="v1.5.0_java5_support"></a>
+  <b>Full support of Java 5 language features</b>
+  <p>
+  The version 1.5.0 is a milestone of DocFlex/Javadoc development. Since that version, 
+  DocFlex/Javadoc fully supports all new language features introduced in Java 5.
+  In particular, this includes two major innovations:
+  <p>
+  <ol>
+    <li>
+      The extension of the Doclet DSM (which maps the whole Doclet API into a DOM-like representation
+      used in DocFlex templates) to fully cover the new 
+      <a href="http://docs.oracle.com/javase/1.5.0/docs/guide/javadoc/doclet/spec/index.html" target="_blank">Doclet API</a>
+      introduced since <a href="http://java.sun.com/j2se/1.5/" target="_blank">JDK 5.0</a>.
+      <p>
+    </li>
+    <li>
+      The new standard template set to generate documentation with the full support 
+      of the new language features introduced in Java 5:
+      <ul>
+        <li><i>Generic Types</i></li>
+        <li><i>Enumerated Types</i></li>
+        <li><i>Annotations</i></li>
+      </ul>
+    </li>
+  </ol>
+  <p>
+</li>
+<li><a name="v1.5.0_performance"></a>
+  <b>Performance improvement</b>
+  <p>
+  The following are two tests that have been run on Java SE 6 JDK Source Code (downloaded from:
+  <a href="http://download.java.net/jdk6/" target="_blank">http://download.java.net/jdk6/</a>)
+  using standard templates and default generator settings.
+  <p>
+  This is the result of the generation of a <b>framed HTML</b> documentation by the Java sources of 
+  all <code>java.*</code> packages and all their subpackages (i.e. the entire Java core class library):
+  <p>
+  <table cellpadding="4" cellspacing="1" border="1">
+  <tr>
+  <td bgcolor="#F5F5F5">
+    <table cellpadding="0" cellspacing="0">
+    <tr>
+      <td class="tbl">Number of Java classes:&nbsp;&nbsp;</td>
+      <td class="tbl">1363</font></td>
+    </tr>
+    <tr>
+      <td class="tbl">Total source code size:&nbsp;&nbsp;</td>
+      <td class="tbl">18.1 Mb (all files)</font></td>
+    </tr>
+    <tr>
+      <td class="tbl">Generation time:&nbsp;&nbsp;</td>
+      <td class="tbl"><b>194 sec</b></td>
+    </tr>
+    <tr>
+      <td class="tbl">Result HTML documentation:&nbsp;&nbsp;</td>
+      <td class="tbl">39.7 Mb</td>
+    </tr>
+    <tr>
+      <td class="tbl">Number of generated files:&nbsp;&nbsp;</td>
+      <td class="tbl">1476</td>
+    </tr>
+    <tr>
+      <td class="tbl">Computer platform:&nbsp;&nbsp;</td>
+      <td class="tbl">AMD Athlon64 3000+ based system / Windows XP</td>
+    </tr>
+    <tr>
+      <td class="tbl">JDK version:&nbsp;&nbsp;</td>
+      <td class="tbl">1.6.0</td>
+    </tr>
+    </table>
+  </td>
+  </tr>
+  </table>
+  <p>
+  This is the result of the generation of a single-file <b>RTF</b> documentation by the Java sources
+  of <code>javax.swing</code> package and subpackages:
+  <p>
+  <table cellpadding="4" cellspacing="1" border="1">
+  <tr>
+  <td bgcolor="#F5F5F5">
+    <table cellpadding="0" cellspacing="0">
+    <tr>
+      <td class="tbl">Number of Java classes:&nbsp;&nbsp;</td>
+      <td class="tbl">872</td>
+    </tr>
+    <tr>
+      <td class="tbl">Total source code size:&nbsp;&nbsp;</td>
+      <td class="tbl">10.7 Mb (all files)</td>
+    </tr>
+    <tr>
+      <td class="tbl">Generation time:&nbsp;&nbsp;</td>
+      <td class="tbl"><b>189 sec</b></td>
+    </tr>
+    <tr>
+      <td class="tbl">Result RTF document:&nbsp;&nbsp;</td>
+      <td class="tbl">22.4 Mb (with images)</td>
+    </tr>
+    <tr>
+      <td class="tbl">Number of pages (A4):&nbsp;&nbsp;</td>
+      <td class="tbl">3981</td>
+    </tr>
+    <tr>
+      <td class="tbl">Computer platform:&nbsp;&nbsp;</td>
+      <td class="tbl">AMD Athlon64 3000+ based system / Windows XP</td>
+    </tr>
+    <tr>
+      <td class="tbl">JDK version:&nbsp;&nbsp;</td>
+      <td class="tbl">1.6.0</td>
+    </tr>
+    </table>
+  </td>
+  </tr>
+  </table>
+</li>
+</ul>
+
+<h2>
+  <a name="v1.4.11"></a>
+  Version 1.4.11
+</h2>
+
+<ul>
+<li><a name="v1.4.11_generator"></a>
+  <b>Template interpreter / output generator</b>
+  <p>
+  <ul>
+    <li>
+      Better support for image formatting. 
+      Now, an image can be aligned both to the left or right of a text and wrapped by it.
+      This is supported both in HTML and RTF output.
+      An image can be aligned directly in a template (e.g. by specifying properties of an Image Control) 
+      or using <b><code>align</code></b> attribute of an <b><code>&lt;img&gt;</code></b> tag in 
+      a description preformatted with HTML markup.
+    </li>
+  </ul>
+  <p>
+</li>
+<li><a name="v1.4.11_template_language_gom"></a>
+  <b>Template Language / Generator Object Model (GOM)</b>
+  <p>
+  <ul>
+    <li>
+      <i>Init/Finish Expressions</i> are now supported in Area Sections.
+      <p>
+    </li>
+    <li>
+      The font size assigned to a particular template component can be specified now
+      not only as a fixed value but also relatively (in percents) to the font size
+      of the component's context. 
+      (See component's Properties Dialog | Formatting | Text tab).
+      <p>
+    </li>
+    <li>
+      The "Alignment" formatting property of Image Control has been extended up to five
+      possible setting: 
+      <p>
+      <ol>
+        <li><i>Bottom (base line)</i></li>
+        <li><i>Middle (base line)</i></li>
+        <li><i>Top (text line)</i></li>
+        <li><i>Left (margin)</i></li>
+        <li><i>Right (margin)</i></li>
+      </ol>
+      <p>
+      (See Image Control Properties Dialog | Formatting | Image tab).
+      <p>
+    </li>
+    <li>
+      A new GOM property <b><code>OutputFormat.renderEmbeddedHTML</code></b> has been added
+      to indicate if <i>"Render embedded HTML"</i> format option has been specified for the generator.
+    </li>
+  </ul>
+</li>
+</li>
+</ul>
+
+<h2>
+  <a name="v1.4.10"></a>
+  Version 1.4.10
+</h2>
+
+<ul>
+<li><a name="v1.4.10_generator"></a>
+  <b>Template interpreter / output generator</b>
+  <p>
+  <ul>
+    <li>
+      Now, the generator consumes considerably less memory and works up to 10% faster!
+    </li>
+    <li>
+      The error reporting, when the generator works without GUI, is directed now to the 
+      <code>stderr</code> (by default) or in a separate <code>'docflex_error.log'</code> file 
+      (when it is specified with the newly introduced <b><code>-errlog</code></b> option).
+    </li>
+  </ul>
+  <p>
+</li>
+<li><a name="v1.4.10_gom"></a>
+  <b>Generator Object Model (GOM)</b>
+  <p>
+  <ul>
+    <li>
+      New properties
+      <b><code>GOMIterator.prevItem</code></b> and <b><code>GOMIterator.nextItem</code></b>
+      were introduced as well as a method accompanying them: 
+      <b><code>GOMIterator.itemAt()</code></b>.
+      <p>
+    </li>
+  </ul>
+  <p>
+  For details, see Template Designer | <i>Help | Expression Assistant</i> dialog.
+</li>
+</ul>
+
+<h2>
+  <a name="v1.4"></a>
+  Version 1.4
+</h2>
+
+<ul>
+<li><a name="v1.4_linux_support"></a>
+  <b>DocFlex/Javadoc now supports Linux</b>
+  <p>
+  DocFlex/Javadoc has been tuned to support Linux (as well as Mac OS X):
+  <p>
+  <ul>
+    <li>Some early bugs have been fixed, which prevented it working properly under Linux.</li>
+    <li>A special RTF option was introduced to generate OpenOffice.org friendly RTF (see below)</li>
+    <li>Improved support for external document viewers (see below)</li>
+  </ul>
+  <p>
+</li>
+<li><a name="v1.4_rtf_options"></a>
+  <b>New RTF option</b>
+  <p>
+  A new RTF output option <i>"Tune output for MS Word"</i> has been introduced.
+  This option, actually, allows switching off that very tuning (which until now was the default mode)
+  to produce an RTF friendlier to open with other non MS Word applications,
+  e.g. OpenOffice.org Writer under Linux.
+  <p>
+  For more details, see <i>Documentation | DocFlex Doclet | Tips | Generating RTF for OpenOffice.org</i>
+  <p>
+</li>
+<li><a name="v1.4_doc_viewers"></a>
+  <b>Improved support for external document viewers</b>
+  <p>
+  The <i>"openURL"</i> setting, which is contained in <code>docflex.config</code> 
+  (the main DocFlex configuration file located in <code>lib</code> directory 
+  near <code>docflex-javadoc.jar</code>)
+  and specifies an external application launched automatically by the generator to view 
+  the generated documentation, now allows to assign different such applications for each 
+  particular document/URL type.
+  <p>
+  For example, using this setting under Linux, you can assign directly for all RTF documents 
+  to be open with OpenOffice.org Writer and other documents -- with Firefox web browser.
+  <p>
+  To find out how to do this, please see the instruction contained in <code>docflex.config</code> itself.
+</li>
+</ul>
+
+<h2>
+  <a name="v1.3"></a>
+  Version 1.3
+</h2>
+
+<ul>
+<li><a name="v1.3_performance"></a>
+  <b>Performance improvement</b>
+  <p>
+  Thanks to implementing of a new algorithm handling cascading formatting properties of
+  template components, the general performance of all output generators has been improved up to 30%!
+  <p>
+  The following is the result of a single file RTF documentation generation for Java sources 
+  contained in <code>javax.swing</code> package and its subpackages supplied with JDK 1.4:
+  <p>
+  <table cellpadding="4" cellspacing="1" border="1">
+  <tr>
+  <td bgcolor="#F5F5F5">
+    <table cellpadding="0" cellspacing="0">
+    <tr>
+      <td class="tbl">Number of Java classes:&nbsp;&nbsp;</td>
+      <td class="tbl">540</td>
+    </tr>
+    <tr>
+      <td class="tbl">Total source code size:&nbsp;&nbsp;</td>
+      <td class="tbl">8.2 Mb</td>
+    </tr>
+    <tr>
+      <td class="tbl">Generation time:&nbsp;&nbsp;</td>
+      <td class="tbl"><b>199 sec</b></td>
+    </tr>
+    <tr>
+      <td class="tbl">Result RTF document:&nbsp;&nbsp;</td>
+      <td class="tbl">20.5 Mb</td>
+    </tr>
+    <tr>
+      <td class="tbl">Number of pages (A4):&nbsp;&nbsp;</td>
+      <td class="tbl">3012</td>
+    </tr>
+    <tr>
+      <td class="tbl">Computer platform:&nbsp;&nbsp;</td>
+      <td class="tbl">AMD Athlon64 3000+ based system / Windows XP</td>
+    </tr>
+    </table>
+  </td>
+  </tr>
+  </table>
+  </p>
+</li>
+<li><a name="v1.3_standard_templates"></a>
+  <b>Standard Templates | New template parameter</b>
+  <p>
+  A new template parameter <i>"Exclude by tags"</i> has been introduced in standard templates. 
+  This parameter allows to exclude from the generated documentation classes, fields and methods 
+  with specified tags.
+  <p>
+</li>
+<li><a name="v1.3_command_line_options"></a>
+  <b>More command line option support</b>
+  <p>
+  <ul> 
+    <li>
+      For any boolean command line option recognized by DocFlex Doclet,
+      now, its explicit <code>true/false</code> value can be specified directly
+      on the command line. 
+      As it was before, when the option value is not specified,
+      it is assumed as <code>true</code>.
+      <p>
+      <dl>
+        <dt>For example:</dt>
+        <dd>
+          <dl>
+            <dt><b><code>-launchviewer</code></b></dt>
+            <dd>Do launch viewer</dd>
+          </dl>
+          <dl>
+             <dt><b><code>-launchviewer=false</code></b></dt>
+             <dd>Do not launch viewer, no matter what's specified in the <code>generator.config</code></dd>
+          </dl>
+        </dd>   
+      </dl>
+      <p>
+    </li>
+    <li>
+      DocFlex Doclet now supports the <code>-quiet</code> command line option.
+      Setting this option suppresses most of non-error generator messages.
+    </li>
+  </ul>
+  <p>
+</li>
+<li><a name="v1.3_html_options"></a>
+  <b>New HTML option</b>
+  <p>
+  A new HTML output option <i>"Add Mark of the Web"</i> has been introduced. 
+  <p>
+  Setting this option will avoid the security alert messages 
+  popping up by Microsoft Internet Explorer under Windows XP SP2 when viewing 
+  the HTML documentation generated by DocFlex.
+  <p>
+  The new option is an alternative to using the old <i>"HTML pattern file"</i> option
+  which also allows to solve this problem however in a more cumbersome way.
+  <p>
+</li>
+</ul>
+
+<h2>
+  <a name="v1.2"></a>
+  Version 1.2
+</h2>
+
+<ul>
+<li><a name="v1.2_ehtml_table_tags"></a>
+  <b>Full support of table tags in embedded HTML</b>
+  <p>
+  When a non-HTML output (such as RTF) is generated, all HTML tags embedded in Java source comments
+  need to be parsed and interpreted with the appropriate formatting available in the destination output format.
+  This is implemented in some universal way for all possible non-HTML formats supported by DocFlex core.
+  (At the moment, this includes only RTF, but other formats coming.)
+  <p>
+  Now, almost all HTML tags (and their attributes) practically usable in doc-comments are supported.
+  Here's the list of all supported HTML tags:
+  <p>
+  <table border="1" cellspacing="1" cellpadding="5">
+  <tr valign="top">
+    <td><b>Text</b></td>
+    <td>
+      &lt;b&gt;, &lt;strong&gt;, &lt;i&gt;, &lt;em&gt;, &lt;code&gt;, &lt;tt&gt;, &lt;u&gt;,
+      &lt;s&gt;, &lt;strike&gt;, &lt;sub&gt;, &lt;sup&gt;, &lt;font&gt;, &lt;br&gt;
+    </td>
+  </tr>
+  <tr valign="top">
+    <td><b>Paragraphs</b></td>
+    <td>
+      &lt;p&gt;, &lt;center&gt;, &lt;div&gt;, &lt;pre&gt;, &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;,
+      &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;, &lt;blockquote&gt;
+    </td>
+  </tr>
+  <tr valign="top">
+    <td><b>Lists</b></td>
+    <td>
+      &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;, &lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;
+    </td>
+  </tr>
+  <tr valign="top">
+    <td><b>Table</b></td>
+    <td>
+      &lt;table&gt;, &lt;tr&gt;, &lt;td&gt;, &lt;th&gt;
+    </td>
+  </tr>
+  <tr valign="top">
+    <td><b>Other</b></td>
+    <td>
+      &lt;hr&gt;, &lt;img&gt;, &lt;a&gt;...&lt;/a&gt;
+    </td>
+  </tr>
+</table>
+</p>
+</li>
+<li><a name="v1.2_standard_templates"></a>
+  <b>Standard Templates | New template parameters</b>
+  <p>
+  New template parameters have been introduced for better control of the content and
+  formatting of the printable documentation generated by <code>PlainDoc.tpl</code>
+  standard template:
+  <p>
+  <ul>
+    <li>
+      <i>Include/exclude details of inner classes</i><br>
+      Controls whether inner classes should be included into the generation scope.
+      <p>
+    </li>
+    <li>
+      <i>Include initial values of fields</i><br>
+      Specify whether the initial values of fields should be shown in the documentation.
+      <p>
+    </li>
+    <li>
+      <i>Omit inherited member lists for packages</i><br>
+      Suppresses generation of lists of the inner classes, fields or methods
+      inherited from those classes/interfaces, which belong to the packages specified
+      with this parameter.
+      <p>
+    </li>
+    <li>
+      <i>Omit all inherited member lists</i><br>
+      Suppresses generation of all inherited member lists.
+      <p>
+    </li>
+    <li>
+      <i>Start package from new page</i><br>
+      Forces each package documentation to start from a new page.
+      <p>
+    </li>
+    <li>
+      <i>Start class from new page</i><br>
+      Forces each class documentation to start from a new page.
+    </li>
+  </ul>
+</li>
+</ul>
+
+<h2>
+  <a name="v1.1"></a>
+  Version 1.1
+</h2>
+
+<ul>
+<li><a name="v1.1_core_upgrade"></a>
+  <b>Upgrade with the latest DocFlex core</b>
+  <p>
+  <ul>
+    <li>Lots of old bugs fixed</li>
+    <li>Performance of the generator improved -- some tests show the generator is working now about 15% faster.</li>
+  </ul>
+  </p>
+</li>
+<li><a name="v1.1_more_docs"></a>
+  <b>Lots of new documentation on the DocFlex Technology</b>
+  <p>
+  More than 80 built-in utility functions are fully documented now,<br>
+  plus the Generator Object Model (i.e. the generator variables accessible within templates) !
+  <p>
+  Those descriptions both are included in the stand-alone HTML documentation and
+  appear in the <i>Expression Assistant Dialog</i> in the Template Designer.
+  </p>
+</li>
+<li><a name="v1.1_template_improvements"></a>
+  <b>Improvements in templates</b>
+  <p>
+  <ul>
+    <li>
+      Some inaccuracies in templates corrected
+    </li>
+    <li>
+      Two new template parameters introduced to control omitting of package qualifiers
+      in the generated documentation (e.g. in method parameters, result and field types, etc.)
+    </li>
+  </ul>
+  </p>
+</li>
+</ul>
+
+<h2>
+  <a name="v1.0"></a>
+  Version 1.0
+</h2>
+
+<dl>
+<dd>The story starts here!</dd>
+</dl>
+
+<hr>
+<span style="font-family: Verdana, helvetica; font-size: 13px">
+Copyright&copy; 2004-2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or
+e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+This parameter allows to hide completely from the generated documentation some intermediate classes
+of your internal implementation (that for some reasons need to be public), however,
+to preserve documenting of some fields and methods (defined within those classes),
+which are supposed to be part of an open API.
+<p>
+This may be particularly helpful when you will need next time to change your implementation
+while keeping intact what you have declared in your open API.
+<p>
+The annotation types specified in this parameter are treated as the following.
+<p>
+A <b>class</b> will be never mentioned in the documentation when at least one of the conditions is met:
+<ol>
+<li>The class has an annotation of one of the specified types.</li>
+<li>This is an inner class and one of its enclosing classes has an annotation of one of the specified types.</li>
+</ol>
+
+Each <b>inheritable member</b> of any excluded class, which has subclasses to be documented,
+will be shown as if it belongs to those of them that are the nearest descendants of the member's original class.
+<p>
+The overall effect should be that the generated documentation will look as if the excluded classes
+themselves did never exist at all, however, everything else is in place and correct.
+(For that matter, see also the description of the <i>"Filter Classes & Members"</i> parameter group.)
+<p>
+Each annotation type must be specified with its <b>fully qualified name</b> (e.g. <code>java.lang.Deprecated</code>).
+Multiple annotation type names must be separated with new lines ('\n'), semicolons (';') or colons (':').
+For example:
+<blockquote>
+<pre><code>
+my.core.util.Internal
+my.project.api.Exclude
+</code></pre>
+</blockquote>

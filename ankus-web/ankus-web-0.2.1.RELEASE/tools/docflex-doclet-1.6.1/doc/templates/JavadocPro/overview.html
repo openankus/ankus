@@ -1,0 +1,1044 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../../styles.css">
+<title>DocFlex/Javadoc - JavadocPro</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/Javadoc - JavadocPro
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ol>
+<li class="mrg4"><a href="#intro"><b>What is JavadocPro?</b></a></li>
+<li class="mrg4"><a href="#key_features"><b>Key Features (What you can generate with it)</b></a>
+  <ul class="mrg4">
+    <li><a href="#output.html.framed">Framed HTML Documentation</a></li>
+    <li><a href="#output.html.single_file">Single file HTML Documentation</a></li>
+    <li><a href="#output.rtf">RTF Documentation</a>
+      <ul>
+        <li><a href="#output.pdf">PDF Documentation</a></li>
+      </ul>
+    </li>
+    <li><a href="#features.filtering">Filtering of classes/members by tags/annotations</a></li>
+    <li><a href="#features.params">More than 70 parameters to customize your JavaDoc</a></li>
+  </ul>
+</li>
+<li class="mrg4"><a href="#templates"><b>Template Set Overview</b></a>
+  <ul class="mrg4">
+    <li><a href="#main_templates">Main Templates</a></li>
+    <li><a href="#subtemplates">Subtemplates</a></li>
+    <li><a href="#params">Template Parameters</a>
+      <ul>
+        <li><a href="#params.inspector_gui">Parameter Inspector GUI</a></li>
+        <li><a href="#params.cmdline">Setting parameters from command line</a></li>
+        <li><a href="#params.standard_doclet_options">Specifying parameters via Standard Doclet options</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+<li class="mrg4"><a href="#advantages"><b>Advantages of JavadocPro</b></a></li>
+<li class="mrg4"><a href="#licensing"><b>Licensing</b></a>
+  <ul class="mrg4">
+    <li><a href="#licensing.free">Limited mode - Use it for free!</a></li>
+    <li><a href="#licensing.commercial">Full functionality - Get a DocFlex/Javadoc license and use everything!</a></li>
+  </ul>
+</li>
+</ol>
+<!-- END TABLE OF CONTENTS -->
+
+<hr>
+
+<h2>
+  <a name="intro"></a>
+  1.&nbsp; What is JavadocPro?
+</h2>
+
+&ldquo;JavadocPro&rdquo; is a new <a href="#templates">template set</a>
+for <a href="../../about.html">DocFlex/Javadoc</a>
+that implements a powerful Java API documentation generator in several output formats
+with the support of filtering of classes and members by tags/annotations.
+<p class="mrg8">
+It employes almost all recent advances in <a href="http://www.filigris.com/products/docflex/" target="_blank">DocFlex Technology</a>!
+
+<h2>
+  <a name="key_features"></a>
+  2.&nbsp; Key Features (What you can generate with it)
+</h2>
+
+<h3 class="spec">
+  <a name="output.html.framed"></a>
+  Framed HTML Documentation
+</h3>
+
+Using <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#FramedDoc.tpl"><b>FramedDoc.tpl</b></a>
+main template, you can generate a complete JavaDoc <b>identical to the classic one</b>.
+<p class="mrg8">
+Click on a screenshot to view a demo HTML JavaDoc:
+
+<blockquote>
+  <table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><a href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/demo/html/" target="_blank"><img src="images/FramedDoc/html.png" alt="Framed HTML documentation" border="0"></a></td>
+    <td><table width="22" height="8" border="0"><tr><td></td></tr></table></td>
+    <td><a href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/demo/html/index.html?java/lang/StackOverflowError.html" target="_blank"><img src="images/FramedDoc/html2.png" alt="Jumping directly to a particular detail" border="0"></a></td>
+  </tr>
+  </table>
+</blockquote>
+
+The following functionality is fully supported:
+<ul class="mrg8">
+<li>
+  Generation of file/page types:
+  <ul class="mrg8">
+    <li><i>Basic Content Pages</i>
+      <ul class="mrg8">
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#overview.tpl">overview-summary.html</a></li>
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#package.tpl">package-summary.html</a></li>
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#class.tpl"><i>classname</i>.html</a></li>
+      </ul>
+    </li>
+    <li><i>Cross-Reference Pages</i>
+      <ul class="mrg8">
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#class-summary.tpl">all-classes-summary.html</a></li>
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#class-tree.tpl">overview-tree.html</a></li>
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#class-tree.tpl">package-tree.html</a></li>
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#package-use.tpl">package-use.html</a></li>
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#class-use.tpl">class-use/<i>classname</i>.html</a></li>
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#deprecated-list.tpl">deprecated-list.html</a></li>
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#constant-values.tpl">constant-values.html</a></li>
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#serialized-form.tpl">serialized-form.html</a></li>
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#index-all.tpl">index-all.html</a></li>
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#index-letter.tpl">index-files/index-<i>n</i>.html</a> (index by letter)</li>
+      </ul>
+    </li>
+    <li><i>Support Files</i>
+      <ul class="mrg8">
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#help-doc.tpl">help-doc.html</a></li>
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#FramedDoc.tpl">index.html</a></li>
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#overview-frame.tpl">overview-frame.tpl</a></li>
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#all-classes-frame.tpl">all-classes-frame.tpl</a></li>
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#package-frame.tpl">package-frame.tpl</a></li>
+        <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#package-list.tpl">package-list</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+<li>
+  Standard Javadoc <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#navbar.tpl">navigation bar</a>
+</li>
+<li>
+  Switching between FRAMES / NO FRAMES views
+</li>
+</ul>
+
+<h3 class="spec">
+  <a name="output.html.single_file"></a>
+  Single File HTML Documentation
+</h3>
+
+The same entire documentation can be equally generated as a single HTML file using
+<a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#PlainDoc.tpl"><b>PlainDoc.tpl</b></a>
+main template.
+
+<blockquote>
+  <a href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/demo/PlainDoc_html.zip"><img src="images/PlainDoc/html.png" title="Single-file HTML documentation" border="0"></a>
+</blockquote>
+
+<h3 class="spec">
+  <a name="output.rtf"></a>
+  RTF Documentation
+</h3>
+
+Using <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#PlainDoc.tpl"><b>PlainDoc.tpl</b></a>
+main template, it is possible not only to generate a <a href="#output.html.single_file">single file HTML</a>.
+Simply, by switch the generator <a href="../../docs/doclet.html#gui.output_format">output format</a>
+to &ldquo;RTF&rdquo;, the same template will produce a highest quality RTF file! 
+
+<p class="mrg8">
+This includes:
+<ul class="mrg8">
+  <li>
+    Processing of HTML tags in Java comments.
+    HTML markup will be rendered with appropriate RTF formatting.
+  </li>
+  <li>Insertion of images (via &lt;img&gt; HTML tags).</li>
+  <li>Page headers/footers relevant to the page content.</li>
+  <li>Page number references in summary table (which substitute for hyperlinks).</li>
+  <li>
+    Generation of
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#TOC.tpl">Table Of Contents</a>.
+  </li>
+</ul>
+
+These screenshots show pages of an RTF documentation generated by several JDK Source classes (click to see in full size): 
+
+<blockquote>
+<table cellspacing="0" cellpadding="2" border="0" bgcolor="#9099AE">
+<tr>
+  <td><a href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/images/package/java.lang_rtf.html" target="_blank"><img src="images/package/java.lang_rtf_s.png" title="Package java.lang" border="0"></a></td>
+  <td><a href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/images/class/Enum_rtf.html" target="_blank"><img src="images/class/Enum_rtf_s.png" title="Class java.lang.Enum" border="0"></a></td>
+  <td><a href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/images/class/Enum_rtf2.html" target="_blank"><img src="images/class/Enum_rtf2_s.png" title="Class java.lang.Enum" border="0"></a></td>
+</tr>
+</table>
+</blockquote>
+
+See also <a href="http://www.filigris.com/products/docflex_javadoc/examples.php#rtf_demo" target="_blank">DocFlex/Javadoc | Examples | RTF Demo</a>
+for more details about that demo RTF and other screenshots.
+
+<h4>
+  <a name="output.pdf"></a>
+  PDF Documentation
+</h4>
+
+Using some of the available RTF <code>-></code> PDF converters,
+you can also produce a top quality PDF documentation.
+<p class="mrg8">
+Here is a PDF JavaDoc generated in that way
+(click on the screenshot to see/download the PDF file, 570 KB):
+
+<blockquote>
+<a href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/demo/PlainDoc.pdf" target="_blank"><img src="images/PlainDoc/pdf_s.png" title="PDF JavaDoc" border="0"></a>
+</blockquote>
+
+Such documentation can be used both for printing and publishing on the web.
+
+<h3 class="spec">
+  <a name="features.filtering"></a>
+  Filtering of classes and members by tags and annotations
+</h3>
+
+You can both:
+<ul class="mrg8">
+  <li>Exclude classes/members by tags/annotation</li>
+  <li>Include classes/members by tags/annotation (opposite to exclusion)</li>
+</ul>
+This will equally work for all types of generated documentation.
+<p class="mrg8">
+See also:
+<ul class="mrg8">
+  <li><a href="parameters.html#filter">DocFlex/Javadoc | JavadocPro | Parameters | Filter Classes & Members</a>
+    (details about what excluding of classes actually means and descriptions of filtering parameters )
+  </li>
+  <li><a href="#advantages">Advantages of JavadocPro</a></li>
+</ul>
+
+<h3 class="spec">
+  <a name="features.params"></a>
+  More than 70 parameters to customize your JavaDoc
+</h3>
+
+The parameters work similar to options provided by the Standard Doclet.
+You can both edit them in a tree-like form using a <a href="#params.inspector_gui">graphic GUI</a>
+and specify directly on the <a href="#params.cmdline">command line</a> (and even via some of the old
+<a href="#params.standard_doclet_options">standard options</a>).
+
+<p class="mrg8">
+For further details about template parameters, please see:
+<ul class="mrg8">
+  <li><a href="#params">Template Set Overview | Template Parameters</a></li>
+  <li><a href="parameters.html">DocFlex/Javadoc | JavadocPro | Parameter Tree</a> (descriptions of all JavadocPro parameters)</li>
+  <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#template_params">DocFlex/Javadoc | JavadocPro | Templates | Parameters</a> (describes how parameters are defined and used)</li>
+</ul>
+
+<h2>
+  <a name="templates"></a>
+  3.&nbsp; Template Set Overview
+</h2>
+
+The entire &ldquo;JavadocPro&rdquo; template set currently consists of <b>28 templates</b>,
+which include:
+<ul class="mrg8">
+  <li><a href="#main_templates">2 main templates</a></li>
+  <li><a href="#subtemplates">26 subtemplates</a></li>
+</ul>
+
+For detailed information about each template, please see:
+<a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php">DocFlex/Javadoc | JavadocPro | Templates</a>
+
+<h3>
+  <a name="main_templates"></a>
+  Main Templates
+</h3>
+
+<i>Main templates</i> are those that can be specified for interpretation directly either with
+-<a href="../../docs/doclet.html#template_option">template</a> option
+on the Javadoc command line or in the <a href="../../docs/doclet.html#gui">Doclet GUI</a>.
+In effect, each main template is a driver for a particular kind of documentation generator.
+<p>
+<table width="100%" border="1" cellspacing="0" cellpadding="5">
+<tr>
+  <th colspan="2" align="left">
+    <b>Main Template Summary</b>
+  </th>
+</tr>
+<tr>
+  <td width="1%" class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#FramedDoc.tpl">FramedDoc.tpl</a>
+  </td>
+  <td width="99%" class="impr">
+    Generates <a href="#output.html.framed">framed HTML</a>
+    Java API documentation identical to the classic JavaDoc.
+  </td>
+</tr>
+<tr>
+  <td width="1%" class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#PlainDoc.tpl">PlainDoc.tpl</a>
+  </td>
+  <td width="99%" class="impr">
+    Generates single-file JavaDoc (both <a href="#output.rtf">RTF</a> and <a href="#output.html.single_file">HTML</a>).
+  </td>
+</tr>
+</table>
+
+<h3>
+  <a name="subtemplates"></a>
+  Subtemplates
+</h3>
+
+Besides the main templates, there are many other templates 
+(called <i>subtemplates</i>) that are used internally.
+Those templates work as procedures invoked from the main templates as well as from each other.
+<p>
+<table width="100%" border="1" cellspacing="0" cellpadding="5">
+
+<tr>
+  <th colspan="2" align="left">
+    <b>Subtemplate Summary</b>
+  </th>
+</tr>
+
+<tr>
+  <td width="1%" class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#init.tpl">init.tpl</a>
+  </td>
+  <td width="99%" class="impr">
+    This template produces no output. Instead, it is called only once from either 
+    <a href="#PlainDoc.tpl">PlainDoc.tpl</a> or <a href="#FramedDoc.tpl">FramedDoc.tpl</a> main templates
+    before any other processing starts. The template's job is to create <b>element maps</b> that are critical
+    for the working of other templates.
+  </td>
+</tr>
+
+<tr align="left">
+  <th class="nav nowrap">
+    <b><a class="latent" target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#basic_content">Basic Content Subtemplates</a></b>
+  </th>
+  <th class="nav">
+    <b>Generate pages (or sections) that provide primary information about the Java project</b>
+  </th>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#overview.tpl">overview.tpl</a>
+  </td>
+  <td class="impr">
+    Generates the documentation Overview page/section (an equivalent of the
+    <span class="nowrap"><a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#overview-summary.html" target="_blank">overview-summary.html</a></span>
+    file generated by the
+    <a href="http://docs.oracle.com/javase/6/docs/technotes/guides/javadoc/standard-doclet.html" target="_blank">Standard Doclet</a>).
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#package.tpl">package.tpl</a>
+  </td>
+  <td class="impr">
+    Generates a Package Overview page/section for every Java package being documented
+    (an equivalent of the
+    <span class="nowrap"><a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#package-summary.html" target="_blank">package-summary.html</a></span>
+    file generated by the
+    <a href="http://docs.oracle.com/javase/6/docs/technotes/guides/javadoc/standard-doclet.html" target="_blank">Standard Doclet</a>),
+    which includes package description, tags and summary tables of contained classes.
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <span class="impr"><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#class.tpl">class.tpl</a>
+  </td>
+  <td class="impr">
+    Generates a Class Details page/section for a class/interface/enum or an annotation type.
+    The class details may include the class description, various reference lists about it,
+    as well as the details of all documented members of that class (except nested classes).
+    This provides the bulk of the whole Java API documentation.
+  </td>
+</tr>
+
+<tr align="left">
+  <th class="nav">
+    <b><a class="latent" target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#cross_reference_pages">Cross-Reference Page Subtemplates</a></b>
+  </th>
+  <th class="nav">
+    <b>Generate pages of <a href="#output.html.framed">framed HTML</a> documentation
+    that help to quickly find the necessary information</b>
+  </th>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#class-summary.tpl">class-summary.tpl</a>
+  </td>
+  <td class="impr">
+    Generates the All Classes Summary page, which is loaded when clicking on
+    &ldquo;All Classes&rdquo; item in the
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#navbar.tpl">navigation bar</a>
+    in <a href="#output.html.framed">framed HTML</a> documentation.
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#package-use.tpl">package-use.tpl</a>
+  </td>
+  <td class="impr">
+    Generates a
+    <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#use.html" target="_blank">&ldquo;use&rdquo; page</a>
+    for each documented package. The page describes which packages and classes use any API of the given package.
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#class-use.tpl">class-use.tpl</a>
+  </td>
+  <td class="impr">
+    Generates a
+    <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#use.html" target="_blank">&ldquo;use&rdquo; page</a>
+    for each documented class. The page describes which packages, classes, methods, constructors and fields use
+    any API of the given class.
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#class-tree.tpl">class-tree.tpl</a>
+  </td>
+  <td class="impr">
+    Generates
+    <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#overview-tree.html" target="_blank">class/interface hierarchy pages</a>.
+    These are the pages you reach using the &ldquo;Tree&rdquo; button in the
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#navbar.tpl">navigation bar</a>.
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#deprecated-list.tpl">deprecated-list.tpl</a>
+  </td>
+  <td class="impr">
+    Generates the
+    <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#deprecated-list.html" target="_blank">deprecated API page</a>
+    (<code>'deprecated-list.html'</code> file), which contains the list of deprecated APIs,
+    and the &ldquo;Deprecated&rdquo; link in the
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#navbar.tpl">navigation bar</a>
+    to that page.
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#index-all.tpl">index-all.tpl</a>
+  </td>
+  <td class="impr">
+    Generates a single 
+    <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#index.html" target="_blank">index page</a>
+    (<code>'index-all.html'</code> file).
+    It is used when no <a href="parameters.html#gen.refs.index.split">splitting</a>
+    of the index into multiple files has been specified.
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#index-letter.tpl">index-letter.tpl</a>
+  </td>
+  <td class="impr">
+    Generates for a particular letter either a section of the whole
+    <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#index.html" target="_blank">index</a>
+    file (i.e. <code>'index-all.html'</code> generated by 
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#index-all.tpl" class="nowrap">index-all.tpl</a>)
+    or a corresponding separate index page (<code>'index-*.html'</code>).
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#serialized-form.tpl">serialized-form.tpl</a>
+  </td>
+  <td class="impr">
+    This template generates the
+    <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#serialized-form.html" target="_blank">serialized form page</a>,
+    which provides information about serializable and externalizable classes. 
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#constant-values.tpl">constant-values.tpl</a>
+  </td>
+  <td class="impr">
+    This template generates the
+    <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#constant-values.html" target="_blank">constant field values page</a>
+    (<code>'constant-values.html'</code> file), which lists the static final fields and their values.
+  </td>
+</tr>
+
+<tr align="left">
+  <th class="nav">
+    <b><a class="latent" target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#support_files">Support File Subtemplates</a></b>
+  </th>
+  <th class="nav">
+    <b>Generate files that help navigation of <a href="#output.html.framed">framed HTML</a> documentation and connecting to it</b>
+  </th>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#help-doc.tpl">help-doc.tpl</a>
+  </td>
+  <td class="impr">
+    Generates the
+    <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#help-doc.html" target="_blank">help page</a>.
+    This is the page you reach using the &ldquo;Help&rdquo; button in the
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#navbar.tpl">navigation bar</a>.
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#overview-frame.tpl">overview-frame.tpl</a>
+  </td>
+  <td class="impr">
+    Generates the primary navigation page, which includes the lists all packages and other primary links.
+    It is used in the upper-left <i>"overview"</i>
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#frameset">frame</a>.
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#all-classes-frame.tpl">all-classes-frame.tpl</a>
+  </td>
+  <td class="impr">
+    Generates a navigation page with the list of all documented classes.
+    It is loaded in the lower-left <i>"summary"</i>
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#frameset">frame</a>.
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#package-frame.tpl">package-frame.tpl</a>
+  </td>
+  <td class="impr">
+    Generates a separate navigation page for each documented package,
+    which is loaded into the lower-left <i>"summary"</i>
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#frameset">frame</a>
+    on clicking on the corresponding package in the <i>"overview"</i>
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#frameset">frame</a>.
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#package-list.tpl">package-list.tpl</a>
+  </td>
+  <td class="impr">
+    Generates a
+    <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#linkpackagelist" target="_blank">Package List</a>
+    file, which is a plain-text file that lists the names of all documented packages
+    (or those containing the documented classes).
+  </td>
+</tr>
+
+<tr align="left">
+  <th class="nav">
+    <b><a class="latent" target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#sections">Section Subtemplates</a></b>
+  </th>
+  <th class="nav">
+    <b>Generate separate (relatively large) sections of the documentation (however, never separate files)</b>
+  </th>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#package-summary.tpl">package-summary.tpl</a>
+  </td>
+  <td class="impr">
+    Generate a package summary table included in the general Overview (produced 
+    <span class="nowrap"><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#overview.tpl">overview.tpl</a></span>
+    template).
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#title-page.tpl">title-page.tpl</a>
+  </td>
+  <td class="impr">
+    Generates the Title Page (which will be the front page of the <a href="#output.rtf">RTF documentation</a>).
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#TOC.tpl">TOC.tpl</a>
+  </td>
+  <td class="impr">
+    Generates the Table Of Contents of the documentation.
+  </td>
+</tr>
+
+<tr align="left">
+  <th class="nav">
+    <b><a class="latent" target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#fragments">Fragment Subtemplates</a></b></i>
+  </th>
+  <th class="nav">
+    <b>Called from other templates to generate small (but frequent) fragments of the documentation</b>
+  </th>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#navbar.tpl">navbar.tpl</a>
+  </td>
+  <td class="impr">
+    Generates all navigation bars found the <a href="#output.html.framed">framed HTML</a> documentation.
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#annotations.tpl">annotations.tpl</a>
+  </td>
+  <td class="impr">
+    Generates the list of annotations (along with all related hyperlinks) of a package,
+    class, member or constructor/method parameter.
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#see-link.tpl">see-link.tpl</a>
+  </td>
+  <td class="impr">
+    Processes a user-defined cross-reference to related documentation.
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#inline-tag.tpl">inline-tag.tpl</a>
+  </td>
+  <td class="impr">
+    Processes most of the inline tags.
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#inline-tag.tpl">about.tpl</a>
+  </td>
+  <td class="impr">
+    Adds the About section at the bottom of each separate output document.
+    It displays the information about <a href="../../about.html">DocFlex/Javadoc</a>
+    product along with the hyperlinks to this website.
+  </td>
+</tr>
+
+</table>
+
+<h3>
+  <a name="params"></a>
+  Template Parameters
+</h3>
+
+Since all the content and formatting of the generated JavaDoc is programmed entirely in the template set
+(which, in effect, becomes the actual doclet), what previously were command-line options provided by the 
+<a href="http://docs.oracle.com/javase/6/docs/technotes/guides/javadoc/standard-doclet.html" target="_blank">Standard Doclet</a>
+now simply become <b>template parameters</b>.
+<p class="mrg8">
+But introducing and checking parameters in templates is much easier
+than implementing some command-line options controlling a Java code.
+(In fact, it is writing a parameter description what takes the most time in many cases!)
+So, there can be a lot more template parameters than in the case of in traditional
+&ldquo;command-line options&rdquo; approach.
+<p class="mrg8">
+&ldquo;JavadocPro&rdquo; currently provides
+<a href="parameters.html">more than 70 parameters</a>.
+
+<h4>
+  <a name="params.inspector_gui"></a>
+  Parameter Inspector GUI
+</h4>
+
+To control so many parameters,
+<a href="../../docs/doclet.html">DocFlex Doclet</a> provides
+a <a href="../../docs/doclet.html#gui">GUI</a> that includes
+the <a href="../../docs/doclet.html#gui.param_inspector">Parameter Inspector</a> dialog
+(which is invoked from the main dialog on clicking <b>&ldquo;Params&rdquo;</b> button for the specified template).
+<p class="mrg8">
+On the following screenshot you can see the Parameter Inspector loaded with the parameters of
+<a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#FramedDoc.tpl">FramedDoc.tpl</a>
+(click to view an expanded form):
+
+<blockquote>
+  <a href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/images/FramedDoc/param_inspector_expanded.html" target="_blank"><img src="images/FramedDoc/param_inspector.png" alt="Template Parameter Inspector with parameters of FramedDoc.tpl" border="0"></a>
+</blockquote>
+
+The inspector content is constructed dynamically from the 
+<a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#param_defs">parameter definitions</a>
+found in the given template.
+<p class="mrg8">
+Using Parameter Inspector, you can:
+<ul class="mrg8">
+  <li>
+    Edit each parameter according to its type.
+  </li>
+  <li>
+    View the parameter HTML description (it is also obtained from the template) as well as
+    the parameter internal name (the first line) and possible values, which must be specified in
+    <span class="nowrap">-<a href="../../docs/doclet.html#p_option">p option</a></span>,
+    when you set that parameter on the command line (see <a href="#params.cmdline">below</a>).
+  </li>
+</ul>
+
+For further details, please see:
+<a href="../../docs/doclet.html#template_params.gui">Documentation | DocFlex Doclet | Handling Template Parameters | Using Parameter Insector GUI</a>
+
+<h4>
+  <a name="params.cmdline"></a>
+  Setting parameters from command line
+</h4>
+
+Besides the <a href="#params.inspector_gui">Parameter Inspector</a> dialog,
+you can always set any template parameters directly on the 
+<a href="../../docs/doclet.html#options">command line</a> using
+<span class="nowrap">-<a href="../../docs/doclet.html#p_option">p option</a></span>.
+<p class="mrg8">
+Please see:
+<a href="../../docs/doclet.html#template_params.cmdline">Documentation | DocFlex Doclet | Handling Template Parameters | Setting parameters from command line</a>
+
+<h4>
+  <a name="params.standard_doclet_options"></a>
+  Specifying parameters via Standard Doclet options
+</h4>
+
+&ldquo;JavadocPro&rdquo; maps some of the
+<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#standard" target="_blank">Standard Doclet options</a>
+to the default values of appropriate <a href="#params">template parameters</a>. This lets you using those options
+instead of specifying the corresponding parameters.
+<p class="mrg8">
+For more information about this capability and its implementation, see also:
+<ul class="mrg8">
+  <li><a href="../../docs/doclet.html#template_params.standard_doclet_options">Documentation | DocFlex Doclet | Handling Template Parameters | Setting template parameters via Standard Doclet options</a></li>
+  <li><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#param_def.defaultValue.expr">JavadocPro | Template Details | Template Parameters | Definition of single parameter | Default Value Expression</a></li>
+</ul>
+
+Below is the list of all supported Standard Doclet options along with the template parameters, to which they are mapped:
+<p class="mrg8">
+<table border="1" cellspacing="0" cellpadding="5">
+<tr align="left">
+  <th class="impr">
+    <b>Standard Option</b>
+  </th>
+  <th class="impr">
+    <b>Mapped to Template Parameter</b>
+  </th>
+</tr>
+<tr>
+  <td class="nowrap">
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#author" target="_blank">author</a></code>
+  </td>
+  <td class="impr">
+    <a href="parameters.html#include.tag.author">Inlcude | Tags | @author</a>
+  </td>
+</tr>
+<tr>
+  <td class="nowrap">
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#bottom" target="_blank">bottom</a></code>
+  </td>
+  <td class="impr">
+    <a href="parameters.html#gen.bottomText">Generate | Bottom Text</a>
+  </td>
+</tr>
+<tr>
+  <td class="nowrap">
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#doctitle" target="_blank">doctitle</a></code>
+  </td>
+  <td class="impr">
+    <a href="parameters.html#docTitle">Documentation Title</a>
+  </td>
+</tr>
+<tr>
+  <td class="nowrap">
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#footer" target="_blank">footer</a></code>
+  </td>
+  <td class="impr">
+    <a href="parameters.html#gen.navbar.footerText">Generate | Navigation bar | Footer Text</a>
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#group" target="_blank">group</a></code>
+  </td>
+  <td class="impr">
+    <a href="parameters.html#gen.overview.packages.groups">Generate | Overview | Package Summary | Package Groups</a>
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#header" target="_blank">header</a></code>
+  </td>
+  <td class="impr">
+    <a href="parameters.html#gen.navbar.headerText">Generate | Navigation bar | Header Text</a>
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#nodeprecated" target="_blank">nodeprecated</a></code>
+  </td>
+  <td class="impr">
+    <a href="parameters.html#include.deprecated">Include | Deprecated API</a>
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#nodeprecatedlist" target="_blank">nodeprecatedlist</a></code>
+  </td>
+  <td class="impr">
+    <a href="parameters.html#gen.refs.deprecatedList">Generate | Cross-Reference Pages | Deprecated List</a>
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#nohelp" target="_blank">nohelp</a></code>
+  </td>
+  <td class="impr">
+    <a href="parameters.html#gen.help">Generate | Help</a>
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#noindex" target="_blank">noindex</a></code>
+  </td>
+  <td class="impr">
+    <a href="parameters.html#gen.refs.index">Generate | Cross-Reference Pages | Index</a>
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#nonavbar" target="_blank">nonavbar</a></code>
+  </td>
+  <td class="impr">
+    <a href="parameters.html#gen.navbar">Generate | Navigation bar</a>
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#noqualifier" target="_blank">noqualifier</a></code>
+  </td>
+  <td class="impr">
+    <a href="parameters.html#show.qualifier">Show | Package Qualifiers</a><br>
+    <a href="parameters.html#show.qualifier.omit">Show | Package Qualifiers | Omit for Packages</a>
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#nosince" target="_blank">nosince</a></code>
+  </td>
+  <td class="impr">
+    <a href="parameters.html#include.tag.since">Inlcude | Tags | @since</a>
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#notree" target="_blank">notree</a></code>
+  </td>
+  <td class="impr">
+    <a href="parameters.html#gen.refs.tree">Generate | Cross-Reference Pages | Tree (Class Hierarchy)</a>
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#splitindex" target="_blank">splitindex</a></code>
+  </td>
+  <td class="impr">
+    <a href="parameters.html#gen.refs.index.split">Generate | Cross-Reference Pages | Index | Split</a>
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#tag" target="_blank">tag</a></code>
+  </td>
+  <td class="impr">
+    <a href="parameters.html#include.tag.custom">Inlcude | Tags | Custom tags</a>
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#version" target="_blank">version</a></code>
+  </td>
+  <td class="impr">
+    <a href="parameters.html#include.tag.version">Inlcude | Tags | @version</a>
+  </td>
+</tr>
+<tr>
+  <td class="impr nowrap">
+    <code>-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#windowtitle" target="_blank">windowtitle</a></code>
+  </td>
+  <td class="impr">
+    <a href="parameters.html#windowTitle">Window Title</a>
+  </td>
+</tr>
+</table>
+
+<h2>
+  <a name="advantages"></a>
+  5.&nbsp; Advantages of JavadocPro
+</h2>
+
+We suggest the following advantages of using
+<a href="../../about.html">DocFlex/Javadoc</a> + <a href="#top">JavadocPro Template Set</a>:
+
+<ul>
+<li class="mrg8">
+  <b>Generation of <a href="#output.html.framed">classic JavaDoc</a> with a possibility
+  to <a href="parameters.html#filter">exclude</a>
+  any classes and members by tags/annotations</b>
+  <p class="mrg8">
+  The standard Javadoc does not support this and unlikely will ever do.
+  <p class="mrg8">
+  <table border="1" cellspacing="1" cellpadding="6">
+  <tr><td bgcolor="#F6F6F6" class="inset">
+    That's because such a feature is pretty much controversial:
+    <ol class="mrg8">
+    <li>
+    It is rather difficult to implement. To make the generated docs consistent,
+    the excluded classes must be not only removed, everything needs to be changed as if those classes
+    never existed at all. For instance, the public members of some excluded classes may still be required
+    to appear in the documentation.
+    But in that case they must be shown as if they are defined in other classes, which actually inherit them.
+    <p class="mrg8"></p>
+    See more discussion about this problem here:
+    <a href="parameters.html#filter">DocFlex/Javadoc | JavadocPro | Parameters | Filter Classes & Members</a>
+    </li>
+    <li class="mrg8">
+    It contradicts the very essence of class/member visibility. According to the canonical approach,
+    instead of deriving a public API directly from the implementation, you are supposed, first,
+    to define the entire API in the form of some abstract interfaces and, then, to maintain the actual
+    implementation separately.
+    </li>
+    </ol>
+    Of course, the real life not always follows some canonical schemes!
+  </td></tr>
+  </table>
+</li>
+<li class="mrg8">
+  <b>Generation of outstanding quality <a "#output.rtf.doc">RTF JavaDoc</a></b>
+  <p class="mrg8">
+  You will hardly find any other tool able to generate such a complex RTF!
+</li>
+<li class="mrg8">
+  <b>Unlimited possibility to customize your Java API documentation</b>
+  <p class="mrg8">
+  Since all the generated documentation output is programmed entirely in
+  <a href="#templates">templates</a> (which are open for any changes), now you can:
+  <ul class="mrg8">
+  <li>
+  Translate all JavaDoc text labels into any other language.
+  <p class="mrg8">
+  <table border="1" cellspacing="1" cellpadding="6">
+  <tr><td bgcolor="#F6F6F6" class="inset">
+    The primary way to do it is by modifying the templates in the Template Designer.
+    However, you can also edit templates directly as plain text (e.g. using Windows Notepad).
+    Templates files are plain text files in UTF-8 encoding.
+    You can change any text labels there and write any symbols (even hieroglyphs).
+    For that matter, see also:
+    <a target="_blank" href="http://www.filigris.com/buy/licensing_pricing.php#templates.custom.changing_manually">Licensing of Templates | Custom Templates | Changing Templates Manually</a>.
+  </td></tr>
+  </table>
+  </li>
+  <li>
+  Change fonts, colors and other look&feel of your JavaDoc. 
+  </li>
+  <li>
+  Add more filtering conditions for what is included in your JavaDoc.
+  </li>
+  <li>
+  Add sections with some special content (not found in the classic JavaDoc).
+  </li>
+  </ul>
+  Ultimately, you can program a completely different JavaDoc generator,
+  and even in a different format (particularly XML-based, e.g. DITA)!
+  <p class="mrg8">
+  What is needed for all this?
+  A license covering the <a href="../../about.html#template_designer">Template Designer</a>,
+  that is the full license for &ldquo;DocFlex/Javadoc&rdquo;
+  (see also <a href="../../about.html#full_edition">Full Edition</a>).
+</li>
+</ul>
+
+<h2>
+  <a name="licensing"></a>
+  <a name="licensing.free"></a>
+  6.&nbsp; Licensing
+</h2>
+
+The &ldquo;<a href="#top">JavadocPro</a>&rdquo; template set is included in both
+<a href="../../about.html#editions">editions</a> of DocFlex/Javadoc.
+However, it will work differently depending on your license for
+<a href="../../about.html">DocFlex/Javadoc</a> software.
+<p class="mrg8">
+There are two modes:
+<i><a href="#licensing.free">limited</a></i> and <i><a href="#licensing.commercial">full</a></i>.
+
+<h3 class="spec">
+  <a name="licensing.free"></a>
+  Limited mode - Use it for free!
+</h3>
+
+This mode is activated by default without any special license.
+
+<p class="mrg8">
+<b>What you can:</b>
+<ul class="mrg8">
+<li>
+  Generate <a href="#output.html.framed">framed HTML JavaDoc</a>
+  with the same functionality as provided by the standard Javadoc.
+  <p class="mrg8">
+  <table border="1" cellspacing="1" cellpadding="6">
+  <tr><td bgcolor="#F6F6F6" class="inset">
+    If you are not particularly happy with the 
+    <a href="http://docs.oracle.com/javase/7/docs/api/index.html" target="_blank">new JavaDoc design</a>
+    introduced in Java 7, you can use &ldquo;<a href="#top">JavadocPro</a>&rdquo; to generate 
+    the classic-looking JavaDoc under Java 7 too.
+  </td></tr>
+  </table>
+  <p class="mrg8">
+  All <a href="#params">template parameters</a> equivalent to Standard Doclet options will be unlocked. 
+  <p class="mrg8">
+  That's free!
+</li>
+</ul>
+
+<p class="mrg8">
+<b>What you cannot:</b>
+<ul class="mrg8">
+<li>
+  Filter classes and members by tags/annotations
+  (the <a href="parameters.html#filter">corresponding</a>
+  template parameters will be disabled).
+</li>
+<li>
+  Generate <a href="#output.html.single_file">single-file HTML</a> and <a href="#output.rtf">RTF JavaDoc</a>
+  (the <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#PlainDoc.tpl">PlainDoc.tpl</a>
+  main template will be disabled).
+</li>
+</ul>
+
+<h3 class="spec">
+  <a name="licensing.commercial"></a>
+  Full functionality - Get a DocFlex/Javadoc license and use everything!
+</h3>
+
+<a href="#top">JavadocPro</a> will be fully unlocked
+under the same <b>&ldquo;DocFlex/Javadoc&rdquo;</b> license that covers the
+<a href="../../about.html#full_edition">Full Edition</a>.
+It will also allow you to customize all the <a href="#templates">templates</a> as much as you need.
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2003-2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

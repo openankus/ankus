@@ -1,0 +1,25 @@
+Specify tags by which both classes and class members (i.e. fields, constructors and methods)
+are completely excluded from the generated documentation.
+<p>
+A <b>class</b> is excluded when at least one of the conditions is met:
+<ol>
+<li>The class has one of the specified tags.</li>
+<li>This is an inner class and one of its enclosing classes has one of the specified tags.</li>
+</ol>
+A class <b>member</b> is excluded according to one of the conditions:
+<ol>
+<li>The member has one of the specified tags.</li>
+<li>The member's class has one of the specified tags.</li>
+<li>The member's class is an inner class and one of its enclosing classes has one of the specified tags.</li>
+</ol>
+
+Therefore, when a class has one of the tags specified in this parameter,
+neither that class nor anything defined in it (i.e. members and inner classes)
+will ever appear in the documentation.
+<p>
+The multiple exclude-tag names must be separated with new lines ('\n'), semicolons (';') or colons (':').
+For example:
+<blockquote><pre><code>
+@exclude
+@omit
+</code></pre></blockquote>

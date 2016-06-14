@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collector xmlns="http://www.openflamingo.org/schema/collector"
+          xsi:schemaLocation="http://www.openflamingo.org/schema/collector flamingo-log-collector-1.0.xsd"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <mapping handler="org.openflamingo.collector.handler.LocalToHdfsHandler" ingress="org.openflamingo.model.collector.FromLocal" egress="org.openflamingo.model.collector.ToHdfs"/>
+    <mapping handler="org.openflamingo.collector.handler.HttpToHdfsHandler" ingress="org.openflamingo.model.collector.FromHttp" egress="org.openflamingo.model.collector.ToHdfs"/>
+    <mapping handler="org.openflamingo.collector.handler.HttpToLocalHandler" ingress="org.openflamingo.model.collector.FromHttp" egress="org.openflamingo.model.collector.ToLocal"/>
+
+</collector>

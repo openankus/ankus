@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collector xmlns="http://www.openflamingo.org/schema/collector"
+           xsi:schemaLocation="http://www.openflamingo.org/schema/collector flamingo-log-collector-1.0.xsd"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <description>서울시 공공 데이터 배치 업로드</description>
+
+    <clusters>
+        <cluster name="dev" description="개발 클러스터">
+            <fs.default.name>hdfs://172.27.21.143:9000</fs.default.name>
+            <mapred.job.tracker>172.27.21.143:9001</mapred.job.tracker>
+        </cluster>
+    </clusters>
+
+    <globalVariables>
+        <globalVariable name="currentDate" value="${dateFormat('yyyyMMdd')}" description="string"/>
+    </globalVariables>
+
+    <job name="Seoul_Rain" description="서울시 공공 데이터 - 강수량 데이터 수집 Job">
+        <schedule>
+            <cronExpression>0 * * * * ?</cronExpression>
+        </schedule>
+        <policy>
+            <ingress>
+                <local>
+                    <sourceDirectory conditionType="antPattern">
+                        <path>/home/hadoop/input/rain</path>
+                        <condition>rain_*.txt</condition>
+                    </sourceDirectory>
+                    <workingDirectory>/tmp/uploader/work</workingDirectory>
+                    <completeDirectory>/tmp/uploader/complete</completeDirectory>
+                    <removeAfterCopy>false</removeAfterCopy>
+                    <errorDirectory>/tmp/uploader/error</errorDirectory>
+                </local>
+            </ingress>
+            <egress>
+                <hdfs cluster="dev">
+                    <targetPath>/input</targetPath>
+                    <stagingPath>/stage</stagingPath>
+                </hdfs>
+            </egress>
+        </policy>
+    </job>
+</collector>

@@ -1,0 +1,150 @@
+ver 2.4.5
+- Fixed initial empty chart display on Sencha Touch
+
+Mobile Demo
+- Fixed full screen issue
+- Added bubble demo with initial empty chart
+- Added column demo for store with embedded data
+- Removed unnecessary files
+
+ver 2.4.4
+- Fixed Javascript errors with Sencha Touch 2.2.1
+
+ver 2.4.3
+- Fixed hidden series update 
+- Refers to Highcharts defaultSeriesType/type option if 
+  series type is not defined
+
+ver 2.4.2
+- Fixed draw method error on hidden series
+
+Desktop Demos
+- Added draw method on hidden series demo 
+
+ver 2.4.1
+- Fixed Javascript error on IE 8
+
+ver 2.4.0
+- Added support for Highcharts 3.0
+  * Bubble series
+  * Error bar series
+  * Box Plot series
+  * Funnel Series
+- Fixed initial loading on irregular data series
+- Moved sencha property into static field
+- Added compatability fix for Sencha Touch 2.1.1
+- Added fixes and enhancements submitted by straccio
+  * Added compatability fixes for Sencha 4.2
+  * Point click event compatibility issue with Highcharts 3.0
+  * Refactor buildInitData method
+
+Desktop Demos
+- Added multiple irregular bubble series demo
+- Added single bubble series demo
+- Added error bar demo
+- Added funnel demo
+- Fixed donut demo
+- Fixed scheduler runner in gauge demo
+
+ver 2.3.3
+Highcharts extension
+- Plot graph for initial animation if data is already loaded
+- Added updateNoRecord option
+- Added loadMaskMsg option
+- Added fixes and enhancements submitted by straccio
+  * Added scope to Highchart Component if not specified
+  * Clone Serie config for scope injection
+  * Added destroy method in Serie class
+  * Fixed LoadMask
+  * Fixed Pie chart update with diff no. of data points
+
+Desktop Demos
+- Added standalone example
+- Added updateNoRecord example
+- Added loadmask example
+- Added pie chart update with diff no. of data points
+
+ver 2.3.2
+Highcharts extension
+- Added support for multiple series with irregular data, dataIndex field can support data array from JsonStore. 
+- Fixed non store support. The extension can be initialised without any store and display series with addSeries method.
+- Fixed the resizable default option
+- Fixed unbind event on destroy
+- Added pointclick event support (contributed by straccio)
+- Massively refactor and clean up a lot of shitake code
+
+Desktop Demos
+- Fixed and improved the demo code
+- Added irregular multiple series demo
+- Added non store demo
+- Added demo to test resizing issue, add/remove data points for series update, pointclick event
+
+ver 2.3.1
+Highcharts extension
+- Fixed compatability issue with Sencha Touch 2.1
+
+ver 2.3.0
+Highcharts extension
+- Incorportated changes submitted by jacrasmussen to break down single Highchart.js into smaller series class files. This enable users to deploy their solution by selecting which series their applications support
+- Massive rewrite and redo on all the documentations, including features that have never been documented before. Now the tutorial and API documents are done in Sencha documentation style - JsDuck.
+
+Demos
+- Updated both desktop and mobile demos with the classes file hierarchy
+ 
+ver 2.2.3
+Highcharts extension
+- Re-implemented the old style of converting series type into class paths using ExtJs 4 feature. This has removed incompatiblity with the latest ExtJS release and also slightly optimised.
+
+ver 2.2.2
+Highcharts extension
+- Fixed removeAllSeries method need to also cleanup categories data in chartConfig from previous load
+- Fixed when store reload with more data, it appends the data in the correct category (string labels) order
+- Fixed when store reload with less data, it correctly remove the data point with the correct index
+- Extended the colorField properties to other series
+- Added 'auto' keyword support for colorField to automatically assign point color to Highcharts colors
+
+Desktop Demos
+- Added spline chart with no initial data demo (initAnimAfterLoad: false)
+- Added column drill down demo
+
+ver 2.2.1
+Highcharts extension
+- Fixed store reload on pie chart
+- Fixed default series type value
+- Allow series definition without dataIndex or yField as long as getData method is defined
+
+Desktop Demos
+- Changed one of series definitions with overriding getData method only in 'No Animation' demo
+- Added 'allowPointSelect' in plotOptions for pie demo
+
+ver 2.2.0
+Highcharts extension
+- Extension works for both ExtJs 4 and Touch 2
+ 
+Demos
+- Added demos for Sencha Touch 2
+
+ver 2.1.1
+Demos
+- Fixed dial color in gauge chart demo
+- Corrected thickness in splitter bar
+- Typo in page title
+
+ver 2.1
+Highcharts extension 
+- Fixed shift animation on category data
+- Fixed stop loading data from the server after few load calls
+
+Demos
+- Added Add Series example
+- Added Null data example
+- Fixed reset sample data on spline demos
+
+ver 2.0
+- Added support to Highcharts 2.3 gauge chart
+- Added support to Highcharts 2.3 range type charts: minDataIndex, maxDataIndex and dataIndex array mode
+- [ Optimisation ] reduce redundant call on refresh, draw method only call refresh if the store is not loading, i.e isLoading
+- [ Optimisation ] added refreshOnChange config - avoid redundant call on refresh.
+- [ Optimisation ] added pointObject as default false to create data as array instead of point object
+- Added initAnimAfterLoad to support initial animation
+- Added afterChartRendered callback

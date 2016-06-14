@@ -1,0 +1,17 @@
+Specify annotation types by which only class members (i.e. fields, constructors and methods) are selectively excluded from the generated documentation.
+<p>
+A class member, which otherwise (without this parameter) would be documented, is excluded when it has an annotation of one of the specified types.
+<p>
+Each annotation type must be specified with its <b>fully qualified name</b> (e.g. <code>java.lang.Deprecated</code>). Multiple annotation type names must be separated with new lines ('\n'), semicolons (';') or colons (':').
+For example:
+<blockquote>
+<pre><code>
+my.core.util.Internal
+my.project.api.Exclude
+</code></pre>
+</blockquote>
+<p>
+<b>See Also:</b>
+<blockquote>
+For more details about using annotations, please see description of <i>"Exclude | By Annotations"</i> parameter group
+</blockquote>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>The source code</title>
+    <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+    <style type="text/css">
+        .highlight {
+            display: block;
+            background-color: #ddd;
+        }
+    </style>
+    <script type="text/javascript">
+        function highlight() {
+            document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+        }
+    </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+<pre class="prettyprint lang-js">@if not is-null($grid-property-cell-background-image) {
+    .#{$prefix}grid-cell-inner-property-name {
+        background-image: theme-background-image($grid-property-cell-background-image);
+        background-repeat: no-repeat;
+        @if not is-null($grid-property-cell-background-position) {
+            background-position: $grid-property-cell-background-position;
+        }
+        @if not is-null($grid-property-cell-before-padding) {
+            padding-left: $grid-property-cell-before-padding;
+        }
+    }
+}</pre>
+</body>
+</html>
