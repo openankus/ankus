@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collector xmlns="http://www.openflamingo.org/schema/collector"
+           xsi:schemaLocation="http://www.openflamingo.org/schema/collector flamingo-log-collector-1.0.xsd"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <description>서울시 공공 데이터 수집기</description>
+
+    <clusters>
+        <cluster name="dev" description="개발 클러스터">
+            <fs.default.name>hdfs://172.27.98.241:9000</fs.default.name>
+            <mapred.job.tracker>172.27.98.241:9001</mapred.job.tracker>
+            <properties>
+                <property name="mapred.maximum.map.task" value="100"/>
+            </properties>
+        </cluster>
+    </clusters>
+
+    <globalVariables>
+        <globalVariable name="currentDate" value="${dateFormat('yyyyMMdd-HHmmss')}" description="string"/>
+    </globalVariables>
+
+    <job name="Traffic-Accident--From-Local-To-HDFS" description="서울시 공공데이터 - 교통 돌발상황 조회">
+        <schedule>
+            <cronExpression>0 * * * * ?</cronExpression>
+        </schedule>
+        <policy>
+            <ingress>
+                <fromLocal>
+                    <sourceDirectory conditionType="antPattern">
+                        <path>/root/seoul/accident/${dateFormat('yyyy')}/${dateFormat('MM')}/${dateFormat('dd')}</path>
+                        <condition>accident*.txt</condition>
+                    </sourceDirectory>
+                    <workingDirectory>/root/seoul/accident/working</workingDirectory>
+                    <completeDirectory>/root/seoul/accident/complete</completeDirectory>
+                    <removeAfterCopy>false</removeAfterCopy>
+                    <errorDirectory>/root/seoul/accident/error</errorDirectory>
+                </fromLocal>
+            </ingress>
+            <egress>
+                <toHdfs cluster="dev">
+                    <targetPath>/seoul1/traffic/accident/${dateFormat('yyyy')}/${dateFormat('MM')}/${dateFormat('dd')}/accident_${dateFormat('yyyyMMdd-HHmmss')}</targetPath>
+                    <stagingPath>/seoul1/staging/traffic/accident/${dateFormat('yyyy')}/${dateFormat('MM')}/${dateFormat('dd')}</stagingPath>
+                </toHdfs>
+            </egress>
+        </policy>
+    </job>
+</collector>

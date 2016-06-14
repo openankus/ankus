@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out"/>
+		<param name="Threshold" value="DEBUG"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%c] %m%n"/>
+		</layout>
+	</appender>
+
+	<category name="org.openflamingo">
+		<priority value="DEBUG"/>
+	</category>
+
+	<category name="org.apache">
+		<priority value="WARN"/>
+	</category>
+
+	<!-- C3P0 Connection Pool -->
+	<category name="com.mchange">
+		<priority value="INFO"/>
+	</category>
+
+	<!-- Quartz Job Scheduler -->
+	<category name="org.quartz">
+		<priority value="INFO"/>
+	</category>
+
+	<!-- Spring Framework -->
+	<category name="org.springframework">
+		<priority value="INFO"/>
+	</category>
+
+	<category name="org.springframework.web.client">
+		<priority value="DEBUG"/>
+	</category>
+
+	<category name="org.mybatis">
+		<priority value="INFO"/>
+	</category>
+
+	<logger name="jdbc.sqlonly" additivity="false">
+		<level value="DEBUG"/>
+		<appender-ref ref="CONSOLE"/>
+	</logger>
+
+	<logger name="jdbc.sqltiming" additivity="false">
+		<level value="INFO"/>
+		<appender-ref ref="CONSOLE"/>
+	</logger>
+
+	<logger name="jdbc.connection" additivity="false">
+		<level value="WARN"/>
+		<appender-ref ref="CONSOLE"/>
+	</logger>
+
+	<logger name="jdbc.audit" additivity="false">
+		<level value="WARN"/>
+		<appender-ref ref="CONSOLE"/>
+	</logger>
+
+	<logger name="jdbc.resultset" additivity="false">
+		<level value="WARN"/>
+		<appender-ref ref="CONSOLE"/>
+	</logger>
+
+	<root>
+		<appender-ref ref="CONSOLE"/>
+	</root>
+</log4j:configuration>

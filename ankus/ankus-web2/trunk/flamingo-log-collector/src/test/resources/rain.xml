@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collector xmlns="http://www.openflamingo.org/schema/collector"
+           xsi:schemaLocation="http://www.openflamingo.org/schema/collector flamingo-log-collector-1.0.xsd"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <description>서울시 공공 데이터 배치 업로드</description>
+
+    <clusters>
+        <cluster name="dev" description="개발 클러스터">
+            <fs.default.name>hdfs://172.27.21.143:9000</fs.default.name>
+            <mapred.job.tracker>172.27.21.143:9001</mapred.job.tracker>
+        </cluster>
+    </clusters>
+
+    <globalVariables>
+        <globalVariable name="currentDate" value="${dateFormat('yyyyMMdd')}" description="string"/>
+    </globalVariables>
+
+    <job name="PUT_HDFS" description="서울시 공공 데이터 - 강수량 데이터 수집 Job (HDFS)">
+        <schedule>
+            <cronExpression>30 * * * * ?</cronExpression>
+        </schedule>
+        <policy>
+            <ingress>
+                <fromLocal>
+                    <sourceDirectory conditionType="antPattern">
+                        <path>/root/kimbyounggon/rain</path>
+                        <condition>rain_*.txt</condition>
+                    </sourceDirectory>
+                    <workingDirectory>/tmp/${user.name}/work</workingDirectory>
+                    <completeDirectory>/tmp/${user.name}/complete</completeDirectory>
+                    <removeAfterCopy>false</removeAfterCopy>
+                    <errorDirectory>/tmp/${user.name}/error</errorDirectory>
+                </fromLocal>
+            </ingress>
+            <egress>
+                <toHdfs cluster="dev">
+                    <targetPath>
+                        /rain/upload/${user.name}/${dateFormat('yyyy')}/${dateFormat('MM')}/${dateFormat('dd')}
+                    </targetPath>
+                    <stagingPath>/rain/stage/${user.name}/${dateFormat('yyyyMMdd')}</stagingPath>
+                </toHdfs>
+            </egress>
+        </policy>
+    </job>
+</collector>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.hadoop:hadoop-mrunit:0.20.2-cdh3u6">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-mrunit/0.20.2-cdh3u6/hadoop-mrunit-0.20.2-cdh3u6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-mrunit/0.20.2-cdh3u6/hadoop-mrunit-0.20.2-cdh3u6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-mrunit/0.20.2-cdh3u6/hadoop-mrunit-0.20.2-cdh3u6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

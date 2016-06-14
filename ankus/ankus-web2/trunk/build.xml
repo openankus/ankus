@@ -1,0 +1,166 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<project name="flamingo" default="javadoc" basedir=".">
+
+    <!-- Change maven repository directory -->
+    <property name="maven.repository" value="${user.home}/.m2/repository"/>
+
+    <property name="ydoc.home" value="${basedir}/tools/yworks-uml-doclet-3.0_02-jdk1.5"/>
+    <property name="DFH" value="${basedir}/tools/docflex-doclet-1.6.1"/>
+
+    <property name="encoding" value="UTF-8"/>
+
+    <condition property="javadoc.version" value="1.6">
+        <not>
+            <isset property="javadoc.version"/>
+        </not>
+    </condition>
+
+    <path id="libpath">
+        <fileset dir="${maven.repository}">
+            <include name="org/springframework/spring-core/3.1.1.RELEASE/spring-core-3.1.1.RELEASE.jar"/>
+            <include name="org/springframework/spring-beans/3.1.1.RELEASE/spring-beans-3.1.1.RELEASE.jar"/>
+            <include name="org/springframework/spring-context/3.1.1.RELEASE/spring-context-3.1.1.RELEASE.jar"/>
+            <include
+                    name="org/springframework/spring-context-support/3.1.1.RELEASE/spring-context-support-3.1.1.RELEASE.jar"/>
+            <include name="org/springframework/spring-jdbc/3.1.1.RELEASE/spring-jdbc-3.1.1.RELEASE.jar"/>
+            <include name="org/springframework/spring-orm/3.1.1.RELEASE/spring-orm-3.1.1.RELEASE.jar"/>
+            <include name="org/springframework/spring-tx/3.1.1.RELEASE/spring-tx-3.1.1.RELEASE.jar"/>
+            <include name="org/springframework/spring-web/3.1.1.RELEASE/spring-web-3.1.1.RELEASE.jar"/>
+            <include name="org/springframework/spring-webmvc/3.1.1.RELEASE/spring-webmvc-3.1.1.RELEASE.jar"/>
+            <include
+                    name="org/springframework/security/spring-security-core/3.1.0.RELEASE/spring-security-core-3.1.0.RELEASE.jar"/>
+            <include name="commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar"/>
+            <include name="commons-io/commons-io/2.1/commons-io-2.1.jar"/>
+            <include name="commons-lang/commons-lang/2.6/commons-lang-2.6.jar"/>
+            <include name="commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar"/>
+            <include name="commons-logging/commons-logging-api/1.1/commons-logging-api-1.1.jar"/>
+            <include name="commons-configuration/commons-configuration/1.6/commons-configuration-1.6.jar"/>
+            <include name="commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar"/>
+            <include name="commons-el/commons-el/1.0/commons-el-1.0.jar"/>
+            <include name="org/apache/commons/commons-exec/1.1/commons-exec-1.1.jar"/>
+            <include name="javax/persistence/persistence-api/1.0/persistence-api-1.0.jar"/>
+            <include name="javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar"/>
+            <include name="javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.jar"/>
+            <include name="javax/servlet/servlet-api/2.5/servlet-api-2.5.jar"/>
+            <include name="javax/el/el-api/1.0/el-api-1.0.jar"/>
+            <include name="log4j/log4j/1.2.16/log4j-1.2.16.jar"/>
+            <include name="org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar"/>
+            <include
+                    name="org/eclipse/persistence/org.eclipse.persistence.moxy/2.3.2/org.eclipse.persistence.moxy-2.3.2.jar"/>
+            <include
+                    name="org/eclipse/persistence/org.eclipse.persistence.core/2.3.2/org.eclipse.persistence.core-2.3.2.jar"/>
+            <include name="org/hibernate/hibernate-core/3.6.10.Final/hibernate-core-3.6.10.Final.jar"/>
+            <include
+                    name="org/hibernate/hibernate-commons-annotations/3.2.0.Final/hibernate-commons-annotations-3.2.0.Final.jar"/>
+            <include name="org/codehaus/jackson/jackson-core-asl/1.9.5/jackson-core-asl-1.9.5.jar"/>
+            <include name="org/codehaus/jackson/jackson-mapper-asl/1.9.5/jackson-mapper-asl-1.9.5.jar"/>
+            <include name="org/atmosphere/atmosphere-runtime/0.7.2/atmosphere-runtime-0.7.2.jar"/>
+            <include name="org/apache/hadoop/hadoop-core/0.20.205.0/hadoop-core-0.20.205.0.jar"/>
+            <include name="org/openflamingo/org/apache/pig/pig/0.10.0/pig-0.10.0.jar"/>
+            <include name="org/quartz-scheduler/quartz/2.1.5/quartz-2.1.5.jar"/>
+            <include name="org/openflamingo/jgrapht/jgrapht-jdk1.6/0.8.2/jgrapht-jdk1.6-0.8.2.jar"/>
+            <include name="jgroups/jgroups/3.0.10.Final/jgroups-3.0.10.Final.jar"/>
+            <include name="mysql/mysql-connector-java/5.1.18/mysql-connector-java-5.1.18.jar"/>
+        </fileset>
+        <fileset dir="${basedir}/target/classes">
+            <include name="**/*.class"/>
+        </fileset>
+    </path>
+
+    <path id="srcpath">
+        <dirset dir="flamingo-core/src/main/java"/>
+        <dirset dir="flamingo-el/src/main/java"/>
+        <dirset dir="flamingo-fs/src/main/java"/>
+        <dirset dir="flamingo-locale/src/main/java"/>
+        <dirset dir="flamingo-log-collector/src/main/java"/>
+        <dirset dir="flamingo-mapreduce/src/main/java"/>
+        <dirset dir="flamingo-model/src/main/java"/>
+        <dirset dir="flamingo-util/src/main/java"/>
+        <dirset dir="ankus-web-services/src/main/java"/>
+        <dirset dir="ankus-web-services/src/main/java"/>
+    </path>
+
+    <target name="javadoc-rtf">
+        <javadoc maxmemory="512m"
+                 encoding="${encoding}"
+                 locale="ko_KR"
+                 classpathref="libpath"
+                 sourcepathref="srcpath"
+                 destdir="${basedir}/target">
+            <doclet name="com.docflex.javadoc.Doclet" path="${DFH}/lib/docflex-doclet.jar">
+                <param name="-template" value="${DFH}/templates/javadoc/PlainDoc.tpl"/>
+                <param name="-p:windowTitle" value="Hadoop Manager API"/>
+                <param name="-p:docTitle" value="Hadoop Manager API"/>
+                <param name="-format" value="RTF"/>
+                <param name="-nodialog"/>
+                <param name="-launchviewer=false"/>
+            </doclet>
+            <package name="org.openflamingo.*"/>
+        </javadoc>
+        <move file="${basedir}/target/PlainDoc.rtf" tofile="${basedir}/target/javadoc.rtf"/>
+    </target>
+
+    <target name="javadoc-html">
+        <property name="ps" value="${path.separator}"/>
+
+        <delete dir="${basedir}/target/javadoc"/>
+
+        <javadoc
+                source="${javadoc.version}"
+                classpathref="libpath"
+                sourcepathref="srcpath"
+                Overview="${basedir}/src/javadoc/overview.html"
+                destdir="${basedir}/target/javadoc"
+                Encoding="${encoding}"
+                Locale="ko_KR"
+                docencoding="${encoding}"
+                charset="${encoding}"
+                Author="true"
+                docfilessubdirs="true"
+                Version="true"
+                Use="true"
+                failonerror="false"
+                additionalparam="-breakiterator"
+                Windowtitle="Flamingo API Reference"
+                Doctitle="Flamingo API Reference">
+
+            <link href="http://static.springsource.org/spring/docs/3.1.x/javadoc-api/"/>
+            <link href="http://download.oracle.com/javase/6/docs/api"/>
+            <link href="http://www.slf4j.org/apidocs/"/>
+            <link href="http://commons.apache.org/logging/commons-logging-1.1.1/apidocs/"/>
+            <link href="http://logging.apache.org/log4j/1.2/apidocs/"/>
+            <link href="http://commons.apache.org/io/apidocs"/>
+            <link href="http://junit.sourceforge.net/javadoc"/>
+            <link href="http://hadoop.apache.org/docs/r1.0.3/api"/>
+            <link href="http://pig.apache.org/docs/r0.10.0/api"/>
+            <link href="http://docs.jboss.org/hibernate/orm/3.2/api"/>
+
+            <doctitle><![CDATA[<h1>Flamingo API Reference</h1>]]></doctitle>
+            <bottom><![CDATA[<i>Copyright &#169; 2011 Flamingo Community.</i>]]></bottom>
+            <doclet
+                    name="ydoc.doclets.YStandard"
+                    path="${ydoc.home}/lib/ydoc.jar${ps}${ydoc.home}/resources${ps}${ydoc.home}/doc">
+                <param name="-author"/>
+                <param name="-generic"/>
+                <param name="-umlautogen"/>
+                <param name="-filterpath" value="${ydoc.home}/lib/ydoc.jar"/>
+                <param name="-filter" value="ydoc.filters.ExcludeFilter"/>
+                <param name="-tag" value="y.precondition"/>
+                <param name="-tag" value="y.postcondition"/>
+                <param name="-tag" value="y.complexity"/>
+                <param name="-tag" value="param"/>
+                <param name="-tag" value="return"/>
+                <param name="-tag" value="see"/>
+                <param name="-tag" value="y.uml"/>
+            </doclet>
+        </javadoc>
+
+    </target>
+
+    <target name="javadoc-zip">
+        <zip destfile="${basedir}/target/javadoc.zip"
+             basedir="${basedir}/target/javadoc"/>
+    </target>
+
+    <target name="javadoc" depends="javadoc-html,javadoc-zip,javadoc-rtf"/>
+</project>

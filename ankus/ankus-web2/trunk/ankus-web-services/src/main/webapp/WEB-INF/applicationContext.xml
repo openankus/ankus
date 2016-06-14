@@ -1,0 +1,97 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+            http://www.springframework.org/schema/util                  http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+    <!-- ========================= PROPERTY PLACE HOLDER DEFINITION ========================= -->
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>/WEB-INF/config-${spring.profiles.active:dev}.properties</value>
+            </list>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="active.profile">${spring.profiles.active:dev}</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- ========================= PROPERTIES DEFINITION ========================= -->
+
+    <util:properties id="config" location="/WEB-INF/config-${spring.profiles.active:dev}.properties"/>
+    <util:properties id="version" location="/WEB-INF/version.properties"/>
+
+    <!-- ========================= DATASOURCE DEFINITION ========================= -->
+
+    <bean id="dataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
+        <constructor-arg ref="pooledDataSource"/>
+        <property name="logFormatter">
+            <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
+                <property name="sqlPrefix" value="[SQL]  "/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="pooledDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="${jdbc.driver}"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="initialPoolSize" value="${jdbc.min.pool}"/>
+        <property name="maxPoolSize" value="${jdbc.max.pool}"/>
+        <property name="debugUnreturnedConnectionStackTraces" value="true"/>
+        <property name="preferredTestQuery" value="select 1"/>
+        <property name="testConnectionOnCheckin" value="true"/>
+        <property name="testConnectionOnCheckout" value="false"/>
+    </bean>
+
+    <!-- ========================= EL SERVICE DEFINITION ========================= -->
+
+    <bean id="configuration" class="org.openflamingo.web.configuration.ConfigurationFactoryBean">
+        <property name="configurationFile" value="/WEB-INF/flamingo-site.xml"/>
+    </bean>
+
+    <bean id="elService" class="org.openflamingo.el.ELServiceImpl" destroy-method="destroy">
+        <property name="definitions">
+            <bean class="org.springframework.beans.factory.config.MapFactoryBean">
+                <property name="sourceMap">
+                    <map>
+                        <entry key="EL.constants">
+                            <value>
+                                KB=org.openflamingo.el.ELConstantsFunctions#KB,
+                                MB=org.openflamingo.el.ELConstantsFunctions#MB,
+                                GB=org.openflamingo.el.ELConstantsFunctions#GB,
+                                TB=org.openflamingo.el.ELConstantsFunctions#TB,
+                                PB=org.openflamingo.el.ELConstantsFunctions#PB,
+                                MINUTES=org.openflamingo.el.ELConstantsFunctions#MINUTES,
+                                HOURS=org.openflamingo.el.ELConstantsFunctions#HOURS,
+                                DAYS=org.openflamingo.el.ELConstantsFunctions#DAYS
+                            </value>
+                        </entry>
+                        <entry key="EL.functions">
+                            <value>
+                                firstNotNull=org.openflamingo.el.ELConstantsFunctions#firstNotNull,
+                                concat=org.openflamingo.el.ELConstantsFunctions#concat,
+                                trim=org.openflamingo.el.ELConstantsFunctions#trim,
+                                dateFormat=org.openflamingo.el.ELConstantsFunctions#dateFormat,
+                                hostname=org.openflamingo.el.ELConstantsFunctions#hostname,
+                                escapeString=org.openflamingo.el.ELConstantsFunctions#escapeString,
+                                yesterday=org.openflamingo.el.ELConstantsFunctions#yesterday,
+                                tommorow=org.openflamingo.el.ELConstantsFunctions#tommorow,
+                                month=org.openflamingo.el.ELConstantsFunctions#month,
+                                day=org.openflamingo.el.ELConstantsFunctions#day,
+                                hour=org.openflamingo.el.ELConstantsFunctions#hour,
+                                minute=org.openflamingo.el.ELConstantsFunctions#minute,
+                                second=org.openflamingo.el.ELConstantsFunctions#second,
+                                urlEncode=org.openflamingo.el.ELConstantsFunctions#urlEncode
+                            </value>
+                        </entry>
+                    </map>
+                </property>
+            </bean>
+        </property>
+    </bean>
+</beans>

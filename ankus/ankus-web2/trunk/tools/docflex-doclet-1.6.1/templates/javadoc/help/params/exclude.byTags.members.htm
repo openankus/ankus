@@ -1,0 +1,10 @@
+Specify tags by which only class members (i.e. fields, constructors and methods) are selectively excluded from the generated documentation.
+<p>
+A class member, which otherwise (without this parameter) would be documented, is excluded when it has at least one of the specified tags.
+<p>
+The multiple exclude-tag names must be separated with new lines ('\n'), semicolons (';') or colons (':').
+For example:
+<blockquote><pre><code>
+@exclude
+@omit
+</code></pre></blockquote>

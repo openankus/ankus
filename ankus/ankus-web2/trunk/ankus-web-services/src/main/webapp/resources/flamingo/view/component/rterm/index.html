@@ -1,0 +1,100 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>rTerm - Ajaxterm Window Widget for Extjs (Ext.ux.rTerm)</title>
+
+    <link rel="stylesheet" type="text/css" href="../../lib/Ext/resources/css/ext-all.css"/>
+    <link rel="stylesheet" type="text/css" href="../../lib/Ext/resources/css/xtheme-gray.css"/>
+    <link rel="stylesheet" type="text/css" href="../../lib/rterm/rterm.css"/>
+
+    <script type="text/javascript" src="../../lib/Ext/adapter/ext/ext-base.js"></script>
+
+    <script type="text/javascript" src="../../lib/Ext/ext-all.js"></script>
+
+    <script type="text/javascript" src="../../lib/Sprocket/Filter.js"></script>
+    <script type="text/javascript" src="../../lib/rterm/rterm.js"></script>
+
+    <style type="text/css">
+        .container {
+            padding: 20px;
+        }
+
+        pre {
+            margin: 10px;
+            padding: 5px;
+            border: 1px solid black;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        Ext.onReady(function () {
+            Ext.QuickTips.init();
+
+            var button = Ext.get('show-btn');
+            var x = 40;
+            var y = 60;
+
+            function createWindow() {
+                x += 50;
+                y += 50;
+                win = new Ext.ux.rTerm({
+                    id: 'rterm-window-' + x,
+                    maximizable: true,
+                    collapsible: true,
+                    x: x,
+                    y: y,
+                    width: 580,
+                    height: 400,
+                    socket: new Ext.ux.rTerm.AjaxtermSocket({
+                        uri: '/u'
+                    })
+                });
+                win.show();
+            }
+
+            if (1 == 1 || window.location.host == 'localhost') {
+                button.removeClass('x-hidden');
+                //createWindow();
+            }
+
+            button.on('click', createWindow);
+        });
+
+    </script>
+
+</head>
+<body>
+<div class="container">
+    <h3>rTerm - Ajaxterm Window Widget for Extjs (Ext.ux.rTerm)</h3>
+
+    <input type="button" id="show-btn" value="Open rTerm Window" class="x-hidden"/><br/><br/>
+
+    <img src="rterm_screenshot2.jpg" width="800" height="461" border="0"/><br/>
+    Author: <a href="http://xant.us/">David W Davis</a><br/>
+    Version: 1.0<br/>
+    License: Same as Extjs 2.0<br/><br/>
+
+    <b>Setup</b><br/><br/>
+    Download and Install <a href="http://antony.lesuisse.org/software/ajaxterm/">ajaxterm</a>, and apache2.<br/>
+    The download link on Antony's site is broken, but here is a working link: <a
+        href="http://antony.lesuisse.org/software/ajaxterm/files/Ajaxterm-0.10.tar.gz">Ajaxterm-0.10.tar.gz</a><br/>
+    Configure apache2 to proxy /u requests:
+<pre>
+    ProxyRequests Off
+    &lt;Proxy *&gt;
+            Order deny,allow
+            Allow from all
+    &lt;/Proxy&gt;
+    ProxyPass /u http://localhost:8022/u
+    ProxyPassReverse /u http://localhost:8022/u
+</pre>
+    Check out <a href="http://svn.xantus.org/ext-ux/">http://svn.xantus.org/ext-ux/</a> into your document root.
+<pre>
+    svn co http://svn.xantus.org/ext-ux/ ext-ux
+</pre>
+    Open your browser to <a href="http://localhost/ext-ux/examples/rterm/">http://localhost/ext-ux/examples/rterm/</a>,
+    it will look exactly like this page, but with a button to open the term window.
+</div>
+</body>
+</html>

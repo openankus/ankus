@@ -1,0 +1,1559 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../../styles.css">
+<title>DocFlex/Javadoc - Basic Templates</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/Javadoc - Basic Templates
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ol>
+<li class="mrg4"><a href="#intro"><b>What is Basic Template Set?</b></a></li>
+<li class="mrg4"><a href="#output"><b>What you can generate with it</b></a>
+  <ul class="mrg4">
+    <li><a href="#output.html">HTML Output</a>
+      <ul>
+        <li><a href="#output.html.framed">Framed HTML Documentation</a></li>
+        <li><a href="#output.html.single_file">Single File HTML Documentation</a></li>
+      </ul>
+    </li>
+    <li><a href="#output.rtf">RTF Output</a></li>
+  </ul>
+</li>
+<li class="mrg4"><a href="#template_set"><b>Template Set Overview</b></a>
+  <ul class="mrg4">
+    <li><a href="#main_templates">Main Templates</a></li>
+    <li><a href="#subtemplates">Subtemplates</a></li>
+    <li><a href="#parameters">Template Parameters</a>
+      <ul>
+        <li><a href="#parameters.inspector">Parameter Inspector</a></li>
+        <li><a href="#parameters.desc">Descriptions of parameters</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+<li class="mrg4"><a href="#licensing"><b>Licensing</b></a></li>
+<li class="mrg4"><a href="#tips"><b>Tips</b></a>
+  <ul class="mrg4">
+    <li><a href="#omit_package_qualifiers">Omitting package qualifiers</a></li>
+    <li><a href="#exclude_by_tag_ann">Excluding classes/methods/fields with a custom tag/annotation</a></li>
+    <li><a href="#migrating_to_new_templates">Migrating to a new version of basic templates</a></li>
+  </ul>
+</li>
+</ol>
+<!-- END TABLE OF CONTENTS -->
+
+<hr>
+
+<h2>
+  <a name="intro"></a>
+  1.&nbsp; What is Basic Template Set?
+</h2>
+
+The <b>Basic Template Set</b> is an early version of standard templates provided with 
+<a href="../../about.html">DocFlex/Javadoc</a>.
+Currently, it is superseded by
+"<a href="../JavadocPro/overview.html">JavadocPro</a>" template set.
+However, it is still included in both <a href="../../about.html#editions">editions</a>
+of DocFlex/Javadoc because it is simpler and requires less <a href="#licensing">licensing</a>
+(basically, it is free).
+<p class="mrg8">
+Using it, you can generate:
+<ul class="mrg8">
+<li>
+  <a href="#output.html">HTML JavaDoc</a> (both framed and single file) with basic content:
+  project overview, package summaries, class details.
+</li>
+<li>
+  <a href="#output.rtf">RTF JavaDoc</a>
+</li>
+</ul>
+
+The Basic Template Set consists of just <a href="#template_set">14 templates</a>
+subdivided into two categories:
+<ol class="mrg8">
+  <li class="mrg8">
+    The <a href="#main_templates">main templates</a>, which are designed to produce
+    finished documentation and should be specified on the Javadoc
+    <a href="../../docs/doclet.html#template_option">command line</a> or in the
+    <a href="../../docs/doclet.html#gui">generator dialog</a>.
+    The main templates are located in <code><b>'templates/javadoc/'</b></code> directory of the
+    DocFlex/Javadoc installation.
+  </li>
+  <li class="mrg8">
+    The subsidiary templates (or <a href="#subtemplates">subtemplates</a>), which constitute a sort
+    of library and are called from the main templates (as well as from each other) to generate fragments
+    or separate files of the whole documentation. All subtemplates are contained in the
+    <code><b>'templates/javadoc/lib/'</b></code>
+    directory of the <a href="../../about.html">DocFlex/Javadoc</a> installation.
+  </li>
+</ol>
+
+<hr>
+
+
+On this page, we overview the <b>Basic Template Set</b> (provided within both
+<a href="../../about.html#full_edition">DocFlex/Javadoc</a>
+and
+<a href="../../about.html#docflex-doclet">DocFlex/Doclet</a> editions)
+and show examples of the output it produces.
+<p>
+The basic templates are subdivided into two categories:
+<ol>
+  <li class="wide">
+    The <a href="#main_templates">main templates</a>, which are designed to produce
+    a finished documentation and should be specified on the Javadoc
+    <a href="../../docs/doclet.html#template_option">command line</a> or in the
+    <a href="../../docs/doclet.html#gui">generator dialog</a>.
+    The main templates are located in the <code><b>'templates'</b></code> directory of the
+    DocFlex/Javadoc installation.
+  </li>
+  <li class="wide">
+    The subsidiary templates or <a href="#subtemplates">subtemplates</a>, which constitute a sort
+    of library and are called from the main templates (as well as from each other) to generate fragments
+    or separate files of the whole documentation. All subtemplates are contained in the <code><b>'templates/lib'</b></code>
+    directory of the <a href="../../about.html">DocFlex/Javadoc</a> installation.
+  </li>
+</ol>
+
+<h2>
+  <a name="output"></a>
+  2.&nbsp; What you can generate with it
+</h2>
+
+<h3 class="spec">
+  <a name="output.html"></a>
+  HTML Output
+</h3>
+
+<h4>
+  <a name="output.html.framed"></a>
+  Framed HTML Documentation
+</h4>
+
+Multi-framed HTML documentation can be generated with
+<a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#FramedDoc.tpl"><b>FramedDoc.tpl</b></a>
+main template.
+
+<blockquote>
+  <a href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/demo/html/" target="_blank"><img src="images/framed_html_s.gif" alt="Framed HTML documentation" border="0"></a>
+</blockquote>
+
+
+<h4>
+  <a name="output.html.single_file"></a>
+  Single File HTML Documentation
+</h4>
+
+The same entire documentation (<a href="#output.html.framed">above</a>)
+can be equally generated as a single HTML file using
+<a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#PlainDoc.tpl"><b>PlainDoc.tpl</b></a>
+main template. 
+
+<blockquote>
+  <a href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/demo/PlainDoc_html.zip"><img src="images/plain_html_s.gif" alt="Single-file HTML documentation" border="0"></a>
+</blockquote>
+
+<h3 class="spec">
+  <a name="output.rtf"></a>
+  RTF Output
+</h3>
+
+Using <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#PlainDoc.tpl"><b>PlainDoc.tpl</b></a>
+main template, it is possible not only to generate a <a href="#output.html.single_file">single file HTML</a>.
+Simply, by switch the generator
+<a href="../../docs/doclet.html#gui.output_format">output format</a>
+to &ldquo;RTF&rdquo;, the same template will produce a highest quality RTF file! 
+
+<blockquote>
+<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+  <td><a href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/images/p15.html" target="_blank"><img src="images/p15_s.gif" alt="RTF demo: javax.swing.text.Document" border="0"></a></td>
+  <td><a href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/images/p16.html" target="_blank"><img src="images/p16_s.gif" alt="RTF demo: javax.swing.text.Document" border="0"></a></td>
+  <td><a href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/images/p17.html" target="_blank"><img src="images/p17_s.gif" alt="RTF demo: javax.swing.text.Document" border="0"></a></td>
+</tr>
+</table>
+</blockquote>
+
+<h2>
+  <a name="template_set"></a>
+  3.&nbsp; Template Set Overview
+</h2>
+
+<h3>
+  <a name="main_templates"></a>
+  Main Templates
+</h3>
+
+These are the templates to be specified on the Javadoc
+<a href="../../docs/doclet.html#template_option">command line</a> or in the
+<a href="../../docs/doclet.html#gui">generator dialog</a>
+to produce a finished Java API documentation.
+
+<p>
+<table width="100%" border="1" cellspacing="1" cellpadding="4">
+
+<!-- Table Heading -->
+
+  <tr>
+    <th width="1%"><b>Template</b></th>
+    <th><b>Description</b></th>
+    <th><b>Called&nbsp;From</b></th>
+  </tr>
+
+<!-- PlainDoc.tpl -->
+
+  <tr valign="middle" class="impr">
+    <td><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#PlainDoc.tpl">PlainDoc.tpl</a></td>
+    <td>generates single-file documentation in any of the supported formats (HTML, RTF and TXT)</td>
+    <td><a href="../../docs/doclet.html#running_doclet">generator (doclet)</a></td>
+  </tr>
+
+<!-- FramedDoc.tpl -->
+
+  <tr valign="middle" class="impr">
+    <td><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#FramedDoc.tpl">FramedDoc.tpl</a></td>
+    <td>generates framed hypertext documentation (HTML only)</td>
+    <td><a href="../../docs/doclet.html#running_doclet">generator (doclet)</a></td>
+  </tr>
+
+</table>
+
+<h3>
+  <a name="subtemplates"></a>
+  Subtemplates
+</h3>
+
+<table width="100%" border="1" cellspacing="1" cellpadding="4">
+
+<!-- Table Heading -->
+
+  <tr>
+    <th width="1%"><b>Template</b></th>
+    <th width="98%"><b>Description</b></th>
+    <th width="1%"><b>Called&nbsp;From</b></th>
+  </tr>
+
+<!-- init.tpl -->
+
+  <tr valign="middle" class="impr">
+    <td><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#init.tpl" class="nowrap">init.tpl</a></td>
+    <td>creates element maps</td>
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#PlainDoc.tpl">PlainDoc.tpl</a>,
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#FramedDoc.tpl">FramedDoc.tpl</a>
+    </td>
+  </tr>
+
+<!-- Detail Subtemplates -->
+
+  <tr>
+    <th colspan="3" class="nav">
+      <b><i>Subtemplates called to generate either big sections of single-file documentation
+      or separate documents for the &ldquo;detail&rdquo; frame of framed HTML documentation</i></b>
+    </th>
+  </tr>
+
+<!-- overview-summary.tpl -->
+
+  <tr valign="middle" class="impr">
+    <td><a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#overview-summary.tpl" class="nowrap">overview-summary.tpl</a></td>
+    <td>generates the overview for the whole documentation</td>
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#PlainDoc.tpl">PlainDoc.tpl</a>,
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#FramedDoc.tpl">FramedDoc.tpl</a>
+    </td>
+  </tr>
+
+<!-- package-summary.tpl -->
+
+  <tr valign="middle" class="impr">
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#package-summary.tpl" class="nowrap">package-summary.tpl</a>
+    </td>
+    <td>
+      generates a package overview (i.e. description, tags and summary tables of contained classes)
+    </td>
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#PlainDoc.tpl">PlainDoc.tpl</a>,
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#FramedDoc.tpl">FramedDoc.tpl</a>
+    </td>
+  </tr>
+
+<!-- class.tpl -->
+
+  <tr valign="middle" class="impr">
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#class.tpl" class="nowrap">class.tpl</a>
+    </td>
+    <td>
+      generates the detailed documentation for a class (i.e. class, interface, enum or annotation type)
+    </td>
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#PlainDoc.tpl">PlainDoc.tpl</a>,
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#FramedDoc.tpl">FramedDoc.tpl</a>
+    </td>
+  </tr>
+
+<!-- Fragment Subtemplates -->
+
+  <tr>
+    <th colspan="3" class="nav">
+      <b><i>Subtemplates called to generate small fragments of the detailed documentation</i></b>
+    </th>
+  </tr>
+
+<!-- annotations.tpl -->
+
+  <tr valign="middle" class="impr">
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#annotations.tpl" class="nowrap">annotations.tpl</a>
+    </td>
+    <td>
+      generates list of annotations (along with all related hyperlinks) of a package, 
+      class, member or constructor/method parameter
+    </td>
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#class.tpl">class.tpl</a>,
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#package-summary.tpl" class="nowrap">package-summary.tpl</a>
+    </td>
+  </tr>
+
+<!-- inline-tag.tpl -->
+
+  <tr valign="middle" class="impr">
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#inline-tag.tpl" class="nowrap">inline-tag.tpl</a>
+    </td>
+    <td>
+      processes most of the inline tags
+    </td>
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#class.tpl">class.tpl</a>,
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#overview-summary.tpl" class="nowrap">overview-summary.tpl</a>,
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#package-summary.tpl" class="nowrap">package-summary.tpl</a>
+    </td>
+  </tr>
+
+<!-- see-link.tpl -->
+
+  <tr valign="middle" class="impr">
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#see-link.tpl" class="nowrap">see-link.tpl</a>
+    </td>
+    <td>
+      processes a user-defined cross-reference to related documentation
+    </td>
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#class.tpl">class.tpl</a>,
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#inline-tag.tpl" class="nowrap">inline-tag.tpl</a>,
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#overview-summary.tpl" class="nowrap">overview-summary.tpl</a>,
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#package-summary.tpl" class="nowrap">package-summary.tpl</a>
+    </td>
+  </tr>
+
+<!-- about.tpl -->
+
+  <tr valign="middle" class="impr">
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#about.tpl">about.tpl</a>
+    </td>
+    <td>
+      prints the &ldquo;about&rdquo; information at the bottom of most of documents
+    </td>
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#PlainDoc.tpl">PlainDoc.tpl</a>,&nbsp;<a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#class.tpl">class.tpl</a>,
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#overview-summary.tpl" class="nowrap">overview-summary.tpl</a>,
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#package-summary.tpl" class="nowrap">package-summary.tpl</a>
+    </td>
+  </tr>
+
+<!-- Reference List Subtemplates -->
+
+  <tr>
+    <th colspan="3" class="nav">
+      <b><i>Subtemplates that generate separate reference files used only in framed HTML documentation</i></b>
+    </th>
+  </tr>
+
+<!-- overview-frame.tpl -->
+
+  <tr valign="middle" class="impr">
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#overview-frame.tpl" class="nowrap">overview-frame.tpl</a>
+    </td>
+    <td>
+      generates the reference document for the whole documentation
+    </td>
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#FramedDoc.tpl">FramedDoc.tpl</a>
+    </td>
+  </tr>
+
+<!-- all-classes-frame.tpl -->
+
+  <tr valign="middle" class="impr">
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#all-classes-frame.tpl" class="nowrap">all-classes-frame.tpl</a>
+    </td>
+    <td>
+      generates the reference document for all classes 
+    </td>
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#FramedDoc.tpl">FramedDoc.tpl</a>
+    </td>
+  </tr>
+
+<!-- package-frame.tpl -->
+
+  <tr valign="middle" class="impr">
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#package-frame.tpl" class="nowrap">package-frame.tpl</a>
+    </td>
+    <td>
+      generates the reference document for a package
+    </td>
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#FramedDoc.tpl">FramedDoc.tpl</a>
+    </td>
+  </tr>
+
+<!-- package-list.tpl -->
+
+  <tr valign="middle" class="impr">
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#package-list.tpl" class="nowrap">package-list.tpl</a>
+    </td>
+    <td>
+      generates the 
+      <a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#linkpackagelist" target="_blank"><code>package-list</code></a>
+      text file
+    </td>
+    <td>
+      <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#FramedDoc.tpl">FramedDoc.tpl</a>
+    </td>
+  </tr>
+
+</table>
+
+<h3>
+  <a name="parameters"></a>
+  Template Parameters
+</h3>
+
+Template parameters control the template set.
+In effect, they serve the role of command-line options provided by the 
+<a href="http://docs.oracle.com/javase/6/docs/technotes/guides/javadoc/standard-doclet.html" target="_blank">Standard Doclet</a>.
+
+<h4>
+  <a name="parameters.inspector"></a>
+  Parameter Inspector
+</h4>
+
+When generating documentation, the parameter values can be specified interactively in the
+<b>Template Parameter Inspector</b> invoked from the
+<a href="../../docs/doclet.html#gui">Generator Dialog</a>
+The inspector contents is constructed dynamically from the parameter definitions specified
+in the template (click on a parameter row in the picture to jump directly to the detailed description
+of each parameter of <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#PlainDoc.tpl">PlainDoc.tpl</a> template):
+
+<blockquote>
+  <img src="images/PlainDoc_param_inspector.png" border="0" usemap="#param_inspector.map">
+  <map name="param_inspector.map">
+    <area shape="rect" coords="6,46,502,70"   href="#param.windowTitle">
+    <area shape="rect" coords="6,71,502,92"   href="#param.docTitle">
+    <area shape="rect" coords="6,93,502,115"  href="#param.include">
+    <area shape="rect" coords="6,117,502,138" href="#param.include.deprecated">
+    <area shape="rect" coords="6,140,502,161" href="#param.include.details">
+    <area shape="rect" coords="6,163,502,184" href="#param.include.details.overview">
+    <area shape="rect" coords="6,186,502,207" href="#param.include.details.packages">
+    <area shape="rect" coords="6,209,502,230" href="#param.include.details.classes">
+    <area shape="rect" coords="6,231,502,252" href="#param.include.details.innerClasses">
+    <area shape="rect" coords="6,254,502,275" href="#param.include.details.members">
+    <area shape="rect" coords="6,277,502,299" href="#param.include.details.initialValues">
+    <area shape="rect" coords="6,301,502,323" href="#param.include.tag">
+    <area shape="rect" coords="6,323,502,345" href="#param.include.tag.version">
+    <area shape="rect" coords="6,347,502,368" href="#param.include.tag.author">
+    <area shape="rect" coords="6,369,502,391" href="#param.include.tag.custom">
+    <area shape="rect" coords="6,392,502,414" href="#param.exclude">
+    <area shape="rect" coords="6,415,502,437" href="#param.exclude.byTags">
+    <area shape="rect" coords="6,438,502,460" href="#param.exclude.byTags.all">
+    <area shape="rect" coords="6,461,502,483" href="#param.exclude.byTags.classes">
+    <area shape="rect" coords="6,484,502,506" href="#param.exclude.byTags.members">
+    <area shape="rect" coords="6,507,502,529" href="#param.exclude.byAnns">
+    <area shape="rect" coords="6,530,502,552" href="#param.exclude.byAnns.all">
+    <area shape="rect" coords="6,553,502,575" href="#param.exclude.byAnns.classes">
+    <area shape="rect" coords="6,576,502,598" href="#param.exclude.byAnns.members">
+    <area shape="rect" coords="6,599,502,621" href="#param.omit">
+    <area shape="rect" coords="6,622,502,644" href="#param.omit.packageQualifiers.for">
+    <area shape="rect" coords="6,645,502,667" href="#param.omit.packageQualifiers.all">
+    <area shape="rect" coords="6,668,502,690" href="#param.omit.inheritedMemberLists.for">
+    <area shape="rect" coords="6,691,502,713" href="#param.omit.inheritedMemberLists.all">
+    <area shape="rect" coords="6,714,502,736" href="#param.fmt">
+    <area shape="rect" coords="6,737,502,759" href="#param.fmt.page.breakBefore.package">
+    <area shape="rect" coords="6,760,502,781" href="#param.fmt.page.breakBefore.class">
+  </map>
+</blockquote>
+
+Also, the template parameters can be passed via
+<a href="../../docs/doclet.html#p_option">-p option</a> on the Javadoc command line.
+
+<h4>
+  <a name="parameters.desc"></a>
+  Descriptions of parameters
+</h4>
+
+Here are the detailed descriptions of all parameters of
+<a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#PlainDoc.tpl">PlainDoc.tpl</a>
+template (that you can see in the inspector screenshot above).
+Those descriptions are also available within the Parameter Inspector dialog directly.
+
+<p>
+<table width="100%" border="1" cellspacing="1" cellpadding="4">
+
+<!-- Table Heading -->
+
+<tr>
+  <th><b>Parameter/Grouping</b></th>
+  <th><b>Description</b></th>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <a name="param.windowTitle"></a>
+    Window Title
+  </td>
+  <td>
+    Parameter name:<code> <b>windowTitle</b></code>
+    <p class="mrg80">
+    Specifies the browser window title for the documentation.
+    This is similar to 
+    <code class="nowrap"><a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#windowtitle" target="_blank">-windowtitle</a></code>
+    option provided by Javadoc 
+    <a href="http://docs.oracle.com/javase/6/docs/technotes/guides/javadoc/standard-doclet.html" target="_blank">Standard Doclet</a>.
+    In addition, if the selected output format supports pagination (RTF),
+    the same text will appear on the page footers.
+  </td>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <a name="param.docTitle"></a>
+    Documentation Title
+  </td>
+  <td>
+    Parameter name:<code> <b>docTitle</b></code>
+    <p class="mrg80">
+    Specifies the title to be placed at the the top of the documentation overview.
+  </td>
+</tr>
+
+<tr align="left" class="impr">
+  <th>
+    <a name="param.include"></a>
+    <b><i>Include</i></b>
+  </th>
+  <th>
+    &nbsp;
+  </th>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:8px">
+      <a name="param.include.deprecated"></a>
+      deprecated API
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>include.deprecated</b></code>
+    <p class="mrg80">
+    Controls whether to generate documentation for  any deprecated API.
+  </td>
+</tr>
+
+<tr align="left" class="impr">
+  <th>
+    <div style="margin-left:8px">
+      <a name="param.include.details"></a>
+      <b><i>Details Of</i></b>
+    </div>
+  </th>
+  <th>
+    This group of parameters controls how much details are included
+    in the generated documentation. This may be important for printing,
+    since the documentation with all details may occur too big to be printable.</i>
+  </th>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:18px">
+      <a name="param.include.details.overview"></a>
+      overview
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>include.details.overview</b></code>
+    <p class="mrg80">
+    Specifies whether to include the overview summary for the whole documentation.
+  </td>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:18px">
+      <a name="param.include.details.packages"></a>
+      packages
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>include.details.packages</b></code>
+    <p class="mrg80">
+    Specifies whether to include the details of packages.
+    If <code>false</code> (unchecked), only classes separately 
+    specified on the Javadoc command line will be documented.
+  </td>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:18px">
+      <a name="param.include.details.classes"></a>
+      classes
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>include.details.classes</b></code>
+    <p class="mrg80">
+    Specifies whether to include details of classes.
+    If <code>false</code> (unchecked), only overview for each package
+    will be generated without the detailed documentation for the
+    contained classes.
+  </td>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:18px">
+      <a name="param.include.details.innerClasses"></a>
+      inner classes
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>include.details.innerClasses</b></code>
+    <p class="mrg80">
+    Specifies whether inner classes should be included into the generation scope.
+    If <code>true</code> (checked), the inner classes contained
+    within those already being documented will also be fully documented.
+    If <code>false</code>, only summaries of the inner classes will be generated.
+  </td>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:18px">
+      <a name="param.include.details.members"></a>
+      members
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>include.details.members</b></code>
+    <p class="mrg80">
+    Specifies whether to include details of class members (i.e. methods and fields).
+    If <code>false</code> (unchecked), only overview for each class will be generated
+    without the details for the class' members.
+  </td>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:18px">
+      <a name="param.include.details.initialValues"></a>
+      initial values
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>include.details.initialValues</b></code>
+    <p class="mrg80">
+    Specify whether the initial values of fields should be shown in the documentation.
+  </td>
+</tr>
+
+<tr align="left" class="impr">
+  <th>
+    <div style="margin-left:8px">
+      <a name="param.include.tag"></a>
+      <b><i>Tags</i></b>
+    </div>
+  </th>
+  <th>
+    This group of parameters controls whether to include in the generated
+    docs the sections associated with some tags.
+  </th>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:18px">
+      <a name="param.include.tag.version"></a>
+      @version
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>include.tag.version</b></code>
+    <p class="mrg80">
+    Include the @version text in the generated docs.
+  </td>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:18px">
+      <a name="param.include.tag.author"></a>
+      @author
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>include.tag.author</b></code>
+    <p class="mrg80">
+    Include the @author text in the generated docs.
+  </td>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:18px">
+      <a name="param.include.tag.custom"></a>
+      Custom tags
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>include.tag.custom</b></code>
+    <p class="mrg80">
+    This parameter duplicates the functionality of the 
+    <code class="nowrap"><a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#tag" target="_blank">-tag</a></code>
+    option supported by the
+    <a href="http://docs.oracle.com/javase/6/docs/technotes/guides/javadoc/standard-doclet.html" target="_blank">Standard Doclet</a>.
+    <p class="mrg8">
+    It allows you to include in the generated output the documentation of your custom tags,
+    specify the tag headings as well as their ordering. You will be able also to redefine
+    the headings and ordering of the standard tags (such as @param, @see, @author etc).
+    <p class="mrg8">
+    This parameter accepts multiple (list) value. Each value item specifies how a single tag should be documented.
+
+    <h4>Specifying Single Tag</h4>
+
+    Documenting of a single tag is specified with the following expression:
+    <blockquote class="mrg8">
+      <code><i>tagname</i>:Xaoptcmf:<i>taghead</i></code>
+    </blockquote>
+    The <code><b><i>tagname</i></b> </code>is the name of the tag for which this setting applies. 
+    The <code><b><i>taghead</i></b> </code>is the heading for the tag documentation. 
+    Omitting <code><i>taghead</i></code> causes <code><i>tagname</i></code> to be used as the heading 
+    (unless this is a standard tag). If the tag has no text (specified in the Java comment), 
+    only the heading will appear in the generated output.
+    <p class="mrg8">
+    The <code><b>Xaoptcmf</b></code> part determines the locations in the source code where the tag
+    is to be processed/documented. Each letter specify possible tag locations according to this table:
+    <p class="mrg8"></p>
+    <table border="1" cellspacing="1" cellpadding="3">
+      <tr>
+        <th align="center"><b>Letter</b></th>
+        <th align="center"><b>Meaning / Location</b></th>
+      </tr>
+      <tr valign="top" class="impr">
+        <td align=center><code>X</code></td>
+        <td>
+          Rather than including the tag, this letter indicates that the tag should be ignored
+          in the specified locations. For example, specifying
+          <blockquote class="mrg8">
+            <code>see:X</code>
+          </blockquote>
+          will suppress documenting of all <code>@see</code> tags. However,
+          <blockquote class="mrg8">
+            <code>see:Xf</code>
+          </blockquote>
+          suppresses <code>@see</code> tags only for fields.
+        </td>
+      </tr>
+      <tr valign="top" class="impr">
+        <td align=center><code>a</code></td>
+        <td>all locations</td>
+      </tr>
+      <tr valign="top" class="impr">
+        <td align=center><code>o</code></td>
+        <td>project overview</td>
+      </tr>
+      <tr valign="top" class="impr">
+        <td align=center><code>p</code></td>
+        <td>packages overviews</td>
+      </tr>
+      <tr valign="top" class="impr">
+        <td align=center><code>t</code></td>
+        <td>types (that is classes and interfaces)</td>
+      </tr>
+      <tr valign="top" class="impr">
+        <td align=center><code>c</code></td>
+        <td>constructors</td>
+      </tr>
+      <tr valign="top" class="impr">
+        <td align=center><code>m</code></td>
+        <td>methods</td>
+      </tr>
+      <tr valign="top" class="impr">
+        <td align=center><code>f</code></td>
+        <td>fields</td>
+      </tr>
+    </table>
+
+    <p><u>Examples</u>:</p>
+
+    The following parameter value item:
+    <blockquote class="mrg8">
+      <code>threadsafe:a:Can be called safely from multiple threads</code>
+    </blockquote>
+    specifies a custom <code>@threadsafe</code> tag to be documented anywhere it is used with the heading message: 
+    <blockquote class="mrg8">
+      <b>Can be called safely from multiple threads</b>
+    </blockquote>
+    The following value item specifies that <code>@todo</code> tag should be processed 
+    only with constructors, methods and fields: 
+    <blockquote class="mrg8">
+      <code>todo:cmf:To Do:</code>
+    </blockquote>
+    Notice the last colon (:) above is not a separator, but is part of the heading text (as shown below).
+    You would use either tag option for source code that contains the tag @todo, such as: 
+    <blockquote class="mrg8">
+      <code>@todo The documentation for this method needs work.</code>
+    </blockquote>
+    This line would produce output something like: 
+    <blockquote class="mrg8">
+      <b>To Do:</b> 
+      <blockquote class="mrg8">
+        The documentation for this method needs work. 
+      </blockquote>
+    </blockquote>
+
+    <p><u>Use of Colon in Tag Name</u></p>
+
+    A colon can be used in a tag name if it is escaped with a backslash. For this doc comment: 
+    <blockquote class="mrg8">
+<pre class="mrg8">
+/**
+ * @ejb:bean
+ */
+</pre>
+    </blockquote>
+    use the following setting of the parameter value: 
+    <blockquote class="mrg8">
+      <code>ejb\:bean:a:EJB Bean:</code>
+    </blockquote>
+
+    <h4>Specifying Multiple Tags</h4>
+
+    Documenting of different tags should be specified in different items of the whole parameter value.
+    Each value item should define how to document a single tag as described above.
+    The items must be separated with one of the allowed item separator characters 
+    (<code>newline</code> or <code>';'</code>). 
+
+    <p><u>Example</u>:</p>
+
+    <blockquote class="mrg8">
+<pre class="mrg8">
+ejb\:bean:a:EJB Bean:
+todo:cmf:To Do:
+</pre>
+    </blockquote>
+    or the same as a single line:
+    <blockquote>
+      <code>ejb\:bean:a:EJB Bean:;todo:cmf:To Do:</code>
+    </blockquote>
+    The last form can be used to specify both tags on the Javadoc command line:
+
+    <blockquote class="mrg8">
+      <code><b>-p:include.tag.custom</b> "ejb\:bean:a:EJB Bean:;todo:cmf:To Do:"</code>
+    </blockquote>
+
+    (Note: Because the full parameter value here contains spaces, it is enclosed in quotes 
+    in order to make it treated as a single command-line argument.)
+    <p>
+    The same can be also specified with two <code>-p</code> options:
+
+    <blockquote class="mrg8">
+    <code>
+      -p:include.tag.custom "ejb\:bean:a:EJB Bean:"
+      -p:include.tag.custom "todo:cmf:To Do:"
+    </code>
+    </blockquote>
+    Each <code><b>-p</b></code> option adds a separate value item to <code>'include.tag.custom'</code> parameter.
+
+    <p><u>Tag Ordering</u></p>
+
+    The tags will appear in the output documentation in the same order as they are specified 
+    in the value items of this parameter. For instance, in the example above, the documentation
+    of <code>'@ejb:bean'</code> tag will be followed by the documentation of <code>'@todo'</code> tag.
+    <p class="mrg8">
+    Using this parameter, you can also redefine the ordering of the standard tags, for example:
+    <blockquote class="mrg8">
+      <code>version;todo:cmf:To Do:;see</code>
+    </blockquote>
+    This setting says that @version tag should be documented before the custom @todo tag 
+    followed by the documentation of @see tags.
+    <p class="mrg8">
+    Any other standard tags will be documented as usual in a certain some predefined order before 
+    the tags specified in this parameter.
+
+    <h4>Using Escapes</h4>
+
+    Each character that serves as a value item separator can be equally used within the value items 
+    if escaped with a backslash. For example, documenting of the tag:
+    <blockquote class="mrg8">
+      <code>@my;odd;tag</code>
+    </blockquote>
+    can be specified like this:
+    <blockquote class="mrg8">
+      <code>my\;odd\;tag:a:My odd tag:</code>
+    </blockquote>
+
+    If a backslash is not consumed by an escape it will be remained in the text as is.
+    To make sure that a backslash is not part of some escape, you may add another backslash.
+    A sequence of two backslashes (<code>"\\"</code>) is an escape by itself, which represents a single backslash. 
+    This is important because backslashes may be used also in a secondary system of escapes
+    (e.g. to escape <code>':'</code> within the tag name).
+    <p class="mrg8">
+    For example, a string like this:
+    <blockquote class="mrg8">
+      <code>my\;odd\;tag:a:\My Odd Title:\\;ejb\:bean:a:EJB Bean:</code>
+    </blockquote>
+    will be initially processed and broken into two value items:
+    <blockquote class="mrg8">
+<pre class="mrg8">
+my;odd;tag:a:\My Odd Title\
+ejb\:bean:a:EJB Bean:
+</pre>
+    </blockquote>
+    then, processed further to document all <code>'@my;odd;tag'</code> tags with <i>"\My Odd Title\"</i> title 
+    and all <code>'@ejb:bean'</code> tags with <i>"EJB Bean:"</i> title.
+  </td>
+</tr>
+
+<tr align="left" class="impr">
+  <th>
+    <a name="param.exclude"></a>
+    <b><i>Exclude</i></b>
+  </th>
+  <th>
+    Specify what should be entirely excluded from the generation scope.
+  </th>
+</tr>
+
+<tr align="left" class="impr">
+  <th>
+    <div style="margin-left:8px">
+      <a name="param.exclude.byTags"></a>
+      <b><i>By Tags</i></b>
+    </div>
+  </th>
+  <th>
+    This group of parameters allows you to exclude from the generated documentation classes, 
+    fields and methods with specified tags (custom or not).
+  </th>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:18px">
+      <a name="param.exclude.byTags.all"></a>
+      classes & members
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>exclude.byTags.all</b></code>
+    <p class="mrg8">
+    Specify tags by which both classes and class members 
+    (i.e. fields, constructors and methods) are completely 
+     excluded from the generated documentation.
+    <p class="mrg8">
+    A <b>class</b> is excluded when at least one of the conditions is met:
+    <ol class="mrg8">
+      <li>The class has one of the specified tags.</li>
+      <li>This is an inner class and one of its enclosing classes has one of the specified tags.</li>
+    </ol>
+    A class <b>member</b> is excluded according to one of the conditions:
+    <ol class="mrg8">
+      <li>The member has one of the specified tags.</li>
+      <li>The member's class has one of the specified tags.</li>
+      <li>The member's class is an inner class and one of its enclosing classes has one of the specified tags.</li>
+    </ol>
+    Therefore, when a class has one of the tags specified in this parameter, neither that class nor anything defined in it (i.e. members and inner classes) will ever appear in the documentation.
+    <p class="mrg8">
+    The multiple exclude-tag names must be separated with new lines ('\n'), semicolons (';') or colons (':').
+    For example:
+    <blockquote class="mrg80">
+      <code>@exclude<br>@omit</code>
+    </blockquote>
+  </td>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:18px">
+      <a name="param.exclude.byTags.classes"></a>
+      classes
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>exclude.byTags.classes</b></code>
+    <p class="mrg8">
+    This parameter allows you to hide completely from the generated documentation some 
+    intermediate classes of your internal implementation (that for some reasons need to be public),
+    however, preserve documenting of some fields and methods (defined within those classes) 
+    which are supposed to be part of an open API.
+    <p class="mrg8">
+    This may be particularly helpful when you will need next time to change your implementation 
+    while keeping intact what you have declared in your open API.
+    <p class="mrg8">
+    The tags specified in this parameter are treated as the following.
+    <p class="mrg8">
+    A <b>class</b> will be never mentioned in the documentation when at least one of the conditions is met:
+    <ol class="mrg8">
+      <li>The class has one of the specified tags.</li>
+      <li>This is an inner class and one of its enclosing classes has one of the specified tags.</li>
+    </ol>
+    Each <b>inheritable member</b> of the excluded class that otherwise (without that parameter) would be documented will appear in every direct descendant of that class being documented as if that member has been defined directly there.
+    <p class="mrg8">
+    Overall effect should be that the generated documentation will look as if the excluded classes
+    themselves did never exist at all, however, everything else is in place and correct.
+    <p class="mrg8">
+    The multiple exclude-tag names must be separated with new lines ('\n'), semicolons (';') or colons (':').
+    For example:
+    <blockquote class="mrg80">
+      <code>@exclude<br>@omit</code>
+    </blockquote>
+  </td>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:18px">
+      <a name="param.exclude.byTags.members"></a>
+      members
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>exclude.byTags.members</b></code>
+    <p class="mrg8">
+    Specify tags by which only class members (i.e. fields, constructors and methods) 
+    are selectively excluded from the generated documentation.
+    <p class="mrg8">
+    A class member, which otherwise (without this parameter) would be documented, 
+    is excluded when it has at least one of the specified tags.
+    <p class="mrg8">
+    The multiple exclude-tag names must be separated with new lines ('\n'), semicolons (';') or colons (':').
+    For example:
+    <blockquote class="mrg80">
+      <code>@exclude<br>@omit</code>
+    </blockquote>
+  </td>
+</tr>
+
+<tr align="left" class="impr">
+  <th>
+    <div style="margin-left:8px">
+      <a name="param.exclude.byAnns"></a>
+      <b><i>By Annotations</i></b>
+    </div>
+  </th>
+  <th>
+    This group of parameters provides an alternative way of excluding classes and class members
+    from the generated documentation.
+  </th>
+</tr>
+<tr align="left" class="impr">
+  <td>
+    &nbsp;
+  </td>
+  <td>
+    As you know, one of the new language features introduced in Java&nbsp;5 is <i>&ldquo;annotations&rdquo;</i>. 
+    Annotations are essentially similar to tags. However, unlike tags, they are specified not within 
+    Java comments, but directly in Java code. That is, annotations are processed by the Java compiler 
+    itself and can be retained in the compiled binary classes (which is impossible with tags).
+    <p class="mrg8">
+    So, similar to <a href="#param.exclude.byTags">tags</a> you can mark some of the classes and members with annotations and, then, 
+    filter them out by those annotations from  the generated documentation.
+    <p class="mrg8">
+    But, why would you need to use annotations? Why are tags not enough?
+    <p class="mrg8">
+    Let's suppose, you have a library of some core Java classes for internal use. 
+    That library is quite a separate thing. So, you may use it in different projects 
+    (or different people are using it). 
+    Therefore, you maintain that library in a precompiled binary form as a jar-file.
+    <p class="mrg8">
+    Now, you are developing a project, in which you use that internal library.
+    You want to publish certain classes of that project as an open API to your system.
+    But some of those classes you want to publish are inherited from the classes of your 
+    internal library (or implement interfaces from it). 
+    The Java API documentation generated by Javadoc would mention those internal classes 
+    as superclasses (implemented interfaces) of your API. 
+    But you do not want them to be visible in the published documentation (they are internal after all)! 
+    How can you do that?
+    <p class="mrg8">
+    Marking your internal classes with tags to be excluded by them will not work, 
+    because your tags will not get into the compiled jar-file. 
+    <p class="mrg8">
+    Here is where annotations can help! Let's see how you can do it.
+    <p class="mrg8">
+    First, you need to define your annotation type like the following (all names are for example):
+    <blockquote class="mrg8">
+<pre class="mrg8">
+package myprojects.core.util;
+
+public @interface Internal {
+}
+</pre>
+    </blockquote>
+    <p class="mrg8">
+    These lines should be saved as <code>'Internal.java'</code> file located in 
+    <code>'myprojects/core/util'</code> package.
+    <p class="mrg8">
+    Note, as with any Java class, the defined annotation type has a <b>fully qualified name</b>, 
+    which will be the string: <code>'myprojects.core.util.Internal'</code>. 
+    Only the fully qualified name can be used to find annotations of a given type.
+    <p class="mrg8">
+    Now, you can use this annotation type to mark your internal classes. Here is how:
+    <blockquote class="mrg8">
+<pre class="mrg8">
+package myprojects.core.classes;
+...
+<span class="red">import myprojects.core.util.Internal;
+
+@Internal</span>
+public class MyIterator {
+...
+}
+</pre>
+    </blockquote>
+    <p class="mrg8">
+    After that, you can exclude all classes marked with that annotation from the generated 
+    documentation by specifying the annotation type qualified name 
+    <code>'myprojects.core.util.Internal'</code> in the 
+    <a href="#param.exclude.byAnns.classes"><code>exclude.byAnns.classes</code></a> parameter.
+    <p class="mrg80">
+    This will equally work both with the classes defined in the Java sources and the binary 
+    classes found on the  Javadoc classpath!
+  </td>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:18px">
+      <a name="param.exclude.byAnns.all"></a>
+      classes & members
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>exclude.byAnns.all</b></code>
+    <p class="mrg8">
+    Specify annotation types by which both classes and class members 
+    (i.e. fields, constructors and methods) are completely excluded 
+    from the generated documentation.
+    <p class="mrg8">
+    A <b>class</b> is excluded when at least one of the conditions is met:
+    <ol class="mrg8">
+      <li>The class has an annotation of one of the specified types.</li>
+      <li>This is an inner class and one of its enclosing classes has an annotation of one of the specified types.</li>
+    </ol>
+    A class <b>member</b> is excluded according to one of the conditions:
+    <ol class="mrg8">
+      <li>The member has an annotation of one of the specified types.</li>
+      <li>The member's class has an annotation of one of the specified types.</li>
+      <li>The member's class is an inner class and one of its enclosing classes has an annotation of one of the specified types.</li>
+    </ol>
+    Therefore, when a class has one of the annotations specified in this parameter, neither that class nor anything defined in it (i.e. members and inner classes) will ever appear in the documentation.
+    <p class="mrg8">
+    Each annotation type must be specified with its <b>fully qualified name</b> 
+    (e.g. <code>java.lang.Deprecated</code>). 
+    Multiple annotation type names must be separated with new lines ('\n'), semicolons (';') or colons (':').
+    For example:
+    <blockquote class="mrg8">
+    <code>
+      my.core.util.Internal<br>
+      my.project.api.Exclude
+    </code>
+    </blockquote>
+    <p class="mrg80">
+    For more details about using annotations, see description of the
+    <a href="#param.exclude.byAnns"><i>Exclude | By Annotations</i></a> parameter group.
+  </td>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:18px">
+      <a name="param.exclude.byAnns.classes"></a>
+      classes
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>exclude.byAnns.classes</b></code>
+    <p class="mrg8">
+    This parameter allows you to hide completely from the generated documentation some intermediate
+    classes of your internal implementation (that for some reasons need to be public), however,
+    to preserve documenting of some fields and methods (defined within those classes) 
+    which are supposed to be part of an open API.
+    <p class="mrg8">
+    This may be particularly helpful when you will need next time to change your implementation 
+    while keeping intact what you have declared in your open API.
+    <p class="mrg8">
+    The annotation types specified in this parameter are treated as the following.
+    <p class="mrg8">
+    A <b>class</b> will be never mentioned in the documentation when at least one of the conditions is met:
+    <ol class="mrg8">
+      <li>The class has an annotation of one of the specified types.</li>
+      <li>This is an inner class and one of its enclosing classes has an annotation of one of the specified types.</li>
+    </ol>
+    Each <b>inheritable member</b> of the excluded class that otherwise (without that parameter) 
+    would be documented will appear in every direct descendant of that class being documented 
+    as if that member has been defined directly there.
+    <p class="mrg8">
+    Overall effect should be that the generated documentation will look as if the excluded classes
+    themselves did never exist at all, however, everything else is in place and correct.
+    <p class="mrg8">
+    Each annotation type must be specified with its <b>fully qualified name</b> 
+    (e.g. <code>java.lang.Deprecated</code>). 
+    Multiple annotation type names must be separated with new lines ('\n'), semicolons (';') or colons (':').
+    For example:
+    <blockquote class="mrg8">
+    <code>
+      my.core.util.Internal<br>
+      my.project.api.Exclude
+    </code>
+    </blockquote>
+    <p class="mrg80">
+    For more details about using annotations, see description of the
+    <a href="#param.exclude.byAnns"><i>Exclude | By Annotations</i></a> parameter group.
+  </td>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:18px">
+      <a name="param.exclude.byAnns.members"></a>
+      members
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>exclude.byAnns.members</b></code>
+    <p class="mrg8">
+    Specify annotation types by which only class members (i.e. fields, constructors and methods)
+    are selectively excluded from the generated documentation.
+    <p class="mrg8">
+    A class member, which otherwise (without this parameter) would be documented, 
+    is excluded when it has an annotation of one of the specified types.
+    <p class="mrg8">
+    Each annotation type must be specified with its <b>fully qualified name</b> 
+    (e.g. <code>java.lang.Deprecated</code>). 
+    Multiple annotation type names must be separated with new lines ('\n'), semicolons (';') or colons (':').
+    For example:
+    <blockquote class="mrg8">
+    <code>
+      my.core.util.Internal<br>
+      my.project.api.Exclude
+    </code>
+    </blockquote>
+    <p class="mrg80">
+    For more details about using annotations, see description of the
+    <a href="#param.exclude.byAnns"><i>Exclude | By Annotations</i></a> parameter group.
+  </td>
+</tr>
+
+<tr align="left" class="impr">
+  <th>
+    <a name="param.omit"></a>
+    <b><i>Omit</i></b>
+  </th>
+  <th>
+    This group of parameters controls which information should not appear in the generated documentation.
+  </th>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:8px">
+      <a name="param.omit.packageQualifiers.for"></a>
+      Package qualifiers started with
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>omit.packageQualifiers.for</b></code>
+    <p class="mrg8">
+    Specify the packages whose qualifying names should be omitted from ahead of class names
+    in parameters, types, referenced classes (like exception lists, implemented interfaces, etc.),
+    @see tags and {@link} tags in comments.
+    <p class="mrg8">
+    The packages to omit are specified as the list of package name prefixes delimited with new
+    lines ('\n'), semicolons (';') or colons (':').
+    For example:
+    <blockquote class="mrg8">
+      <code>java.lang.<br>javax.swing.</code>
+    </blockquote>
+    <p class="mrg80">
+    When a particular fully-qualified name is decided whether
+    to be shortened, the answer will be yes when the full name
+    starts with one of the specified prefixes.
+  </td>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:8px">
+      <a name="param.omit.packageQualifiers.all"></a>
+      All package qualifiers
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>omit.packageQualifiers.all</b></code>
+    <p class="mrg80">
+    If selected, all qualifying package names will be omitted
+    from ahead of class names in parameters, types, referenced
+    classes (like exception lists, implemented interfaces, etc.),
+    @see tags and {@link} tags in comments.
+  </td>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:8px">
+      <a name="param.omit.inheritedMemberLists.for"></a>
+      Inherited member lists for packages
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>omit.inheritedMemberLists.for</b></code>
+    <p class="mrg8">
+    Suppress generation of lists of the inner classes, fields or methods inherited
+    from those classes/interfaces, which belong to the packages specified with this parameter.
+    <p class="mrg8">
+    This parameter may be especially useful to suppress long lists of the class members inherited
+    from the standard Java API classes and, in such a way, to considerably reduce the output documentation.
+    <p class="mrg8">
+    The packages, whose classes/inerfaces should not appear in the "inherited from ..." lists,
+    are specified as the list of the package name prefixes delimited with new lines
+    ('\n'), semicolons (';') or colons (':').
+    <p class="mrg8">
+    For example, the following will exclude lists of the members inherited from most of the standard Java API classes:
+    <blockquote class="mrg80">
+      <code>java.lang.</br>javax.swing.</code>
+    </blockquote>
+  </td>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:8px">
+      <a name="param.omit.inheritedMemberLists.all"></a>
+      All inherited member lists
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>omit.inheritedMemberLists.all</b></code>
+    <p class="mrg80">
+    If selected, no lists of  inherited inner classes, fields or methods will be generated at all.
+  </td>
+</tr>
+
+<tr align="left" class="impr">
+  <th>
+    <a name="param.fmt"></a>
+    <b><i>Formatting</i></b>
+  </th>
+  <th>
+    This group of parameters controls some formatting features
+    of the output documentation specifically generated by this template.
+  </th>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:8px">
+      <a name="param.fmt.page.breakBefore.package"></a>
+      Start package from new page
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>fmt.page.breakBefore.package</b></code>
+    <p class="mrg80">
+    If <code>true</code> (checked), each package documentation will be started from a new page.
+  </td>
+</tr>
+
+<tr align="left" valign="top" class="impr">
+  <td>
+    <div style="margin-left:8px">
+      <a name="param.fmt.page.breakBefore.class"></a>
+      Start class from new page
+    </div>
+  </td>
+  <td>
+    Parameter name:<code> <b>fmt.page.breakBefore.class</b></code>
+    <p class="mrg80">
+    If <code>true</code> (checked), each class documentation will be started from a new page.
+  </td>
+</tr>
+</table>
+
+<h2>
+  <a name="licensing"></a>
+  4.&nbsp; Licensing
+</h2>
+
+The <a href="#top">Basic Template Set</a> is essentially free:
+<ul class="mrg8">
+<li class="mrg8">
+  You can generate with it any documentation (in any supported format) and use it without limitation.
+</li>
+<li class="mrg8">
+  The same is extended to the templates derived from <a href="#top">Basic Template Set</a> (if you modify something).
+  However, the modification itself must be done under an appropriate &ldquo;DocFlex/Javadoc&rdquo; license that covers
+  the <a href="../../about.html#template_designer">Template Designer</a>
+  included in the <a href="../../about.html#full_edition">Full Edition</a>.
+</li>
+</ul>
+
+See also:
+<a target="_blank" href="http://www.filigris.com/buy/licensing_pricing.php#templates.basic">Licensing of Templates | Basic Templates</a>
+
+<h2>
+  <a name="tips"></a>
+  5.&nbsp; Tips
+</h2>
+
+<h3>
+  <a name="omit_package_qualifiers"></a>
+  Omitting package qualifiers
+</h3>
+
+Since DocFlex/Javadoc, version 1.1, the provided <a href="#intro">basic templates</a>
+include two additional parameters to suppress appearing package qualifiers in the generated
+documentation in such places like method parameters, field types and so on:
+
+<ol>
+  <li>
+    <a href="#param.omit.packageQualifiers.for">
+      Omit package qualifiers started with
+    </a>
+  </li>
+  <li>
+    <a href="#param.omit.packageQualifiers.all">
+      Omit all package qualifiers
+    </a>
+  </li>
+</ol>
+
+<h3>
+  <a name="exclude_by_tag_ann"></a>
+  Excluding classes/methods/fields with a custom tag/annotation
+</h3>
+
+Since version 1.3, there is a new template parameter <i>"Exclude by tags"</i>
+(<a href="#param.exclude.byTags"><code>exclude.byTags</code></a>),
+which since v1.5.1 has been split into several ones.
+Those parameters can be used to exclude from the generated documentation classes, fields and methods
+with specified tags.
+See the <a href="#param.exclude.byTags">parameter description</a> for more details.
+<p>
+Since version 1.5.2, to that was added a possibility to exclude everything by annotations.
+See <i><a href="#param.exclude.byAnns">"Exclude by annotations"</a></i>
+parameter group 
+(<a href="#param.exclude.byAnns"><code>exclude.byAnns.*</code></a>).
+Annotations are more cumbersome to use for that purpose. But they can be retained in the compiled classes.
+So the exclusion will work even when no corresponding Java source code is found on Javadoc source path.
+
+<h3>
+  <a name="migrating_to_new_templates"></a>
+  Migrating to a new version of basic templates
+</h3>
+
+This section is addressed to those our users who have a full 
+<a target="_blank" href="http://www.filigris.com/buy/licensing_pricing.php#commercial_license">commercial</a> or
+<a target="_blank" href="http://www.filigris.com/buy/licensing_pricing.php#academic_license">academic</a> license for 
+<a href="../../about.html">DocFlex/Javadoc</a>.
+<p>
+Suppose, some time ago you modified the 
+<a href="#intro">basic templates</a> according to your needs
+and since then have been (happily) using them.
+Now, you come to this web-site and notice that the latest version of DocFlex/Javadoc supports a host of 
+new features, which might be interesting to you too (for instance, the full support of Java 5.0).
+<p>
+Of course, you can run your old templates with the new DocFlex Doclet version.
+But this won't make those new features automatically available to you. 
+First, they must be applied in templates, which 
+are the actual programs that generate everything. (See 
+<a href="../../about.html#tda">About DocFlex/Javadoc | Key Features | Template-driven doclet architecture</a>)
+<p>
+So, now you need to migrate to the new 
+<a href="#intro">basic template set</a> and copy to there or replicate
+all your specific changes necessary for your work. What is the best way to do this?
+<p>
+<i>The safest way would be to replicate all your changes on the new templates.</i>
+<p>
+You may try to mix your old templates with the new ones. But keep in mind that 
+we constantly change something from the version to version. 
+<p>
+Some subtemplates depend on other templates that call them. Basically, there are two such dependencies:
+<ol>
+<li>The template parameters</li>
+<li>The element maps</li>
+</ol>
+ 
+Especially this concerns element maps, which are a special kind of hash-tables adapted for DSM elements.
+Element maps help to resolve some very complex data-mining queries.
+<p>
+The <a href="#intro">basic template set</a> is organized so that
+during the first steps each main template calls
+the <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#init.tpl">init.tpl</a> subtemplate,
+whose job is to create the element maps.
+All element maps are global. Further, they are used in many locations across the template set
+(especially, in <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/javadoc/templates.php#class.tpl">class.tpl</a>).
+<p>
+<i>If the structure of some element maps is different from what is expected and used by a template, 
+that template will work incorrectly (or not work at all)!</i>
+
+<p>
+<table cellspacing="0" cellpadding="0">
+  <tr valign="top">
+    <td><b>Note:</b>&nbsp;&nbsp;</td>
+    <td>
+      Since v1.5.6, all <a href="#intro">basic templates</a>
+      also include the version number of the DocFlex/Javadoc release to which the particular 
+      template set belongs.
+      This may help you to quickly recognize if you have inadvertently mixed the templates
+      from different versions and because of this now experience errors and wrong working of
+      your template application.
+      <p class="mrg8">
+      You can find the version in the <code>'APP_VER=...'</code> line of each template as well as
+      in the Template Designer | Template Properties Dialog | General tab | Template Application tab.
+    </td>
+  </tr>
+</table>
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2003-2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

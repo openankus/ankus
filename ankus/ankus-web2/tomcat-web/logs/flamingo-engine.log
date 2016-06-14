@@ -1,0 +1,193 @@
+2016-05-26 09:13:29,620 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=1119905544, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:13:30,127 TRACE [org.springframework.beans.CachedIntrospectionResults:234] Getting BeanInfo for class [org.openflamingo.engine.monitoring.cleaning.HiveLogCleaningQuartzJob]
+2016-05-26 09:13:31,328 TRACE [org.springframework.beans.CachedIntrospectionResults:262] Caching PropertyDescriptors for class [org.openflamingo.engine.monitoring.cleaning.HiveLogCleaningQuartzJob]
+2016-05-26 09:13:31,329 TRACE [org.springframework.beans.CachedIntrospectionResults:275] Found bean property 'class' of type [java.lang.Class]
+2016-05-26 09:13:31,415 ERROR [org.quartz.core.JobRunShell:211] Job DEFAULT.hiveLogCleaningJobDetail threw an unhandled Exception: 
+Cannot remove before 2 days for log files of Hive Query
+	at org.openflamingo.engine.monitoring.cleaning.HiveLogCleaningQuartzJob.executeInternal(HiveLogCleaningQuartzJob.java:72)
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:111)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: org.openflamingo.core.exception.WorkflowException: Invalid Hive Log Cleaning Job
+	at org.openflamingo.engine.monitoring.cleaning.HiveLogCleaningQuartzJob.getApplicationContext(HiveLogCleaningQuartzJob.java:93)
+	at org.openflamingo.engine.monitoring.cleaning.HiveLogCleaningQuartzJob.getBean(HiveLogCleaningQuartzJob.java:77)
+	at org.openflamingo.engine.monitoring.cleaning.HiveLogCleaningQuartzJob.executeInternal(HiveLogCleaningQuartzJob.java:69)
+	... 3 more
+Caused by: java.lang.NullPointerException
+	at org.openflamingo.engine.monitoring.cleaning.HiveLogCleaningQuartzJob.getApplicationContext(HiveLogCleaningQuartzJob.java:87)
+	... 5 more
+2016-05-26 09:13:31,422 ERROR [org.quartz.core.ErrorLogger:2425] Job (DEFAULT.hiveLogCleaningJobDetail threw an exception.
+org.quartz.SchedulerException: Job threw an unhandled exception. [See nested exception: Cannot remove before 2 days for log files of Hive Query]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:213)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+Caused by: Cannot remove before 2 days for log files of Hive Query
+	at org.openflamingo.engine.monitoring.cleaning.HiveLogCleaningQuartzJob.executeInternal(HiveLogCleaningQuartzJob.java:72)
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:111)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	... 1 more
+Caused by: org.openflamingo.core.exception.WorkflowException: Invalid Hive Log Cleaning Job
+	at org.openflamingo.engine.monitoring.cleaning.HiveLogCleaningQuartzJob.getApplicationContext(HiveLogCleaningQuartzJob.java:93)
+	at org.openflamingo.engine.monitoring.cleaning.HiveLogCleaningQuartzJob.getBean(HiveLogCleaningQuartzJob.java:77)
+	at org.openflamingo.engine.monitoring.cleaning.HiveLogCleaningQuartzJob.executeInternal(HiveLogCleaningQuartzJob.java:69)
+	... 3 more
+Caused by: java.lang.NullPointerException
+	at org.openflamingo.engine.monitoring.cleaning.HiveLogCleaningQuartzJob.getApplicationContext(HiveLogCleaningQuartzJob.java:87)
+	... 5 more
+2016-05-26 09:14:00,003 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=1104618752, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:15:03,605 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=1101949080, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:16:00,009 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=1090726064, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:17:00,010 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=1079502672, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:18:00,014 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=1068279576, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:19:00,003 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=1057056392, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:20:00,008 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=1045833288, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:21:00,005 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=1043163616, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:22:00,010 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=1031940560, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:23:00,010 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=1020717256, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:24:00,006 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=1008100640, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:25:00,011 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=995483616, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:26:00,010 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=982866712, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:27:00,010 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=970249448, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:28:00,008 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=957632312, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:29:00,011 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=945015264, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:30:00,007 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=932398168, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:31:00,009 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=919781144, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:32:00,004 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=907164040, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:33:00,009 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=894546832, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:34:00,011 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=890483440, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:35:00,009 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=877866496, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:36:00,008 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=865249256, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:37:00,004 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=852632160, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:38:00,009 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=840015056, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:39:00,011 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=827398448, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:40:00,009 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=814781680, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:41:00,004 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=802164544, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:42:00,010 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=789547640, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:43:00,006 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=776930488, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:44:00,003 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=764313712, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:45:00,007 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=751696544, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:46:00,010 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=739079400, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:47:00,010 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=726462776, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:48:00,004 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=722399384, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:49:00,009 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=711175960, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:50:00,005 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=698558848, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:51:00,009 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=685942080, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:52:00,010 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=673324936, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:53:00,008 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=660708160, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:54:00,005 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=648091528, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:55:00,008 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=635474864, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:56:00,005 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=622858224, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:57:00,005 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=610241056, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:58:00,004 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=601687320, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 09:59:00,001 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=601687320, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:00:00,005 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=593133584, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:01:00,007 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=584580200, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:02:00,003 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=576026640, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:03:00,003 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=567472888, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:04:00,003 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=558919352, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:05:00,008 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=550365632, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:06:00,006 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=541811912, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:07:00,009 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=533258648, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:08:00,009 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=524704920, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:09:00,006 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=516151560, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:10:00,005 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=507597840, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:11:00,004 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=499043944, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:12:00,006 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=499043944, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:13:00,006 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=490490216, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:14:00,002 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=481937008, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:15:00,004 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=473383624, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:16:00,002 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=464829752, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:17:00,001 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=456276368, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:18:00,003 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=447722496, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:19:00,005 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=439169224, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:20:00,004 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=430616016, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:21:00,006 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=422062632, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:22:00,004 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=413508768, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:23:00,004 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=403201560, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:24:00,002 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=394648144, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:25:00,004 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=394648144, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:26:00,001 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=386094856, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:27:00,002 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=377541008, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:28:00,002 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=368987632, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:29:00,005 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=360433736, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:30:00,004 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=351879984, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:31:00,004 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=343326712, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:32:00,003 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=334773312, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:33:00,006 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=326219896, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:34:00,010 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=317666112, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:35:00,005 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=309112480, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:36:00,004 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=300558744, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:37:00,004 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=292005104, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:38:00,003 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=292005104, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:39:00,003 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=283451560, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:40:00,002 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=274897696, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:41:00,001 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=266344184, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:42:00,004 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=257790840, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:43:00,003 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=249237104, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:44:00,006 INFO  [org.openflamingo.engine.monitoring.job.MonitoringQuartzJob:43] Free Heap=240683688, Total Heap=1507852288, Max Heap=3817865216, Processors=8
+2016-05-26 10:44:32,442 INFO  [org.quartz.plugins.management.ShutdownHookPlugin:126] Shutting down Quartz...
+2016-05-26 10:44:32,442 INFO  [org.quartz.core.QuartzScheduler:694] Scheduler scheduler_$_NON_CLUSTERED shutting down.
+2016-05-26 10:44:32,443 INFO  [org.quartz.core.QuartzScheduler:613] Scheduler scheduler_$_NON_CLUSTERED paused.
+2016-05-26 10:44:32,572 INFO  [org.springframework.web.context.support.XmlWebApplicationContext:873] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed May 25 11:14:36 KST 2016]; parent: Root WebApplicationContext
+2016-05-26 10:44:32,572 TRACE [org.springframework.web.context.support.XmlWebApplicationContext:331] Publishing event in WebApplicationContext for namespace 'dispatcher-servlet': org.springframework.context.event.ContextClosedEvent[source=WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed May 25 11:14:36 KST 2016]; parent: Root WebApplicationContext]
+2016-05-26 10:44:32,574 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:249] Returning cached instance of singleton bean 'sqlSessionFactory'
+2016-05-26 10:44:32,574 TRACE [org.springframework.web.context.support.XmlWebApplicationContext:331] Publishing event in Root WebApplicationContext: org.springframework.context.event.ContextClosedEvent[source=WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed May 25 11:14:36 KST 2016]; parent: Root WebApplicationContext]
+2016-05-26 10:44:32,589 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:249] Returning cached instance of singleton bean 'quartzJobScheduler'
+2016-05-26 10:44:32,589 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:249] Returning cached instance of singleton bean 'lifecycleProcessor'
+2016-05-26 10:44:32,590 INFO  [org.springframework.context.support.DefaultLifecycleProcessor:356] Stopping beans in phase 2147483647
+2016-05-26 10:44:32,591 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:474] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1fa40516: defining beans [configurationManager,configurationManagerHelper,actionHistoryRepositoryImpl,actionHistoryServiceImpl,historyServiceImpl,visualizationHistoryRepositoryImpl,workflowHistoryRepositoryImpl,workflowHistoryServiceImpl,hiveHistoryRepositoryImpl,hiveHistoryServiceImpl,hiveServiceImpl,resourceBundleRetreiverImpl,workflowEngineServiceImpl,failActionStateHandler,failWorkflowStateHandler,killWorkflowStateHandler,prepareActionStateHandler,prepareWorkflowStateHandler,runningActionStateHandler,runningWorkflowStateHandler,successActionStateHandler,successWorkflowStateHandler,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,configurationFactoryBean,handlerRegistry,jobRegisterImpl,auditLogRepositoryImpl,fileSystemAuditServiceImpl,localeRepositoryImpl,localeServiceImpl,resourceBundleHelper,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0,org.springframework.format.support.FormattingConversionServiceFactoryBean#0,org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0,mvcUriComponentsContributor,org.springframework.web.servlet.handler.MappedInterceptor#0,org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0,org.springframework.web.servlet.mvc.annotation.ResponseStatusExceptionResolver#0,org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver#0,org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping,org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter,org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter,org.springframework.web.servlet.view.InternalResourceViewResolver#0,contentNegotiationManager,exceptionResolverComposite,jsonMediaType,xmlMediaType,jsonConverter,stringHttpMessageConverter,restTemplate,localeResolver,messageSource,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,config,jobScheduler,quartzJobScheduler,monitoringJobDetail,monitoringTrigger,hiveLogCleaningJobDetail,hiveLogCleaningTrigger,sqlSessionFactory,sqlSessionTemplate,org.mybatis.spring.mapper.MapperScannerConfigurer#0,transactionManager,transactionTemplate,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0,org.springframework.transaction.interceptor.TransactionInterceptor#0,org.springframework.transaction.config.internalTransactionAdvisor,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0,org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#1,txAdvice,/remote/hdfs,jobRemoteService,/remote/job,cacheRemoteService,/remote/cache,workflowEngineRemoteService,/remote/engine,historyRemoteService,/remote/history,adminRemoteService,/remote/admin,hiveRemoteService,/remote/hive,hdfsFileSystemRemoteService,fileSystemAuditService,/remote/audit,fileSystemServiceInterceptor,fileSystemServiceProxy,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor]; parent: org.springframework.beans.factory.support.DefaultListableBeanFactory@68294123
+2016-05-26 10:44:32,593 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:530] Retrieved dependent beans for bean 'org.springframework.beans.factory.config.MethodInvokingFactoryBean#67f142c9': [stringHttpMessageConverter]
+2016-05-26 10:44:32,593 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:530] Retrieved dependent beans for bean 'java.lang.String#5e19ae0a': [org.springframework.beans.factory.config.MethodInvokingFactoryBean#67f142c9]
+2016-05-26 10:44:32,594 DEBUG [org.springframework.beans.factory.support.DisposableBeanAdapter:244] Invoking destroy() on bean with name 'util:list#1057cf6f'
+2016-05-26 10:44:32,596 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:530] Retrieved dependent beans for bean 'util:list#6d6e3406': [jsonConverter]
+2016-05-26 10:44:32,597 DEBUG [org.springframework.beans.factory.support.DisposableBeanAdapter:244] Invoking destroy() on bean with name 'util:list#6d6e3406'
+2016-05-26 10:44:32,597 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:530] Retrieved dependent beans for bean 'exceptionResolver': [exceptionResolverComposite]
+2016-05-26 10:44:32,600 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:530] Retrieved dependent beans for bean '(inner bean)#21': [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver#0]
+2016-05-26 10:44:32,601 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:530] Retrieved dependent beans for bean '(inner bean)#12': [mvcUriComponentsContributor]
+2016-05-26 10:44:32,601 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:530] Retrieved dependent beans for bean '(inner bean)#13': [(inner bean)#12]
+2016-05-26 10:44:32,602 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:530] Retrieved dependent beans for bean '(inner bean)#4': [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter#0]
+2016-05-26 10:44:32,603 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:530] Retrieved dependent beans for bean '(inner bean)#3': [org.springframework.web.servlet.handler.MappedInterceptor#0]
+2016-05-26 10:44:32,604 DEBUG [org.springframework.beans.factory.support.DisposableBeanAdapter:244] Invoking destroy() on bean with name 'quartzJobScheduler'
+2016-05-26 10:44:32,605 INFO  [org.springframework.scheduling.quartz.SchedulerFactoryBean:771] Shutting down Quartz Scheduler
+2016-05-26 10:44:32,605 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:530] Retrieved dependent beans for bean '(inner bean)#2': [txAdvice]
+2016-05-26 10:44:32,606 DEBUG [org.springframework.beans.factory.support.DisposableBeanAdapter:322] Invoking destroy method 'close' on bean with name 'sqlSessionTemplate'
+2016-05-26 10:44:32,606 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter:356] Invocation of destroy method 'close' failed on bean with name 'sqlSessionTemplate'
+java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+	at org.mybatis.spring.SqlSessionTemplate.close(SqlSessionTemplate.java:310)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:349)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:272)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:540)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:516)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:824)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:485)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:921)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:895)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:841)
+	at org.springframework.web.servlet.FrameworkServlet.destroy(FrameworkServlet.java:789)
+	at org.apache.catalina.core.StandardWrapper.unload(StandardWrapper.java:1484)
+	at org.apache.catalina.core.StandardWrapper.stopInternal(StandardWrapper.java:1846)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:224)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5767)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:224)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1588)
+	at org.apache.catalina.core.ContainerBase$StopChild.call(ContainerBase.java:1577)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2016-05-26 10:44:32,607 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:530] Retrieved dependent beans for bean '(inner bean)#1': [org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#1]
+2016-05-26 10:44:32,607 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:530] Retrieved dependent beans for bean '(inner bean)': [org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0]
+2016-05-26 10:44:32,608 INFO  [org.springframework.web.context.support.XmlWebApplicationContext:873] Closing Root WebApplicationContext: startup date [Wed May 25 11:14:35 KST 2016]; root of context hierarchy
+2016-05-26 10:44:32,608 TRACE [org.springframework.web.context.support.XmlWebApplicationContext:331] Publishing event in Root WebApplicationContext: org.springframework.context.event.ContextClosedEvent[source=Root WebApplicationContext: startup date [Wed May 25 11:14:35 KST 2016]; root of context hierarchy]
+2016-05-26 10:44:32,609 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:249] Returning cached instance of singleton bean 'lifecycleProcessor'
+2016-05-26 10:44:32,609 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:474] Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@68294123: defining beans [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,config,version,dataSource,pooledDataSource,taskExecutor,configuration,elService]; root of factory hierarchy
+2016-05-26 10:44:32,609 DEBUG [org.springframework.beans.factory.support.DisposableBeanAdapter:244] Invoking destroy() on bean with name 'elService'
+2016-05-26 10:44:32,609 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:530] Retrieved dependent beans for bean 'org.springframework.beans.factory.config.MapFactoryBean#e77ff88': [elService]
+2016-05-26 10:44:32,610 DEBUG [org.springframework.beans.factory.support.DisposableBeanAdapter:244] Invoking destroy() on bean with name 'org.springframework.beans.factory.config.MapFactoryBean#e77ff88'
+2016-05-26 10:44:32,610 DEBUG [org.springframework.beans.factory.support.DisposableBeanAdapter:244] Invoking destroy() on bean with name 'taskExecutor'
+2016-05-26 10:44:32,610 INFO  [org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor:203] Shutting down ExecutorService 'taskExecutor'
+2016-05-26 10:44:32,610 DEBUG [org.springframework.beans.factory.support.DefaultListableBeanFactory:530] Retrieved dependent beans for bean 'net.sf.log4jdbc.tools.Log4JdbcCustomFormatter#7f987915': [dataSource]
+2016-05-26 10:44:32,610 DEBUG [org.springframework.beans.factory.support.DisposableBeanAdapter:322] Invoking destroy method 'close' on bean with name 'pooledDataSource'

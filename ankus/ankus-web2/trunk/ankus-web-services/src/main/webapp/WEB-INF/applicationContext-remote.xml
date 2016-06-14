@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="remoteService" class="org.openflamingo.web.core.RemoteServiceImpl">
+        <property name="serviceMap">
+            <map>
+                <entry key="hive" value="org.openflamingo.provider.hive.HiveService"/>
+                <entry key="job" value="org.openflamingo.provider.engine.JobService"/>
+                <entry key="hdfs" value="org.openflamingo.provider.fs.FileSystemService"/>
+                <entry key="audit" value="org.openflamingo.provider.fs.FileSystemAuditService"/>
+                <entry key="engine" value="org.openflamingo.provider.engine.WorkflowEngineService"/>
+                <entry key="cache" value="org.openflamingo.provider.engine.JobService"/>
+                <entry key="monitoring" value="org.openflamingo.provider.engine.MonitoringEngineService"/>
+                <entry key="module" value="org.openflamingo.provider.engine.JobService"/>
+            </map>
+        </property>
+    </bean>
+
+</beans>

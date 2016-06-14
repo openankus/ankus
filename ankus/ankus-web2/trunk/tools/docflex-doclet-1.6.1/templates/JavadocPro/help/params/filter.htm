@@ -1,0 +1,102 @@
+This group of parameters allows you to filter classes and members
+that will appear in the generated Java API documentation.
+<p>
+You can identify classes and members to be documented both:
+<ul>
+  <li>Explicitly -- those that are marked with <b>including</b> tags/annotations</li>
+  <li>Implicitly -- those that are not marked with the <b>excluding</b> tags/annotations</li>
+</ul>
+
+<h2>Exclusion of Classes</h2>
+
+The inclusion/exclusions of classes is controlled separately, which
+allows you to exclude specific classes from the documentation,
+yet to let some their public/protected members be visible still.
+<p>
+The overall effect will be that the generated JavaDoc will look as if the excluded classes
+themselves did never exist at all, however, everything else is in place and correct.
+
+<table border="1" style="margin-top:12pt">
+<tr><td><font face="Dialog" size="-1">
+In that case, the generated Java API documentation will effectively reorganize your actual
+Java implementation, excluding certain classes and showing some of their member as if they belong
+to other classes (derived from the excluded ones).
+<p style="margin-top:10pt">
+In fact, there is nothing wrong with such a reorganization, because the standard Javadoc actually does it too.
+For instance, when you specify documenting only public classes, the package-local ones will get excluded,
+but the public members defined in them may show up as part of the documented classes, which inherit them.
+</font>
+</td></tr>
+</table>
+
+<h3>Inheriting methods of excluded classes</h3>
+
+As an example, suppose we have the following situation:
+<ul>
+  <li>class <code>C1</code> extends class <code>C2</code></li>
+  <li>class <code>C2</code> extends class <code>C3</code></li>
+  <li>class <code>C3</code> contains a public method <code>m()</code> -- which is supposed to be documented</li>
+</ul>
+Now, let's assume that the class <code>C3</code> must be excluded from the documentation.
+What will happen with the method <code>m()</code>?
+It will be shown in the documentation as declared in the class <code>C2</code>!
+Then, for the class <code>C1</code>, <code>m()</code> must appear as inherited from the class <code>C2</code>
+(rather than from the class <code>C3</code>, as it actually is in the code).
+
+<h3>Shadowing of equally named fields</h3>
+
+The same situation is with fields, which is actually even more complicated,
+because equally named fields do not overload but shadow each other. For example:
+
+<ul>
+  <li>class <code>C1</code> extends class <code>C2</code></li>
+  <li>class <code>C2</code> implements interface <code>I</code></li>
+  <li>class <code>C2</code> contains a private field <code>F</code></li>
+  <li>interface <code>I</code> contains a public field <code>F</code> -- which might be documented</li>
+</ul>
+
+Let's assume the interface <code>I</code> must be excluded from the documentation.
+What will happen with the field <code>I.F</code>? Actually, nothing!
+It shouldn't get in the documentation because it is shadowed by <code>C2.F</code>,
+which is private and, therefore, must be invisible.
+
+<h3>Dynamic extension of type variables</h3>
+
+For example, we have a class <code>C1</code> defined like this:
+
+<dl><dd>
+<pre><code>
+class C1<V> {
+  ...
+  public void mmm (V param);
+}
+</code></pre>
+</dd></dl>
+
+and class <code>C2</code> that extends <code>C1</code>:
+
+<dl><dd>
+<pre><code>
+class C2 extends C1<String> {
+  ...
+}
+</code></pre>
+</dd></dl>
+
+Now, suppose that class <code>C1</code> should be excluded from the documentation,
+but its method <code>C1.mmm()</code> should not.
+Then, showing that method like:
+
+<dl><dd>
+<code>C2.mmm (V param)</code>
+</dd></dl>
+
+would be incorrect because class <code>C2</code> has no type variable <code>'V'</code>
+(and even if it had that would be actually a different variable).
+So, what would be correct then? Actually this:
+
+<dl><dd>
+<code>C2.mmm (String param)</code>
+</dd></dl>
+
+And that's how it will be process and documented by this template set!

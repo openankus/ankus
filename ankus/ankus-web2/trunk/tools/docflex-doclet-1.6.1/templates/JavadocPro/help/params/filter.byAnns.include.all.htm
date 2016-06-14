@@ -1,0 +1,47 @@
+Specify annotation types, by which both classes and class members (i.e. fields, constructors and methods)
+are included in the generated documentation.
+<p>
+When this parameter is specified, the entire documentation scope will be limited as follows.
+<p>
+A <b>class</b> is included in the documentation only when at least one of the conditions is met:
+<ol>
+  <li>The class has an annotation of one of the specified types.</li>
+  <li>This is an inner class and one of its enclosing classes has an annotation of one of the specified types.</li>
+</ol>
+A class <b>member</b> is included according to one of the conditions:
+<ol>
+<li>
+  The member has an annotation of one of the specified types.
+  <p style="margin-top:10pt">
+  <b>Note:</b> When the class containing the member must be excluded,
+  the member itself may still appear in the documentation.
+  If that class has documented subclasses, the member will be shown as if it belongs
+  to those of them, which are the nearest descendants of the member's original class.
+</li>
+<li style="margin-top:10pt">
+  The member's class has an annotation of one of the specified types.
+</li>
+<li>
+  The member's class is an inner class and one of its enclosing classes has an annotation
+  of one of the specified types.
+</li>
+</ol>
+
+<table border="1" style="margin-top:12pt;margin-bottom:12pt">
+<tr><td><font face="Dialog" size="-1">
+When you specify this parameter, the criteria above are only necessary for a class or member to be actually
+included in the documentation scope. However, they do not guarantee it.
+Using other <i>include/exclude</i> parameters, you can limit the documentation scope even further!
+</font>
+</td></tr>
+</table>
+
+Each annotation type must be specified with its <b>fully qualified name</b> (e.g. <code>java.lang.Deprecated</code>).
+Multiple annotation type names must be separated with new lines ('\n'), semicolons (';') or colons (':').
+For example:
+<dl><dd>
+<code>
+  my.core.util.Public<br>
+  my.project.api.Include
+</code>
+</dd></dl>

@@ -1,0 +1,22 @@
+With these parameters you can limit the scope, to which filtering by annotations applies.
+(That is the classes that may be excluded from the documentation according
+to any filtering by annotation criteria -- both explicit and implicitly ones).
+<p>
+The limitation is needed because since filtering by annotations potentially extends
+to all classes involved (including those contained in pre-compiled Java libraries),
+it may have unwanted side effects.
+
+<table border="1" style="margin-top:12pt;margin-bottom:12pt">
+<tr><td style="font-family: Dialog; font-size:12pt">
+For instance, when you include only classes marked with the specified annotations (using
+<i>"Filter Classes & Members | By Annotations | Include | Classes"</i> parameter),
+without any limitation to what this applies,
+all standard Java SDK classes (e.g. even <code>java.lang.Object</code>)
+will get excluded from being mentioned as ancestors of your classes.
+That will be wrong, of course!
+<p style="margin-top:10pt">
+But even more surprising would be to see all public fields and methods of those
+standard Java classes to show up in your documentation as if they are defined in your 
+own classes you document.
+</td></tr>
+</table>

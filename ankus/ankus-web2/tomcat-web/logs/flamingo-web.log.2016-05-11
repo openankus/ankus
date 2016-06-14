@@ -1,0 +1,559 @@
+2016-05-11 13:26:59,793 INFO  [org.openflamingo.web.util.VersionConfigurer:120] =================================================
+2016-05-11 13:26:59,795 INFO  [org.openflamingo.web.util.VersionConfigurer:121]  Flamingo Web Services starting...
+2016-05-11 13:26:59,795 INFO  [org.openflamingo.web.util.VersionConfigurer:122] =================================================
+
+== Application Information =====================
+
+  Version                   : ${pom.version}
+  Application               : Flamingo Workflow Engine
+  Current Working Directory : /Applications/eclipse/forHadoop2.x/Eclipse2.x.app/Contents/MacOS
+  Revision Number           : ${revisionNumber}
+  Build Key                 : ${buildKey}
+  Application Server        : Apache Tomcat/7.0.69 - Servlet API 3.0
+  Build Number              : ${buildNumber}
+  Java Version              : 1.7.0_79 - Oracle Corporation
+  Build Date                : ${buildTimeStamp}
+  Used Memory              : 1230MB
+  Maximum Allowable Memory : 3641MB
+  Total Memory             : 1486MB
+  Free Memory              : 256MB
+
+== Java System Properties =====================
+
+  java.runtime.name                                    : Java(TM) SE Runtime Environment
+  sun.boot.library.path                                : /Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre/lib
+  java.vm.version                                      : 24.79-b02
+  shared.loader                                        : 
+  gopherProxySet                                       : false
+  java.vm.vendor                                       : Oracle Corporation
+  java.vendor.url                                      : http://java.oracle.com/
+  path.separator                                       : :
+  java.vm.name                                         : Java HotSpot(TM) 64-Bit Server VM
+  tomcat.util.buf.StringCache.byte.enabled             : true
+  file.encoding.pkg                                    : sun.io
+  user.country                                         : KR
+  sun.java.launcher                                    : SUN_STANDARD
+  sun.os.patch.level                                   : unknown
+  java.vm.specification.name                           : Java Virtual Machine Specification
+  user.dir                                             : /Applications/eclipse/forHadoop2.x/Eclipse2.x.app/Contents/MacOS
+  java.runtime.version                                 : 1.7.0_79-b15
+  org.apache.catalina.startup.TldConfig.jarsToSkip     : tomcat7-websocket.jar
+  java.awt.graphicsenv                                 : sun.awt.CGraphicsEnvironment
+  java.endorsed.dirs                                   : /Applications/eclipse/forHadoop2.x/ankus_build_small_2.x/ankus-web2/tomcat-web/endorsed
+  os.arch                                              : x86_64
+  java.io.tmpdir                                       : /var/folders/82/yj3w0p1x1sd34g8x28_wwb5r0000gn/T/
+  line.separator                                       : 
+
+  java.vm.specification.vendor                         : Oracle Corporation
+  java.naming.factory.url.pkgs                         : org.apache.naming
+  os.name                                              : Mac OS X
+  sun.jnu.encoding                                     : UTF-8
+  java.library.path                                    : /Users/ankus/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+  tomcat.util.scan.DefaultJarScanner.jarsToSkip        : bootstrap.jar,commons-daemon.jar,tomcat-juli.jar,annotations-api.jar,el-api.jar,jsp-api.jar,servlet-api.jar,websocket-api.jar,catalina.jar,catalina-ant.jar,catalina-ha.jar,catalina-tribes.jar,jasper.jar,jasper-el.jar,ecj-*.jar,tomcat-api.jar,tomcat-util.jar,tomcat-coyote.jar,tomcat-dbcp.jar,tomcat-jni.jar,tomcat-spdy.jar,tomcat-i18n-en.jar,tomcat-i18n-es.jar,tomcat-i18n-fr.jar,tomcat-i18n-ja.jar,tomcat-juli-adapters.jar,catalina-jmx-remote.jar,catalina-ws.jar,tomcat-jdbc.jar,tools.jar,commons-beanutils*.jar,commons-codec*.jar,commons-collections*.jar,commons-dbcp*.jar,commons-digester*.jar,commons-fileupload*.jar,commons-httpclient*.jar,commons-io*.jar,commons-lang*.jar,commons-logging*.jar,commons-math*.jar,commons-pool*.jar,jstl.jar,taglibs-standard-spec-*.jar,geronimo-spec-jaxrpc*.jar,wsdl4j*.jar,ant.jar,ant-junit*.jar,aspectj*.jar,jmx.jar,h2*.jar,hibernate*.jar,httpclient*.jar,jmx-tools.jar,jta*.jar,log4j.jar,log4j-1*.jar,mail*.jar,slf4j*.jar,xercesImpl.jar,xmlParserAPIs.jar,xml-apis.jar,junit.jar,junit-*.jar,hamcrest*.jar,org.hamcrest*.jar,ant-launcher.jar,cobertura-*.jar,asm-*.jar,dom4j-*.jar,icu4j-*.jar,jaxen-*.jar,jdom-*.jar,jetty-*.jar,oro-*.jar,servlet-api-*.jar,tagsoup-*.jar,xmlParserAPIs-*.jar,xom-*.jar
+  java.specification.name                              : Java Platform API Specification
+  java.class.version                                   : 51.0
+  sun.management.compiler                              : HotSpot 64-Bit Tiered Compilers
+  site.root                                            : /Applications/eclipse/forHadoop2.x/ankus_build_small_2.x/ankus-web2/trunk/ankus-web-services/src/main/webapp/
+  os.version                                           : 10.10.5
+  http.nonProxyHosts                                   : local|*.local|169.254/16|*.169.254/16
+  user.home                                            : /Users/ankus
+  org.apache.catalina.startup.ContextConfig.jarsToSkip : 
+  user.timezone                                        : Asia/Seoul
+  catalina.useNaming                                   : true
+  java.awt.printerjob                                  : sun.lwawt.macosx.CPrinterJob
+  java.specification.version                           : 1.7
+  file.encoding                                        : UTF-8
+  catalina.home                                        : /Applications/eclipse/forHadoop2.x/ankus_build_small_2.x/ankus-web2/tomcat-web
+  user.name                                            : ankus
+  java.class.path                                      : /Applications/eclipse/forHadoop2.x/ankus_build_small_2.x/ankus-web2/tomcat-web/bin/bootstrap.jar:/Applications/eclipse/forHadoop2.x/ankus_build_small_2.x/ankus-web2/tomcat-web/bin/tomcat-juli.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/lib/tools.jar
+  java.naming.factory.initial                          : org.apache.naming.java.javaURLContextFactory
+  package.definition                                   : sun.,java.,org.apache.catalina.,org.apache.coyote.,org.apache.jasper.,org.apache.naming.,org.apache.tomcat.
+  java.vm.specification.version                        : 1.7
+  sun.arch.data.model                                  : 64
+  java.home                                            : /Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre
+  sun.java.command                                     : org.apache.catalina.startup.Bootstrap start
+  java.specification.vendor                            : Oracle Corporation
+  user.language                                        : ko
+  awt.toolkit                                          : sun.lwawt.macosx.LWCToolkit
+  java.vm.info                                         : mixed mode
+  java.version                                         : 1.7.0_79
+  java.ext.dirs                                        : /Users/ankus/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+  sun.boot.class.path                                  : /Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/jre/classes
+  java.vendor                                          : Oracle Corporation
+  server.loader                                        : 
+  catalina.base                                        : /Applications/eclipse/forHadoop2.x/ankus_build_small_2.x/.metadata/.plugins/org.eclipse.wst.server.core/tmp2
+  file.separator                                       : /
+  java.vendor.url.bug                                  : http://bugreport.sun.com/bugreport/
+  common.loader                                        : ${catalina.base}/lib,${catalina.base}/lib/*.jar,${catalina.home}/lib,${catalina.home}/lib/*.jar
+  sun.cpu.endian                                       : little
+  sun.io.unicode.encoding                              : UnicodeBig
+  wtp.deploy                                           : /Applications/eclipse/forHadoop2.x/ankus_build_small_2.x
+  socksNonProxyHosts                                   : local|*.local|169.254/16|*.169.254/16
+  package.access                                       : sun.,org.apache.catalina.,org.apache.coyote.,org.apache.jasper.,org.apache.naming.resources.,org.apache.tomcat.
+  ftp.nonProxyHosts                                    : local|*.local|169.254/16|*.169.254/16
+  sun.cpu.isalist                                      : 
+
+== System Environments =====================
+
+  TMPDIR                           : /var/folders/82/yj3w0p1x1sd34g8x28_wwb5r0000gn/T/
+  JAVA_STARTED_ON_FIRST_THREAD_380 : 1
+  LOGNAME                          : ankus
+  SHELL                            : /bin/bash
+  XPC_SERVICE_NAME                 : org.eclipse.platform.ide.150268
+  USER                             : ankus
+  JAVA_MAIN_CLASS_484              : org.apache.catalina.startup.Bootstrap
+  SSH_AUTH_SOCK                    : /private/tmp/com.apple.launchd.JuvOrHghF2/Listeners
+  Apple_PubSub_Socket_Render       : /private/tmp/com.apple.launchd.ES4PdY09LP/Render
+  HOME                             : /Users/ankus
+  PATH                             : /usr/bin:/bin:/usr/sbin:/sbin
+  APP_ICON_380                     : ../Resources/Eclipse.icns
+  __CF_USER_TEXT_ENCODING          : 0x1F5:0x3:0x33
+  XPC_FLAGS                        : 0x0
+
+2016-05-11 13:26:59,797 INFO  [org.springframework.web.context.ContextLoader:272] Root WebApplicationContext: initialization started
+2016-05-11 13:26:59,859 INFO  [org.springframework.web.context.support.XmlWebApplicationContext:513] Refreshing Root WebApplicationContext: startup date [Wed May 11 13:26:59 KST 2016]; root of context hierarchy
+2016-05-11 13:26:59,897 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader:316] Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2016-05-11 13:27:00,103 INFO  [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer:172] Loading properties file from ServletContext resource [/WEB-INF/config-dev.properties]
+2016-05-11 13:27:00,122 INFO  [org.springframework.beans.factory.config.PropertiesFactoryBean:172] Loading properties file from ServletContext resource [/WEB-INF/config-dev.properties]
+2016-05-11 13:27:00,128 INFO  [org.springframework.beans.factory.config.PropertiesFactoryBean:172] Loading properties file from ServletContext resource [/WEB-INF/version.properties]
+2016-05-11 13:27:00,142 INFO  [com.mchange.v2.log.MLog:80] MLog clients using log4j logging.
+2016-05-11 13:27:00,606 INFO  [com.mchange.v2.c3p0.C3P0Registry:204] Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2016-05-11 13:27:00,906 DEBUG [org.openflamingo.el.ELServiceImpl:155] Registered prefix:constant[:KB] for class#field[org.openflamingo.el.ELConstantsFunctions#KB]
+2016-05-11 13:27:00,906 DEBUG [org.openflamingo.el.ELServiceImpl:155] Registered prefix:constant[:MB] for class#field[org.openflamingo.el.ELConstantsFunctions#MB]
+2016-05-11 13:27:00,906 DEBUG [org.openflamingo.el.ELServiceImpl:155] Registered prefix:constant[:GB] for class#field[org.openflamingo.el.ELConstantsFunctions#GB]
+2016-05-11 13:27:00,906 DEBUG [org.openflamingo.el.ELServiceImpl:155] Registered prefix:constant[:TB] for class#field[org.openflamingo.el.ELConstantsFunctions#TB]
+2016-05-11 13:27:00,906 DEBUG [org.openflamingo.el.ELServiceImpl:155] Registered prefix:constant[:PB] for class#field[org.openflamingo.el.ELConstantsFunctions#PB]
+2016-05-11 13:27:00,907 DEBUG [org.openflamingo.el.ELServiceImpl:155] Registered prefix:constant[:MINUTES] for class#field[org.openflamingo.el.ELConstantsFunctions#MINUTES]
+2016-05-11 13:27:00,907 DEBUG [org.openflamingo.el.ELServiceImpl:155] Registered prefix:constant[:HOURS] for class#field[org.openflamingo.el.ELConstantsFunctions#HOURS]
+2016-05-11 13:27:00,907 DEBUG [org.openflamingo.el.ELServiceImpl:155] Registered prefix:constant[:DAYS] for class#field[org.openflamingo.el.ELConstantsFunctions#DAYS]
+2016-05-11 13:27:00,908 DEBUG [org.openflamingo.el.ELServiceImpl:169] Registered prefix:constant[:firstNotNull] for class#field[org.openflamingo.el.ELConstantsFunctions#firstNotNull]
+2016-05-11 13:27:00,908 DEBUG [org.openflamingo.el.ELServiceImpl:169] Registered prefix:constant[:concat] for class#field[org.openflamingo.el.ELConstantsFunctions#concat]
+2016-05-11 13:27:00,908 DEBUG [org.openflamingo.el.ELServiceImpl:169] Registered prefix:constant[:trim] for class#field[org.openflamingo.el.ELConstantsFunctions#trim]
+2016-05-11 13:27:00,908 DEBUG [org.openflamingo.el.ELServiceImpl:169] Registered prefix:constant[:dateFormat] for class#field[org.openflamingo.el.ELConstantsFunctions#dateFormat]
+2016-05-11 13:27:00,909 DEBUG [org.openflamingo.el.ELServiceImpl:169] Registered prefix:constant[:hostname] for class#field[org.openflamingo.el.ELConstantsFunctions#hostname]
+2016-05-11 13:27:00,909 DEBUG [org.openflamingo.el.ELServiceImpl:169] Registered prefix:constant[:escapeString] for class#field[org.openflamingo.el.ELConstantsFunctions#escapeString]
+2016-05-11 13:27:00,909 DEBUG [org.openflamingo.el.ELServiceImpl:169] Registered prefix:constant[:yesterday] for class#field[org.openflamingo.el.ELConstantsFunctions#yesterday]
+2016-05-11 13:27:00,909 DEBUG [org.openflamingo.el.ELServiceImpl:169] Registered prefix:constant[:tommorow] for class#field[org.openflamingo.el.ELConstantsFunctions#tommorow]
+2016-05-11 13:27:00,909 DEBUG [org.openflamingo.el.ELServiceImpl:169] Registered prefix:constant[:month] for class#field[org.openflamingo.el.ELConstantsFunctions#month]
+2016-05-11 13:27:00,909 DEBUG [org.openflamingo.el.ELServiceImpl:169] Registered prefix:constant[:day] for class#field[org.openflamingo.el.ELConstantsFunctions#day]
+2016-05-11 13:27:00,909 DEBUG [org.openflamingo.el.ELServiceImpl:169] Registered prefix:constant[:hour] for class#field[org.openflamingo.el.ELConstantsFunctions#hour]
+2016-05-11 13:27:00,909 DEBUG [org.openflamingo.el.ELServiceImpl:169] Registered prefix:constant[:minute] for class#field[org.openflamingo.el.ELConstantsFunctions#minute]
+2016-05-11 13:27:00,910 DEBUG [org.openflamingo.el.ELServiceImpl:169] Registered prefix:constant[:second] for class#field[org.openflamingo.el.ELConstantsFunctions#second]
+2016-05-11 13:27:00,910 DEBUG [org.openflamingo.el.ELServiceImpl:169] Registered prefix:constant[:urlEncode] for class#field[org.openflamingo.el.ELConstantsFunctions#urlEncode]
+2016-05-11 13:27:00,910 INFO  [org.openflamingo.el.ELServiceImpl:95] Registered expression definitions
+2016-05-11 13:27:00,912 INFO  [org.springframework.web.context.ContextLoader:312] Root WebApplicationContext: initialization completed in 1115 ms
+2016-05-11 13:27:00,949 INFO  [org.springframework.web.servlet.DispatcherServlet:461] FrameworkServlet 'dispatcher': initialization started
+2016-05-11 13:27:00,952 INFO  [org.springframework.web.context.support.XmlWebApplicationContext:513] Refreshing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed May 11 13:27:00 KST 2016]; parent: Root WebApplicationContext
+2016-05-11 13:27:00,954 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader:316] Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext-remote.xml]
+2016-05-11 13:27:00,972 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader:316] Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext-repository.xml]
+2016-05-11 13:27:01,226 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader:316] Loading XML bean definitions from ServletContext resource [/WEB-INF/dispatcher-servlet.xml]
+2016-05-11 13:27:01,948 INFO  [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer:172] Loading properties file from ServletContext resource [/WEB-INF/config-dev.properties]
+2016-05-11 13:27:01,958 INFO  [org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor:141] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2016-05-11 13:27:02,750 INFO  [com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource:462] Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1oj1m3g9g17uw9yqvz39xi|25d13f60, debugUnreturnedConnectionStackTraces -> true, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1oj1m3g9g17uw9yqvz39xi|25d13f60, idleConnectionTestPeriod -> 0, initialPoolSize -> 1, jdbcUrl -> jdbc:mysql://localhost:3306/flamingo?useUnicode=true&characterEncoding=UTF8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 3, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> select 1, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2016-05-11 13:27:03,251 INFO  [org.springframework.beans.factory.config.PropertiesFactoryBean:172] Loading properties file from ServletContext resource [/WEB-INF/config-dev.properties]
+2016-05-11 13:27:03,631 INFO  [org.openflamingo.web.core.ConfigurationController:108] Converted flamingo-site.xml to JSON for Web.
+{
+  "build_timestamp" : "${buildTimeStamp}",
+  "extjs_ajax_disable_cache" : "true",
+  "revision_number" : "${revisionNumber}",
+  "hive_query_result_max_download_size" : "5242880",
+  "build_number" : "${buildNumber}",
+  "fs_browser_upload_timeout" : "120000",
+  "copyright" : "Copyright Â© 2013 Flamingo in Open Cloud Engine.",
+  "build_key" : "${buildKey}",
+  "fs_browser_upload_max_file_size" : "3000000",
+  "demo_mode" : "false",
+  "fs_browser_download_max_file_size" : "104857600000",
+  "version" : "${pom.version}",
+  "application_locale" : "English"
+}
+2016-05-11 13:27:04,768 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/account/init],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.account.AccountController.initializeUser(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,769 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/hadoop/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.admin.HadoopAdminController.add(org.openflamingo.model.rest.HadoopCluster)
+2016-05-11 13:27:04,770 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/hadoop/delete],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.admin.HadoopAdminController.delete(org.openflamingo.model.rest.HadoopCluster)
+2016-05-11 13:27:04,770 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/hadoop/cluster],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.admin.HadoopAdminController.a_cluster(java.lang.String)
+2016-05-11 13:27:04,770 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/hadoop/clusters],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.admin.HadoopAdminController.getHadoopClusters()
+2016-05-11 13:27:04,771 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/hadoop/name_exist],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.admin.HadoopAdminController.exist_byname(org.openflamingo.model.rest.HadoopCluster)
+2016-05-11 13:27:04,771 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/hadoop/exist],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.admin.HadoopAdminController.exist(org.openflamingo.model.rest.HadoopCluster)
+2016-05-11 13:27:04,772 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/hive/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.admin.HiveAdminController.add(org.openflamingo.model.rest.HiveServer)
+2016-05-11 13:27:04,772 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/hive/delete],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.admin.HiveAdminController.delete(org.openflamingo.model.rest.HiveServer)
+2016-05-11 13:27:04,772 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/hive/servers],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.admin.HiveAdminController.getHiveServers()
+2016-05-11 13:27:04,774 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/user/delete],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.admin.UserAdminController.delete(org.openflamingo.model.rest.User)
+2016-05-11 13:27:04,774 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/user/update],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.admin.UserAdminController.update(org.openflamingo.model.rest.User)
+2016-05-11 13:27:04,774 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/user/servers],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.admin.UserAdminController.getAdminServers(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,int)
+2016-05-11 13:27:04,777 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//user_info/get],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void org.openflamingo.web.CommonController.get_userinfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String) throws java.lang.Exception
+2016-05-11 13:27:04,777 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//admin/hadoop/update_a_cluster],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void org.openflamingo.web.CommonController.update_a_cluster(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.lang.Exception
+2016-05-11 13:27:04,778 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//admin/hadoop/check_enginewithCluster],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void org.openflamingo.web.CommonController.check_enginewithCluster(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String) throws java.lang.Exception
+2016-05-11 13:27:04,778 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//mrjar/get],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void org.openflamingo.web.CommonController.get_mrjar(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) throws java.lang.Exception
+2016-05-11 13:27:04,778 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//wfexport/get],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void org.openflamingo.web.CommonController.get_wfexport(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String) throws java.lang.Exception
+2016-05-11 13:27:04,778 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//wfimport/get],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void org.openflamingo.web.CommonController.get_wfimport(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String) throws java.lang.Exception
+2016-05-11 13:27:04,779 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//addline],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void org.openflamingo.web.CommonController.addline(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String) throws java.lang.Exception
+2016-05-11 13:27:04,779 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//getmoduleinfos],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void org.openflamingo.web.CommonController.getmoduleinfos(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String) throws java.lang.Exception
+2016-05-11 13:27:04,779 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//getmoduleresource],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void org.openflamingo.web.CommonController.getmoduleresource(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String) throws java.lang.Exception
+2016-05-11 13:27:04,780 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//get_tajotables],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.HashMap<java.lang.String, java.lang.Object> org.openflamingo.web.CommonController.get_tajotables(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.Long,java.lang.String)
+2016-05-11 13:27:04,780 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//get_tajodatabases],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.HashMap<java.lang.String, java.lang.Object> org.openflamingo.web.CommonController.get_tajodatabases(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.Long)
+2016-05-11 13:27:04,780 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//run_tajoQuery],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.HashMap<java.lang.String, java.lang.Object> org.openflamingo.web.CommonController.run_tajoQuery(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.Long,java.lang.String,java.lang.String)
+2016-05-11 13:27:04,781 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//create_tajoDatabase],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.HashMap<java.lang.String, java.lang.Object> org.openflamingo.web.CommonController.create_tajoDatabase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.Long,java.lang.String)
+2016-05-11 13:27:04,781 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//create_tajoTable],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.HashMap<java.lang.String, java.lang.Object> org.openflamingo.web.CommonController.create_tajoTable(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.Long,java.lang.String,java.lang.String)
+2016-05-11 13:27:04,781 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//del_tajoTable],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.HashMap<java.lang.String, java.lang.Object> org.openflamingo.web.CommonController.del_tajoTable(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.Long,java.lang.String,java.lang.String)
+2016-05-11 13:27:04,782 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//del_tajoDatabase],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.HashMap<java.lang.String, java.lang.Object> org.openflamingo.web.CommonController.del_tajoDatabase(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.Long,java.lang.String)
+2016-05-11 13:27:04,782 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/message/config],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.lang.String> org.openflamingo.web.core.ConfigurationController.getResourceBundle(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.util.Locale) throws java.io.IOException
+2016-05-11 13:27:04,783 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/message/bundle],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.lang.String> org.openflamingo.web.core.ResourceBundleController.getResourceBundle(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.util.Locale) throws java.io.IOException
+2016-05-11 13:27:04,784 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/dashboard/actions],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.dashboard.DashboardController.getActions(long,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,int)
+2016-05-11 13:27:04,784 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/dashboard/script],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.lang.String> org.openflamingo.web.dashboard.DashboardController.getScript(long,long)
+2016-05-11 13:27:04,785 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/dashboard/log],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.lang.String> org.openflamingo.web.dashboard.DashboardController.getLog(long,long)
+2016-05-11 13:27:04,785 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/dashboard/workflows],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.dashboard.DashboardController.getWorkflows(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,long,java.lang.String,java.lang.String,java.lang.String,int,int)
+2016-05-11 13:27:04,788 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/designer/run],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.designer.DesignerController.run(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,788 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/designer/tree/get],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.designer.DesignerController.get(java.lang.String,java.lang.String,java.lang.String)
+2016-05-11 13:27:04,789 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/designer/get],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.designer.DesignerController.get(java.lang.Long)
+2016-05-11 13:27:04,789 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/designer/load],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.lang.String> org.openflamingo.web.designer.DesignerController.load(java.lang.Long)
+2016-05-11 13:27:04,789 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/designer/save],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.designer.DesignerController.save(java.lang.Long,java.lang.String,java.lang.String,java.lang.String,java.lang.Long,java.lang.String,java.lang.Long,java.lang.String)
+2016-05-11 13:27:04,789 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/designer/previewHDFSFile],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.designer.DesignerController.previewHDFSFile(java.lang.String,java.lang.String,long)
+2016-05-11 13:27:04,790 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/designer/previewHDFSFile_FP],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.designer.DesignerController.previewHDFSFile_FP(java.lang.String,java.lang.String,long)
+2016-05-11 13:27:04,790 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/designer/previewHDFSFile_FP_ORIGINAL],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.designer.DesignerController.previewHDFSFile_FP_ORIG(java.lang.String,java.lang.String,long,int,int)
+2016-05-11 13:27:04,790 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/designer/status],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.designer.DesignerController.getWorkflowStatus(long)
+2016-05-11 13:27:04,791 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/designer/xml],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.designer.DesignerController.getWorkflowXml(long)
+2016-05-11 13:27:04,791 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/designer/delete],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.designer.DesignerController.deleteWorkflow(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,791 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/designer/cacheClear],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.designer.DesignerController.cacheClear(java.lang.Long)
+2016-05-11 13:27:04,795 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/engine/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.engine.EngineController.add(org.openflamingo.model.rest.Engine)
+2016-05-11 13:27:04,795 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/engine/delete],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.engine.EngineController.delete(org.openflamingo.model.rest.Engine)
+2016-05-11 13:27:04,795 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/engine/directory],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.engine.EngineController.getDirectory(java.lang.String,java.lang.String)
+2016-05-11 13:27:04,796 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/engine/name_exist],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.engine.EngineController.exist_byname(org.openflamingo.model.rest.Engine)
+2016-05-11 13:27:04,796 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/engine/regist],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.engine.EngineController.registCollectionJob(java.lang.Long,java.lang.String)
+2016-05-11 13:27:04,796 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/engine/engines],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.engine.EngineController.getEngines(java.lang.String,java.lang.String)
+2016-05-11 13:27:04,797 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/engine/envs],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.engine.EngineController.getEnvs(java.lang.String,int,int,int)
+2016-05-11 13:27:04,797 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/engine/props],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.engine.EngineController.getPros(java.lang.String,int,int,int)
+2016-05-11 13:27:04,797 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/engine/triggers],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.engine.EngineController.getTriggers(java.lang.String,int,int,int)
+2016-05-11 13:27:04,797 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/engine/running],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.engine.EngineController.getRunningJobs(java.lang.String,int,int,int)
+2016-05-11 13:27:04,798 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/engine/job],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.engine.EngineController.getJob(java.lang.String,java.lang.String,java.lang.String,int,int,int)
+2016-05-11 13:27:04,798 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/engine/history],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.engine.EngineController.getHistories(java.lang.String,int,int,int)
+2016-05-11 13:27:04,798 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/engine/aio],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.engine.EngineController.getDirectoryAndFile(java.lang.Long,java.lang.String)
+2016-05-11 13:27:04,798 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/engine/file],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.engine.EngineController.getFiles(java.lang.String,java.lang.String,int,int,int)
+2016-05-11 13:27:04,799 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/engine/load_engineinfo],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.HashMap<java.lang.String, java.lang.Object> org.openflamingo.web.engine.EngineController.load_engineinfo(long)
+2016-05-11 13:27:04,799 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/admin/engine/update_engineinfo],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.HashMap<java.lang.String, java.lang.Object> org.openflamingo.web.engine.EngineController.update_engineinfo(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,long,java.lang.String,java.lang.String,java.lang.String,long,long,java.lang.String) throws java.lang.Exception
+2016-05-11 13:27:04,800 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/audit/list],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.AuditController.getAuditHistories(java.lang.String,java.lang.String,java.lang.String,java.lang.String,long,java.lang.String,int,int,int)
+2016-05-11 13:27:04,808 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/size],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.getSize(java.lang.String,java.lang.String)
+2016-05-11 13:27:04,809 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/newDirectory],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.createDirectory(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,809 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/upload],methods=[POST],params=[],headers=[],consumes=[multipart/form-data],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.lang.String> org.openflamingo.web.fs.HdfsBrowserController.upload(javax.servlet.http.HttpServletRequest) throws java.io.IOException
+2016-05-11 13:27:04,809 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/info],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.getInfo(java.lang.String,java.lang.String)
+2016-05-11 13:27:04,810 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/count],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.getCount(java.lang.String,java.lang.String)
+2016-05-11 13:27:04,810 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/file],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.getFiles(java.lang.String,java.lang.String)
+2016-05-11 13:27:04,810 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/directory],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.getDirectories(java.lang.String,java.lang.String)
+2016-05-11 13:27:04,810 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/deleteDirectory],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.deleteDirectory(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,811 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/renameDirectory],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.renameDirectory(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,811 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/moveDirectory],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.moveDirectory(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,811 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/copyDirectory],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.copyDirectory(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,812 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/infoDirectory],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.infoDirectory(java.lang.String,java.lang.String)
+2016-05-11 13:27:04,812 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/PathEmpty],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.getPathEmpty(java.lang.String,java.lang.String)
+2016-05-11 13:27:04,812 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/rename],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.renameFile(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,813 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/copy],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.copyFiles(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,813 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/move],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.moveFiles(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,813 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/deleteFiles],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.deleteFiles(java.lang.String,java.lang.String[]) throws java.io.IOException
+2016-05-11 13:27:04,813 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/deleteFile],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.deleteFiles(java.util.List<java.lang.String>,java.lang.String)
+2016-05-11 13:27:04,814 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/download],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity org.openflamingo.web.fs.HdfsBrowserController.download(javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-05-11 13:27:04,814 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/fileSystemStatus],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.getFileSystemStatus(java.lang.String)
+2016-05-11 13:27:04,814 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/db_work_insert],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.insert_db_work(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,815 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/WORKHISTORY_DBCHECK],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.getCheckWorkHistoyDB(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2016-05-11 13:27:04,815 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/WORKHISTORY_TABLECHECK],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.getCheckWorkHistoyTABLE(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2016-05-11 13:27:04,815 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/import],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.getImport(java.lang.String,java.lang.String)
+2016-05-11 13:27:04,815 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/PROGRESSRATE],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.getProgressRate(java.lang.String,java.lang.String)
+2016-05-11 13:27:04,816 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/WorkNameParameter],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.getWorkNameParameter(java.lang.String,java.lang.String)
+2016-05-11 13:27:04,816 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/workhistory],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.workhistory(java.lang.String)
+2016-05-11 13:27:04,816 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/worklist_history],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.worklist_history(java.lang.String)
+2016-05-11 13:27:04,816 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/work_name_list],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.work_name_list(java.lang.String)
+2016-05-11 13:27:04,817 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/worknamelistbydashboard],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.worknamelistbydashboard(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2016-05-11 13:27:04,817 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/dblist],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.getDBlist(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2016-05-11 13:27:04,817 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/tableList],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.getTableList(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2016-05-11 13:27:04,818 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/GetFields],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.getGetFields(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2016-05-11 13:27:04,818 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/SQLHEAD],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.sqlhead(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2016-05-11 13:27:04,818 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/SQLBODY],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.sqlrun(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)
+2016-05-11 13:27:04,818 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hdfs/kill_work],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HdfsBrowserController.kill_work(java.lang.String,java.lang.String)
+2016-05-11 13:27:04,819 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/fs/hive/db],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.fs.HiveController.createHiveDB(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,821 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/hive/editor/query],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.hive.HiveQueryEditorController.getQuery(java.lang.String,java.lang.String)
+2016-05-11 13:27:04,821 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/hive/editor/results],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.hive.HiveQueryEditorController.results(java.lang.String,java.lang.String,int,int)
+2016-05-11 13:27:04,822 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/hive/editor/execute],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.hive.HiveQueryEditorController.executeQuery(java.util.Map<java.lang.String, java.lang.Object>) throws java.lang.Exception
+2016-05-11 13:27:04,822 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/hive/editor/history],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.hive.HiveQueryEditorController.getHistories(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,int)
+2016-05-11 13:27:04,822 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/hive/editor/download],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity org.openflamingo.web.hive.HiveQueryEditorController.download(javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String)
+2016-05-11 13:27:04,822 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/hive/editor/validate],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.hive.HiveQueryEditorController.validateQuery(java.util.Map<java.lang.String, java.lang.Object>) throws java.lang.Exception
+2016-05-11 13:27:04,823 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/hive/editor/databases],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.hive.HiveQueryEditorController.getDatabases(java.lang.String,int,int,int)
+2016-05-11 13:27:04,823 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/hive/editor/size],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.hive.HiveQueryEditorController.checkSize(java.util.Map<java.lang.String, java.lang.Object>) throws java.lang.Exception
+2016-05-11 13:27:04,826 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//getMembers],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.IndexController.getMembers(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,827 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.openflamingo.web.IndexController.index()
+2016-05-11 13:27:04,828 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//authenticate],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.IndexController.authenticate(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,828 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//login],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.openflamingo.web.IndexController.login(javax.servlet.http.HttpServletRequest)
+2016-05-11 13:27:04,828 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//logout],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.openflamingo.web.IndexController.logout(javax.servlet.http.HttpServletRequest)
+2016-05-11 13:27:04,829 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//forward],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.openflamingo.web.IndexController.forward(java.lang.String)
+2016-05-11 13:27:04,829 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//redirect],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.openflamingo.web.IndexController.redirect(java.lang.String)
+2016-05-11 13:27:04,829 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//edit_authenticate],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.IndexController.edit_authenticate(java.lang.String,java.lang.String)
+2016-05-11 13:27:04,829 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//finduser],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.IndexController.findemail(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,830 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//findpass],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.IndexController.findpass(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,830 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//signup],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.IndexController.signup(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,830 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[//updateLanguage],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.lang.Object> org.openflamingo.web.IndexController.updateLanguage(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,831 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/job/list],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.job.JobController.list(java.lang.String,java.lang.String,java.lang.String,java.lang.String,long,java.lang.String,java.lang.String,java.lang.String,int,int)
+2016-05-11 13:27:04,832 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/job/regist],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.job.JobController.regist(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,832 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/job/valid],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.job.JobController.isValidCronExpression(java.lang.String)
+2016-05-11 13:27:04,833 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/menu],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.openflamingo.web.menu.MenuController.build(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2016-05-11 13:27:04,834 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/pig/run],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.pig.PigController.run(java.lang.Long,java.lang.String) throws java.io.IOException
+2016-05-11 13:27:04,834 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/pig/list],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.pig.PigController.list(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,int)
+2016-05-11 13:27:04,835 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/pig/save],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.pig.PigController.save(java.lang.String) throws java.io.IOException
+2016-05-11 13:27:04,835 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/pig/log],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.lang.String> org.openflamingo.web.pig.PigController.getLog(long,java.lang.String)
+2016-05-11 13:27:04,835 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/pig/delete],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.pig.PigController.deleteScript(java.lang.Long) throws java.io.IOException
+2016-05-11 13:27:04,837 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/tree/get],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.tree.TreeController.get(java.lang.String,java.lang.String)
+2016-05-11 13:27:04,837 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/tree/move],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.tree.TreeController.move(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,838 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/tree/new],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.tree.TreeController.newDirectory(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,838 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/tree/delete],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.tree.TreeController.deleteDirectory(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,838 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/tree/rename],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.tree.TreeController.renameDirectory(java.util.Map<java.lang.String, java.lang.String>)
+2016-05-11 13:27:04,839 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/visualization/run],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.visualization.VisualizationController.run(org.openflamingo.model.rest.Visualization)
+2016-05-11 13:27:04,839 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/visualization/visualization],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.visualization.VisualizationController.getVisualizationHistory(java.lang.String,long)
+2016-05-11 13:27:04,840 INFO  [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping:181] Mapped "{[/viz/file],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.openflamingo.model.rest.Response org.openflamingo.web.viz.VizController.getFile(java.lang.String,java.lang.String)
+2016-05-11 13:27:05,107 INFO  [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:313] Detected @ExceptionHandler methods in restExceptionHandler
+2016-05-11 13:27:05,107 INFO  [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:313] Detected @ExceptionHandler methods in serviceExceptionHandler
+2016-05-11 13:27:05,174 INFO  [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping:315] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2016-05-11 13:27:05,207 INFO  [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:313] Detected @ExceptionHandler methods in restExceptionHandler
+2016-05-11 13:27:05,207 INFO  [org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:313] Detected @ExceptionHandler methods in serviceExceptionHandler
+2016-05-11 13:27:05,260 INFO  [org.springframework.web.servlet.DispatcherServlet:480] FrameworkServlet 'dispatcher': initialization completed in 4311 ms
+2016-05-11 13:27:20,742 WARN  [org.springframework.web.servlet.PageNotFound:1118] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'dispatcher'
+2016-05-11 13:27:24,227 DEBUG [org.openflamingo.web.member.MemberRepository.selectByUser:132] ooo Using Connection [net.sf.log4jdbc.ConnectionSpy@4e196219]
+2016-05-11 13:27:24,230 DEBUG [org.openflamingo.web.member.MemberRepository.selectByUser:132] ==>  Preparing: SELECT * FROM USER WHERE USERNAME = ? 
+2016-05-11 13:27:24,253 DEBUG [org.openflamingo.web.member.MemberRepository.selectByUser:132] ==> Parameters: admin(String)
+2016-05-11 13:27:24,280 INFO  [jdbc.resultsettable:108] |---------|-------|------|--------------------|--------|---------------|--------------|---------------|-----------|----------------------|-----------|
+2016-05-11 13:27:24,281 INFO  [jdbc.resultsettable:108] |USERNAME |PASSWD |NAME  |EMAIL               |ENABLED |AC_NON_EXPIRED |AC_NON_LOCKED |CR_NON_EXPIRED |AUTHORITY  |CREATE_DT             |LAST_LOGIN |
+2016-05-11 13:27:24,282 INFO  [jdbc.resultsettable:108] |---------|-------|------|--------------------|--------|---------------|--------------|---------------|-----------|----------------------|-----------|
+2016-05-11 13:27:24,282 INFO  [jdbc.resultsettable:108] |admin    |admin  |ankus |ankus@openankus.org |true    |true           |true          |true           |ROLE_ADMIN |2013-11-29 00:00:00.0 |[unread]   |
+2016-05-11 13:27:24,283 INFO  [jdbc.resultsettable:108] |---------|-------|------|--------------------|--------|---------------|--------------|---------------|-----------|----------------------|-----------|
+2016-05-11 13:27:24,283 DEBUG [org.openflamingo.web.member.MemberRepository.selectByUser:132] <==      Total: 1
+2016-05-11 13:27:24,303 INFO  [org.openflamingo.web.IndexController:262] 'admin' 사용자의 세션을 생성했습니다.
+2016-05-11 13:27:24,366 DEBUG [org.openflamingo.web.member.MemberRepository.selectByUser:132] ooo Using Connection [net.sf.log4jdbc.ConnectionSpy@2ff94051]
+2016-05-11 13:27:24,366 DEBUG [org.openflamingo.web.member.MemberRepository.selectByUser:132] ==>  Preparing: SELECT * FROM USER WHERE USERNAME = ? 
+2016-05-11 13:27:24,367 DEBUG [org.openflamingo.web.member.MemberRepository.selectByUser:132] ==> Parameters: admin(String)
+2016-05-11 13:27:24,370 INFO  [jdbc.resultsettable:108] |---------|-------|------|--------------------|--------|---------------|--------------|---------------|-----------|----------------------|-----------|
+2016-05-11 13:27:24,370 INFO  [jdbc.resultsettable:108] |USERNAME |PASSWD |NAME  |EMAIL               |ENABLED |AC_NON_EXPIRED |AC_NON_LOCKED |CR_NON_EXPIRED |AUTHORITY  |CREATE_DT             |LAST_LOGIN |
+2016-05-11 13:27:24,371 INFO  [jdbc.resultsettable:108] |---------|-------|------|--------------------|--------|---------------|--------------|---------------|-----------|----------------------|-----------|
+2016-05-11 13:27:24,371 INFO  [jdbc.resultsettable:108] |admin    |admin  |ankus |ankus@openankus.org |true    |true           |true          |true           |ROLE_ADMIN |2013-11-29 00:00:00.0 |[unread]   |
+2016-05-11 13:27:24,372 INFO  [jdbc.resultsettable:108] |---------|-------|------|--------------------|--------|---------------|--------------|---------------|-----------|----------------------|-----------|
+2016-05-11 13:27:24,372 DEBUG [org.openflamingo.web.member.MemberRepository.selectByUser:132] <==      Total: 1
+2016-05-11 13:27:25,515 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.selectAll:132] ooo Using Connection [net.sf.log4jdbc.ConnectionSpy@7cb817dc]
+2016-05-11 13:27:25,515 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.selectAll:132] ==>  Preparing: SELECT * FROM ADMIN_HADOOP_CLUSTER 
+2016-05-11 13:27:25,515 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.selectAll:132] ==> Parameters: 
+2016-05-11 13:27:25,518 INFO  [jdbc.resultsettable:108] |---|-----|------------|------|--------|---------|------|--------|-----------|-----------|-------------------|-------------------|
+2016-05-11 13:27:25,519 INFO  [jdbc.resultsettable:108] |ID |NAME |NN_PROTOCOL |NN_IP |NN_PORT |HDFS_URL |JT_IP |JT_PORT |NN_CONSOLE |JT_CONSOLE |JT_MONITORING_PORT |NN_MONITORING_PORT |
+2016-05-11 13:27:25,519 INFO  [jdbc.resultsettable:108] |---|-----|------------|------|--------|---------|------|--------|-----------|-----------|-------------------|-------------------|
+2016-05-11 13:27:25,520 INFO  [jdbc.resultsettable:108] |---|-----|------------|------|--------|---------|------|--------|-----------|-----------|-------------------|-------------------|
+2016-05-11 13:27:25,520 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.selectAll:132] <==      Total: 0
+2016-05-11 13:27:25,523 DEBUG [org.openflamingo.web.admin.HiveAdminRepository.selectAll:132] ooo Using Connection [net.sf.log4jdbc.ConnectionSpy@30eea5e8]
+2016-05-11 13:27:25,524 DEBUG [org.openflamingo.web.admin.HiveAdminRepository.selectAll:132] ==>  Preparing: SELECT * FROM ADMIN_HIVE_SERVER 
+2016-05-11 13:27:25,524 DEBUG [org.openflamingo.web.admin.HiveAdminRepository.selectAll:132] ==> Parameters: 
+2016-05-11 13:27:25,527 INFO  [jdbc.resultsettable:108] |---|-----|------------|---------|---------------|-------------------|---------------|
+2016-05-11 13:27:25,527 INFO  [jdbc.resultsettable:108] |ID |NAME |JDBC_DRIVER |JDBC_URL |METASTORE_USER |METASTORE_PASSWORD |METASTORE_URIS |
+2016-05-11 13:27:25,528 INFO  [jdbc.resultsettable:108] |---|-----|------------|---------|---------------|-------------------|---------------|
+2016-05-11 13:27:25,529 INFO  [jdbc.resultsettable:108] |---|-----|------------|---------|---------------|-------------------|---------------|
+2016-05-11 13:27:25,529 DEBUG [org.openflamingo.web.admin.HiveAdminRepository.selectAll:132] <==      Total: 0
+2016-05-11 13:27:25,599 DEBUG [org.openflamingo.web.admin.UserAdminRepository.selectByCondition:132] ooo Using Connection [net.sf.log4jdbc.ConnectionSpy@623c3ff1]
+2016-05-11 13:27:25,599 DEBUG [org.openflamingo.web.admin.UserAdminRepository.selectByCondition:132] ==>  Preparing: SELECT * FROM USER WHERE 1=1 ORDER BY USERNAME DESC LIMIT 0, 25 
+2016-05-11 13:27:25,600 DEBUG [org.openflamingo.web.admin.UserAdminRepository.selectByCondition:132] ==> Parameters: 
+2016-05-11 13:27:25,603 INFO  [jdbc.resultsettable:108] |---------|---------|------|--------------------|--------|---------------|--------------|---------------|-----------|----------------------|-----------|
+2016-05-11 13:27:25,603 INFO  [jdbc.resultsettable:108] |USERNAME |PASSWD   |NAME  |EMAIL               |ENABLED |AC_NON_EXPIRED |AC_NON_LOCKED |CR_NON_EXPIRED |AUTHORITY  |CREATE_DT             |LAST_LOGIN |
+2016-05-11 13:27:25,604 INFO  [jdbc.resultsettable:108] |---------|---------|------|--------------------|--------|---------------|--------------|---------------|-----------|----------------------|-----------|
+2016-05-11 13:27:25,604 INFO  [jdbc.resultsettable:108] |admin    |[unread] |ankus |ankus@openankus.org |true    |[unread]       |[unread]      |[unread]       |ROLE_ADMIN |2013-11-29 00:00:00.0 |[unread]   |
+2016-05-11 13:27:25,605 INFO  [jdbc.resultsettable:108] |---------|---------|------|--------------------|--------|---------------|--------------|---------------|-----------|----------------------|-----------|
+2016-05-11 13:27:25,606 DEBUG [org.openflamingo.web.admin.UserAdminRepository.selectByCondition:132] <==      Total: 1
+2016-05-11 13:27:25,909 DEBUG [org.openflamingo.web.designer.DesignerController:909] [WF][TREE][GET] Type 'WORKFLOW' Path '/'
+2016-05-11 13:27:25,911 DEBUG [org.openflamingo.web.tree.TreeRepository.selectRoot:132] ooo Using Connection [net.sf.log4jdbc.ConnectionSpy@24a0bdb4]
+2016-05-11 13:27:25,912 DEBUG [org.openflamingo.web.tree.TreeRepository.selectRoot:132] ==>  Preparing: SELECT ID, NAME, TREE, NODE, ROOT, USERNAME, PARENT_ID FROM TREE WHERE 1=1 AND NAME = '/' AND TREE = ? AND NODE = 'FOLDER' AND USERNAME = ? 
+2016-05-11 13:27:25,912 DEBUG [org.openflamingo.web.tree.TreeRepository.selectRoot:132] ==> Parameters: WORKFLOW(String), admin(String)
+2016-05-11 13:27:25,915 INFO  [jdbc.resultsettable:108] |---|-----|---------|-------|-----|---------|----------|
+2016-05-11 13:27:25,916 INFO  [jdbc.resultsettable:108] |ID |NAME |TREE     |NODE   |ROOT |USERNAME |PARENT_ID |
+2016-05-11 13:27:25,917 INFO  [jdbc.resultsettable:108] |---|-----|---------|-------|-----|---------|----------|
+2016-05-11 13:27:25,918 INFO  [jdbc.resultsettable:108] |1  |/    |WORKFLOW |FOLDER |true |admin    |[null]    |
+2016-05-11 13:27:25,918 INFO  [jdbc.resultsettable:108] |---|-----|---------|-------|-----|---------|----------|
+2016-05-11 13:27:25,919 DEBUG [org.openflamingo.web.tree.TreeRepository.selectRoot:132] <==      Total: 1
+2016-05-11 13:27:25,920 DEBUG [org.openflamingo.web.member.MemberRepository.selectByUser:132] ooo Using Connection [net.sf.log4jdbc.ConnectionSpy@16327426]
+2016-05-11 13:27:25,921 DEBUG [org.openflamingo.web.member.MemberRepository.selectByUser:132] ==>  Preparing: SELECT * FROM USER WHERE USERNAME = ? 
+2016-05-11 13:27:25,921 DEBUG [org.openflamingo.web.member.MemberRepository.selectByUser:132] ==> Parameters: admin(String)
+2016-05-11 13:27:25,924 INFO  [jdbc.resultsettable:108] |---------|-------|------|--------------------|--------|---------------|--------------|---------------|-----------|----------------------|-----------|
+2016-05-11 13:27:25,925 INFO  [jdbc.resultsettable:108] |USERNAME |PASSWD |NAME  |EMAIL               |ENABLED |AC_NON_EXPIRED |AC_NON_LOCKED |CR_NON_EXPIRED |AUTHORITY  |CREATE_DT             |LAST_LOGIN |
+2016-05-11 13:27:25,925 INFO  [jdbc.resultsettable:108] |---------|-------|------|--------------------|--------|---------------|--------------|---------------|-----------|----------------------|-----------|
+2016-05-11 13:27:25,926 INFO  [jdbc.resultsettable:108] |admin    |admin  |ankus |ankus@openankus.org |true    |true           |true          |true           |ROLE_ADMIN |2013-11-29 00:00:00.0 |[unread]   |
+2016-05-11 13:27:25,927 INFO  [jdbc.resultsettable:108] |---------|-------|------|--------------------|--------|---------------|--------------|---------------|-----------|----------------------|-----------|
+2016-05-11 13:27:25,927 DEBUG [org.openflamingo.web.member.MemberRepository.selectByUser:132] <==      Total: 1
+2016-05-11 13:27:25,929 DEBUG [org.openflamingo.web.tree.TreeRepository.selectWorkflowChilds:132] ooo Using Connection [net.sf.log4jdbc.ConnectionSpy@5c067f39]
+2016-05-11 13:27:25,930 DEBUG [org.openflamingo.web.tree.TreeRepository.selectWorkflowChilds:132] ==>  Preparing: SELECT T.ID AS ID, T.NAME AS NAME, T.TREE AS TREE, T.NODE AS NODE, T.ROOT AS ROOT, T.USERNAME AS USERNAME, W.ID AS REF_ID FROM TREE T, WORKFLOW W WHERE T.ID = W.TREE_ID 
+2016-05-11 13:27:25,930 DEBUG [org.openflamingo.web.tree.TreeRepository.selectWorkflowChilds:132] ==> Parameters: 
+2016-05-11 13:27:25,932 INFO  [jdbc.resultsettable:108] |---|-----|-----|-----|-----|---------|---|
+2016-05-11 13:27:25,932 INFO  [jdbc.resultsettable:108] |ID |NAME |TREE |NODE |ROOT |USERNAME |ID |
+2016-05-11 13:27:25,933 INFO  [jdbc.resultsettable:108] |---|-----|-----|-----|-----|---------|---|
+2016-05-11 13:27:25,933 INFO  [jdbc.resultsettable:108] |---|-----|-----|-----|-----|---------|---|
+2016-05-11 13:27:25,934 DEBUG [org.openflamingo.web.tree.TreeRepository.selectWorkflowChilds:132] <==      Total: 0
+2016-05-11 13:28:52,932 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.selectAll:132] ooo Using Connection [net.sf.log4jdbc.ConnectionSpy@419b4b92]
+2016-05-11 13:28:52,933 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.selectAll:132] ==>  Preparing: SELECT * FROM ADMIN_HADOOP_CLUSTER 
+2016-05-11 13:28:52,933 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.selectAll:132] ==> Parameters: 
+2016-05-11 13:28:52,935 INFO  [jdbc.resultsettable:108] |---|-----|------------|------|--------|---------|------|--------|-----------|-----------|-------------------|-------------------|
+2016-05-11 13:28:52,935 INFO  [jdbc.resultsettable:108] |ID |NAME |NN_PROTOCOL |NN_IP |NN_PORT |HDFS_URL |JT_IP |JT_PORT |NN_CONSOLE |JT_CONSOLE |JT_MONITORING_PORT |NN_MONITORING_PORT |
+2016-05-11 13:28:52,936 INFO  [jdbc.resultsettable:108] |---|-----|------------|------|--------|---------|------|--------|-----------|-----------|-------------------|-------------------|
+2016-05-11 13:28:52,937 INFO  [jdbc.resultsettable:108] |---|-----|------------|------|--------|---------|------|--------|-----------|-----------|-------------------|-------------------|
+2016-05-11 13:28:52,937 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.selectAll:132] <==      Total: 0
+2016-05-11 13:28:59,294 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.insert:132] ooo Using Connection [net.sf.log4jdbc.ConnectionSpy@5cf294dd]
+2016-05-11 13:28:59,294 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.insert:132] ==>  Preparing: INSERT INTO ADMIN_HADOOP_CLUSTER ( ID, NAME, NN_PROTOCOL, NN_IP, NN_PORT, HDFS_URL, JT_IP, JT_PORT, NN_CONSOLE, JT_CONSOLE, NN_MONITORING_PORT, JT_MONITORING_PORT) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2016-05-11 13:28:59,295 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.insert:132] ==> Parameters: 0(Long), c1(String), hdfs://(String), 127.0.0.1(String), 9000(Integer), hdfs://127.0.0.1:9000(String), 127.0.0.1(String), 9001(Integer), http://127.0.0.1:50070(String), http://127.0.0.1:50030(String), 28080(String), 18080(String)
+2016-05-11 13:28:59,296 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.insert:132] <==    Updates: 1
+2016-05-11 13:28:59,297 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.insert!selectKey:132] ooo Using Connection [net.sf.log4jdbc.ConnectionSpy@5cf294dd]
+2016-05-11 13:28:59,297 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.insert!selectKey:132] ==>  Preparing: SELECT LAST_INSERT_ID() 
+2016-05-11 13:28:59,297 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.insert!selectKey:132] ==> Parameters: 
+2016-05-11 13:28:59,298 INFO  [jdbc.resultsettable:108] |-----------------|
+2016-05-11 13:28:59,299 INFO  [jdbc.resultsettable:108] |LAST_INSERT_ID() |
+2016-05-11 13:28:59,299 INFO  [jdbc.resultsettable:108] |-----------------|
+2016-05-11 13:28:59,299 INFO  [jdbc.resultsettable:108] |2                |
+2016-05-11 13:28:59,299 INFO  [jdbc.resultsettable:108] |-----------------|
+2016-05-11 13:28:59,300 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.insert!selectKey:132] <==      Total: 1
+2016-05-11 13:28:59,309 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.selectAll:132] ooo Using Connection [net.sf.log4jdbc.ConnectionSpy@2e3a79cf]
+2016-05-11 13:28:59,309 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.selectAll:132] ==>  Preparing: SELECT * FROM ADMIN_HADOOP_CLUSTER 
+2016-05-11 13:28:59,310 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.selectAll:132] ==> Parameters: 
+2016-05-11 13:28:59,312 INFO  [jdbc.resultsettable:108] |---|-----|------------|----------|--------|----------------------|----------|--------|-----------------------|-----------------------|-------------------|-------------------|
+2016-05-11 13:28:59,313 INFO  [jdbc.resultsettable:108] |ID |NAME |NN_PROTOCOL |NN_IP     |NN_PORT |HDFS_URL              |JT_IP     |JT_PORT |NN_CONSOLE             |JT_CONSOLE             |JT_MONITORING_PORT |NN_MONITORING_PORT |
+2016-05-11 13:28:59,314 INFO  [jdbc.resultsettable:108] |---|-----|------------|----------|--------|----------------------|----------|--------|-----------------------|-----------------------|-------------------|-------------------|
+2016-05-11 13:28:59,314 INFO  [jdbc.resultsettable:108] |2  |c1   |hdfs://     |127.0.0.1 |9000    |hdfs://127.0.0.1:9000 |127.0.0.1 |9001    |http://127.0.0.1:50070 |http://127.0.0.1:50030 |18080              |28080              |
+2016-05-11 13:28:59,315 INFO  [jdbc.resultsettable:108] |---|-----|------------|----------|--------|----------------------|----------|--------|-----------------------|-----------------------|-------------------|-------------------|
+2016-05-11 13:28:59,315 DEBUG [org.openflamingo.web.admin.HadoopClusterAdminRepository.selectAll:132] <==      Total: 1
+2016-05-11 13:29:14,202 DEBUG [org.openflamingo.web.member.MemberRepository.selectByUser:132] ooo Using Connection [net.sf.log4jdbc.ConnectionSpy@29de428e]
+2016-05-11 13:29:14,203 DEBUG [org.openflamingo.web.member.MemberRepository.selectByUser:132] ==>  Preparing: SELECT * FROM USER WHERE USERNAME = ? 
+2016-05-11 13:29:14,203 DEBUG [org.openflamingo.web.member.MemberRepository.selectByUser:132] ==> Parameters: admin(String)
+2016-05-11 13:29:14,207 INFO  [jdbc.resultsettable:108] |---------|-------|------|--------------------|--------|---------------|--------------|---------------|-----------|----------------------|-----------|
+2016-05-11 13:29:14,208 INFO  [jdbc.resultsettable:108] |USERNAME |PASSWD |NAME  |EMAIL               |ENABLED |AC_NON_EXPIRED |AC_NON_LOCKED |CR_NON_EXPIRED |AUTHORITY  |CREATE_DT             |LAST_LOGIN |
+2016-05-11 13:29:14,209 INFO  [jdbc.resultsettable:108] |---------|-------|------|--------------------|--------|---------------|--------------|---------------|-----------|----------------------|-----------|
+2016-05-11 13:29:14,209 INFO  [jdbc.resultsettable:108] |admin    |admin  |ankus |ankus@openankus.org |true    |true           |true          |true           |ROLE_ADMIN |2013-11-29 00:00:00.0 |[unread]   |
+2016-05-11 13:29:14,210 INFO  [jdbc.resultsettable:108] |---------|-------|------|--------------------|--------|---------------|--------------|---------------|-----------|----------------------|-----------|
+2016-05-11 13:29:14,210 DEBUG [org.openflamingo.web.member.MemberRepository.selectByUser:132] <==      Total: 1
+2016-05-11 13:29:14,212 DEBUG [org.openflamingo.web.engine.EngineRepository.selectAll:132] ooo Using Connection [net.sf.log4jdbc.ConnectionSpy@7e71eb20]
+2016-05-11 13:29:14,212 DEBUG [org.openflamingo.web.engine.EngineRepository.selectAll:132] ==>  Preparing: SELECT E.ID, E.NAME, E.IP, E.PORT, E.CLUSTER_ID, E.HIVE_ID, E.ISPUBLIC, NULL AS 'PERMISSION' FROM ENGINE E WHERE E.ISPUBLIC = 1 UNION SELECT E.ID, E.NAME, E.IP, E.PORT, E.CLUSTER_ID, E.HIVE_ID, E.ISPUBLIC, P.PERMISSION FROM ENGINE E, (SELECT ID, GROUP_CONCAT(USERNAME) AS PERMISSION from ADMIN_ENGINE_PERMISSION GROUP BY ID) as P WHERE E.ISPUBLIC = 0 AND E.ID = P.ID 
+2016-05-11 13:29:14,213 DEBUG [org.openflamingo.web.engine.EngineRepository.selectAll:132] ==> Parameters: 
+2016-05-11 13:29:14,240 INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader:316] Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2016-05-11 13:29:14,263 INFO  [org.springframework.jdbc.support.SQLErrorCodesFactory:126] SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+2016-05-11 13:29:14,267 WARN  [org.openflamingo.web.engine.EngineController:211] Workflow Engine 정보를 확인할 수 없습니다.
+org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'flamingo.admin_engine_permission' doesn't exist
+### The error may exist in org/openflamingo/web/admin/engine-mapper.xml
+### The error may involve org.openflamingo.web.engine.EngineRepository.selectAll-Inline
+### The error occurred while setting parameters
+### SQL: SELECT E.ID, E.NAME, E.IP, E.PORT, E.CLUSTER_ID, E.HIVE_ID, E.ISPUBLIC, NULL AS 'PERMISSION'   FROM ENGINE E   WHERE E.ISPUBLIC = 1   UNION   SELECT E.ID, E.NAME, E.IP, E.PORT, E.CLUSTER_ID, E.HIVE_ID, E.ISPUBLIC, P.PERMISSION   FROM ENGINE E,         (SELECT ID, GROUP_CONCAT(USERNAME) AS PERMISSION from ADMIN_ENGINE_PERMISSION               GROUP BY ID) as P   WHERE E.ISPUBLIC = 0 AND E.ID = P.ID
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'flamingo.admin_engine_permission' doesn't exist
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'flamingo.admin_engine_permission' doesn't exist
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:231)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:73)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:73)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:368)
+	at com.sun.proxy.$Proxy26.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:198)
+	at org.openflamingo.web.engine.EngineRepositoryImpl.selectAll(EngineRepositoryImpl.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:98)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:262)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy35.selectAll(Unknown Source)
+	at org.openflamingo.web.engine.EngineServiceImpl.getEngines(EngineServiceImpl.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:98)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:262)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy36.getEngines(Unknown Source)
+	at org.openflamingo.web.engine.EngineController.getEngines(EngineController.java:148)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:214)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:132)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:748)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:689)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:83)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:945)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:876)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:931)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:822)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:807)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:108)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:505)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:956)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:436)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1078)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:625)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:318)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'flamingo.admin_engine_permission' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1054)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4237)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4169)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2617)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2778)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2825)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2156)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1379)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.execute(NewProxyPreparedStatement.java:989)
+	at net.sf.log4jdbc.PreparedStatementSpy.execute(PreparedStatementSpy.java:418)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:55)
+	at com.sun.proxy.$Proxy73.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:56)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:70)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:57)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:259)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:132)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:105)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:81)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:104)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:98)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:358)
+	... 76 more
+2016-05-11 13:42:07,811 INFO  [org.springframework.web.context.support.XmlWebApplicationContext:873] Closing WebApplicationContext for namespace 'dispatcher-servlet': startup date [Wed May 11 13:27:00 KST 2016]; parent: Root WebApplicationContext
+2016-05-11 13:42:07,821 WARN  [org.springframework.beans.factory.support.DisposableBeanAdapter:359] Invocation of destroy method 'close' failed on bean with name 'sqlSessionTemplate': java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+2016-05-11 13:42:07,831 INFO  [org.springframework.web.context.support.XmlWebApplicationContext:873] Closing Root WebApplicationContext: startup date [Wed May 11 13:26:59 KST 2016]; root of context hierarchy

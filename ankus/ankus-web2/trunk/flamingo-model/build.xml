@@ -1,0 +1,45 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<project name="flamingo-configuration" default="generate" basedir=".">
+
+    <!-- Change maven repository directory -->
+    <property name="maven.repository" value="${user.home}/.m2/repository"/>
+
+    <!-- JAXB XJC -->
+    <taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask">
+        <classpath>
+            <fileset dir="${maven.repository}/javax/xml/bind/jaxb-api/2.1">
+                <include name="**/*.jar"/>
+            </fileset>
+            <fileset dir="${maven.repository}/javax/xml/stream/stax-api/1.0-2">
+                <include name="**/*.jar"/>
+            </fileset>
+            <fileset dir="${maven.repository}/com/sun/xml/bind/jaxb-xjc/2.1.13">
+                <include name="**/*.jar"/>
+            </fileset>
+            <fileset dir="${maven.repository}/com/sun/xml/bind/jaxb-impl/2.1.13">
+                <include name="**/*.jar"/>
+            </fileset>
+        </classpath>
+    </taskdef>
+
+    <target name="generate">
+        <echo>Now generating JAXB objects for XSD ....</echo>
+        <echo>Base Directory : ${basedir}</echo>
+
+<!--
+        <xjc schema="${basedir}/src/main/resources/flamingo-site-1.0.xsd" destdir="${basedir}/src/main/java"
+             package="org.openflamingo.model.site"/>
+
+        <xjc schema="${basedir}/src/main/resources/opengraph-1.0.xsd" destdir="${basedir}/src/main/java"
+             package="org.openflamingo.model.opengraph"/>
+
+        <xjc schema="${basedir}/src/main/resources/flamingo-log-collector-1.0.xsd" destdir="${basedir}/src/main/java"
+             package="org.openflamingo.model.collector"/>
+
+-->
+        <xjc schema="${basedir}/src/main/resources/flamingo-workflow-1.0.xsd" destdir="${basedir}/src/main/java"
+             package="org.openflamingo.model.workflow"/>
+
+        <echo>Completed...</echo>
+    </target>
+</project>

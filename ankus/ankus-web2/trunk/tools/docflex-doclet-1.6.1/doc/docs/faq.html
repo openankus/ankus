@@ -1,0 +1,431 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="../styles.css">
+<title>DocFlex/Javadoc - Documentation - Frequently Asked Questions</title>
+</head>
+
+<body>
+
+<h1>
+  DocFlex/Javadoc - Documentation - Frequently Asked Questions
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ol>
+  <li><a href="#troubleshooting">Troubleshooting</a>
+    <ul>
+      <li><a href="#no_doclet_class">Cannot find doclet class</a></li>
+      <li><a href="#docflex_too_slow">DocFlex doclet is too slow</a></li>
+      <li><a href="#missing_overview_package_summaries">Missing overview and package summaries</a></li>
+    </ul>
+  </li>
+  <li><a href="#html_tips">HTML Output</a>
+    <ul>
+      <li><a href="#mark_of_the_web">Inserting "Mark of the Web" comment</a></li>
+    </ul>
+  </li>
+  <li><a href="#rtf_tips">RTF Output</a>
+    <ul>
+      <li><a href="#getting_images_into_rtf">Getting your images into RTF</a></li>
+      <li><a href="#updating_rtf_fields">Updating RTF fields in MS Word</a></li>
+      <li><a href="#including_rtf_in_doc">Including RTF in larger MS Word document</a></li>
+      <li><a href="#generating_rtf_for_oo">Generating RTF for OpenOffice.org</a></li>
+    </ul>
+  </li>
+</ol>
+<!-- END TABLE OF CONTENTS -->
+
+<hr>
+
+<h2>
+  <a name="troubleshooting"></a>
+  1.&nbsp; Troubleshooting
+</h2>
+
+There are few (but frequent) situations where we can immediately suggest
+how to fix your problem.
+
+<h3>
+  <a name="no_doclet_class"></a>
+  Cannot find doclet class
+</h3>
+
+You are trying to run Javadoc with
+<a href="doclet.html">DocFlex Doclet</a>
+and receive an error:
+
+<blockquote>
+  <i>Cannot find doclet class com.docflex.javadoc.Doclet</i>
+</blockquote>
+
+This happens because Javadoc cannot find the <code>docflex-javadoc.jar</code> or
+<code>docflex-doclet.jar</code> file (depending on the 
+<a href="../about.html#editions">edition</a> you use),
+which contains the DocFlex Doclet executable classes.
+<p>
+Please, check the following:
+<ol>
+<li>
+If you run Javadoc from the command line (or command file), make sure that 
+<b><code>-docletpath</code></b> option is specified properly and points to the location
+of one of the above jar-files. For example:
+
+<blockquote>
+  <code>-docletpath <i>{docflex-javadoc}</i>\lib\docflex-javadoc.jar</code>
+</blockquote>
+
+where <code><i>{docflex-javadoc}</i></code> is the absolute pathname of your
+DocFlex/Javadoc installation directory.
+<p>
+</li>
+<li>
+If you run Javadoc from Apache Ant, make sure that both <b>name</b>
+and <b>path</b> attributes of <b>&lt;doclet&gt;</b> element are specified properly.
+For more details, see
+<a href="integrations.html#ant">Documentation | Integrations | Apache Ant</a>.
+<p>
+</li>
+<li>
+If you run Javadoc from Apache Maven, make sure that 
+either <code>docflex-javadoc.jar</code> (or <code>docflex-doclet.jar</code>)
+has been installed into the Maven repository and you have properly specified 
+<b>&lt;doclet&gt;</b>
+and <b>&lt;docletArtifact&gt;</b> elements in your project POM file.
+For more details, see
+<a href="integrations.html#maven">Documentation | Integrations | Apache Maven</a>.
+<p>
+</li>
+<li>
+If you run Javadoc from Eclipse, make sure that the field
+&ldquo;Use Custom Doclet | Doclet class path&rdquo; in the
+&ldquo;Generate Javadoc&rdquo; dialog is specified with the absolute pathname 
+of <code>docflex-javadoc.jar</code> or <code>docflex-doclet.jar</code> file.
+For more details, see
+<a href="integrations.html#eclipse">Documentation | Integrations | Eclipse</a>.
+</li>
+</ol>
+
+<h3>
+  <a name="docflex_too_slow"></a>
+  DocFlex doclet is too slow
+</h3>
+
+You are running Javadoc with 
+<a href="doclet.html">DocFlex Doclet</a>
+and it seems working too slow.
+<p>
+If you are not trying to generate the documentation for many thousands Java classes
+(or running everything on an outdated computer), most likely you have forgotten
+to specify enough memory for Javadoc. 
+<p>
+<table border="1" cellspacing="1" cellpadding="6">
+<tr><td bgcolor="#F5F5F5" class="inset">
+The same is true even when DocFlex Doclet is not involved at all.
+You may run Javadoc with the 
+<a href="http://docs.oracle.com/javase/6/docs/technotes/guides/javadoc/standard-doclet.html" target="_blank">Standard Doclet</a>
+(that is without specifying any doclets) on a rather big project and it may become very slow too.
+The cause is the same -- the lack of memory!
+</td></tr>
+</table>
+<p>
+Now, you may wonder. You have a lot of RAM installed on your system, e.g. a couple of gigabytes (or even more).
+Is it not enough?
+<p>
+The problem is that without specifying that memory explicitly, JVM does not use it.
+By default, JVM will allocate a heap of 64 MB size and that will be all the memory available to any Java
+application executed by that JVM!
+<p>
+When the application is memory-intensive, it will be allocating lots of objects,
+discarding some of them later, allocating new ones and so on.
+When the memory heap is small, JVM will run the memory garbage collection procedure too frequently.
+It may be resolving eventually each memory request coming from the application.
+But that will cost many extra operations. Effectively, JVM may end up doing the garbage collection almost
+all the time. That's why everything gets so slow!
+If at some point JVM is unable to allocate a necessary memory block it will throw
+<code>java.lang.OutOfMemoryError</code> exception.
+<p>
+DocFlex Doclet does need memory! First, it needs memory to maintain the virtual XML-like representation
+of the Doclet API (see <a href="../about.html#doclet_dsm">Doclet DSM</a>).
+Additionally, it uses lots of hash-tables to boost performance. So, the default 64 MB heap size is almost 
+never enough.
+<p>
+What you need to do is to notify the JVM (that will run Javadoc with
+<a href="doclet.html">DocFlex Doclet</a>)
+that it must use 256-512 MB heap size.
+How to specify this depends on where you run Javadoc:
+<ol>
+<li>
+If you run Javadoc from the command line (or command file), make sure that
+<span class="nowrap"><b>-J-Xmx</b></span> option is specified with sufficient 
+amount of memory. For example:
+<blockquote>
+  <code>javadoc <b>-J-Xmx512m</b> ...</code>
+</blockquote>
+</li>
+<li>
+If you run Javadoc from Apache Ant, make sure that <b>maxmemory</b>
+attribute of <b>&lt;javadoc&gt;</b> element is specified with proper memory size.
+For more details, see
+<a href="integrations.html#ant">Documentation | Integrations | Apache Ant</a>.
+<p>
+</li>
+<li>
+If you run Javadoc from Apache Maven, make sure that you have specified
+<b>&lt;maxmemory&gt;</b> element with enough memory size in the Javadoc plugin
+configuration of your project POM file.
+For more details, see
+<a href="integrations.html#maven">Documentation | Integrations | Apache Maven</a>.
+<p>
+</li>
+<li>
+If you run Javadoc from Eclipse, make sure that 
+<span class="nowrap"><b>-J-Xmx</b></span> option is properly specified 
+in &ldquo;VM options&rdquo; field of &ldquo;Generate Javadoc&rdquo; dialog.
+For more details, see
+<a href="integrations.html#eclipse">Documentation | Integrations | Eclipse</a>.
+</li>
+</ol>
+
+<h3>
+  <a name="missing_overview_package_summaries"></a>
+  Missing overview and package summaries
+</h3>
+
+From time to time, we regularly receive complaints like:
+
+<blockquote>
+  <i>project/package summary seems to be missing using <a href="doclet.html">DocFlex Doclet</a></i>
+</blockquote>
+or that
+<blockquote>
+  <i><code>overview.html</code> and <code>package.html</code> files are ignored</i>
+</blockquote>
+
+If you have this kind of problem, please understand the following basic things:
+<ul>
+<li>
+The project overview (which appears on the standard JavaDoc front page)
+is obtained from the <code>overview.html</code> (or any other HTML file) specified with
+<code class="nowrap">-<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#overview" target="_blank">overview</a></code>
+option on the Javadoc command-line.
+This is one of the 
+<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#javadocoptions" target="_blank">core Javadoc options</a>
+never processed by any doclet!
+<p class="mrg8">
+See also:
+<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#overviewcomment" target="_blank">ORACLE.COM | Javadoc Reference Guide | Source Files | Overview Comment File</a>
+</li>
+
+<li class="mrg8">
+The package descriptions are not specified with any options.
+Rather they are found in the <code>package.html</code> files placed in the package directories themselves.
+<p class="mrg8">
+Under Java 5, instead of <code>package.html</code> you may also use <code>package-info.java</code> file.
+The main difference is that it may include annotations.
+<p class="mrg8">
+See also:
+<a href="http://docs.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#packagecomment" target="_blank">ORACLE.COM | Javadoc Reference Guide | Source Files | Package Comment Files</a>
+</li>
+
+<li class="mrg8">
+<b>Both <code>overview.html</code> and <code>package.html</code>/<code>package-info.java</code> files are never processed by any doclets!</b>
+<p class="mrg8">
+Rather, they are picked up and processed by the Javadoc core itself.
+Then, the content of those files is just provided via 
+<a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/" target="_blank">Doclet API</a>,
+as any other Javadoc comments.
+</li>
+</ul>
+
+So, if you do not see some of your project/package summaries in a JavaDoc generated 
+using <a href="doclet.html">DocFlex Doclet</a>,
+please do not hurry to blame our tool. Rather, check your settings again!
+
+<p>
+For example, here is what one our user found eventually (and reported to us):
+<blockquote>
+<i>The problem was simple, I created the package.html files in another workspace [Eclipse].
+So it was my fault. Now it works as expected. Thank you for your help.</i>
+</blockquote>
+
+<h2>
+  <a name="html_tips"></a>
+  2.&nbsp; HTML Output
+</h2>
+
+<h3>
+  <a name="mark_of_the_web"></a>
+  Inserting "Mark of the Web" comment
+</h3>
+
+When you run generated HTML documentation from a local drive using Internet Explorer with Windows XP SP2,
+the Information Bar may indicate that active content (the JavaScript in the HTML) has been blocked.
+To avoid this problem, according to Microsoft, a Mark of the Web (MOTW) comment should be inserted in all generated
+HTML documents.
+<p>
+Since version 1.3, DocFlex/Doclet is able to insert the generic MOTW automatically (see code below).
+This is controlled by <i>"Add Mark of the Web"</i> option
+(see <a href="doclet.html#gui.html_option_inspector">HTML Options dialog</a>).
+<p>
+You may also program inserting MOTW by yourself using a special <i>HTML pattern file</i>.
+To do so, you should create a separate HTML file with the following content:
+<blockquote>
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+<b>&lt;!-- saved from url=(0014)about:internet --&gt;</b>
+&lt;HTML&gt;
+&lt;HEAD&gt;
+<b>&lt;!-- docflex-html-head --&gt;</b>
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+<b>&lt;!-- docflex-html-body --&gt;</b>
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+</pre>
+</blockquote>
+
+Then, specify location of this file in the &ldquo;HTML pattern file&rdquo; field within the
+<a href="doclet.html#gui.html_option_inspector">HTML Options dialog</a> (or using
+<code class="nowrap">'-o:html.documentPatternFile'</code>
+<a href="doclet.html#o_option">formatting option</a>
+on the Javadoc command line).
+<p>
+DocFlex will produce all HTML documents using the specified HTML pattern file with the
+lines <code class="nowrap">&lt;!--&nbsp;docflex-html-head&nbsp;--&gt;</code> and
+<code class="nowrap">&lt;!--&nbsp;docflex-html-body&nbsp;--&gt;</code> replaced with the actual generated output.
+<p>
+For more information about MOTW, please see Microsoft MSDN web-site.
+They frequently change the page location, so here is a Google query:
+<a target="_blank" href="http://www.google.com/#q=Mark+of+the+Web">http://www.google.com/#q=Mark+of+the+Web</a>
+
+<h2>
+  <a name="rtf_tips"></a>
+  3.&nbsp; RTF Output
+</h2>
+
+<h3>
+  <a name="getting_images_into_rtf"></a>
+  Getting your images into RTF
+</h3>
+
+Since DocFlex/Javadoc version 1.4.7, any your images embedded in Java comments
+using <code>&lt;IMG&gt;</code> tags will be picked automatically from their original
+locations, where you have prepared them for the standard Javadoc, and inserted into
+the generated RTF.
+
+<h3>
+  <a name="updating_rtf_fields"></a>
+  Updating RTF fields in MS Word
+</h3>
+
+The RTF documentation generated by the provided templates heavily uses document
+<b>fields</b> (for such things like <i>page number references</i>,
+<i>number of pages</i> and so on).
+<p>
+When you load the generated RTF in MS Word, to have the fields display the correct values,
+you will need to update them. To do this, please type: <b>Ctrl+A</b>, then <b>F9</b>.
+
+<h3>
+  <a name="including_rtf_in_doc"></a>
+  Including RTF in larger MS Word document
+</h3>
+
+Your task is the following. You have prepared a certain static Word document 
+and need to include into it the output generated with DocFlex so as each time 
+your Java API documentation is regenerated, the larger Word document is updated as well. 
+<p>
+Here is how you can do that.
+<p>
+You should insert into your Word document an <b><i>INCLUDETEXT</i></b> field.
+Using the MS Word menu, it may be done like this:
+
+<blockquote>
+<i>Insert | Field... | Categories: Links and References | Field names: Include Text</i>
+</blockquote>
+
+In the Word document (when &ldquo;Toggle Field Codes&rdquo; switched on), 
+the field will look like the following:
+
+<blockquote>
+<code>{ INCLUDETEXT "C:\\blah\\blah\\PlainDoc.rtf" \* MERGEFORMAT }</code>
+</blockquote>
+
+Here, the RTF document generated with DocFlex should be found by the path:
+<blockquote>
+<code>C:\blah\blah\PlainDoc.rtf</code>
+</blockquote>
+Make sure you use double slashes in the field's pathname 
+(as a single slash is used to start a command or an option)!
+<p> 
+After that, you can generate with DocFlex the JavaDoc RTF.
+To prepare the result big document, open it with MS Word.
+Then, press <b>Ctrl+A</b> (select all) and <b>F9</b> (to update fields).
+
+<h3>
+  <a name="generating_rtf_for_oo"></a>
+  Generating RTF for OpenOffice.org
+</h3>
+
+Since DocFlex/Javadoc version 1.4, you can launch DocFlex/Javadoc under Linux
+(both <a href="../about.html#template_designer">Template Designer</a> and
+<a href="../about.html#doclet">doclet</a>).
+<p>
+The RTF generated by DocFlex/Javadoc may be open with Linux OpenOffice.org Writer, which renders
+it almost the same as MS Word (see
+<a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/examples.php#rtf_oo_demo">Examples | RTF in OpenOffice.org</a>).
+<p>
+To make the RTF look better under OpenOffice.org, before generating it, please uncheck
+<b>&ldquo;Tune output for MS Word&rdquo;</b> option in
+<a href="doclet.html#gui.rtf_option_inspector">RTF Options dialog</a>
+(or using 
+<code class="nowrap">'-o:rtf.tuneForMSWord=false'</code>
+<a href="doclet.html#o_option">formatting option</a>
+on the Javadoc command line).
+
+<p class="mrg8">
+Here are the details about this option:
+<p class="mrg8">
+<table border="1" cellspacing="1" cellpadding="6">
+<tr><td bgcolor="#F5F5F5" class="inset">
+When <b>&ldquo;Tune output for MS Word&rdquo;</b> option is selected,
+the generator will adjust some RTF formatting settings specifically for MS Word.
+<p class="mrg8"></p>
+Although Microsoft is the originator of RTF format, the MS Word itself
+appears to have some oddities of rendering certain RTF settings,
+even though those settings may well follow the RTF specification.
+For instance, when displaying the paragraph or table borders, their
+horizontal positions may be shifted (e.g. when MS Word interprets
+horizontal margins of a paragraph, it draws the paragraph borders and
+paddings within the specified margin space but not within the paragraph
+content as it might be natural).
+<p class="mrg8"></p>
+To overcome this, in such cases, we adjust the initial dimensions in
+the opposite way so as the result formatting would look properly in MS Word
+(e.g. to make the actual paragraph margin look as intended the margin width
+specified in RTF is increased by the paragraph border and padding widths).
+<p class="mrg8"></p>
+However, when you generate RTF to display it primarily not in MS Word
+but rather in different viewers or editors (e.g. OpenOffice.org under Linux),
+which interpret the original RTF specification more literally,
+those specific adjustments may cause a visible distortion of the intended
+formatting of the document.
+<p class="mrg8"></p>
+In such cases, we recommend to uncheck this option.
+</td></tr>
+</table>
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2003-2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

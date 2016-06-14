@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.openflamingo.locale.LocaleRepository">
+
+    <resultMap id="localeMap" type="org.openflamingo.locale.Locale">
+        <result property="id"           column="ID"         jdbcType="INTEGER"/>
+        <result property="language"     column="LANG"       jdbcType="VARCHAR"/>
+        <result property="country"      column="COUNTRY"    jdbcType="VARCHAR"/>
+        <result property="name"         column="NAME"       jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="messageMap" type="org.openflamingo.locale.Message">
+        <result property="id"           column="ID"             jdbcType="INTEGER"/>
+        <result property="groupKey"     column="GROUP_KEY"      jdbcType="VARCHAR"/>
+        <result property="messageKey"   column="MESSAGE_KEY"    jdbcType="VARCHAR"/>
+        <result property="message"      column="MESSAGE"        jdbcType="VARCHAR"/>
+
+        <association property="locale" column="LOCALE_ID" javaType="locale" select="select">
+            <id property="id" column="ID"/>
+            <result property="language" column="LANG"/>
+            <result property="country" column="COUNTRY"/>
+            <result property="name" column="NAME"/>
+        </association>
+    </resultMap>
+
+    <sql id="select">
+        SELECT ID, LANG, COUNTRY, NAME
+        FROM LOCALE
+    </sql>
+
+    <sql id="sort">
+        ORDER BY ID
+    </sql>
+
+    <select id="select" parameterType="int" resultMap="localeMap">
+        <include refid="select"/>
+        WHERE ID = #{id}
+    </select>
+
+    <select id="selectAll" resultMap="localeMap">
+        <include refid="select"/>
+    </select>
+
+    <select id="selectByLocale" parameterType="string" resultMap="localeMap">
+        <include refid="select"/>
+
+        WHERE 1=1
+        <if test="language != null and language != ''">
+            AND LANG = #{language}
+        </if>
+
+        <if test="country != null and country != ''">
+            AND COUNTRY = #{country}
+        </if>
+    </select>
+
+    <select id="selectMessageByLocale" parameterType="locale" resultMap="messageMap">
+        SELECT ID, GROUP_KEY, MESSAGE_KEY, MESSAGE, LOCALE_ID FROM MESSAGE
+        WHERE LOCALE_ID = (SELECT ID FROM LOCALE WHERE LANG = #{language} AND COUNTRY = #{country}) ORDER BY ID ASC
+    </select>
+
+    <insert id="insert" parameterType="locale" useGeneratedKeys="true" keyProperty="id" keyColumn="ID">
+        INSERT INTO MENU
+        (
+        ID, LANG, COUNTRY, NAME
+        )
+        VALUES (
+        #{id}, #{language}, #{country}, #{name}
+        )
+
+        <selectKey resultType="int" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+    <update id="update" parameterType="locale">
+        UPDATE MENU
+        SET
+            LANG = #{language},
+            COUNTRY = #{country},
+            NAME = #{name}
+        WHERE ID = #{id}
+    </update>
+
+    <delete id="delete" parameterType="locale">
+        DELETE FROM LOCALE WHERE ID = #{id}
+    </delete>
+</mapper>

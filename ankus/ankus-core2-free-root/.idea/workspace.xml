@@ -1,0 +1,2101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" name="Default" comment="Code Reduction">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/AttrProbabilityInfo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NBClassifyingMapper.java" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\ankus-generate.iml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\generate.iml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\src\main\java\org\ankus\GenerateDataSet.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\src\main\java\org\ankus\clustering\ScatterChartGenerateDataSet.java" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\target\classes\org\ankus\clustering\ScatterChartGenerateDataSet.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\src\main\java\org\ankus" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\target\classes\org\ankus" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\target\generated-sources\annotations" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\target\classes" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\src\main\java\org\ankus\clustering" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\target\classes\org\ankus\clustering" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\target\generated-sources" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\src\main\java" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\src\test\java" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\src\main" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\src\main\java\org" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\src\test\java\org" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\target\classes\org" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\src\main\resources" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\src" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\target\surefire" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\target" afterPath="" />
+      <change type="DELETED" beforePath="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-generate\src\test" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/util/CommonMethods.java" afterPath="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/util/CommonMethods.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/util/Constants.java" afterPath="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/util/Constants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NBSplitMapper.java" afterPath="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NBSplitMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NBStatSumCombiner.java" afterPath="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NBStatSumCombiner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NBStatSumReducer.java" afterPath="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NBStatSumReducer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NaiveBayesDriver.java" afterPath="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NaiveBayesDriver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ankus-core/ankus-core.iml" afterPath="$PROJECT_DIR$/ankus-core/ankus-core.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ankus.iml" afterPath="$PROJECT_DIR$/ankus.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/knn/kNNDistanceComputeMapper.java" afterPath="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/knn/kNNDistanceComputeMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/knn/kNNDriver.java" afterPath="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/knn/kNNDriver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+    <ignored path="ankus.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/NumericStatsDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1426167088054" ignored="false" />
+    <file path="/Dummy.txt" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1432741917509" ignored="false" />
+    <file path="/NominalStatsDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1426659345630" ignored="false" />
+    <file path="/CertaintyFactorSumDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1385352627211" ignored="false" />
+    <file path="/RecommendationDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1385352935360" ignored="false" />
+    <file path="/HadoopUtil.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1407458896933" ignored="false" />
+    <file path="/CFBasedSimilarityDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1421127592885" ignored="false" />
+    <file path="/ContentBasedSimilarityDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1421217330647" ignored="false" />
+    <file path="/NormalizeDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1429775822998" ignored="false" />
+    <file path="/BooleanSetDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1429776713912" ignored="false" />
+    <file path="/NumericSetDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1385353300961" ignored="false" />
+    <file path="/StringSetDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1385353330801" ignored="false" />
+    <file path="/EMDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1407850160477" ignored="false" />
+    <file path="/KMeansDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1429859480384" ignored="false" />
+    <file path="/ID3Driver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1385353635707" ignored="false" />
+    <file path="/pom.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388046585074" ignored="false" />
+    <file path="/PredictionForVerifyDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1385353809243" ignored="false" />
+    <file path="/RMSEDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1385353845625" ignored="false" />
+    <file path="/CompareDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1385353864356" ignored="false" />
+    <file path="$USER_HOME$/src/oozie-4.0.0/pom.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1385964716987" ignored="false" />
+    <file path="$USER_HOME$/src/oozie-4.0.0/hadooplibs/hadoop-2/pom.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1385964737953" ignored="false" />
+    <file path="$USER_HOME$/src/oozie-4.0.0/hadooplibs/hadoop-test-2/pom.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1385964876870" ignored="false" />
+    <file path="$USER_HOME$/src/oozie-4.0.0/hadooplibs/hadoop-distcp-2/pom.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1385964926940" ignored="false" />
+    <file path="/Usage.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1386650240319" ignored="false" />
+    <file path="/fragment.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1431411947852" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/util/FileWriter.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862515790" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/scheduler/DefaultWorkflowJob.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862522019" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/scheduler/QuartzJobScheduler.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862522019" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/scheduler/JobVariable.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862522019" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/scheduler/JobScheduler.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862522019" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/pom.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389574800632" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/handler/MavenArtifactLoader.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862528898" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/handler/ActionBasePathGenerator.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862528898" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/handler/ActionHandlerRegistry.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862528898" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/handler/StartHandler.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862528898" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/handler/DefaultHandler.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862528899" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/handler/ShellHandler.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862528899" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/handler/HdfsArtifactLoader.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862528899" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/build.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862528899" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/handler/ArtifactLoader.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862528899" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/pom.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389574800632" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/handler/MapReduceHandler.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862528899" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/state/KillWorkflowStateHandler.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862528899" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/handler/ELSupportHandler.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862528899" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/state/SuccessActionStateHandler.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862528899" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/state/PrepareWorkflowStateHandler.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862528899" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/state/FailActionStateHandler.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862528899" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/state/FailWorkflowStateHandler.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862528899" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/state/PrepareActionStateHandler.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862528899" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/java/org/openflamingo/engine/state/SuccessWorkflowStateHandler.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862528899" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/flamingo-workflow-engine.iml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387862787236" ignored="false" />
+    <file path="/a.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1407460449613" ignored="false" />
+    <file path="/sample.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387868006521" ignored="false" />
+    <file path="/a.groovy" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387867868716" ignored="false" />
+    <file path="/a.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1387868015745" ignored="false" />
+    <file path="/a.dummy" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1416802770687" ignored="false" />
+    <file path="/HiveJdbcClientTest.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388024082594" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/test/java/org/openflamingo/web/hive/HiveJdbcClientTest.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388025123257" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/webapp/WEB-INF/config-dev.properties" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388024114786" ignored="false" />
+    <file path="/config-dev.properties" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388024200232" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/webapp/WEB-INF/config-prd.properties" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388024178864" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/test/resources/config-dev.properties" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388024200232" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/test/java/org/openflamingo/web/hive/HiveJDBCTest.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388026259054" ignored="false" />
+    <file path="/HiveJDBCTest.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388025397181" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/webapp/WEB-INF/flamingo-site.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388133472556" ignored="false" />
+    <file path="/flamingo-site.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388038028145" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/apache-tomcat-7.0.47/logs/catalina.out" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389588510927" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/webapp/WEB-INF/dispatcher-servlet.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388107564331" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/webapp/WEB-INF/web.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389343348165" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/apache-tomcat-7.0.47/webapps/ROOT/WEB-INF/web.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388133140682" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-home/.idea/workspace.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388129776902" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-home/.idea/modules.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388129776902" ignored="false" />
+    <file path="$PROJECT_DIR$/../../untitled2/.idea/workspace.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388130047717" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-util/pom.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389574800632" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-mapreduce/pom.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389574800632" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-el/pom.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389574800632" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-locale/pom.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389574800632" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/pom.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389574800632" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/job/JobController.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389659959592" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/designer/OpenGraphMarshaller.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389659959592" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-core/pom.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389574800632" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/util/RestTemplateFactoryBean.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388133458054" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/core/ObjectMapeprFactoryBean.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389659959592" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-log-collector/pom.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389574800632" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-model/pom.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389574800632" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/hive/HiveServiceImpl.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388133458055" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-fs/pom.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389574800632" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/webapp/WEB-INF/mybatis-config.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388133458055" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/webapp/WEB-INF/applicationContext.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388133458055" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/webapp/WEB-INF/applicationContext-hadoop.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388133458055" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/webapp/WEB-INF/flamingo-site.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389574800632" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/src/main/webapp/WEB-INF/web.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388133458055" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/hive/HiveQueryEditorController.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388133458055" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/index.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388641420575" ignored="false" />
+    <file path="/index.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388641409017" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/.idea/workspace.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388644537977" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/flare.json" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388637128071" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/diagram.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388652438646" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/population.csv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388641724116" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/d3/cfuserbased.csv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388652199960" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/cfuserbased.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388655146572" ignored="false" />
+    <file path="/cfuserbased.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388655052041" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/cfuserbased.csv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388656916959" ignored="false" />
+    <file path="/cfuserbased.csv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388652305221" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/bar.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388656953120" ignored="false" />
+    <file path="/bar.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388656750645" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/data.tsv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388656858213" ignored="false" />
+    <file path="/data.tsv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388656858213" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/test.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388662365704" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/test.tsv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388662285139" ignored="false" />
+    <file path="/test.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388662362944" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/cfuserbased.tsv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388662844313" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/happy.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388663354130" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/airports.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388716712074" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/d3/d3.csv.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388716545703" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/ds.geo.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388716564080" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/d3/d3.geom.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388716581331" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/style.css" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388716976832" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/scatter.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388992992556" ignored="false" />
+    <file path="/scatter.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388992977379" ignored="false" />
+    <file path="/ScatterChartGenerateDataSet.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1388993456636" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/d3_scatter.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389077988471" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/data/kmeans_data.tsv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389056464944" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/data/kmeans_data.csv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389060955736" ignored="false" />
+    <file path="/kmeans_data.csv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389060287987" ignored="false" />
+    <file path="/d3_scatter.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389077594818" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/data/id3.csv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389083210623" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/data/id3_result.csv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389084813215" ignored="false" />
+    <file path="/id3_scatter.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389085038283" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/id3_scatter.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389085050389" ignored="false" />
+    <file path="/id3_result.csv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389084804674" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/data/id3_result.tsv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389085109678" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/id3_tree.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389088609846" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/resources/jquery-2.0.0.min.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389089834073" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/resources/jquery-ui-1.9.2.custom.css" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389088834578" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/resources/jquery-ui-1.9.2.custom.min.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389089199383" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/resources/jquery.form.min.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389089230799" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/resources/font-awesome.min.css" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389089249445" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/resources/dagre-d3-simple.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389089273087" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/resources/dagre.min.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389089293879" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/resources/d3.v3.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389172667713" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/resources/d3.min.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389089350952" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/resources/bootstrap.min.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389089382589" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/resources/bootstrap.min.css" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389089408175" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/dendrogram.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389094057040" ignored="false" />
+    <file path="/dendrogram.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389094050091" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/bubble.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389094953171" ignored="false" />
+    <file path="/numeric_stats.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389141709219" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/numeric_stats.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389141913220" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/data/numeric_stats.tsv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389140710638" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/data/numeric_stats.csv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389141267726" ignored="false" />
+    <file path="/numeric_stats.csv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389141267726" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/data/nominal_stats.csv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389142234421" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/nominal_stats.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389142249131" ignored="false" />
+    <file path="/nominal_stats.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389142134322" ignored="false" />
+    <file path="/nominal_stats.csv" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389142234420" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/decision_tre.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389143121305" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/decision_tree.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389149720122" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/resources/d3.v2.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389143374777" ignored="false" />
+    <file path="/decision_tree.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389149353847" ignored="false" />
+    <file path="$PROJECT_DIR$/../../visual/dt.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389177495677" ignored="false" />
+    <file path="/d3.v3.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389172606704" ignored="false" />
+    <file path="/dt.html" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389154402311" ignored="false" />
+    <file path="/InformationGain.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389250615515" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/webapp/WEB-INF/applicationContext-remote.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389343348165" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-locale/src/main/resources/org/openflamingo/locale/flamingo.sql" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389574800632" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-fs/src/main/java/org/openflamingo/fs/audit/FileSystemAuditServiceImpl.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389659959592" ignored="false" />
+    <file path="/FileSystemAuditServiceImpl.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389574989522" ignored="false" />
+    <file path="/FileSystemAuditService.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389580136453" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-interface/src/main/java/org/openflamingo/provider/fs/FileSystemAuditService.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389580963831" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/tomcat/logs/catalina.out" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389585417657" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/deploy.sh" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389588045659" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/apache-tomcat-7.0.47/logs/localhost.2014-01-13.log" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389588510927" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo-0.4/trunk/flamingo-locale/src/main/resources/org/openflamingo/locale/flamingo.sql" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389832329281" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo-0.4/trunk/flamingo-workflow-engine/deploy.sh" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389599505931" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/core/RestExceptionHandler.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389659959592" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/core/ConfigurationController.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389659959592" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/tree/TreeRepositoryImpl.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389659959592" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/pig/PigServiceImpl.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389659959592" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/dashboard/DashboardController.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389659959592" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/tree/TreeController.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389659959592" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/controller/fs/hdfs/BrowserController.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389659959592" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-locale/src/main/java/org/openflamingo/locale/ResourceBundleHelper.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389659959592" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo/trunk/flamingo-workflow-engine/tomcat/derby.log" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389666804179" ignored="false" />
+    <file path="/index.jsp" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389854830340" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo-0.4/trunk/flamingo-web-services/src/main/webapp/WEB-INF/pages/index.jsp" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389863043519" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo-0.4/trunk/flamingo-web-services/src/main/webapp/resources/css/style.css" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389837125044" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo-0.4/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/account/AccountController.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389863401117" ignored="false" />
+    <file path="/AccountController.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1389863241727" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo-1.0.1-GA-integration-ankus/trunk/README" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1390368875207" ignored="false" />
+    <file path="/README" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1390368875207" ignored="false" />
+    <file path="$PROJECT_DIR$/../../flamingo-1.0.1-GA-integration-ankus/trunk/flamingo-core/flamingo-core.iml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1390796463091" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo/trunk/flamingo-util/src/main/java/org/openflamingo/util/FileSystemUtils.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392009082879" ignored="false" />
+    <file path="/FileSystemUtils.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392009020197" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo/trunk/flamingo-log-collector/src/main/java/org/openflamingo/collector/handler/HttpToHdfsHandler.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392010385115" ignored="false" />
+    <file path="/HttpToHdfsHandler.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392010348911" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo/trunk/flamingo-log-collector/src/test/resources/http-to-hdfs-from-seoul" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392011227874" ignored="false" />
+    <file path="/http-to-hdfs-from-seoul" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392011227874" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/desktop/ux/Wallpaper.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392079400135" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/desktop/App.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392080936128" ignored="false" />
+    <file path="$PROJECT_DIR$/../../tags/flamingo-1.0.1-GA/flamingo-web-services/src/main/webapp/resources/flamingo/view/desktop/Admin.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392101168174" ignored="false" />
+    <file path="$PROJECT_DIR$/../../tags/flamingo-1.0.1-GA/flamingo-web-services/src/main/webapp/resources/flamingo/view/desktop/AboutWindow.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392080833548" ignored="false" />
+    <file path="$PROJECT_DIR$/../../tags/flamingo-1.0.1-GA/flamingo-web-services/src/main/webapp/resources/flamingo/view/desktop/App.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392080895389" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo/trunk/flamingo-web-services/src/main/webapp/WEB-INF/pages/main.jsp" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392081108525" ignored="false" />
+    <file path="/main.jsp" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394699672036" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/desktop/Admin.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392101373955" ignored="false" />
+    <file path="$PROJECT_DIR$/../../tags/flamingo-1.0.1-GA/flamingo-web-services/src/main/webapp/WEB-INF/pages/main.jsp" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392100492966" ignored="false" />
+    <file path="$PROJECT_DIR$/../../tags/flamingo-1.0.1-GA/flamingo-web-services/src/main/webapp/WEB-INF/pages/index.jsp" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392100499358" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/controller/admin/WorkflowEngineController.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392102041796" ignored="false" />
+    <file path="/WorkflowEngineController.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392102012373" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo/trunk/flamingo-web-services/src/main/webapp/WEB-INF/pages/index.jsp" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392106336948" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-2/tags/.idea/workspace.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1393549816527" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-2/tags/flamingo-locale/src/main/resources/org/openflamingo/locale/flamingo.sql" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392168941737" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/desktop/Login.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394418329109" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-locale/src/main/resources/org/openflamingo/locale/flamingo-en.sql" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392180528692" ignored="false" />
+    <file path="/flamingo-en.sql" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392180527000" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/WEB-INF/pages/main.jsp" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395104585169" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/WEB-INF/pages/signup.jsp" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392193646964" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/admin/engine/History.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1392193966402" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/controller/login/LoginController.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395019566542" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/.idea/workspace.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1393980570375" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/controller/login/SignUpController.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394760736962" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/login/SignUpPanel.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394770065476" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/IndexController.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395022299454" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/member/MemberServiceImpl.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395021254444" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/member/MemberRepositoryImpl.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395024438900" ignored="false" />
+    <file path="/IndexController.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395021176955" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/login/popup/FindEmailWindow.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394775532720" ignored="false" />
+    <file path="/FindEmailWindow.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394756056511" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/login/FindEmailPanel.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394756497254" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/member/MemberRepository.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395021285835" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/admin/UserManagement.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395032885632" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/resources/org/openflamingo/web/member/member-mapper.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395025108615" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/member/MemberService.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395021225358" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-2/tags/.idea/findbugs-idea.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1393549816527" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/desktop/ux/Desktop.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394095023871" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/controller/admin/UserManagementController.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394089454696" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/store/admin/UserManagementStore.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1393982768171" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/dashboard/WorkflowHistory.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1393909915043" ignored="false" />
+    <file path="/UserManagement.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395032547551" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/common/Rest.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395024850786" ignored="false" />
+    <file path="/Rest.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395024848854" ignored="false" />
+    <file path="/UserManagementController.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1393984376102" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/admin/UserAdminController.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395025090034" ignored="false" />
+    <file path="/UserAdminController.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395025084383" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/admin/UserAdminService.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395025008536" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/admin/UserAdminServiceImpl.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395025024960" ignored="false" />
+    <file path="/UserAdminService.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395025006642" ignored="false" />
+    <file path="/UserAdminServiceImpl.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395025023280" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/admin/UserAdminRepository.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395025043337" ignored="false" />
+    <file path="/UserAdminRepository.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395025041649" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/java/org/openflamingo/web/admin/UserAdminRepositoryImpl.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395025066121" ignored="false" />
+    <file path="/UserAdminRepositoryImpl.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395025065039" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/resources/org/openflamingo/web/admin/user-admin-mapper.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395025185567" ignored="false" />
+    <file path="/user-admin-mapper.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395025178616" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/dist/config/sample.sql" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1393915818754" ignored="false" />
+    <file path="/sample.sql" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1393915818754" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/dist/config/web/english/flamingo.sql" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1393915828969" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/dist/config/web/korean/flamingo.sql" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1393915836324" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/resources/flamingo.sql" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1393915850179" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/WEB-INF/mybatis-config.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1393916895851" ignored="false" />
+    <file path="/mybatis-config.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1393916895851" ignored="false" />
+    <file path="/UserManagementStore.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1393981706109" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-interface/src/main/java/org/openflamingo/provider/engine/HistoryService.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1393993318663" ignored="false" />
+    <file path="/HistoryService.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1393993288846" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-model/src/main/java/org/openflamingo/model/rest/User.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394005358665" ignored="false" />
+    <file path="/User.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394005356619" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-locale/src/main/resources/org/openflamingo/locale/flamingo.sql" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394067233754" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/login/FindPassPanel.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394765247642" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/login/LoginPanel.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395022311098" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/desktop/App.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394699295068" ignored="false" />
+    <file path="/App.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394699281183" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/css/flamingo-gray.css" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394518581987" ignored="false" />
+    <file path="/flamingo-gray.css" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394435649261" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/desktop/FileSystem.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394518816906" ignored="false" />
+    <file path="/FileSystem.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394096854894" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/desktop/Admin.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394698734903" ignored="false" />
+    <file path="/Admin.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394698676926" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/desktop/Dashboard.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394435662978" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/desktop/Job.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394169247321" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/desktop/Designer.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394518630814" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/desktop/UserManagement.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394169224091" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/desktop/User.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394518660939" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/desktop/About.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394173303289" ignored="false" />
+    <file path="/About.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394172869923" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-workflow-engine/apache-tomcat-7.0.47/webapps/ROOT/WEB-INF/classes/flamingo.sql" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394414246948" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/desktop/Workflow.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394415147986" ignored="false" />
+    <file path="/Workflow.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394415147197" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/login/popup/FindPassWindow.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395020745425" ignored="false" />
+    <file path="/Login.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394417720332" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/login/popup/SignUpWindow.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394763993758" ignored="false" />
+    <file path="/LoginController.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395019113355" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/login/FindUsernamePanel.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394419615312" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/login/popup/FindUsernameWindow.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394419307801" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/controller/login/FindEmailController.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394775532720" ignored="false" />
+    <file path="/FindEmailController.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394419385397" ignored="false" />
+    <file path="/LoginPanel.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395021764736" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/WEB-INF/pages/findemail.jsp" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394419774145" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/admin/Hadoop.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395101861662" ignored="false" />
+    <file path="/SignUpPanel.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394764323951" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/designer/NodeTab.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394584169912" ignored="false" />
+    <file path="/NodeTab.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394584167110" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/store/designer/NodeMeta.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394584101579" ignored="false" />
+    <file path="/member-mapper.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395021375284" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/controller/designer/DesignerController.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394518004983" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/css/desktop.css" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394518363179" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-workflow-engine/src/main/webapp/WEB-INF/flamingo-site.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394586495820" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/lib/ext-4.2.2.1144/src/data/Field.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394755909725" ignored="false" />
+    <file path="/MemberRepository.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395021273726" ignored="false" />
+    <file path="/MemberRepositoryImpl.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395021309281" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/resources/org/openflamingo/web/designer/workflow-mapper.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394756722018" ignored="false" />
+    <file path="/workflow-mapper.xml" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394756714468" ignored="false" />
+    <file path="/MemberServiceImpl.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395021251342" ignored="false" />
+    <file path="/MemberService.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395020884131" ignored="false" />
+    <file path="/SignUpController.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394760730602" ignored="false" />
+    <file path="/SignUpWindow.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394762501372" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/login/popup/NewSignUpWindow.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1394763735922" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/controller/login/FindPassController.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395020725371" ignored="false" />
+    <file path="/*.regexp" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395104526706" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/designer/property/ankus/ALG_ANKUS_ID3.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395104967838" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/designer/property/_BrowserFieldForAnkusAnalyzer.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395116265432" ignored="false" />
+    <file path="/_BrowserFieldForAnkusAnalyzer.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395102822587" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/designer/property/_SelecttParameterFromHDFS.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395103892621" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/designer/property/SelectParamterFromHDFS.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395103915333" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/designer/property/_SelectParamterFromHDFS.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395104778044" ignored="false" />
+    <file path="/_SelectParamterFromHDFS.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395103999893" ignored="false" />
+    <file path="/ALG_ANKUS_ID3.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395104948953" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/designer/property/browser/hdfs/BrowserPanelForAnkusAnalyzer.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395117419811" ignored="false" />
+    <file path="$PROJECT_DIR$/../../ankus-integration-repo-3/trunk/flamingo-web-services/src/main/webapp/resources/flamingo/view/designer/property/browser/hdfs/DirectoryPanel.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395116516921" ignored="false" />
+    <file path="/BrowserPanelForAnkusAnalyzer.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1395116963296" ignored="false" />
+    <file path="/EMClusterInfoMgr.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1407848885980" ignored="false" />
+    <file path="/CommonMethods.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1432692737478" ignored="false" />
+    <file path="/ClusterCommon.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1407851464159" ignored="false" />
+    <file path="/KMeansClusterInfoMgr.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1407852558731" ignored="false" />
+    <file path="/ArgumentsConstants.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1427790434970" ignored="false" />
+    <file path="/ConfigurationVariable.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1427790361646" ignored="false" />
+    <file path="/ReadFileFromHDFSTest.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1413942506839" ignored="false" />
+    <file path="/Constants.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1432700952960" ignored="false" />
+    <file path="/AnkusDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1431405354547" ignored="false" />
+    <file path="/ColumnCorrDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1414029756329" ignored="false" />
+    <file path="/ColumnCorrReducer.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1414053024246" ignored="false" />
+    <file path="/ColumnCorrMapper.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1413953708137" ignored="false" />
+    <file path="/KMeansClusterAssignFinalMapper.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1414027735546" ignored="false" />
+    <file path="/CFBasedSimilarityDriver_OLD.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1415251282178" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Web/trunk/ankus-web-services/src/main/webapp/resources/flamingo/view/designer/property/ankus/ALG_ANKUS_CF_SIM.js" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1416802858808" ignored="false" />
+    <file path="/CFBasedSimilarityPairMakingMapper.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1421126036888" ignored="false" />
+    <file path="/CFBasedSimilarityPairMakingReducer.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1421127056756" ignored="false" />
+    <file path="/CFBasedSimilarityComputeMapper.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1421127962056" ignored="false" />
+    <file path="/CFBasedSimilarityComputeReducer.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1429839691388" ignored="false" />
+    <file path="/ContentBasedSimilarityAttrSimMapper.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1421203289483" ignored="false" />
+    <file path="/ContentBasedSimilarityAttrSimReducer.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1421208401424" ignored="false" />
+    <file path="/ContentBasedSimilaritySimSumMapper.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1421210946933" ignored="false" />
+    <file path="/ContentBasedSimilaritySimSumReducer.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1421217370831" ignored="false" />
+    <file path="/CFRecommenderDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1421304414982" ignored="false" />
+    <file path="/SimilarityBasedRecommenderDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1421919716533" ignored="false" />
+    <file path="/UserSimRecommenderDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1422236666592" ignored="false" />
+    <file path="/SimilUserExtractMapper.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1421821909274" ignored="false" />
+    <file path="/UserViewedItemsExtractMapper.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1422236167103" ignored="false" />
+    <file path="/RecomResultStructure.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1421971674833" ignored="false" />
+    <file path="/FinalRecommendationMakingMapper_UserSim.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1421888890522" ignored="false" />
+    <file path="/FinalRecommendationMakingReducer.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1422236619608" ignored="false" />
+    <file path="/ItemSimRecommenderDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1422253566508" ignored="false" />
+    <file path="/UserUnViewedItemsExtractMapper.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1422235492781" ignored="false" />
+    <file path="/FinalRecommendationMakingMapper_ItemSim.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1422253771489" ignored="false" />
+    <file path="/NominalStatsFrequencyMapper.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1422345009811" ignored="false" />
+    <file path="/NominalStatsFrequencyReducer.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1422348909788" ignored="false" />
+    <file path="/NumericStats1MRReducer.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1426057867525" ignored="false" />
+    <file path="/NumericStats2MRSplitReducer.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1426057913271" ignored="false" />
+    <file path="/NumericStats2MRMergeReducer.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1426057972805" ignored="false" />
+    <file path="/NumericStats2_BlockInfoMapper.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1426062581144" ignored="false" />
+    <file path="/NumericStats2_QuartilesMapper.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1426141870949" ignored="false" />
+    <file path="/NumericStats2_QuartilesReducer.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1426210696138" ignored="false" />
+    <file path="/ValidationMain.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1426571151401" ignored="false" />
+    <file path="/NumericStats1_1MRReducer.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1426650476890" ignored="false" />
+    <file path="/knnDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1427783794085" ignored="false" />
+    <file path="/kNNDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1427956549072" ignored="false" />
+    <file path="/kNNMapper.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1427853038574" ignored="false" />
+    <file path="/kNNCombiner.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1427853149851" ignored="false" />
+    <file path="/DistClassInfo.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1427940783608" ignored="false" />
+    <file path="/kNNLocalNNExtractCombiner.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1427961842121" ignored="false" />
+    <file path="/kNNGlobalNNExtractReducer.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1427959444923" ignored="false" />
+    <file path="/kNNDistanceComputeMapper.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1432693477984" ignored="false" />
+    <file path="/NaiveBayesDriver.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1432701373748" ignored="false" />
+    <file path="/NBSplitMapper.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1431923257945" ignored="false" />
+    <file path="/NBStatSumCombiner.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1431923278655" ignored="false" />
+    <file path="/NBStatSumReducer.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1432691533752" ignored="false" />
+    <file path="/NBClassifyingMapper.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1432704967432" ignored="false" />
+    <file path="/ClassDistInfo.java" changelist="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" time="1432706697945" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="ankus" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="NaiveBayesDriver.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NaiveBayesDriver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="246" column="46" selection-start="9897" selection-end="9897" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/util/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="67" column="46" selection-start="2891" selection-end="2891" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NumericStatsDriver.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/statistics/numericstats/NumericStatsDriver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="306" column="20" selection-start="10427" selection-end="12407" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kNNDriver.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/knn/kNNDriver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="124" column="97" selection-start="4794" selection-end="4972" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="kNNDistanceComputeMapper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/knn/kNNDistanceComputeMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="90" column="9" selection-start="2963" selection-end="3477" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NBClassifyingMapper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NBClassifyingMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="44" selection-start="1984" selection-end="1984" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AttrProbabilityInfo.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/AttrProbabilityInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="30" selection-start="384" selection-end="384" vertical-scroll-proportion="1.0446736">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommonMethods.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/util/CommonMethods.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="81" column="5" selection-start="2069" selection-end="2069" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NBSplitMapper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NBSplitMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="0" selection-start="1693" selection-end="1693" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NBStatSumReducer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NBStatSumReducer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="94" column="13" selection-start="3010" selection-end="3664" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
+  <component name="GitLogSettings">
+    <option name="myStructureFilterPaths" />
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/util/ArgumentsConstants.java" />
+        <option value="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/recommendation/similarity/cfbased/CFBasedSimilarityComputeReducer.java" />
+        <option value="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/recommendation/similarity/cfbased/CFBasedSimilarityComputeMapper.java" />
+        <option value="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/AnkusDriver.java" />
+        <option value="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/kNNLocalNNExtractCombiner.java" />
+        <option value="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NBSplitMapper.java" />
+        <option value="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NBStatSumCombiner.java" />
+        <option value="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NBStatSumReducer.java" />
+        <option value="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/knn/kNNDriver.java" />
+        <option value="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/util/CommonMethods.java" />
+        <option value="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/knn/kNNDistanceComputeMapper.java" />
+        <option value="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/util/Constants.java" />
+        <option value="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NaiveBayesDriver.java" />
+        <option value="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NBClassifyingMapper.java" />
+        <option value="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/ClassDistInfo.java" />
+        <option value="$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/AttrProbabilityInfo.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\apache-maven-3.2.2-bin\apache-maven-3.2.2" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="ankus-core" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="ankus-core" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Ankus" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </treeState>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="163" />
+    <option name="y" value="14" />
+    <option name="width" value="1559" />
+    <option name="height" value="863" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <OptionsSetting value="true" id="Undo Check Out" />
+    <OptionsSetting value="true" id="Get Latest Version" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapreduce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapreduce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="statistics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapreduce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="statistics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nominalstats" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapreduce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapreduce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classification" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapreduce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classification" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="naivebayes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapreduce" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="algorithms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classification" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="knn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ankus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="options.lastSelected" value="MavenSettings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Web" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.ankus.mapreduce.algorithms.classification.naivebayes" />
+      <recent name="org.ankus.mapreduce.algorithms.classification.knn" />
+      <recent name="org.ankus.mapreduce.algorithms.statistics.numericstats" />
+      <recent name="org.ankus.mapreduce.algorithms.recommendation.recommender.itembased" />
+      <recent name="org.ankus.mapreduce.algorithms.recommendation.recommender.commons" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-core\src\main\java\org\ankus\mapreduce\algorithms\classification\naivebayes" />
+      <recent name="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-core\src\main\java\org\ankus\mapreduce\algorithms\recommendation\similarity\old_version\contentbased" />
+      <recent name="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-core\src\main\java\org\ankus\mapreduce\algorithms\recommendation\similarity\cfbased_old" />
+      <recent name="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-core\src\main\java\org\ankus\mapreduce\algorithms\correlation\columnbase" />
+    </key>
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="org.ankus.util.Constants" />
+      <recent name="org.ankus.util.CommonMethods" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Progs\java\IntelliJ-Ankus\Library\trunk" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ScatterChartGenerateDataSet">
+    <configuration default="false" name="ScatterChartGenerateDataSet" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.ankus.clustering.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="org.ankus.clustering.ScatterChartGenerateDataSet" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="ankus-generate" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="workingDirPath" value="" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.ScatterChartGenerateDataSet" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.ScatterChartGenerateDataSet" />
+      </list>
+    </recent_temporary>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="true">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <configuration useDefault="false">$USER_HOME$/.subversion</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\Progs\java\IntelliJ-Ankus\Library\trunk" />
+          <option name="myCopyRoot" value="D:\Progs\java\IntelliJ-Ankus\Library\trunk" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\Progs\java\IntelliJ-Ankus\Library\trunk\.idea" />
+          <option name="myCopyRoot" value="D:\Progs\java\IntelliJ-Ankus\Library\trunk\.idea" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-core" />
+          <option name="myCopyRoot" value="D:\Progs\java\IntelliJ-Ankus\Library\trunk\ankus-core" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\Progs\java\IntelliJ-Ankus\Library\trunk" />
+          <option name="myCopyRoot" value="D:\Progs\java\IntelliJ-Ankus\Library\trunk" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e6e006b1-bd0c-4127-82b0-4b0aeb15dc1a" name="Default" comment="" />
+      <created>1385352395142</created>
+      <updated>1385352395142</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Change moduel name to ankus-core from core">
+      <created>1385352532103</created>
+      <updated>1385352532103</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Change configuration to this.getConf() from new Configuration() for all driver classes">
+      <created>1385354003102</created>
+      <updated>1385354003102</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add delimiter of if statements">
+      <created>1385427057101</created>
+      <updated>1385427057101</updated>
+    </task>
+    <task id="LOCAL-00004">
+      <created>1385446141102</created>
+      <updated>1385446141102</updated>
+    </task>
+    <task id="LOCAL-00005">
+      <created>1385446218102</created>
+      <updated>1385446218102</updated>
+    </task>
+    <task id="LOCAL-00006">
+      <created>1385455150101</created>
+      <updated>1385455150101</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add delimiter of if statements">
+      <created>1385707405654</created>
+      <updated>1385707405654</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add delimiter of if statements">
+      <created>1385707975196</created>
+      <updated>1385707975196</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Modify usage class">
+      <created>1386643271812</created>
+      <updated>1386643271812</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add ID3 / EM / Content based modules">
+      <created>1386644706125</created>
+      <updated>1386644706125</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Remove system.out.println()">
+      <created>1389249295412</created>
+      <updated>1389249295412</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Remove system.out.println()">
+      <created>1389255005081</created>
+      <updated>1389255005081</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Remove comments">
+      <created>1389256730381</created>
+      <updated>1389256730381</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Update: EM clustering training converge adaptation">
+      <created>1407831572112</created>
+      <updated>1407831572112</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Update: EM clustering initial iteration value">
+      <created>1407832169107</created>
+      <updated>1407832169107</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Method update for File Finding">
+      <created>1407851100109</created>
+      <updated>1407851100109</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Nominal Delimiter Mgr Update">
+      <created>1407852773214</created>
+      <updated>1407852773214</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Comment update">
+      <created>1407853230105</created>
+      <updated>1407853230106</updated>
+    </task>
+    <task id="LOCAL-00019" summary="EM clustering update&#10; - training converge&#10; - cluster assign using trained model&#10; - purity generation&#10; - control flow update">
+      <created>1407866840193</created>
+      <updated>1407866840193</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Common Methods for Clustering">
+      <created>1407866890106</created>
+      <updated>1407866890106</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Comment Updates">
+      <created>1407882353109</created>
+      <updated>1407882353109</updated>
+    </task>
+    <task id="LOCAL-00022" summary="version update: 0.2 -&gt; 0.3">
+      <created>1407907642105</created>
+      <updated>1407907642105</updated>
+    </task>
+    <task id="LOCAL-00023" summary="correlation and similarity package update&#10;">
+      <created>1413881234105</created>
+      <updated>1413881234105</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Test Code Delete">
+      <created>1413941598105</created>
+      <updated>1413941598105</updated>
+    </task>
+    <task id="LOCAL-00025" summary="test code deletion">
+      <created>1413942909105</created>
+      <updated>1413942909105</updated>
+    </task>
+    <task id="LOCAL-00026" summary="constans variables refine">
+      <created>1413944557106</created>
+      <updated>1413944557106</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Correlation Driver Info Update">
+      <created>1413945630104</created>
+      <updated>1413945630104</updated>
+    </task>
+    <task id="LOCAL-00028">
+      <created>1413951046105</created>
+      <updated>1413951046105</updated>
+    </task>
+    <task id="LOCAL-00029" summary="column based developing">
+      <created>1413951093105</created>
+      <updated>1413951093105</updated>
+    </task>
+    <task id="LOCAL-00030" summary="update for column based correlation">
+      <created>1414027712105</created>
+      <updated>1414027712105</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Constancs Variable Update">
+      <created>1414027774105</created>
+      <updated>1414027774105</updated>
+    </task>
+    <task id="LOCAL-00032" summary="constants update for column based correlation">
+      <created>1414044199107</created>
+      <updated>1414044199107</updated>
+    </task>
+    <task id="LOCAL-00033" summary="update for column based correlation (m/r)">
+      <created>1414044335105</created>
+      <updated>1414044335105</updated>
+    </task>
+    <task id="LOCAL-00034" summary="update some comments">
+      <created>1414044528105</created>
+      <updated>1414044528105</updated>
+    </task>
+    <task id="LOCAL-00035" summary="update some comments">
+      <created>1414044575107</created>
+      <updated>1414044575107</updated>
+    </task>
+    <task id="LOCAL-00036" summary="deleted class import debugging">
+      <created>1414044672106</created>
+      <updated>1414044672106</updated>
+    </task>
+    <task id="LOCAL-00037" summary="package deletion">
+      <created>1414046726156</created>
+      <updated>1414046726156</updated>
+    </task>
+    <task id="LOCAL-00038" summary="output format update">
+      <created>1414053054106</created>
+      <updated>1414053054106</updated>
+    </task>
+    <task id="LOCAL-00039" summary="version update: 0.3 -&gt; 0.3.0">
+      <created>1414113809104</created>
+      <updated>1414113809104</updated>
+    </task>
+    <task id="LOCAL-00040" summary="cf based similarity -&gt; old version directory generation">
+      <created>1414114585114</created>
+      <updated>1414114585114</updated>
+    </task>
+    <task id="LOCAL-00041" summary="recommendation debugging">
+      <created>1421121854107</created>
+      <updated>1421121854108</updated>
+    </task>
+    <task id="LOCAL-00042" summary="version update: 0.2 -&gt; 0.3">
+      <created>1421121960105</created>
+      <updated>1421121960105</updated>
+    </task>
+    <task id="LOCAL-00043" summary="cf based correlation version update (api and code modification), arguments and constants variables update">
+      <created>1421130809107</created>
+      <updated>1421130809107</updated>
+    </task>
+    <task id="LOCAL-00044" summary="cf-similarity writing modify (0.3 over)">
+      <created>1421131864107</created>
+      <updated>1421131864107</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Driver Class Import Update">
+      <created>1421132434136</created>
+      <updated>1421132434136</updated>
+    </task>
+    <task id="LOCAL-00046" summary="temp directory path update">
+      <created>1421138893106</created>
+      <updated>1421138893106</updated>
+    </task>
+    <task id="LOCAL-00047" summary="contents based item similarity for recommendation is modified/updated">
+      <created>1421217796105</created>
+      <updated>1421217796105</updated>
+    </task>
+    <task id="LOCAL-00048" summary="new Development for CF based Recommender">
+      <created>1421217984107</created>
+      <updated>1421217984107</updated>
+    </task>
+    <task id="LOCAL-00049" summary="text modification">
+      <created>1421311358110</created>
+      <updated>1421311358110</updated>
+    </task>
+    <task id="LOCAL-00050" summary="parameters for user/item similarity based recommendation">
+      <created>1421311384107</created>
+      <updated>1421311384107</updated>
+    </task>
+    <task id="LOCAL-00051" summary="New Recommendation Driver Update">
+      <created>1421312996105</created>
+      <updated>1421312996105</updated>
+    </task>
+    <task id="LOCAL-00052" summary="finish debugging">
+      <created>1421313038108</created>
+      <updated>1421313038108</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Recommendation Driver Info Update">
+      <created>1421313061105</created>
+      <updated>1421313061105</updated>
+    </task>
+    <task id="LOCAL-00054" summary="version update: 0.2 -&gt; 0.3">
+      <created>1421313118106</created>
+      <updated>1421313118106</updated>
+    </task>
+    <task id="LOCAL-00055" summary="version update: 0.2 -&gt; 0.3">
+      <created>1421313186106</created>
+      <updated>1421313186106</updated>
+    </task>
+    <task id="LOCAL-00056" summary="recommender update">
+      <created>1421818089111</created>
+      <updated>1421818089111</updated>
+    </task>
+    <task id="LOCAL-00057" summary="user similarity based recommendation making update">
+      <created>1421973537105</created>
+      <updated>1421973537105</updated>
+    </task>
+    <task id="LOCAL-00058" summary="user similarity based recommendation making update">
+      <created>1421973575106</created>
+      <updated>1421973575106</updated>
+    </task>
+    <task id="LOCAL-00059" summary="arguments update for user similarity based recommendation making">
+      <created>1421973601107</created>
+      <updated>1421973601107</updated>
+    </task>
+    <task id="LOCAL-00060" summary="common methods for recommendation making are updated">
+      <created>1422238201110</created>
+      <updated>1422238201110</updated>
+    </task>
+    <task id="LOCAL-00061" summary="similarity threshold is not applied.">
+      <created>1422250256106</created>
+      <updated>1422250256106</updated>
+    </task>
+    <task id="LOCAL-00062" summary="item similar based recommendation making updated">
+      <created>1422258079107</created>
+      <updated>1422258079107</updated>
+    </task>
+    <task id="LOCAL-00063" summary="counter test">
+      <created>1422344680283</created>
+      <updated>1422344680283</updated>
+    </task>
+    <task id="LOCAL-00064" summary="version update: 0.2 -&gt; 0.3">
+      <created>1422349196117</created>
+      <updated>1422349196117</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Final Result Integration and MR-Job Reduction">
+      <created>1426056799270</created>
+      <updated>1426056799270</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Code Reduction">
+      <created>1426164755110</created>
+      <updated>1426164755110</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Quartile and Result Integration">
+      <created>1426167394106</created>
+      <updated>1426167394106</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Code Update">
+      <created>1426208418260</created>
+      <updated>1426208418260</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Code Reduction">
+      <created>1426570984106</created>
+      <updated>1426570984106</updated>
+    </task>
+    <task id="LOCAL-00070" summary="ID3 Validation Debugging">
+      <created>1426571180105</created>
+      <updated>1426571180105</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Initial MRJob Step Setting to 2">
+      <created>1426650626121</created>
+      <updated>1426650626121</updated>
+    </task>
+    <task id="LOCAL-00072" summary="version update to 0.4.0">
+      <created>1426653600109</created>
+      <updated>1426653600109</updated>
+    </task>
+    <task id="LOCAL-00073" summary="version update to 0.4.0">
+      <created>1426653620105</created>
+      <updated>1426653620105</updated>
+    </task>
+    <task id="LOCAL-00074" summary="association package update">
+      <created>1426653648105</created>
+      <updated>1426653648105</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Drivers for PFPGrowth">
+      <created>1426653949105</created>
+      <updated>1426653949105</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Combiner for Nominal Stats">
+      <created>1426659377128</created>
+      <updated>1426659377128</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Association Driver Comment">
+      <created>1426725103109</created>
+      <updated>1426725103109</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Arguments List Update for Association Rule Mining">
+      <created>1426755572116</created>
+      <updated>1426755572116</updated>
+    </task>
+    <task id="LOCAL-00079" summary="matric -&gt; metric">
+      <created>1427353539113</created>
+      <updated>1427353539113</updated>
+    </task>
+    <task id="LOCAL-00080" summary="clustering attribute index processing debugging">
+      <created>1427962989177</created>
+      <updated>1427962989177</updated>
+    </task>
+    <task id="LOCAL-00081" summary="Update Files for kNN Classification">
+      <created>1427965899107</created>
+      <updated>1427965899107</updated>
+    </task>
+    <task id="LOCAL-00082" summary="Nomalization Debugging about Numeric Stats">
+      <created>1429775859356</created>
+      <updated>1429775859356</updated>
+    </task>
+    <task id="LOCAL-00083" summary="Code Debugging">
+      <created>1429835913108</created>
+      <updated>1429835913108</updated>
+    </task>
+    <task id="LOCAL-00084" summary="Debugging">
+      <created>1429839200109</created>
+      <updated>1429839200109</updated>
+    </task>
+    <task id="LOCAL-00085" summary="Debugging">
+      <created>1429839829107</created>
+      <updated>1429839829107</updated>
+    </task>
+    <task id="LOCAL-00086" summary="code reducing">
+      <created>1431405848110</created>
+      <updated>1431405848110</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Driver Name Variable Update fo Naive Bayes">
+      <created>1431405874106</created>
+      <updated>1431405874107</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Basic Package Update for Naive Bayes">
+      <created>1431405914109</created>
+      <updated>1431405914109</updated>
+    </task>
+    <task id="LOCAL-00089" summary="Basic Package Update for Naive Bayes">
+      <created>1431405935108</created>
+      <updated>1431405935108</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="163" y="14" width="1559" height="863" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26781002" sideWeight="0.48558322" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.48433048" sideWeight="0.5557782" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38113207" sideWeight="0.7762557" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32763532" sideWeight="0.48697394" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="SVN Repositories" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.48433048" sideWeight="0.43954575" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21153846" sideWeight="0.47792363" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24890557" sideWeight="0.6883436" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09686039" sideWeight="0.5156695" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3279893" sideWeight="0.5156695" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3018868" sideWeight="0.43975225" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2008547" sideWeight="0.81295925" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="false" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Import" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="item similar based recommendation making updated" />
+    <MESSAGE value="counter test" />
+    <MESSAGE value="version update: 0.2 -&gt; 0.3" />
+    <MESSAGE value="Final Result Integration and MR-Job Reduction" />
+    <MESSAGE value="Quartile and Result Integration" />
+    <MESSAGE value="Code Update" />
+    <MESSAGE value="ID3 Validation Debugging" />
+    <MESSAGE value="Initial MRJob Step Setting to 2" />
+    <MESSAGE value="version update to 0.4.0" />
+    <MESSAGE value="association package update" />
+    <MESSAGE value="Drivers for PFPGrowth" />
+    <MESSAGE value="Combiner for Nominal Stats" />
+    <MESSAGE value="Association Driver Comment" />
+    <MESSAGE value="Arguments List Update for Association Rule Mining" />
+    <MESSAGE value="matric -&gt; metric" />
+    <MESSAGE value="clustering attribute index processing debugging" />
+    <MESSAGE value="Update Files for kNN Classification" />
+    <MESSAGE value="Nomalization Debugging about Numeric Stats" />
+    <MESSAGE value="Code Debugging" />
+    <MESSAGE value="Debugging" />
+    <MESSAGE value="code reducing" />
+    <MESSAGE value="Driver Name Variable Update fo Naive Bayes" />
+    <MESSAGE value="Basic Package Update for Naive Bayes" />
+    <MESSAGE value="Code Reduction" />
+    <MESSAGE value="Initial Import" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/knn/kNNLocalNNExtractCombiner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="55" selection-start="2483" selection-end="2483" vertical-scroll-proportion="-6.8">
+          <folding>
+            <element signature="e#1962#1977#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/knn/DistClassInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="22" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/knn/kNNGlobalNNExtractReducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="24" selection-start="2527" selection-end="2527" vertical-scroll-proportion="-11.36">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NBSplitMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="1693" selection-end="1693" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/statistics/numericstats/NumericStatsDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="306" column="20" selection-start="10427" selection-end="12407" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/statistics/nominalstats/NominalStatsDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="44" selection-start="4235" selection-end="4249" vertical-scroll-proportion="0.83006537">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/statistics/nominalstats/NominalStatsRatioMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="27" selection-start="1554" selection-end="1554" vertical-scroll-proportion="0.45454547">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/util/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="46" selection-start="2891" selection-end="2891" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NBStatSumReducer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="13" selection-start="3010" selection-end="3664" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/confusionMatrix/ConfusionMatrixMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="23" selection-start="1746" selection-end="1746" vertical-scroll-proportion="0.41666666" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/knn/kNNDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="124" column="97" selection-start="4794" selection-end="4972" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/knn/kNNDistanceComputeMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="9" selection-start="2963" selection-end="3477" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/util/CommonMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="5" selection-start="2069" selection-end="2069" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NaiveBayesDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="246" column="46" selection-start="9897" selection-end="9897" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/NBClassifyingMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="44" selection-start="1984" selection-end="1984" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ankus-core/src/main/java/org/ankus/mapreduce/algorithms/classification/naivebayes/AttrProbabilityInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="30" selection-start="384" selection-end="384" vertical-scroll-proportion="1.0446736">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>ankus-generate</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: commons-collections:commons-collections:3.2.1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+

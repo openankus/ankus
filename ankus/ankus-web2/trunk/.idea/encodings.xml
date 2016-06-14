@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ankus-web-services" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ankus-workflow-engine" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flamingo-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flamingo-el" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flamingo-fs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flamingo-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flamingo-locale" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flamingo-log-collector" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flamingo-mapreduce" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flamingo-model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/flamingo-util" charset="UTF-8" />
+  </component>
+</project>
+

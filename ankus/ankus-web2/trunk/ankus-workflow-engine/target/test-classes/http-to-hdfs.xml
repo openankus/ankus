@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collector xmlns="http://www.openflamingo.org/schema/collector"
+           xsi:schemaLocation="http://www.openflamingo.org/schema/collector flamingo-log-collector-1.0.xsd"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <description>서울시 공공 데이터 수집기</description>
+
+    <clusters>
+        <cluster name="dev" description="개발 클러스터">
+            <fs.default.name>hdfs://localhost:9000</fs.default.name>
+            <mapred.job.tracker>localhost:9001</mapred.job.tracker>
+            <properties>
+                <property name="mapred.maximum.map.task" value="100"/>
+            </properties>
+        </cluster>
+    </clusters>
+
+    <globalVariables>
+        <globalVariable name="currentDate" value="${dateFormat('yyyyMMdd-HHmmss')}" description="string"/>
+    </globalVariables>
+
+    <job name="Seoul_Rain" description="서울시 공공데이터 - 교통 돌발상황 조회">
+        <schedule>
+            <cronExpression>0 * * * * ?</cronExpression>
+        </schedule>
+        <policy>
+            <ingress>
+                <fromHttp>
+                    <url>http://openapi.seoul.go.kr:8088/sample/xml/SearchTrafficAccidentService/1/5</url>
+                    <method type="GET"/>
+                </fromHttp>
+            </ingress>
+            <egress>
+                <toHdfs cluster="dev">
+                    <targetPath>
+                        /accident/${dateFormat('yyyy')}/${dateFormat('MM')}/${dateFormat('dd')}/${dateFormat('HH')}
+                    </targetPath>
+                    <filename>accident_${dateFormat('yyyyMMdd-HHmmss')}.txt</filename>
+                </toHdfs>
+            </egress>
+        </policy>
+    </job>
+</collector>

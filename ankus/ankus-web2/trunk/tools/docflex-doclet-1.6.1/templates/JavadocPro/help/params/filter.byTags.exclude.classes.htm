@@ -1,0 +1,27 @@
+This parameter allows you to hide completely from the generated documentation
+some intermediate classes of your internal implementation (that for some reasons need to be public),
+while keeping in the documentation some of the fields and methods defined in those excluded classes,
+which you actually want to be part of your open API.
+<p>
+The tags specified in this parameter are treated as the following.
+<p>
+A <b>class</b> will be never mentioned in the documentation when at least one of the conditions is met:
+<ol>
+<li>The class has one of the specified tags.</li>
+<li>This is an inner class and one of its enclosing classes has one of the specified tags.</li>
+</ol>
+
+Each <b>inheritable member</b> of any excluded class, which has subclasses to be documented,
+will be shown as if it belongs to those of them that are the nearest descendants of the member's
+original class.
+<p>
+The overall effect should be that the generated documentation will look as if the excluded classes
+themselves did never exist at all, however, everything else is in place and correct.
+(For that matter, see also description of the <i>"Filter Classes & Members"</i> parameter group.)
+<p>
+The multiple exclude-tag names must be separated with new lines ('\n'), semicolons (';') or colons (':').
+For example:
+<dl><dd><code>
+@exclude<br>
+@omit
+</code></dd></dl>

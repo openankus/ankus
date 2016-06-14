@@ -1,0 +1,1268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0014)about:internet -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="styles.css">
+<title>About DocFlex/Javadoc</title>
+</head>
+
+<body>
+
+<h1>
+  About DocFlex/Javadoc
+</h1>
+
+<!-- TABLE OF CONTENTS -->
+<ol>
+  <li class="mrg4"><a href="#overview"><b>Overview</b></a></li>
+  <li class="mrg4"><a href="#key_features"><b>Key Features</b></a>
+    <ul class="mrg4">
+      <li><a href="#tda">Template-driven doclet architecture</a></li>
+      <li><a href="#data_processing">Data processing</a></li>
+      <li><a href="#hypertext">Hypertext</a></li>
+      <li><a href="#output_formats">Output formats</a></li>
+      <li><a href="#doclet_gui">Doclet GUI</a></li>
+      <li><a href="#ready_templates">Supplied Templates</a></li>
+      <li><a href="#integrations">Integrations</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#system_requirements"><b>System Requirements</b></a></li>
+  <li class="mrg4"><a href="#editions"><b>Editions</b></a>
+    <ul class="mrg4">
+      <li><a href="#full_edition">Full Edition</a></li>
+      <li><a href="#docflex-doclet">DocFlex/Doclet</a></li>
+    </ul>
+  </li>
+  <li class="mrg4"><a href="#how_it_works"><b>How it works</b></a>
+    <ul class="mrg4">
+      <li><a href="#main_components">Main Components</a></li>
+      <li><a href="#doclet_dsm">Doclet DSM</a></li>
+      <li><a href="#how_fast">How fast it works</a></li>
+    </ul>
+  </li>
+</ol>
+<!-- END TABLE OF CONTENTS -->
+
+<h2>
+  <a name="overview"></a>
+  1.&nbsp; Overview
+</h2>
+
+DocFlex/Javadoc is both a multi-format 
+<a href="http://docs.oracle.com/javase/6/docs/technotes/guides/javadoc/doclet/overview.html" target="_blank">Javadoc Doclet</a>
+and a programming tool for rapid development of 
+<a href="http://java.sun.com/j2se/javadoc/" target="_blank">Javadoc</a>-based
+Java API documentation generators in various output formats, which by their complexity and quality
+are equal or exceed the standard Javadoc.
+
+<h2>
+  <a name="key_features"></a>
+  2.&nbsp; Key Features
+</h2>
+
+<h3 class="spec">
+  <a name="tda"></a>
+  Template-driven doclet architecture
+</h3>
+
+<ul>
+<li class="mrg8">
+  <a name="template_sets"></a>
+  <b>Template Sets</b>
+  <p class="mrg8">
+  Actual doc-generators are created in the form of special <a href="#ready_templates">templates</a>
+  interpreted by the &ldquo;<a href="#doclet">DocFlex Doclet</a>&rdquo;, which is
+  the template interpreter / output generator wrapped in the form of a 
+  <a href="http://docs.oracle.com/javase/6/docs/technotes/guides/javadoc/doclet/overview.html" target="_blank">Javadoc Doclet</a>.
+  <p class="mrg8">
+  See also: <a target="_blank" href="http://www.filigris.com/products/docflex/#templates">About DocFlex Technology | What are Templates?</a>
+</li>
+<li class="mrg8">
+  <b>Template Designer</b>
+  <p class="mrg8">
+  The high quality graphic <a href="#template_designer">Template Designer</a>
+  represents the templates in a visual form resembling the output they generate.
+  At the same time, it allows programming of very sophisticated <a href="#data_processing">processing</a>
+  of the input data and formatting of the generated output --
+  the features possible to develop so far only by direct Java coding!
+  <p class="mrg8">
+  On the following screenshot is the
+  <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#class.tpl">JavadocPro | class.tpl</a>
+  template open in the Template Designer (click to see in full size):
+  <p class="mrg8">
+  <a href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/images/class/tpl.html" target="_blank" title="Template Designer (click to enlarge)"><img src="docs/images/designer_s.png" border="0"></a>
+</li>
+<li class="mrg8">
+  <b>Universal support of various formatting techniques</b>
+  <p class="mrg8">
+  The templates are designed independently on a particular output format.
+  All formatting is specified in some universal way using 
+  <a target="_blank" href="http://www.filigris.com/products/docflex/features/templates_designer.php#component_properties">properties</a> of
+  <a target="_blank" href="http://www.filigris.com/products/docflex/features/templates_designer.php#template_components">template components</a>.
+  During the generation, this is rendered with the appropriate features available in the selected output format.
+  <p class="mrg8">
+  The following formatting techniques are supported:
+  <ul class="mrg8">
+    <li>text formatting: fonts, colors, borders</li>
+    <li>paragraph formatting: margins, pagination control, borders, colors</li>
+    <li>border formatting: styles (solid, double, dashed, dotted), thickness, colors</li>
+    <li>tables: arbitrary cell layouts, borders, nested tables</li>
+    <li>lists: bulleted, numbered, delimited</li>
+    <li>document fields (RTF): page number, number of pages, TOC, etc.</li>
+    <li>page formatting: size, orientation, margins, headers/footers</li>
+    <li>formatting styles</li>
+    <li>
+      rendering of embedded HTML, which means interpreting in non-HTML output formats (such as RTF)
+      the HTML tags embedded in text data (e.g. documentation comments). Almost all HTML tags practically
+      usable in doc-comments are supported. See
+      <a target="_blank" href="http://www.filigris.com/products/docflex/features/formatting.php#embedded_html">Formatting Features | Rendering of embedded HTML</a>
+     for the list of all supported HTML tags.
+    </li>
+  </ul>
+</li>
+<li class="mrg8">
+  <b>Inserting of images</b>
+  <p class="mrg8">
+  <ul>
+    <li>statically specified in templates</li>
+    <li>dynamically, obtained by <code>&lt;img&gt;</code> tags found in Java comments</li>
+    <li>supported image formats: GIF, PNG, JPG, WMF, EMF, BMP</li>
+  </ul>
+</li>
+<li class="mrg8">
+  <b>Template Parameters</b>
+  <p class="mrg8">
+  Since all the content and formatting of the generated JavaDoc is programmed entirely in
+  <a href="#template_sets">templates</a>, what previously were command-line options provided by the
+  <a href="http://docs.oracle.com/javase/6/docs/technotes/guides/javadoc/standard-doclet.html" target="_blank">Standard Doclet</a>
+  now simply become <a href="docs/doclet.html#template_params">template parameters</a>.
+  The parameters are <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#template_params">defined</a>
+  and <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#param_usage">accessed</a>
+  within templates to adjust
+  <a target="_blank" href="http://www.filigris.com/products/docflex/features/templates_designer.php#dynamic_properties">dynamic properties</a>
+  of <a target="_blank" href="http://www.filigris.com/products/docflex/features/templates_designer.php#template_components">template components</a>.
+</li>
+<li class="mrg8">
+  <b>Template Libraries</b>
+  <p class="mrg8">
+  The templates can be <a target="_blank" href="http://www.filigris.com/products/docflex/documentation/template_components.php#call_template">called</a>
+  from one another, which (along with the template parameters) allows reusing the same templates 
+  for different tasks and even in different doc-generators.
+</li>
+</ul>
+
+<h3 class="spec">
+  <a name="data_processing"></a>
+  Data processing
+</h3>
+
+<ul>
+<li class="mrg8">
+  <b>Doclet API as virtual XML document</b>
+  <p class="mrg8">
+  The entire <a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/" target="_blank">Doclet API</a>
+  is represented in the form of a virtual XML document (called &ldquo;<a href="#doclet_dsm">Doclet DSM</a>&rdquo;),
+  on which the designing and processing of templates is based.
+  This allows using for Javadoc some of the technologies developed around XML.
+</li>
+<li class="mrg8">
+  <b>Location Paths / Location Rules / Element Maps</b>
+  <p class="mrg8">
+  Most of data mining and retrieval is based on <a target="_blank" href="http://www.filigris.com/products/docflex/documentation/element_iterator_details.php#collecting_elements_by_location_rules">Location Paths / Location Rules</a>,
+  which is a developed by us extension of <a href="http://www.w3.org/TR/xpath" target="_blank">XML XPath</a>.
+  This is complemented also with the specifically adapted hash-maps (called 
+  &ldquo;<a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/templates.php#init.tpl">element maps</a>&rdquo;)
+  that serve the role of indexes.
+</li>
+<li>
+  <b>Java 5.0 language features</b>
+  <p class="mrg8">
+  Full support of all new Java 5.0 language features:
+  <i>Generic Types</i>, <i>Enums</i>, <i>Annotations</i>.
+</li>
+<li>
+  <b>Simultaneous support of Java 1.4 and Java 5</b>
+  <p class="mrg8">
+  <table border="1" cellspacing="1" cellpadding="6">
+  <tr><td bgcolor="#F6F6F6" class="inset">
+  As you perhaps know, since JDK 5.0, the
+  <a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/" target="_blank">Doclet API</a>
+  has been extended to reflect the new language features introduced in Java 5.
+  Because of this, a doclet developed for Java 5 won't work under Java 1.4
+  (otherwise is possible, of course).
+  <p class="mrg8"></p>
+  However, as we found (after the preliminary v1.5 beta release), Java 1.4 appears to be still well in use. 
+  So, we have finally decided in DocFlex/Javadoc v1.5.x to support both Java versions (i.e. the new
+  <a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/" target="_blank">Doclet API 1.5</a>
+  and the old
+  <a href="http://java.sun.com/j2se/1.4.2/docs/tooldocs/javadoc/doclet/" target="_blank">Doclet API 1.4</a>).
+  <p class="mrg8"></p>
+  Since the binaries compiled for Java 5 are not compatible with Java 1.4, now, DocFlex/Javadoc v1.5.x 
+  (both editions) includes two Java libraries: the one compiled for Java 5+ and another one
+  compiled for Java 1.4.
+  <p class="mrg8"></p>
+  The <a href="#doclet_dsm">Doclet DSM</a>, on which any DocFlex/Javadoc
+  <a href="#template_sets">templates</a> are based, is always the same.
+  That is, the Java 5 functionality (i.e. the mapping of entire
+  <a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/" target="_blank">Doclet API 1.5</a>
+  on a virtual XML document model) is present in both libraries.
+  However, in the version compiled for Java 1.4, everything concerned Java 5 is emulated
+  by the <a href="#doclet_dsm_driver">Doclet DSM Driver</a> itself.
+  <p class="mrg8"></p>
+  It happened to be very simple to implement. So, we've done this!
+  As a result, any <a href="#template_sets">templates</a>
+  designed for either Java version will work fine under both Java 5+ and Java 1.4 as well. 
+  The templates simply won't "notice" the difference!
+  </td></tr>
+  </table>
+</li>
+</ul>
+
+<h3 class="spec">
+  <a name="hypertext"></a>
+  Hypertext
+</h3>
+
+<ul>
+  <li class="mrg8">
+    Generation of cross-reference hyperlinks interconnecting the whole documentation.
+    The hyperlinks are defined in templates in a very abstract way using special
+    <a target="_blank" href="http://www.filigris.com/products/docflex/features/data_processing.php#hyperlinks">link/target keys</a>.
+  </li>
+  <li class="mrg8">
+    Generation of hyperlinks to any external URLs.
+    This allows, for instance, linking the generated JavaDoc to any other existing javadoc-generated
+    documentation of external referenced classes.
+  </li>
+  <li class="mrg8">
+    The hyperlinks can be generated in all output formats that support them (this currently includes HTML and RTF). 
+  </li>
+  <li class="mrg8">
+    In RTF, the cross-reference links can be represented also in the form of page number references,
+    which in effect makes them usable even in printed documentation. 
+  </li>
+  <li class="mrg8">
+    In HTML, the possibility of loading several frame windows from a single hyperlink at once.
+  </li>
+</ul>
+
+<h3 class="spec">
+  <a name="output_formats"></a>
+  Output formats
+</h3>
+
+<ul>
+<li class="mrg8">
+  <b>HTML</b> (both framed multi-file and single-file HTML output)
+</li>
+<li class="mrg8">
+  <b>RTF</b> (version 1.6 - supported since Word 2000; can be further converted to PDF)
+</li>
+<li class="mrg8">
+  <b>TXT (plain text)</b>
+  <p class="mrg8">
+  It may be particularly useful for various utilizations 
+  of the Java code information provided by the
+  <a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/" target="_blank">Doclet API</a>
+  (for instance, to generate XML files by it, or SQL files to import into a database).
+  <p class="mrg8">
+  <table border="1" cellspacing="1" cellpadding="6">
+  <tr><td bgcolor="#F6F6F6" class="inset">
+    <b>Generation of XML</b>
+    <p class="mrg8"></p>
+    Since XML files are just text files, you can easily generate any sorts of XML output 
+    from the data provided by 
+    <a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/" target="_blank">Doclet API</a>
+    using DocFlex/Javadoc.
+    <p class="mrg8"></p>
+    To generated XML, all you need is to design a template where the output produced 
+    by <a target="_blank" href="http://www.filigris.com/products/docflex/documentation/template_components.php#data_control">Data Controls</a>
+    (from the data obtained from Doclet API) is interchanged with the static text representing certain XML tags,
+    which can be produced, for instance, by 
+    <a target="_blank" href="http://www.filigris.com/products/docflex/documentation/template_components.php#text_control">Text Controls</a>.
+    Then, you can simply generate a TXT output with such a template, and this will be XML.
+  </td></tr>
+  </table>
+</li>
+</ul>
+
+<h3 class="spec">
+  <a name="doclet_gui"></a>
+  Doclet GUI
+</h3>
+
+<ul>
+<li class="mrg8">
+  <b>Why Doclet GUI?</b>
+  <p class="mrg8">
+  A JavaDoc generator implemented as 
+  {<a href="#doclet">DocFlex Doclet</a> + <a href="#template_sets">template set</a>}
+  is controlled by lots of settings, which include:
+  <ul class="mrg8">
+    <li>The main template</li>
+    <li>The template parameters</li>
+    <li>The output format</li>
+    <li>The format-specific options to the output generator</li>
+    <li>The output destination (directory/file)</li>
+  </ul>
+  Of course, all such settings can be assigned using 
+  <a href="docs/doclet.html#options">options</a>
+  on the Javadoc command line (most, actually, have their default values).
+  But there may be so many of them!
+  <p class="mrg8">
+  So, besides command line options, <a href="#doclet">DocFlex Doclet</a> provides a more user-friendly way 
+  to control the template-based doclets interactively -- the <a href="#doclet_gui">Doclet GUI</a>.
+</li>
+<li class="mrg8">
+  <b>Generator Dialog</b>
+  <p class="mrg8">
+  When no 
+  <code class="nowrap">-<a href="docs/doclet.html#nodialog_option">nodialog</a></code>
+  option has been specified on the command line,
+  as soon as Javadoc finishes parsing Java sources and calls the doclet to generate the output, 
+  the DocFlex Doclet invokes the following
+  <a href="docs/doclet.html#generator_dialog">Generator Dialog</a>
+  (click to enlarge):
+  <p>
+  <a href="docs/images/generator_dialog.html" target="_blank"><img src="docs/images/generator_dialog_s.png" title="Generator Dialog" border="0"></a>
+  </p>
+  Here, you can fill in all required settings (such as the main template, the output format and 
+  the output directory), start the generation, track its progress and stop at any moment you need.
+</li>
+<li class="mrg8">
+  <b>Template Parameter / Output Format Option Inspectors</b>
+  <p class="mrg8">
+  The additional settings, such as template parameters and output format options
+  can be assigned in the special property inspector dialogs invoked by clicking the buttons on the right 
+  (click to enlarge):
+  <p>
+  <table cellspacing="0" cellpadding="0">
+  <tr valign="top">
+  <td>
+    <a href="docs/images/param_inspector.html" target="_blank"><img src="docs/images/param_inspector_s.png" title="Template Parameter Inspector" border="0"></a>
+  </td>
+  <td>
+    <table width="16"><tr><td></td></tr></table>
+  </td>
+  <td>
+    <a href="docs/images/rtf_option_inspector.html" target="_blank"><img src="docs/images/rtf_option_inspector_s.png" title="RTF Option Inspector" border="0"></a>
+  </td>
+  </tr>
+  </table>
+  </p>
+  Here you can edit the parameter or option values according to their data types.
+  The bottom panel in the inspector dialog shows the HTML-preformatted description 
+  of each parameter or format-specific generator option.
+</li>
+<li class="mrg8">
+  <b>Generating: start, see progress, stop / restart again</b>
+  <p class="mrg8">
+  When all settings are prepared, you can start the generation by clicking <b>&lt;Run&gt;</b> button.
+  Then, the generator dialog will transform itself to show the generation progress (click to enlarge):
+  <p>
+  <a href="docs/images/generating.html" target="_blank"><img src="docs/images/generating_s.png" title="Generating Output" border="0"></a>
+  </p>
+  You can stop the generation at any moment by clicking <b>&lt;Cancel&gt;</b> button.
+  <p class="mrg8">
+  Once the generation has finished (or cancelled), the generator dialog transforms itself back 
+  into its initial state.
+  <p class="mrg8">
+  After that, you can change any settings and start the generator again with a new (or modified) template set. 
+  This, in effect, allows changing your doclet on the fly. 
+  At that, you won't need to restart the whole Javadoc. 
+  All the memory representation of your Java project provided via the 
+  <a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/" target="_blank">Doclet API</a>
+  will remain the same.
+  <p class="mrg8">
+  This unique capability makes possible extremely fast designing and modification of your templates. 
+  Just change something in the <a href="#template_designer">Template Designer</a>, restart the generator
+  and you can see how it looks now in the result output!
+</li>
+</ul>
+</li>
+
+<h3 class="spec">
+  <a name="ready_templates"></a>
+  Supplied Templates
+</h3>
+
+<ul>
+<li>
+  <b>Basic Template Set</b>
+  <p class="mrg8">
+  This is an early version of the standard template set. It allows you to generate:
+  <ul class="mrg8">
+  <li>
+    <a href="templates/javadoc/overview.html#output.html">HTML JavaDoc</a>
+    (both framed and single-file) with basic content (project overview, package summaries, class details).
+  </li>
+  <li>
+    <a href="templates/javadoc/overview.html#output.rtf">RTF JavaDoc</a>
+  </li>
+  </ul>
+
+  The basic template set consists of just 14
+  <a href="templates/javadoc/overview.html">template files</a>
+  (plus one icon), which totally occupy 415 KB.
+  That was all what was needed to implement the entire Java API documentation generator
+  for both HTML and RTF output formats simultaneously!
+  <p class="mrg8">
+  For more details about the basic template set, please see:
+  <a href="templates/javadoc/overview.html"><b>DocFlex/Javadoc | Basic Templates</b></a>
+</li>
+
+<li>
+  <a name="JavadocPro_templates"></a>
+  <b>JavadocPro Template Set</b>
+  <p class="mrg8">
+  &ldquo;<a href="templates/JavadocPro/overview.html">JavadocPro</a>&rdquo;
+  is a new template set available since the version 1.6.0.
+  Using it you will be able to generate:
+  <ul class="mrg8">
+  <li>
+    <a href="templates/JavadocPro/overview.html#output.html.framed">Framed HTML JavaDoc</a>
+    identical to the classic one (see a demo below).
+  </li>
+  <li>
+    <a href="templates/JavadocPro/overview.html#output.html.single_file">Single-file HTML JavaDoc</a>
+    with basic content (project overview, package summaries, class details)
+  </li>
+  <li>
+    The newly redesigned 
+    <a href="templates/JavadocPro/overview.html#output.rtf">RTF JavaDoc</a>
+    (which can be further converted to
+    <a href="templates/JavadocPro/overview.html#output.pdf">PDF</a>).
+  </li>
+  </ul>
+  This everything is complemented with a possibility to selectively
+  <a href="templates/JavadocPro/parameters.html#filter">filter classes and members by tags/annotations</a>,
+  a feature not seen in any other software known to us!
+  <p class="mrg8">
+  Here is a demo of framed HTML JavaDoc generated with
+  <a href="templates/JavadocPro/overview.html">JavadocPro Template Set</a>
+  (click on a screenshot to view the real HTML):
+  <p>
+  <table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><a href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/demo/html/" target="_blank"><img src="templates/JavadocPro/images/FramedDoc/html.png" alt="&ldquo;Classic&rdquo; HTML JavaDoc" border="0"></a></td>
+    <td><table width="22" height="8" border="0"><tr><td></td></tr></table></td>
+    <td><a href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/demo/html/index.html?java/lang/StackOverflowError.html" target="_blank"><img src="templates/JavadocPro/images/FramedDoc/html2.png" alt="Jumping directly to a particular detail" border="0"></a></td>
+  </tr>
+  </table>
+  </p>
+
+  For more sample docs generated with the new template set, please see:
+  <a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/examples.php">DocFlex/Javadoc | Examples</a>
+
+  <p class="mrg8">
+  Further details about &ldquo;JavadocPro&rdquo; are available on the page:
+  <a href="templates/JavadocPro/overview.html"><b>DocFlex/Javadoc | JavadocPro</b></a>
+</li>
+</ul>
+
+<h3 class="spec">
+  <a name="integrations"></a>
+  Integrations
+</h3>
+
+<ul>
+<li><a href="docs/integrations.html#ant">Apache Ant</a></li>
+<li><a href="docs/integrations.html#maven">Apache Maven</a></li>
+<li><a href="docs/integrations.html#eclipse">Eclipse</a></li>
+<li>
+  With any <a href="docs/integrations.html#other">other system</a>
+  able to run Javadoc
+</li>
+</ul>
+
+<h2>
+  <a name="system_requirements"></a>
+  3.&nbsp; System Requirements
+</h2>
+
+DocFlex/Javadoc requires the
+<a href="http://java.sun.com/j2se/javadoc/" target="_blank">Javadoc Tool</a>
+delivered with any Java Development Kit (JDK) version 7, 6.x, 5.x or 1.4.x.
+(<a href="http://www.oracle.com/technetwork/java/" target="_blank">Java 7</a> may be preferable as it is the fastest!)
+<p class="mrg8">
+<table border="1" cellspacing="1" cellpadding="6">
+<tr><td bgcolor="#F6F6F6" class="inset">
+<b>Note:</b> Javadoc is not a separate software but rather a part of the whole Java Development Kit (JDK),
+which you can freely download from the Oracle Corporation website by this link:
+<a href="http://www.oracle.com/technetwork/java/javase/downloads/" target="_blank">http://www.oracle.com/technetwork/java/javase/downloads/</a>
+</td></tr>
+</table>
+
+<p class="mrg8">
+Since DocFlex/Javadoc is a pure Java application 
+(the <a href="#template_designer">Template Designer</a> GUI is based entirely on 
+<a href="http://en.wikipedia.org/wiki/Swing_(Java)" target="_blank">Swing</a>),
+it is supposed to work on any operating system with the installed JDK.
+
+<p class="mrg8">
+Specifically, the software available for <a target="_blank" href="http://www.filigris.com/downloads/">downloads</a>
+includes both <b>MS Windows</b> BAT files and <b>Linux</b> shell script files 
+to run DocFlex/Javadoc immediately on those operating systems.
+(We have been also reported that DocFlex/Javadoc was successfully working under <b>Mac OS X</b>).
+<p class="mrg8">
+Additionally, a sample Ant buildfile and Maven POM file are provided to demonstrate
+integration of <a href="#doclet">DocFlex Doclet</a> both with <b>Apache Ant</b> and <b>Maven</b>
+(see also <a href="docs/integrations.html">Documentation | Integrations</a>).
+
+<p class="mrg8">
+For further details, please see product README files on the <a target="_blank" href="http://www.filigris.com/downloads/">downloads</a> page.
+
+<h2>
+  <a name="editions"></a>
+  4.&nbsp; Editions
+</h2>
+
+DocFlex/Javadoc comes in two editions:
+
+<ol>
+ <li><a href="#full_edition">DocFlex/Javadoc - Full Edition</a></li>
+ <li><a href="#docflex-doclet">DocFlex/Doclet - Reduced Free Edition</a></li>
+</ol>
+
+You can freely download both editions from the <a target="_blank" href="http://www.filigris.com/downloads/">Downloads</a> page.
+
+<h3>
+  <a name="full_edition"></a>
+  Full Edition
+</h3>
+
+The full edition, called <b>&ldquo;DocFlex/Javadoc&rdquo;</b> as it is,
+includes all features available in this product line:
+
+<ol class="mrg8">
+  <li>
+    <a href="#template_designer">Template Designer</a> - provides a GUI to design/modify templates.
+  </li>
+  <li>
+    <a href="#doclet">DocFlex Doclet</a> - the template interpreter / output generator wrapped in the form
+    of a <a href="http://docs.oracle.com/javase/6/docs/technotes/guides/javadoc/doclet/overview.html" target="_blank">Javadoc Doclet</a>.
+  </li>
+  <li>
+    <a href="templates/javadoc/overview.html">Basic Template Set</a>
+    - an early version of standard template set.
+  </li>
+  <li>
+    <a href="templates/JavadocPro/overview.html">JavadocPro Template Set</a> -
+    the new advanced template set able to generate classic HTML JavaDoc as well as redesigned RTF documentation
+    with a possibility to exclude classes/members by tags/annotations.
+  </li>
+</ol>
+
+This everything is covered by the same &ldquo;DocFlex/Javadoc&rdquo;, depending on which
+it may work in one of three modes:
+<ul class="mrg8">
+  <li>limited</li>
+  <li>full</li> 
+  <li>trial</li>
+</ul>
+The differences between those modes are shown in the table:
+<p class="mrg8">
+<table width="100%" border="1" cellspacing="1" cellpadding="5" class="brdr1">
+
+<tr align="center">
+  <th width="40%" class="brdr1"><b class="impr">Feature / Functionality</b></td>
+  <th width="20%" class="brdr1"><b class="impr">Limited Mode</b></td>
+  <th width="20%" class="brdr1"><b class="impr">Full Mode</b></td>
+  <th width="20%" class="brdr1"><b class="impr">Trial Mode</b></td>
+</tr>
+
+<!-- Licensing -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <span class="impr">License type(s)</span>
+  </td>
+  <td class="brdr1">
+    <span class="nav">
+      <a target="_blank" href="http://www.filigris.com/buy/licensing_pricing.php#limited_free_license">Limited Free License</a> 
+      (activated by default)
+    </span>
+  </td>
+  <td class="brdr1">
+    <span class="nav">
+      <a target="_blank" href="http://www.filigris.com/buy/licensing_pricing.php#commercial_license">Commercial</a> or
+      <a target="_blank" href="http://www.filigris.com/buy/licensing_pricing.php#academic_license">Academic</a> License
+    </span>
+  </td>
+  <td class="brdr1">
+    <span class="nav"><a target="_blank" href="http://www.filigris.com/buy/licensing_pricing.php#trial_license">Trial License</a></span>
+  </td>
+</tr>
+
+<!-- Template Designer -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <span class="impr">
+      <a href="#template_designer">Template Designer</a>
+    </span>
+  </td>
+  <td class="brdr1"><span class="nav">demo only</span></td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+</tr>
+
+<!-- Designing templates -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <span class="impr">Possibility to create/modify templates</span>
+  </td>
+  <td class="brdr1">&#8211;</td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+</tr>
+
+<!-- Execution of custom templates -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <div class="impr">
+      Execution of any <a target="_blank" href="http://www.filigris.com/buy/licensing_pricing.php#templates.custom">custom templates</a>.
+      <p class="mrg8"></p>
+      <b>Note:</b> If your custom templates are derived from a template set provided by Filigris Works, 
+      their execution will depend also on your license for that template application
+      (see <a target="_blank" href="http://www.filigris.com/buy/licensing_pricing.php#templates">Licensing of Templates</a>).
+    </div>
+  </td>
+  <td class="brdr1">
+    <span class="nav">
+      only those created or modified the last time under a
+      <a target="_blank" href="http://www.filigris.com/buy/licensing_pricing.php#commercial_license">Commercial License</a>
+    </span>
+  </td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+  <td class="brdr1">
+    <span class="nav">
+      <a href="http://www.filigris.com/buy/licensing_pricing.php#trial_license.output" target="_blank">distorted output</a>
+    </span>
+  </td>
+</tr>
+
+<!-- Execution of Basic Template Set -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <div class="impr">
+      Execution of <a href="templates/javadoc/overview.html">Basic Template Set</a>
+    </div>
+  </td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+  <td class="brdr1">
+    <span class="nav">
+      <a href="http://www.filigris.com/buy/licensing_pricing.php#trial_license.output" target="_blank">distorted output</a>
+    </span>
+  </td>
+</tr>
+
+<!-- Execution of JavadocPro Template Set -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <div class="impr">
+      Execution of <a href="templates/JavadocPro/overview.html">JavadocPro Template Set</a>
+      <p class="mrg8"></p>
+      <b>See also:</b>
+      <a href="templates/JavadocPro/overview.html#licensing">DocFlex/Javadoc | JavadocPro | Licensing</a>
+    </div>
+  </td>
+  <td class="brdr1">
+    <span class="nav">
+      <a href="templates/JavadocPro/overview.html#licensing.free">reduced functionality</a>
+    </span>
+  </td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+  <td class="brdr1">
+    <span class="nav">
+      <a href="http://www.filigris.com/buy/licensing_pricing.php#trial_license.output" target="_blank">distorted output</a>
+    </span>
+  </td>
+</tr>
+
+<!-- Doclet Doclet / Doclet GUI / Output Formats -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <span class="impr">
+      <a href="#doclet">DocFlex Doclet</a> (including <a href="#doclet_gui">Doclet GUI</a>)
+    </span>
+  </td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+</tr>
+
+<!-- Output Formats -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <span class="impr">
+      Generation of HTML, RTF, TXT (plain-text) output
+    </span>
+  </td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+</tr>
+
+<!-- Input Java project -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <span class="impr">
+      No limitation on input Java project (number of classes etc.)
+    </span>
+  </td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+</tr>
+
+<!-- Output files -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <span class="impr">
+      Any number of output files of any size
+    </span>
+  </td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+</tr>
+
+<!-- Output Usage -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <div class="impr">
+      Possible usage of generated documentation
+    </div>
+  </td>
+  <td class="brdr1">
+    <span class="nav">any usage</span>
+  </td>
+  <td class="brdr1">
+    <span class="nav">
+      unlimited (under <a target="_blank" href="http://www.filigris.com/buy/licensing_pricing.php#academic_license">Academic License</a>,
+      only for education purposes)
+    </span>
+  </td>
+  <td class="brdr1">
+    <span class="nav">
+      for evaluation only
+    </span>
+  </td>
+</tr>
+</table>
+
+<h3>
+  <a name="docflex-doclet"></a>
+  DocFlex/Doclet
+</h3>
+
+This is a reduced <a href="#top">DocFlex/Javadoc</a>
+without the <a href="#template_designer">Template Designer</a>.
+It includes:
+
+<ol class="mrg8">
+  <li>
+    <a href="#doclet">DocFlex Doclet</a>
+  </li>
+  <li>
+    <a href="templates/javadoc/overview.html">Basic Template Set</a>
+  </li>
+  <li>
+    <a href="templates/JavadocPro/overview.html">JavadocPro Template Set</a>
+  </li>
+</ol>
+
+DocFlex/Doclet is covered by the <a target="_blank" href="http://www.filigris.com/buy/licensing_pricing.php#free_license">Free License</a>.
+What exactly it allows is shown in this table:
+
+<p class="mrg8">
+<table width="100%" border="1" cellspacing="1" cellpadding="5" class="brdr1">
+
+<tr align="center">
+  <th width="60%" class="brdr1"><b class="impr">Feature / Functionality</b></td>
+  <th width="40%" class="brdr1"><b class="impr">Availability</b></td>
+</tr>
+
+<!-- Licensing -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <span class="impr">License type</span>
+  </td>
+  <td class="brdr1">
+    <span class="nav">
+      <a target="_blank" href="http://www.filigris.com/buy/licensing_pricing.php#free_license">Free License</a>
+    </span>
+  </td>
+</tr>
+
+<!-- Designing templates -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <span class="impr">Possibility to create/modify templates</span>
+  </td>
+  <td class="brdr1">&#8211;</td>
+</tr>
+
+<!-- Execution of custom templates -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <div class="impr">
+      Execution of <a target="_blank" href="http://www.filigris.com/buy/licensing_pricing.php#templates.custom">custom templates</a>.
+      <p class="mrg8"></p>
+      <b>Note:</b> If your custom templates are derived from a template set provided by Filigris Works, 
+      their execution will depend also on your license for that template application
+      (see <a target="_blank" href="http://www.filigris.com/buy/licensing_pricing.php#templates">Licensing of Templates</a>).
+    </div>
+  </td>
+  <td class="brdr1">
+    <span class="nav">
+      only those created or modified the last time under a
+      <a target="_blank" href="http://www.filigris.com/buy/licensing_pricing.php#commercial_license">Commercial License</a>
+      for &ldquo;DocFlex/Javadoc&rdquo;
+    </span>
+  </td>
+</tr>
+
+<!-- Execution of Basic Template Set -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <div class="impr">
+      Execution of <a href="templates/javadoc/overview.html">Basic Template Set</a>
+    </div>
+  </td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+</tr>
+
+<!-- Execution of JavadocPro Template Set -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <div class="impr">
+      Execution of <a href="templates/JavadocPro/overview.html">JavadocPro Template Set</a>
+      <p class="mrg8"></p>
+      <b>See also:</b>
+      <a href="templates/JavadocPro/overview.html#licensing">DocFlex/Javadoc | JavadocPro | Licensing</a>
+    </div>
+  </td>
+  <td class="brdr1">
+    <span class="nav">
+      <a href="templates/JavadocPro/overview.html#licensing.free">reduced functionality</a>
+    </span>
+  </td>
+</tr>
+
+<!-- Doclet Doclet / Doclet GUI / Output Formats -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <span class="impr">
+      <a href="#doclet">DocFlex Doclet</a> (including <a href="#doclet_gui">Doclet GUI</a>)
+    </span>
+  </td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+</tr>
+
+<!-- Output Formats -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <span class="impr">
+      Generation of HTML, RTF, TXT (plain-text) output
+    </span>
+  </td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+</tr>
+
+<!-- Input Java project -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <span class="impr">
+      No limitation on input Java project (number of classes etc.)
+    </span>
+  </td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+</tr>
+
+<!-- Output files -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <span class="impr">
+      Any number of output files of any size
+    </span>
+  </td>
+  <td class="brdr1"><img src="docs/images/tick.gif"></td>
+</tr>
+
+<!-- Output Usage -->
+
+<tr align="center">
+  <td align="left" class="brdr1">
+    <div class="impr">
+      Possible usage of generated documentation
+    </div>
+  </td>
+  <td class="brdr1">
+    <span class="nav">any usage</span>
+  </td>
+</tr>
+
+</table>
+
+<h2>
+  <a name="how_it_works"></a>
+  5.&nbsp; How it works
+</h2>
+
+Here is a <a href="http://www.uml.org/" target="_blank">UML</a>
+<i>implementation diagram</i>, which depicts the functional structure of DocFlex/Javadoc:
+
+<p>
+<img src="docs/images/diagram.png" border="0" usemap="#diagram">
+<map name="diagram">
+  <area shape="rect" coords="257,5,426,69" href="http://java.sun.com/j2se/javadoc/" target="_blank">
+  <area shape="rect" coords="490,15,541,53" href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/" target="_blank">
+  <area shape="rect" coords="251,183,402,225" href="#doclet">
+  <area shape="rect" coords="468,183,612,225" href="#doclet_dsm_driver">
+  <area shape="rect" coords="483,256,513,293" href="#doclet_dsm">
+  <area shape="rect" coords="514,324,566,363" href="#doclet_dsm_type">
+  <area shape="rect" coords="251,281,402,321" href="#generator">
+  <area shape="rect" coords="252,386,401,426" href="#template_designer">
+  <area shape="rect" coords="5,155,158,235" target="_blank" href="http://www.filigris.com/products/docflex_javadoc/examples.php">
+  <area shape="rect" coords="5,338,158,417" href="#template_sets">
+</map>
+
+<h3>
+  <a name="main_components"></a>
+  Main Components
+</h3>
+
+The DocFlex/Javadoc implementation consists of four main components:
+
+<ol>
+  <li class="mrg8">
+    <a name="doclet_dsm_driver"></a>
+    The <b>Doclet DSM Driver</b>, which represents a bridge between Javadoc
+    <a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/" target="_blank">Doclet API</a>
+    and <a target="_blank" href="http://www.filigris.com/products/docflex/">DocFlex core</a>. The driver connects to Javadoc
+    using Doclet API and supplies data via <b>DSM</b> (Data Source Model) interface that is
+    a representation of Javadoc data source in the form understandable for DocFlex core. This representation is
+    called <a href="#doclet_dsm">Doclet DSM</a>. The driver also supports
+    <a name="doclet_dsm_type"></a><b>DSM Type</b> interface which provides the data structure and type information about
+    this data source. The DSM interface is used by DocFlex Generator to obtain data it operates. The DSM Type
+    interface is used both by the generator to know how to handle those data, and by the 
+    <a href="#template_designer">Template Designer</a> to provide the data type information during 
+    designing of the templates.
+  </li>
+  <li class="mrg8">
+    <a name="doclet"></a>
+    The <b>DocFlex Doclet</b> component provides 
+    <code><a href="docs/doclet.html#running_doclet">com.docflex.javadoc.Doclet</a></code>
+    class, 
+    which is the one to be specified with the <code class="nowrap"><b>-doclet</b></code> option on 
+    the Javadoc command line. The DocFlex Doclet component processes the command line options received 
+    from the Javadoc, initiates the <a href="#doclet_dsm_driver">Doclet DSM Driver</a> and starts the generator. 
+    It also may invoke the <a href="#doclet_gui">Doclet GUI</a>, which provides a user-friendly interface 
+    to specify most of parameters and settings used by the generator.
+    <p class="mrg8">
+    For further details, please see:
+    <a href="docs/doclet.html">Documentation | DocFlex Doclet</a>
+  </li>
+  <li class="mrg8">
+    <a name="generator"></a>
+    The <b>DocFlex Generator</b>, which is launched by DocFlex Doclet and receives from it:
+    <ul class="mrg8">
+      <li>The <a href="#doclet_dsm_driver">Doclet DSM Driver</a> ready to supply data from Javadoc</li>
+      <li>The template to be interpreted</li>
+      <li>The template parameters and other settings</li>
+    </ul>
+    The generator executes the template and generates the output documentation.
+  </li>
+  <li class="mrg8">
+    <a name="template_designer"></a>
+    The <b>Template Designer</b>, which provides a GUI for designing the templates.
+    It also starts Doclet DSM Driver (however, without connection to Javadoc) and uses information provided
+    by DSM Type interface. In the next section, we shall discuss what that information is.
+    <p>
+    <a href="http://www.filigris.com/products/docflex_javadoc/templates/JavadocPro/images/class/tpl.html" target="_blank" title="Template Designer (click to enlarge)"><img src="docs/images/designer_s.png" border="0"></a>
+  </li>
+</ol>
+
+<h3>
+  <a name="doclet_dsm"></a>
+  Doclet DSM
+</h3>
+
+When <a href="http://java.sun.com/j2se/javadoc/" target="_blank">Javadoc</a>
+is started, first, it collects the information about the Java sources to be documented.
+Javadoc does this by parsing all the Java classes
+(most likely, it just calls from itself the Java compiler that does that parsing job).
+<p class="mrg8">
+Once the collecting of the information is finished, Javadoc calls a doclet (by default, the 
+<a href="http://docs.oracle.com/javase/6/docs/technotes/guides/javadoc/standard-doclet.html" target="_blank">Standard Doclet</a>)
+and passes to it all the Java source information organized in the form of a tree-like representation,
+which is provided to the doclet via the
+<a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/" target="_blank">Doclet API</a>.
+<p class="mrg8">
+One may notice, however, that the structure of that representation is very much similar to that described by
+<a href="http://www.w3.org/DOM/" target="_blank">DOM</a> (the Document Object Model of an XML file).
+All data provided by Doclet API can be represented either as some XML elements or as their attributes.
+<p class="mrg8">
+DocFlex/Javadoc makes use of this. It maps all the 
+<a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/" target="_blank">Doclet API</a>
+classes (such as
+<a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/index.html?com/sun/javadoc/ClassDoc.html" target="_blank">com.sun.javadoc.ClassDoc</a>)
+to the equally named <b>elements</b> and the values returned by the methods of those classes 
+-- to the element's children and <b>attributes</b> (see below).
+<p class="mrg8">
+As a result, the entire Doclet API is mapped on some XML-like representation
+called <b><i>Doclet Data Source Model</i></b> (or <b><i>Doclet DSM</i></b>).
+The elements and attributes, on which everything is mapped, 
+are called DSM elements and DSM attributes.
+<p class="mrg8">
+Actually, that XML-like representation is not created in memory. 
+Rather, it is maintained dynamically by the <a href="#doclet_dsm_driver">Doclet DSM Driver</a>.
+When a particular element or attribute is needed, the driver just calls the corresponding method
+of a Doclet API class.
+
+<p class="mrg8">
+<a name="doclet_api_mapping"></a>
+The methods of
+<a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/" target="_blank">Doclet API</a>
+classes (or more precisely, the data they return) are mapped according to the following rules:
+<ul class="mrg8">
+  <li class="mrg8">
+    If a method returns one or more objects whose type has an <b>aggregation</b> relationship with the given class
+    (i.e. each returned objects is a part of the object of this class) and, in addition, the method returns <u>all</u>
+    aggregated objects of such type, then the returned objects are interpreted as <i>children</i> of the DSM element
+    associated with the given class.
+    <p class="mrg8">
+    For example, class
+    <a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/index.html?com/sun/javadoc/ClassDoc.html" target="_blank"><code>com.sun.javadoc.ClassDoc</code></a>
+    has a method <code>methods()</code>, which returns an array of
+    <a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/index.html?com/sun/javadoc/FieldDoc.html" target="_blank"><code>com.sun.javadoc.FieldDoc</code></a>
+    objects representing <u>all</u> fields of a Java class being documented. Those two classes and method
+    are mapped as the following:
+    <ol class="mrg8">
+      <li>Class <code>com.sun.javadoc.ClassDoc</code> is mapped to DSM element <code>ClassDoc</code></li>
+      <li>Class <code>com.sun.javadoc.FieldDoc</code> is mapped to DSM element <code>FieldDoc</code></li>
+      <li class="mrg8">
+         Method <code>ClassDoc.fields()</code> is mapped into parent/child relationship between <code>ClassDoc</code>
+         and <code>FieldDoc</code> elements according to the following XML
+         <a href="http://www.w3schools.com/dtd/" target="_blank">DTD</a> declaration:
+         <blockquote class="mrg8"><code>&lt;!ELEMENT ClassDoc (FieldDoc*)&gt;</code></blockquote>
+      </li>
+    </ol>
+  </li>
+  <li class="mrg8">
+    If a method returns object(s) whose type has an <b>association</b> relationship with the given class,
+    or in the case of aggregation, the returned array represents only a <u>subset</u> of all aggregated objects
+    of this type, then this method is mapped as an attribute with <code>IDREF</code> type
+    (single- or multi-valued depending on the cardinality of the returned objects).
+    <p class="mrg8">
+    For example, method <code>com.sun.javadoc.ClassDoc.interfaces()</code> returns <code>ClassDoc</code>
+    objects, which represent all interfaces implemented by a documented Java class. Those interfaces are not
+    part of this class. They exist independently. So, the relationship between the interfaces and the class
+    implementing them should be interpreted as association. Therefore, the method
+    <code>ClassDoc.interfaces()</code> is mapped as an attribute <code>interfaces</code> of the 
+    <code>ClassDoc</code> DSM element.
+    Here is how this might look in the form of an XML DTD declaration:
+    <blockquote class="mrg8"><code>&lt;!ATTRLIST ClassDoc interfaces IDREFS&gt;</code></blockquote>
+  </li>
+  <li class="mrg8">
+    If a method returns a <b>primitive type</b> (or array of primitive type), it is mapped as an attribute 
+    of the DSM element associated with the given class. The attribute data type is the same as the one returned 
+    by the method.
+    (Note: DocFlex introduces additional
+    <a target="_blank" href="http://www.filigris.com/products/docflex/features/data_processing.php#data_types">data types</a>
+    not presented in XML DTD to handle values of DSM elements and attributes suitable for Java-based data sources.)
+    <p class="mrg8">
+    For example, method <code>com.sun.javadoc.ClassDoc.isAbstract()</code>, which returns a boolean value,
+    is mapped to a <code>isAbstact</code> attribute of the <code>ClassDoc</code> DSM element. 
+    Here is how this would looks in the form of a XML DTD declaration 
+    (if <code>BOOLEAN</code> data type was allowed in DTD):
+    <blockquote class="mrg8"><code>&lt;!ATTRLIST ClassDoc isAbstract BOOLEAN&gt;</code></blockquote>
+  </li>
+</ul>
+
+You can see all mapping of
+<a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/" target="_blank">Doclet API</a>
+to <a href="http://www.w3.org/XML/" target="_blank">XML</a>
+used by <a href="#doclet_dsm">Doclet DSM</a>, if you look at
+<a target="_blank" href="http://www.filigris.com/products/docflex/features/templates_designer.php#expr_editors">FlexQuery Assistance Dialog</a>
+invoked from the Template Designer. Here is a screenshot of it (click to see a larger screenshot):
+
+<blockquote>
+<a href="http://www.filigris.com/products/docflex_javadoc/docs/images/DocletDSM.html" target="_blank"><img src="docs/images/DocletDSM_s.png" alt="Doclet API Data Source Model" border="0"></a>
+</blockquote>
+
+In effect, the tree visible on this picture represents all the
+<a href="http://docs.oracle.com/javase/6/docs/jdk/api/javadoc/doclet/" target="_blank">Doclet API</a>
+in a very simple but equally powerful form.
+
+<h3>
+  <a name="how_fast"></a>
+  How fast it works
+</h3>
+
+Even though the entire JavaDoc Generator is implemented as a 
+<a href="#template_sets">set of templates</a>, which adds an additional level 
+of interpretation, we have passed a very long way of optimizations.
+<p class="mrg8">
+Now, by its performance, the result doclet
+(i.e. <a href="#doclet">DocFlex Doclet</a> + <a href="#template_sets">templates</a>)
+may well rival with anything written directly in Java!
+<p class="mrg8">
+Here are a couple of tests that have been run on Java SE 6u3 JDK Source Code (downloaded from:
+<a href="http://java.sun.com/javase/downloads/" target="_blank">http://java.sun.com/javase/downloads/</a>)
+using <a href="#JavadocPro_templates">JavadocPro templates</a> and default 
+<a href="docs/doclet.html#options">generator settings</a>.
+
+<h4>
+  Generation of Framed HTML Documentation
+</h4>
+
+The following is the result of the generation of a framed 
+<a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/examples.php#html_demo">HTML documentation</a>
+by all Java sources of the following packages (with all subpackages):
+<ul class="mrg8">
+<li><code>java.*</code></li>
+<li><code>javax.*</code></li>
+<li><code>org.*</code></li> 
+</ul>
+which is essentially identical to the entire 
+<a href="http://docs.oracle.com/javase/6/docs/api/" target="_blank">Java SE 6 API Specification</a>.
+<p>
+<table cellpadding="3" cellspacing="1" border="1">
+<tr>
+<td bgcolor="#F6F6F6">
+<table cellpadding="0" cellspacing="0" class="impr">
+  <tr>
+    <td>Number of packages/classes:&nbsp;&nbsp;</td>
+    <td>196 / 3558</td>
+  </tr>
+  <tr>
+    <td>Total source code size:&nbsp;&nbsp;</td>
+    <td>40.8 Mb (all files)</td>
+  </tr>
+  <tr>
+    <td>Generation time (1):&nbsp;&nbsp;</td>
+    <td><b>637 sec</b> (Windows XP 32-bit)</td>
+  </tr>
+  <tr>
+    <td>Generation time (2):&nbsp;&nbsp;</td>
+    <td><b>449 sec</b> (Windows 7 64-bit)</td>
+  </tr>
+  <tr>
+    <td>Result HTML documentation:&nbsp;&nbsp;</td>
+    <td>187 Mb</td>
+  </tr>
+  <tr>
+    <td>Number of generated files:&nbsp;&nbsp;</td>
+    <td>8491</td>
+  </tr>
+  <tr>
+    <td>Template Set:&nbsp;&nbsp;</td>
+    <td><a href="templates/JavadocPro/overview.html">JavadocPro</a></td>
+  </tr>
+  <tr>
+    <td><a href="#full_edition">DocFlex/Javadoc</a> version:&nbsp;&nbsp;</td>
+    <td>1.6.0</td>
+  </tr>
+  <tr>
+    <td>JDK version:&nbsp;&nbsp;</td>
+    <td>1.7.0 (32-bit / 64-bit)</td>
+  </tr>
+  <tr>
+    <td>Computer platform:&nbsp;&nbsp;</td>
+    <td>Intel Core 2 Duo E6600, 4GB RAM</td>
+  </tr>
+</table>
+</td>
+</tr>
+</table>
+
+<h4>
+  Generation of RTF Documentation
+</h4>
+
+The following is the result of the generation of a single-file 
+<a target="_blank" href="http://www.filigris.com/products/docflex_javadoc/examples.php#rtf_demo">RTF documentation</a>
+by the Java sources of
+<code><a href="http://docs.oracle.com/javase/6/docs/api/javax/swing/package-summary.html" target="_blank">javax.swing</a></code>
+package and subpackages:
+<p>
+<table cellpadding="3" cellspacing="1" border="1">
+<tr>
+<td bgcolor="#F6F6F6">
+<table cellpadding="0" cellspacing="0" class="impr">
+  <tr>
+    <td>Number of packages/classes:&nbsp;&nbsp;</td>
+    <td>17 / 633</td>
+  </tr>
+  <tr>
+    <td>Total source code size:&nbsp;&nbsp;</td>
+    <td>10.8 Mb (all files)</td>
+  </tr>
+  <tr>
+    <td>Generation time:&nbsp;&nbsp;</td>
+    <td><b>93 sec</b></td>
+  </tr>
+  <tr>
+    <td>Result RTF document:&nbsp;&nbsp;</td>
+    <td>22.5 Mb (with images)</td>
+  </tr>
+  <tr>
+    <td>Number of pages (A4):&nbsp;&nbsp;</td>
+    <td>3516</td>
+  </tr>
+  <tr>
+    <td>Template Set:&nbsp;&nbsp;</td>
+    <td><a href="templates/JavadocPro/overview.html">JavadocPro</a></td>
+  </tr>
+  <tr>
+    <td><a href="#full_edition">DocFlex/Javadoc</a> version:&nbsp;&nbsp;</td>
+    <td>1.6.0</td>
+  </tr>
+  <tr>
+    <td>JDK version:&nbsp;&nbsp;</td>
+    <td>1.7.0 (Windows XP 32-bit)</td>
+  </tr>
+  <tr>
+    <td>Computer platform:&nbsp;&nbsp;</td>
+    <td>Intel Core 2 Duo E6600, 4GB RAM</td>
+  </tr>
+</table>
+</td>
+</tr>
+</table>
+
+<p>
+<hr>
+<span class="impr">Copyright&copy; 2003-2012 Filigris Works, Leonid Rudy Softwareprodukte. All rights reserved.<br>
+To contact us, please visit
+<a href="http://www.filigris.com" target="_blank">www.filigris.com</a> or e-mail to: <a href="mailto:contact@filigris.com">contact@filigris.com</a>
+</span>
+</p>
+
+</body>
+
+</html>

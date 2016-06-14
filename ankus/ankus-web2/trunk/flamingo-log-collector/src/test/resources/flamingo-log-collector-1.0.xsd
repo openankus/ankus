@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://www.openflamingo.org/schema/collector"
+            targetNamespace="http://www.openflamingo.org/schema/collector"
+            elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+
+    <xsd:annotation>
+        <xsd:documentation><![CDATA[
+	Open Flamingo Log Collector Schema, version 1.0
+	Authors: Edward KIM
+	Description:
+	    Log Collector는 전체적으로 다음의 기능을 수행한다.
+	      1. Local FS -> HDFS
+	      2. HTTP -> HDFS
+	      3. HTTP -> Local
+		]]></xsd:documentation>
+    </xsd:annotation>
+
+    <!-- Top-level <collector> tag -->
+    <xsd:element name="collector">
+        <xsd:annotation>
+            <xsd:documentation>Log Collector의 시작</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="description" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="clusters" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="globalVariables" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="job" minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element ref="mapping" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="description">
+        <xsd:annotation>
+            <xsd:documentation><![CDATA[ 로그 수집에 대한 상사 설명 ]]></xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:simpleContent>
+                <xsd:extension base="xsd:string"/>
+            </xsd:simpleContent>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Hadoop Clusters -->
+    <xsd:element name="clusters">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="cluster" minOccurs="1" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Hadoop Cluster -->
+    <xsd:element name="cluster">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="fs.default.name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                <xsd:element name="mapred.job.tracker" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                <xsd:element ref="properties" minOccurs="0" maxOccurs="1"/>
+            </xsd:sequence>
+            <xsd:attribute name="name" type="xsd:string" use="required"/>
+            <xsd:attribute name="description" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Global Variables -->
+    <xsd:element name="globalVariables">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="globalVariable" minOccurs="1" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Global Variable -->
+    <xsd:element name="globalVariable">
+        <xsd:complexType>
+            <xsd:attribute name="name" type="xsd:string" use="required"/>
+            <xsd:attribute name="value" type="xsd:string" use="required"/>
+            <xsd:attribute name="description" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Job -->
+    <xsd:element name="job">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="schedule" minOccurs="1" maxOccurs="1"/>
+                <xsd:element ref="policy" minOccurs="1" maxOccurs="1"/>
+            </xsd:sequence>
+            <xsd:attribute name="name" type="xsd:string" use="required"/>
+            <xsd:attribute name="description" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Input -->
+    <xsd:element name="input">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="selector" minOccurs="1" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="excludeOnNotExist" type="xsd:boolean" default="true">
+                <xsd:annotation>
+                    <xsd:documentation>
+                        <![CDATA[ 이 옵션이 true인 경우 해당 경로에 대한 검증을 수행하고 존재하지 않는 경로인 경우 제회한다. ]]>
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Output -->
+    <xsd:element name="output">
+        <xsd:annotation>
+            <xsd:documentation>Single Output Path</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:simpleContent>
+                <xsd:extension base="xsd:string">
+                    <xsd:attribute name="description" type="xsd:string"/>
+                    <xsd:attribute name="deleteOnExist" type="xsd:boolean" default="false">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                <![CDATA[
+							        파일을 저장할때 이미 파일이 존재한다면 기존 파일을 삭제할지 여부를 설정하는 옵션으로
+							        기본값은 false이다. 만약에 이 옵션이 true이고 기존 파일이 이미 존재한다면 원래 있던 파일은
+							        삭제된다. 만약에 이 옵션이 false이고 이미 존재한다면 원본 파일은 errorDirectory로 이동하게 된다.
+								]]>
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:attribute>
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Ingress Local FileSystem -->
+    <xsd:element name="fromLocal">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="sourceDirectory" minOccurs="1" maxOccurs="1"/>
+                <xsd:element name="workingDirectory" type="xsd:string" minOccurs="1" maxOccurs="1">
+                    <xsd:annotation>
+                        <xsd:documentation>HDFS File Uploader가 처리</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="completeDirectory" type="xsd:string" minOccurs="1" maxOccurs="1">
+                    <xsd:annotation>
+                        <xsd:documentation>파일을 선택하는 파일 선택자</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="removeAfterCopy" type="xsd:boolean" minOccurs="1" maxOccurs="1" default="false">
+                    <xsd:annotation>
+                        <xsd:documentation>파일을 선택하는 파일 선택자</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="errorDirectory" type="xsd:string" minOccurs="1" maxOccurs="1">
+                    <xsd:annotation>
+                        <xsd:documentation>파일을 선택하는 파일 선택자</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Egress Local -->
+    <xsd:element name="toLocal">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="targetPath" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                <xsd:element name="filename" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Egress HDFS -->
+    <xsd:element name="toHdfs">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="targetPath" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                <xsd:element name="stagingPath" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+            </xsd:sequence>
+            <xsd:attribute name="cluster" type="xsd:string"/>
+            <xsd:attribute name="description" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Cluster Name -->
+    <xsd:element name="clusterName">
+        <xsd:complexType>
+            <xsd:simpleContent>
+                <xsd:extension base="xsd:string"/>
+            </xsd:simpleContent>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Shell based Command -->
+    <xsd:element name="shell">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="workingDirectory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                <xsd:element name="program" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                <xsd:element ref="args" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="envs" minOccurs="0" maxOccurs="1"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Arguments-->
+    <xsd:element name="args">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="variable" minOccurs="1" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Environment Variables -->
+    <xsd:element name="envs">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="variable" minOccurs="1" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Variables -->
+    <xsd:element name="variables">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="variable" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Variable -->
+    <xsd:element name="variable">
+        <xsd:complexType>
+            <xsd:attribute name="name" type="xsd:string"/>
+            <xsd:attribute name="value" type="xsd:string" use="required"/>
+            <xsd:attribute name="description" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Properties -->
+    <xsd:element name="properties">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="property" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Variable -->
+    <xsd:element name="property">
+        <xsd:complexType>
+            <xsd:attribute name="name" type="xsd:string" use="required"/>
+            <xsd:attribute name="value" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Policy -->
+    <xsd:element name="policy">
+        <xsd:annotation>
+            <xsd:documentation>
+                <![CDATA[
+					파일을 처리하는 정책을 결정하는 엘리먼트로써 HDFS File Uploader에는
+					하나 이상의 정책을 정의할 수 있으며 각각의 정책에는 ingress와 egress를 반드시 포함해야 한다.
+					특히 ingress에 대해서 주기적인 실행이 필요하므로 cron expression 방식의
+					스케줄링 정보를 설정할 필요가 있다.
+			    ]]>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="ingress">
+                    <xsd:complexType>
+                        <xsd:choice>
+                            <xsd:element ref="fromLocal" minOccurs="1" maxOccurs="1"/>
+                            <xsd:element ref="fromHttp" minOccurs="1" maxOccurs="1"/>
+                        </xsd:choice>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="egress">
+                    <xsd:complexType>
+                        <xsd:choice>
+                            <xsd:element ref="toLocal" minOccurs="1" maxOccurs="1"/>
+                            <xsd:element ref="toHdfs" minOccurs="1" maxOccurs="1"/>
+                        </xsd:choice>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- 스케줄링 정보를 설정한다. 추후 확장할 수 있다.
+        <schedule>
+            <cronExpression>* * * * * * ?</cronExpression>
+            <datePattern>yyyyMMddHH</datePattern>
+            <start>201201010000</start>
+            <end>201512311159</end>
+        </schedule>
+    -->
+    <xsd:element name="schedule">
+        <xsd:annotation>
+            <xsd:documentation>
+                <![CDATA[
+					Cron Expression 기반 Cron Trigger로써 Cron Expression, Start, End로 구성되어 있다.
+					Start를 지정하지 않으면 즉시 시작하게 되며 End를 지정하지 않으면 무한 동작하게 된다.
+					시작 및 종료 날짜를 명시적으로 지정하려면 datePattern에 Simple Date Format 형식으로 날짜 패턴을 지정하고
+					start와 end에 해당 날짜 패턴에 맞도록 입력하면 된다.
+					${timestamp('DATE_PATTERN')} 형식의 Expression Language를 사용할 수 있다.
+			    ]]>
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="cronExpression" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                <xsd:element name="timezone" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                <xsd:element name="triggerPriority" type="xsd:int" minOccurs="0" maxOccurs="1" default="5"/>
+                <xsd:element name="misfireInstructions" minOccurs="0" maxOccurs="1">
+                    <xsd:complexType>
+                        <xsd:attribute name="type" default="MISFIRE_INSTRUCTION_SMART_POLICY">
+                            <xsd:simpleType>
+                                <xsd:restriction base="xsd:NMTOKEN">
+                                    <xsd:enumeration value="MISFIRE_INSTRUCTION_SMART_POLICY"/>
+                                    <xsd:enumeration value="MISFIRE_INSTRUCTION_IGNORE_MISFIRE_POLICY"/>
+                                    <xsd:enumeration value="MISFIRE_INSTRUCTION_DO_NOTHING"/>
+                                    <xsd:enumeration value="MISFIRE_INSTRUCTION_FIRE_NOW"/>
+                                </xsd:restriction>
+                            </xsd:simpleType>
+                        </xsd:attribute>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element ref="start" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="end" minOccurs="0" maxOccurs="1"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="start">
+        <xsd:complexType>
+            <xsd:attribute name="datePattern" type="xsd:string" use="required"/>
+            <xsd:attribute name="date" type="xsd:string" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="end">
+        <xsd:complexType>
+            <xsd:attribute name="datePattern" type="xsd:string" use="required"/>
+            <xsd:attribute name="date" type="xsd:string" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="sourceDirectory">
+        <xsd:annotation>
+            <xsd:documentation>원본 파일이 존재하는 로컬 파일 시스템상의 절대 경로</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="path" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                <xsd:element name="condition" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            </xsd:sequence>
+            <xsd:attribute name="conditionType" default="antPattern">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:NMTOKEN">
+                        <xsd:enumeration value="startWith"/>
+                        <xsd:enumeration value="endWith"/>
+                        <xsd:enumeration value="antPattern"/>
+                        <xsd:enumeration value="datePattern"/>
+                        <xsd:enumeration value="regEx"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- 파일을 선택하기 위해서 사용할 수 있는 Selector
+        <selector conditionType="datePattern">
+            <path>/home/uploader/rain/${timestamp('yyyy')}/${timestamp('MM')}/${timestamp('dd')}</path>
+            <condition>${timestamp('yyyyMMdd')}</condition>
+        </selector>
+    -->
+    <xsd:element name="selector">
+        <xsd:annotation>
+            <xsd:documentation>파일을 선택하는 파일 선택자</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="path" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                <xsd:element name="condition" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            </xsd:sequence>
+            <xsd:attribute name="conditionType" default="antPattern">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:NMTOKEN">
+                        <xsd:enumeration value="startWith"/>
+                        <xsd:enumeration value="endWith"/>
+                        <xsd:enumeration value="antPattern"/>
+                        <xsd:enumeration value="datePattern"/>
+                        <xsd:enumeration value="regEx"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Egress -->
+    <xsd:element name="egress">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="output" minOccurs="1" maxOccurs="1"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Prepare -->
+    <xsd:element name="prepare">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="delete" minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element ref="mkdir" minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element ref="move" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- HDFS Move -->
+    <xsd:element name="move">
+        <xsd:complexType>
+            <xsd:attribute name="from" type="xsd:string" use="required"/>
+            <xsd:attribute name="to" type="xsd:string" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- HDFS Copy -->
+    <xsd:element name="copy">
+        <xsd:complexType>
+            <xsd:attribute name="from" type="xsd:string" use="required"/>
+            <xsd:attribute name="to" type="xsd:string" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- HDFS Delete -->
+    <xsd:element name="delete">
+        <xsd:complexType>
+            <xsd:attribute name="path" type="xsd:string" use="required"/>
+            <xsd:attribute name="deleteOnExist" type="xsd:boolean" default="true"/>
+            <xsd:attribute name="ignoreOnNotExist" type="xsd:boolean" default="true"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- HDFS mkdir -->
+    <xsd:element name="mkdir">
+        <xsd:complexType>
+            <xsd:attribute name="path" type="xsd:string" use="required"/>
+            <xsd:attribute name="deleteOnExist" type="xsd:boolean" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Ingress HTTP -->
+    <xsd:element name="fromHttp">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="url" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                <xsd:element name="method" minOccurs="1" maxOccurs="1">
+                    <xsd:complexType>
+                        <xsd:attribute name="type" default="GET">
+                            <xsd:simpleType>
+                                <xsd:restriction base="xsd:NMTOKEN">
+                                    <xsd:enumeration value="GET"/>
+                                    <xsd:enumeration value="POST"/>
+                                </xsd:restriction>
+                            </xsd:simpleType>
+                        </xsd:attribute>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="body" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                <xsd:element ref="headers" minOccurs="0" maxOccurs="1"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Headers -->
+    <xsd:element name="headers">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="header" minOccurs="1" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- HTTP Header -->
+    <xsd:element name="header">
+        <xsd:complexType>
+            <xsd:attribute name="name" type="xsd:string" use="required"/>
+            <xsd:attribute name="value" type="xsd:string" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- FTP -->
+    <xsd:element name="ftp">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="host" type="xsd:string"/>
+                <xsd:element name="port" type="xsd:string"/>
+                <xsd:element name="mode" type="ftpMode"/>
+                <xsd:element name="username" type="xsd:string"/>
+                <xsd:element name="password" type="xsd:string"/>
+                <xsd:element ref="toLocal" minOccurs="1" maxOccurs="1">
+                    <xsd:annotation>
+                        <xsd:documentation>FTP에서 파일을 다운로드한 이후에 로컬 파일 시스템에 저장하고 관리하기 위한 설정 정보</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="after" minOccurs="0" maxOccurs="1">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="shell" minOccurs="0" maxOccurs="1"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- FTP Mode -->
+    <xsd:simpleType name="ftpMode">
+        <xsd:annotation>
+            <xsd:documentation>FTP Transfer Mode</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ACTIVE"/>
+            <xsd:enumeration value="PASSIVE"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Compression -->
+    <xsd:element name="compression">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="path" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                <xsd:element name="mode" type="compressionMode" minOccurs="1" maxOccurs="1"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <!-- Compression Mode -->
+    <xsd:simpleType name="compressionMode">
+        <xsd:annotation>
+            <xsd:documentation>Compression Mode</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="LZO"/>
+            <xsd:enumeration value="GZIP"/>
+            <xsd:enumeration value="SNAPPY"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- Ingress Engress Mapping -->
+    <xsd:element name="mapping">
+        <xsd:complexType>
+            <xsd:attribute name="handler" type="xsd:string" use="required"/>
+            <xsd:attribute name="ingress" type="xsd:string" use="required"/>
+            <xsd:attribute name="egress" type="xsd:string" use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>

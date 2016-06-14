@@ -1,0 +1,125 @@
+This parameter is an analog of
+<code>-<a href="http://download.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#group">group</a></code>
+option provided by the <a href="http://download.oracle.com/javase/6/docs/technotes/guides/javadoc/standard-doclet.html">Standard Doclet</a>.
+It allows you to separates packages on the overview page into whatever groups you specify,
+one group per table.
+<p>
+The parameter accepts multiple (list) value. Each value item specifies a single package group.
+
+<h2>Specifying Package Group</h2>
+
+A package group is specified as follows:
+<dl><dd>
+  <code><i>packagepattern1</i>:<i>packagepattern2</i>:<i>...</i>::<i>groupheading</i></code>
+</dd></dl>
+
+where
+<ul>
+<li>
+  <b><i>packagepattern</i></b> ${include ../refs/package_pattern.htm}
+</li>
+<li style="margin-top:10pt">
+  <b><i>groupheading</i></b> can be any text (including white spaces).
+  This text is placed in the table heading for the group
+</li>
+</ul>
+
+<u>Example</u>:
+<dl><dd>
+  <code>java.*:javax.*::This is a title</code>
+</dd></dl>
+
+<h2>Specifying Multiple Package Groups</h2>
+
+Different package groups should be specified with separate items of the whole parameter value.
+Each value item should define a single group as described above.
+The items must be separated with one of the allowed item separators (newline or <code>';'</code>). 
+<p>
+<u>Example</u>:
+
+<dl><dd>
+<code>
+java.awt.*:javax.swing.*::Java GUI API<br>
+org.w3c.*::W3C API
+</code>
+</dd></dl>
+
+or the same as a single line:
+
+<dl><dd>
+<code>
+java.awt.*:javax.swing.*::Java GUI API;org.w3c.*::W3C API
+</code>
+</dd></dl>
+
+The last form can be used to specify both groups on the Javadoc command line:
+
+<dl><dd>
+<code>
+<b>-p:gen.overview.packages.groups</b>&nbsp;"java.awt.*:javax.swing.*::Java GUI API;org.w3c.*::W3C API"
+</code>
+</dd></dl>
+
+(Note: Because here the full parameter value contains spaces,
+it is enclosed in quotes to have it treated as a single command-line argument.)
+<p>
+The same can be also specified with two <code>-p</code> options:
+
+<dl><dd>
+<code>
+<b>-p:gen.overview.packages.groups</b>&nbsp;"java.awt.*:javax.swing.*::Java GUI API"
+<b>-p:gen.overview.packages.groups</b>&nbsp;"org.w3c.*::W3C API"
+</code>
+</dd></dl>
+
+Each <code><b>-p</b></code> option adds a separate value item to 
+the <code>'gen.overview.packages.groups'</code> parameter.
+
+<p><u>Using Escapes</u><p>
+
+Each character that serves as a value item separator can be equally used within the value item
+if escaped with a backslash. 
+If a backslash is not consumed by an escape it will be remained in the text as is.
+To make sure that a backslash is not part of some escape, you may add another backslash.
+<p>
+
+For example, a package group with the title:
+<dl><dd>
+<code>
+<i>The API to process ';' and '\' in text</i>
+</code>
+</dd></dl>
+can be specified like this:
+<dl><dd>
+<code>
+textmill.semicolon.*:textmill.slash.*::The API to process '\;' and '\\' in text
+</code>
+</dd></dl>
+
+<h2>Sorting Order</h2>
+
+The groups appear on the page in the order of the parameter's value items specifying each group
+(i.e. in the same order as the package groups are specified on the command line).
+The packages are alphabetized within a group.
+
+<h2>Packages Outside Groups</h2>
+
+If you specify no package groups (the parameter value is empty),
+all packages are placed in one group with the heading <i>"Packages"</i>.
+<p>
+If the all groups do not include all documented packages, 
+any leftover packages appear in a separate group with the heading <i>"Other Packages"</i>,
+which is printed the last.
+
+<h2>Default Value</h2>
+
+The default value of this parameter is produced from all 
+<code>-<a href="http://download.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#group">group</a></code>
+options found on the Javadoc command line. Each <code>-group</code> option
+is converted to a single value item of this parameter.
+<p>
+So, you can use Standard Doclet's 
+<code>-<a href="http://download.oracle.com/javase/6/docs/technotes/tools/windows/javadoc.html#group">group</a></code>
+options instead of specifying this parameter directly.
+<p>
+${include ../refs/standard_doclet_options.htm}

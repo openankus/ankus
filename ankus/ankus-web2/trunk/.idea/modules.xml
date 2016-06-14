@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ankus-web-services/ankus-web-services.iml" filepath="$PROJECT_DIR$/ankus-web-services/ankus-web-services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ankus-workflow-engine/ankus-workflow-engine.iml" filepath="$PROJECT_DIR$/ankus-workflow-engine/ankus-workflow-engine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flamingo-core/flamingo-core.iml" filepath="$PROJECT_DIR$/flamingo-core/flamingo-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flamingo-el/flamingo-el.iml" filepath="$PROJECT_DIR$/flamingo-el/flamingo-el.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flamingo-fs/flamingo-fs.iml" filepath="$PROJECT_DIR$/flamingo-fs/flamingo-fs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flamingo-interface/flamingo-interface.iml" filepath="$PROJECT_DIR$/flamingo-interface/flamingo-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flamingo-locale/flamingo-locale.iml" filepath="$PROJECT_DIR$/flamingo-locale/flamingo-locale.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flamingo-log-collector/flamingo-log-collector.iml" filepath="$PROJECT_DIR$/flamingo-log-collector/flamingo-log-collector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flamingo-mapreduce/flamingo-mapreduce.iml" filepath="$PROJECT_DIR$/flamingo-mapreduce/flamingo-mapreduce.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flamingo-model/flamingo-model.iml" filepath="$PROJECT_DIR$/flamingo-model/flamingo-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flamingo-util/flamingo-util.iml" filepath="$PROJECT_DIR$/flamingo-util/flamingo-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/trunk_2015_03_17.iml" filepath="$PROJECT_DIR$/trunk_2015_03_17.iml" />
+    </modules>
+  </component>
+</project>
+

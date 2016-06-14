@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Flamingo</title>
+
+    <link type="text/css" rel="stylesheet" href="../../resources/lib/ext-4.2.2.1144/resources/css/ext-all-gray.css"/>
+    <link type="text/css" rel="stylesheet" href="../../resources/css/flamingo-gray.css"/>
+    <link type="text/css" rel="stylesheet" href="../../resources/css/desktop.css"/>
+    <link type="text/css" rel="stylesheet" href="../../resources/lib/codemirror-2.35/lib/codemirror.css"/>
+    <link type="text/css" rel="stylesheet" href="../../resources/lib/codemirror-2.35/lib/util/simple-hint.css"/>
+
+    <!-- Workflow Designer CSS -->
+    <link rel="stylesheet" type="text/css" href="../../resources/css/node-list.css">
+    <link rel="stylesheet" type="text/css" href="../../resources/lib/mzext/ux/window/css/notification.css">
+    <link rel="stylesheet" type="text/css"
+          href="../../resources/lib/ext-ux/statusbar/css/statusbar.css">
+
+    <script type="text/javascript" src="../../resources/lib/ext-4.2.2.1144/ext-all-debug-w-comments.js"></script>
+    <script type="text/javascript" src="../../resources/flamingo/common/Rest.js"></script>
+    <script type="text/javascript" src="../../resources/flamingo/common/Patch.js"></script>
+    <script type="text/javascript" src="../../resources/flamingo/common/VTypes.js"></script>
+    <!--<script type="text/javascript" src="./message/bundle"></script>-->
+
+    <!-- ExtJS Plugins -->
+    <script type="text/javascript"
+            src="../../resources/lib/mzext/ux/form/field/Ext.ux.form.field.CodeMirror.411.js"></script>
+    <script type="text/javascript" src="../../resources/lib/mzext/ux/window/Notification.js"></script>
+
+    <!-- Flamingo Utility -->
+    <script type="text/javascript" src="../../resources/lib/flamingo/Flamingo.Ajax.js"></script>
+    <script type="text/javascript" src="../../resources/lib/flamingo/Flamingo.Util.js"></script>
+    <script type="text/javascript" src="../../resources/lib/flamingo/Flamingo.UI.js"></script>
+    <script type="text/javascript" src="../../resources/flamingo/common/Shortcut.js"></script>
+
+    <!-- OpenGraph -->
+    <link rel="stylesheet" type="text/css" href="../../resources/lib/opengraph/lib/contextmenu/jquery.contextMenu.css">
+    <script type="text/javascript" src="../../resources/lib/opengraph/OpenGraph-0.1-SNAPSHOT-All.js"></script>
+
+    <!-- Code Mirror -->
+    <script type="text/javascript"
+            src="../../resources/lib/mzext/ux/form/field/Ext.ux.form.field.CodeMirror.411.js"></script>
+    <script type="text/javascript" src="../../resources/lib/codemirror-2.35/lib/codemirror.js"></script>
+    <script type="text/javascript" src="../../resources/lib/codemirror-2.35/mode/pig/pig.js"></script>
+    <script type="text/javascript" src="../../resources/lib/codemirror-2.35/lib/util/simple-hint.js"></script>
+    <script type="text/javascript" src="../../resources/lib/codemirror-2.35/lib/util/pig-hint.js"></script>
+
+    <script type="text/javascript">
+        CONSTANTS.CONTEXT_PATH = '../..';
+
+        Ext.Loader.setConfig({enabled: true});
+
+        Ext.Loader.setPath({
+            'Flamingo': '../../resources/flamingo',
+            'Ext.ux': '../../resources/lib/ext-ux'
+        });
+
+        Ext.require([
+            'Flamingo.view.desktop.App'
+        ]);
+
+        // backward 방지
+        Ext.EventManager.on(document, 'keydown', function (e, t) {
+            if (e.getKey() == e.BACKSPACE &&
+                    (!/^input$/i.test(t.tagName) || t.disabled || t.readOnly) &&
+                    (!/^textarea/i.test(t.tagName) || t.disabled || t.readOnly)) {
+                e.stopEvent();
+            }
+        });
+
+        var desktopApp;
+        Ext.onReady(function () {
+            desktopApp = Ext.create('Flamingo.view.desktop.App');
+            Flamingo.app = desktopApp;
+            Flamingo.app.controllers = new Flamingo.Util.Map();
+        });
+    </script>
+</head>
+
+<body>
+</body>
+</html>

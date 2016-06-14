@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://www.openflamingo.org/schema/configuration">
+
+	<property>
+		<name>application.locale</name>
+		<value>Korean</value>
+		<description>Application Locale. If it's changed, log messages are also changed.</description>
+		<expose>true</expose>
+	</property>
+
+	<property>
+		<name>demo.mode</name>
+		<value>false</value>
+		<description>Demo mode. If it's true, app works in testing mode and the admin page appears hidden.</description>
+		<expose>true</expose>
+	</property>
+
+	<property>
+		<name>extjs.ajax.disable.cache</name>
+		<value>false</value>
+		<description>ExtJS Ajax Cache config. If set it to false, web browser's cache is enabled and modified JavaScript doesn't get applied. So web browser's cache must be deleted.
+		</description>
+		<expose>true</expose>
+	</property>
+
+	<property>
+		<name>fs.browser.download.max.file.size</name>
+		<value>1048576</value>
+		<description>Max size of download files in File System Browser</description>
+		<expose>true</expose>
+	</property>
+
+	<property>
+		<name>fs.browser.upload.max.file.size</name>
+		<value>3000000</value>
+		<description>Max size of upload files in File System Browser.</description>
+		<expose>true</expose>
+	</property>
+
+	<property>
+		<name>fs.browser.upload.timeout</name>
+		<value>120000</value>
+		<description>Sets HTTP timeout when uploading files in File System Browser.</description>
+		<expose>true</expose>
+	</property>
+
+	<property>
+		<name>hive.query.result.max.download.size</name>
+		<value>5242880</value>
+		<description>Max size of download query results in Hive Query Editor.</description>
+		<expose>true</expose>
+	</property>
+
+	<property>
+		<name>hdfs.delete.forbidden.paths</name>
+		<value>/tmp/**/*,/tmp,/user/hive/**/*,/usr/hive,/lib/**/*,/lib,/samples/**/*,/samples</value>
+		<description>Lis of non-deletable file paths in File System Browser</description>
+		<expose>false</expose>
+	</property>
+
+</configuration>
