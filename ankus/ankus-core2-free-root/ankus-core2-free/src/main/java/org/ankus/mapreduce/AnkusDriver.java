@@ -55,7 +55,9 @@ public class AnkusDriver {
         
         try
         {
-            programDriver.addClass(Constants.DRIVER_NUMERIC_STATS, NumericStatsDriver.class, "Statistics for Numeric Attributes of Data");
+        	programDriver.addClass(Constants.DRIVER_VECTOR_ANALYSIS, NumericStatsDriver.class, "Vector Analysis");
+        	
+        	programDriver.addClass(Constants.DRIVER_NUMERIC_STATS, NumericStatsDriver.class, "Statistics for Numeric Attributes of Data");
             programDriver.addClass(Constants.DRIVER_NOMINAL_STATS, NominalStatsDriver.class, "Statistics(frequency/ratio) for Nominal Attributes of Data");
             programDriver.addClass(Constants.DRIVER_CERTAINTYFACTOR_SUM, CertaintyFactorSumDriver.class, "Certainty Factor based Summation for Numeric Attributes of Data");
 
