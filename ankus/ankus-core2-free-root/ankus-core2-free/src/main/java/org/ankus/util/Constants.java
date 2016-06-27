@@ -29,6 +29,8 @@ package org.ankus.util;
 public class Constants {
 
    // for map-reduce job driver class
+	public static final String DRIVE_TF_IDF = "TFIDF";
+	public static final String DRIVE_DOCSIMILITY = "DocumentSimilarity";
     public static final String DRIVER_NUMERIC_STATS = "NumericStatistics";
     public static final String DRIVER_NOMINAL_STATS = "NominalStatistics";
     public static final String DRIVER_CERTAINTYFACTOR_SUM = "CertaintyFactorSUM";

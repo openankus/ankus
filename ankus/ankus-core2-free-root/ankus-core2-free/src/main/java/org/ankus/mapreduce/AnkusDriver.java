@@ -32,6 +32,8 @@ import org.ankus.mapreduce.algorithms.preprocessing.normalize.NormalizeDriver;
 import org.ankus.mapreduce.algorithms.statistics.certaintyfactorsum.CertaintyFactorSumDriver;
 import org.ankus.mapreduce.algorithms.statistics.nominalstats.NominalStatsDriver;
 import org.ankus.mapreduce.algorithms.statistics.numericstats.NumericStatsDriver;
+import org.ankus.mapreduce.algorithms.utils.DocSimilarity.DocSiliarityDriver;
+import org.ankus.mapreduce.algorithms.utils.TF_IDF.TF_IDF;
 import org.ankus.util.Constants;
 import org.apache.hadoop.util.ProgramDriver;
 
@@ -55,7 +57,8 @@ public class AnkusDriver {
         
         try
         {
-        	programDriver.addClass(Constants.DRIVER_VECTOR_ANALYSIS, NumericStatsDriver.class, "Vector Analysis");
+        	programDriver.addClass(Constants.DRIVE_TF_IDF, TF_IDF.class, "TF-IDF");//20160627 prism
+        	programDriver.addClass(Constants.DRIVE_DOCSIMILITY, DocSiliarityDriver.class, "DocSiliarity"); //20160627 prism
         	
         	programDriver.addClass(Constants.DRIVER_NUMERIC_STATS, NumericStatsDriver.class, "Statistics for Numeric Attributes of Data");
             programDriver.addClass(Constants.DRIVER_NOMINAL_STATS, NominalStatsDriver.class, "Statistics(frequency/ratio) for Nominal Attributes of Data");
