@@ -1,6 +1,23 @@
-ankus source consists with 2parts
+ankus source consists with 2 parts
 
 1. WEB UI
-    this is using tomcat was
+    this is ankus web interface based tomcat and extjs3
+    It will be easy to handling, if you check hadoop path in WEB-INF/flamingo-site.xml exactly.
+    Notice! It has different tomcat -> ankus-web-services, ankus-workflow-engine
+    You must run all that.
+    
 2. ankus core
     this is data mining using mapreduce
+    you can use that on console using command.
+    like this "hadoop jar ankus-core[version].jar"
+
+ankus 1.1.0 web ui Build method 
+step 1. Clone or download
+step 2. Ignore or remove ankus-core/1.0.0, ankus-visualization/1.0.1, ankus-web folders
+        Run eclipse and Import existing maven project
+step 3. Choose ankus-web2/trunk folder
+step 4. Create server on eclipse and link two project(ankus-web-services, ankus-workflow-engine)
+step 5. If you finished Build web ui project
+        then you can access from Chrome browser
+
+For more detail information, you can find out wiki pages...
