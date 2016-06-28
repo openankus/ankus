@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+New source code is updated to ankus
+Please review ankus->ankus-core2-free-root which is mining code
+and ankus->ankus2 is web ui
+
 [The feature of ankus] 
  * ankus is a 'web-based big data mining project and tool' 
   - MapReduce-based data mining/machine learning algorithms library
